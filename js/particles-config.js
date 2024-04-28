@@ -1,11 +1,38 @@
 function getParticleCount() {
     var width = window.innerWidth;
     if (width < 480) {
-        return 100; // Menos partículas para dispositivos móviles
+        return 50; 
     } else if (width < 768) {
-        return 125; // Más partículas para tabletas
+        return 125; 
     } else {
-        return 250; // Aún más partículas para escritorios
+        return 250; 
+    }
+}
+
+function getInteractivity() {
+    var width = window.innerWidth;
+    if (width < 480) {
+        return {
+            "onhover": {
+                "enable": false
+            },
+            "onclick": {
+                "enable": false
+            },
+            "resize": true
+        };
+    } else {
+        return {
+            "onhover": {
+                "enable": true,
+                "mode": "grab"
+            },
+            "onclick": {
+                "enable": false,
+                "mode": "repulse"
+            },
+            "resize": true
+        };
     }
 }
 
@@ -81,17 +108,7 @@ particlesJS(
         },
         "interactivity": {
             "detect_on": "window",
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "grab"
-                },
-                "onclick": {
-                    "enable": false,
-                    "mode": "repulse"
-                },
-                "resize": true
-            },
+            "events": getInteractivity(),
             "modes": {
                 "grab": {
                     "distance": 203.7962037962038,
