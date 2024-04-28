@@ -1,8 +1,19 @@
+function getParticleCount() {
+    var width = window.innerWidth;
+    if (width < 480) {
+        return 100; // Menos partículas para dispositivos móviles
+    } else if (width < 768) {
+        return 125; // Más partículas para tabletas
+    } else {
+        return 250; // Aún más partículas para escritorios
+    }
+}
+
 particlesJS(
     {
         "particles": {
             "number": {
-                "value": 269,
+                "value": getParticleCount(),
                 "density": {
                     "enable": true,
                     "value_area": 800
