@@ -1,0 +1,147 @@
+body {
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+#background {
+    content: "";
+    position: fixed;
+    top: -5%; /* Ajusta la posición para que la imagen de fondo sea más grande que la ventana del navegador */
+    left: -5%;
+    width: 110vw; /* Aumenta el tamaño para que la imagen de fondo sea más grande que la ventana del navegador */
+    height: 110vh;
+    background-image: url('./img/ultra-detailed-nebula-abstract-wallpaper-4-_1_.webp');
+    background-size: cover;
+    background-position: 0 0;
+    z-index: -2;
+    animation: moveBackground 40s linear infinite; 
+}
+
+#background::after {
+    content: "";
+    position: absolute;
+    top: -5%; /* Ajusta la posición para que el área de desenfoque sea más grande que la ventana del navegador */
+    left: -5%;
+    width: 110%; /* Aumenta el tamaño para que el área de desenfoque sea más grande que la ventana del navegador */
+    height: 110%;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(20px, 30px); }
+    50% { transform: translate(30px, 20px); }
+    75% { transform: translate(-10px, 30px); }
+    100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 600px) {
+    #background {
+        background-position: center; /* Centra la imagen de fondo */
+        animation: moveBackground 40s linear infinite; 
+    }
+    
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Cambia a vh para hacer que la altura sea igual a la altura de la ventana del navegador */
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid #fff !important;
+}
+
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #fff; /* Cambia el color de la línea según tus preferencias */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+
+@media (min-width: 768px) { 
+    .navbar {
+        max-width: 50% !important;
+        border: 2px solid #fff !important;
+        border-radius: 25px !important;
+    }
+}
+
+
+.navbar-brand {
+    position: relative;
+}
+
+.circle-border {
+    position: absolute;
+    top: -7px;
+    left: -4px;
+    transform: scale(1.1);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.border {
+    fill: none;
+    stroke: white;
+    stroke-width: 3;
+    stroke-dasharray: 283; /* approximately 2*pi*45 */
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.navbar-brand:hover .circle-border {
+    opacity: 1;
+}
+
+.navbar-brand:hover .border {
+    stroke-dashoffset: 0;
+}
+
+.navbar-brand .border {
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.levitate {
+    animation: levitate 4s ease-in-out infinite;
+    
+}
+
+@keyframes levitate {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.custom-vh-90 {
+    height: 85vh;
+}
