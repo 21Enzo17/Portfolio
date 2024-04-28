@@ -38,6 +38,8 @@ body {
 
 @media (max-width: 600px) {
     #background {
+        width: 150vw;
+        left: -25%;   
         background-position: center; /* Centra la imagen de fondo */
         animation: moveBackground 40s linear infinite; 
     }
