@@ -164,3 +164,38 @@ body {
 }
 
 
+.glass-btn {
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 1000;
+}
+
+.glass-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 768px) {
+    #toggle-particles{
+        position: fixed;
+        right: 15px;
+        z-index: 1000;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    #toggle-particles{
+        position: fixed;
+        top: 2px;
+        right: 15px;
+        z-index: 1000;
+    }
+    
+}
