@@ -520,7 +520,7 @@
   "pauseOnOutsideViewport": true,
   "responsive": [
     {
-      "maxWidth": 800,
+      "maxWidth": 480,
       "options": {
         "interactivity": {
           "events": {
@@ -532,6 +532,23 @@
         "particles": {
           "number": {
             "value": 40
+          }
+        }
+      }
+    },
+    {
+      "maxWidth": 768,
+      "options": {
+        "interactivity": {
+          "events": {
+            "onHover": {
+              "enable": false
+            }
+          }
+        },
+        "particles": {
+          "number": {
+            "value": 100
           }
         }
       }
