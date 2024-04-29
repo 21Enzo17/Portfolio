@@ -13,78 +13,87 @@
     <script>
         document.body.classList.add('body-loading');
     </script>
-    <iframe id="loader-frame" src="loader.html" style="border: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;"></iframe>
-    
-    <div class="py-md-3">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent w-100 mx-auto border-bottom border-white">
-            <div class="container-fluid mx-auto d-flex justify-content-center align-items-center">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNav">
-                    <ul class="navbar-nav align-items-center">
-                        <li class="nav-item px-2">
-                            <a class="nav-link active" aria-current="page" href="#">Sobre Mi</a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link  active" href="#">Trabajos</a>
-                        </li>
-                        <!-- Logo en el centro -->
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="#">
-                                <img src="./img/logo.png" alt="Logo" class="img-fluid" style="width: 50px;">
-                                <svg class="circle-border" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 58px; height: 58px;">
-                                    <circle class="border" cx="50" cy="50" r="40" transform="rotate(-90 50 50)"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link  active" href="#">Proyectos</a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a class="nav-link  active" href="#">Contacto</a>
-                        </li>
-                    </ul>
+    <iframe id="loader-frame" src="loader.html"
+        style="border: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;"></iframe>
+    <div id="d-none" class="d-none">
+        <div class="py-md-3">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-transparent w-100 mx-auto border-bottom border-white">
+                <div class="container-fluid mx-auto d-flex justify-content-center align-items-center">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNav">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item px-2">
+                                <a class="nav-link active" aria-current="page" href="#">Sobre Mi</a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a class="nav-link  active" href="#">Trabajos</a>
+                            </li>
+                            <!-- Logo en el centro -->
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="#">
+                                    <img src="./img/logo.png" alt="Logo" class="img-fluid" style="width: 50px;">
+                                    <svg class="circle-border" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                                        style="width: 58px; height: 58px;">
+                                        <circle class="border" cx="50" cy="50" r="40" transform="rotate(-90 50 50)" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a class="nav-link  active" href="#">Proyectos</a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a class="nav-link  active" href="#">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </div>
-    <div class="d-flex align-items-center justify-content-center custom-vh-90 w-sm-80  mb-5 pb-3">
-        <div class="container mt-5 px-4">
-            <div class="row justify-content-center align-items-center p-5 bg-transparent text-white rounded-5 shadow-lg border border-white" style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.1);">
-                <div class="col-lg-8">
-                    <h1 class="text-shadow">Hola, soy Enzo Meneghini</h1>
-                    <p class="text-justify text-shadow fs-sm-3">Soy un apasionado y altamente motivado desarrollador con una sólida comprensión de los conceptos fundamentales de programación. Aunque estoy buscando mi primer trabajo formal como programador, he adquirido experiencia a través de proyectos personales. Estoy listo para aplicar mis habilidades en un entorno profesional y contribuir a la creación de soluciones de software robustas y eficientes.</p>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center">
-                    <img src="./img/Astronauta.png" alt="Enzo Meneghini" class="img-fluid levitate" style="width: 200px; transition: transform 0.3s;">
+            </nav>
+        </div>
+        <div class="d-flex align-items-center justify-content-center custom-vh-90 w-sm-80  mb-5 pb-3">
+            <div class="container mt-5 px-4">
+                <div class="row justify-content-center align-items-center p-5 bg-transparent text-white rounded-5 shadow-lg border border-white"
+                    style="backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.1);">
+                    <div class="col-lg-8">
+                        <h1 class="text-shadow">Hola, soy Enzo Meneghini</h1>
+                        <p class="text-justify text-shadow fs-sm-3">Soy un apasionado y altamente motivado desarrollador
+                            con una sólida comprensión de los conceptos fundamentales de programación. Aunque estoy
+                            buscando mi primer trabajo formal como programador, he adquirido experiencia a través de
+                            proyectos personales. Estoy listo para aplicar mis habilidades en un entorno profesional y
+                            contribuir a la creación de soluciones de software robustas y eficientes.</p>
+                    </div>
+                    <div class="col-lg-4 d-flex justify-content-center">
+                        <img src="./img/Astronauta.png" alt="Enzo Meneghini" class="img-fluid levitate"
+                            style="width: 200px; transition: transform 0.3s;">
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="container mt-5">
+            <h2 class="text-center text-white mb-4">Proyectos</h2>
+
+        </div>
+        <div id="particles-js"></div>
+        <div id="tsparticles"></div>
+        <div id="background"></div>
     </div>
-    <div class="container mt-5">
-        <h2 class="text-center text-white mb-4">Proyectos</h2>
-       
-    </div>
-    <div id="particles-js"></div>
-    <div id="tsparticles"></div>
-    <div id="background"></div>
     <script src="./js/desenfoque.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
 
     <script type="text/javascript">
-       tsParticles
-        .load({
-            id: "tsparticles",
-            url: "./js/particles.json",
-        })
-        .then(container => {
-            console.log("callback - tsparticles config loaded");
-        })
-        .catch(error => {
-            console.error(error);
-        });
+        tsParticles
+            .load({
+                id: "tsparticles",
+                url: "./js/particles.json",
+            })
+            .then(container => {
+                console.log("callback - tsparticles config loaded");
+            })
+            .catch(error => {
+                console.error(error);
+            });
     </script>
     <!--    FUNCIONA PERO TIENE PEORES TIEMPOS DE CARGA QUE LA LIBRERÍA DE TSPARTICLES
         <script src="./js/particles.min.js"></script>
@@ -92,13 +101,16 @@
     -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        document.body.classList.add('body-loading');
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('body-loading');
         });
 
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
+            document.getElementById('d-none').classList.remove('d-none');
+        setTimeout(function() {
             document.getElementById('loader-frame').style.display = 'none';
             document.body.classList.remove('body-loading');
+        }, 1000); 
         });
     </script>
 </body>
