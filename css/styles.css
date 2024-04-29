@@ -23,6 +23,12 @@ body {
     animation: moveBackground 40s linear infinite; 
 }
 
+@media (max-width: 768px) {
+    #background {
+      background-image: url('../img/Fondo-Moviles.jpg');
+    }
+  }
+
 #background::after {
     content: "";
     position: absolute;
