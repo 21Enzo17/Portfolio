@@ -6,6 +6,7 @@ body {
 
 .body-loading {
     overflow: hidden;
+    background: none; /* O el color de tu loader */
 }
 
 #background {
