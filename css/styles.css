@@ -4,6 +4,10 @@ body {
     min-height: 100vh;
 }
 
+.body-loading {
+    overflow: hidden;
+}
+
 #background {
     content: "";
     position: fixed;
@@ -11,7 +15,7 @@ body {
     left: -5%;
     width: 110vw; /* Aumenta el tamaño para que la imagen de fondo sea más grande que la ventana del navegador */
     height: 110vh;
-    background-image: url('./img/ultra-detailed-nebula-abstract-wallpaper-4-_1_.webp');
+    background-image: url('../img/ultra-detailed-nebula-abstract-wallpaper-4-_1_.webp');
     background-size: cover;
     background-position: 0 0;
     z-index: -2;
@@ -159,13 +163,3 @@ body {
 }
 
 
-#lottie-animation::after {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 3px solid #fff;
-    border-radius: 50%;
-  }
