@@ -193,7 +193,7 @@ body {
 @media (max-width: 768px) {
     #toggle-particles{
         position: fixed;
-        top: 2px;
+        top: 4px;
         right: 15px;
         z-index: 1000;
     }

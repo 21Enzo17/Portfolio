@@ -97,7 +97,10 @@
             <h2 class="text-center text-white mb-4">Proyectos</h2>
 
         </div>
-        <div id="particles-js"></div>
+        <div id="particles-toggle-msg" class="p-5 glass-msg position-fixed top-50 start-50 translate-middle text-center p-3 rounded border text-white flex-column align-items-center justify-content-center" style="display: none; backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.1); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); display: flex;">
+            <span id="particles-msg-text" class="mb-auto"></span>
+            <button id="particles-msg-close" class="btn position-absolute top-0 end-0" style="z-index: 1;"><i class="bi bi-x-circle text-white fs-3"></i></button>
+        </div>
         <div id="tsparticles"></div>
         <div id="background"></div>
     </div>
@@ -123,12 +126,23 @@
         }
 
         document.getElementById('toggle-particles').addEventListener('click', function () {
+            var particlesMsg = document.getElementById('particles-toggle-msg');
+            var particlesMsgText = document.getElementById('particles-msg-text');
             if (particlesInstance) {
                 particlesInstance.destroy();
                 particlesInstance = null;
+                particlesMsgText.textContent = 'Las partículas han sido desactivadas.';
+                particlesMsg.style.display = 'block';
             } else {
                 loadParticles();
+                particlesMsgText.textContent = 'Las partículas han sido activadas.';
+                particlesMsg.style.display = 'block';
             }
+        });
+
+        document.getElementById('particles-msg-close').addEventListener('click', function () {
+            console.log('cerrar');
+            document.getElementById('particles-toggle-msg').style.display = 'none';
         });
 
         loadParticles();
