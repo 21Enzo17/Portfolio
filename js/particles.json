@@ -361,7 +361,7 @@
       "type": "circle"
     },
     "size": {
-      "value": 2,
+      "value": 3,
       "animation": {
         "count": 0,
         "enable": false,
@@ -518,7 +518,25 @@
   },
   "pauseOnBlur": true,
   "pauseOnOutsideViewport": true,
-  "responsive": [],
+  "responsive": [
+    {
+      "maxWidth": 800,
+      "options": {
+        "interactivity": {
+          "events": {
+            "onHover": {
+              "enable": false
+            }
+          }
+        },
+        "particles": {
+          "number": {
+            "value": 100
+          }
+        }
+      }
+    }
+  ],
   "smooth": false,
   "style": {},
   "themes": [],
