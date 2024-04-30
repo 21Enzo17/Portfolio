@@ -552,6 +552,20 @@
           }
         }
       }
+    },
+    {
+      "minWidth": 769,
+      "options": {
+        "particles": {
+          "number": {
+            "density": {
+              "enable": false
+            },
+            "limit": 100,
+            "value": 300
+          }
+        }
+      }
     }
   ],
   "smooth": false,
