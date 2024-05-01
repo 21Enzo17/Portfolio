@@ -228,3 +228,13 @@ body {
 .carousel-dark .carousel-indicators [data-bs-target] {
     background-color: #fff!important;
 }
+
+.shadow-effect {
+    filter: url(#dropshadow);
+}
+
+
+.section {
+    height: 100vh;
+    scroll-snap-align: start;
+}

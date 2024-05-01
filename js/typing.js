@@ -18,7 +18,13 @@ $(document).ready(function(){
 
             if(!back){ //valida que sea false
 
-                if(k ==text.length)back=!back ; // valida si k es igual longitud del arreglo para ir hacia atras
+                if(k ==text.length){
+                    setTimeout(function() {
+                        back=!back;
+                    }, 2000);
+                    
+                } // valida si k es igual longitud del arreglo para ir hacia atras
+
                 k++;
             }else{
                 k--; 
