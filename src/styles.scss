@@ -1,0 +1,361 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --background: #e0e5ec;
+  --foreground: #2d3748;
+  --card: #e0e5ec;
+  --card-foreground: #2d3748;
+  --popover: #e0e5ec;
+  --popover-foreground: #2d3748;
+  --primary: #4a5568;
+  --primary-foreground: #f7fafc;
+  --secondary: #edf2f7;
+  --secondary-foreground: #2d3748;
+  --muted: #edf2f7;
+  --muted-foreground: #718096;
+  --accent: #edf2f7;
+  --accent-foreground: #2d3748;
+  --destructive: #e53e3e;
+  --destructive-foreground: #fff;
+  --border: #cbd5e0;
+  --input: #cbd5e0;
+  --ring: #4a5568;
+  --radius: 0.5rem;
+  --neumorphic-shadow-light: #babecc;
+  --neumorphic-shadow-dark: #ffffff;
+  --logo-color: #2d3748;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #1a202b;
+  --foreground: #e2e8f0;
+  --card: #1a202b;
+  --card-foreground: #e2e8f0;
+  --popover: #1a202b;
+  --popover-foreground: #e2e8f0;
+  --primary: #a0aec0;
+  --primary-foreground: #1a202b;
+  --secondary: #2d3748;
+  --secondary-foreground: #e2e8f0;
+  --muted: #2d3748;
+  --muted-foreground: #a0aec0;
+  --accent: #2d3748;
+  --accent-foreground: #e2e8f0;
+  --destructive: #f56565;
+  --destructive-foreground: #1a202b;
+  --border: #4a5568;
+  --input: #4a5568;
+  --ring: #a0aec0;
+  --neumorphic-shadow-light: #10131a;
+  --neumorphic-shadow-dark: #1a202b;
+  --logo-color: #e2e8f0;
+  color-scheme: dark;
+}
+
+/* Clase para reducir animaciones cuando la ventana está inactiva */
+.reduced-animations * {
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+
+body {
+  background-color: var(--background) !important;
+  color: var(--foreground);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.neumorphic {
+  box-shadow: 8px 8px 16px var(--neumorphic-shadow-light), -8px -8px 16px var(--neumorphic-shadow-dark);
+  border-radius: 20px;
+  background-color: var(--background);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neumorphic:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 20px var(--neumorphic-shadow-light), -10px -10px 20px var(--neumorphic-shadow-dark);
+}
+
+/* Estilo para tooltips */
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 50;
+  box-shadow: 3px 3px 6px var(--neumorphic-shadow-light), -3px -3px 6px var(--neumorphic-shadow-dark);
+}
+
+.neumorphic-inset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  background-color: var(--background);
+  aspect-ratio: 1 / 1; /* Garantiza la proporción cuadrada */
+  overflow: hidden; /* Asegura que el contenido no sobresalga del círculo */
+}
+
+.neumorphic-icon {
+  background: var(--background);
+  box-shadow: inset 4px 4px 6px var(--neumorphic-shadow-light), inset -4px -4px 6px var(--neumorphic-shadow-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1;
+}
+
+.neumorphic-button {
+  box-shadow: 4px 4px 8px var(--neumorphic-shadow-light), -4px -4px 8px var(--neumorphic-shadow-dark);
+  border-radius: 15px;
+  padding: 8px 8px;
+  transition: all 0.3s ease;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.neumorphic-button:hover {
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  transform: translateY(2px);
+}
+
+/* Clase mejorada para el efecto inset al hacer hover */
+.hover-inset {
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
+}
+
+.hover-inset:hover {
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  transform: translateY(2px);
+}
+
+/* Aplicar el efecto inset a todos los botones y elementos interactivos */
+.tech-icon:hover,
+.social-icon:hover,
+.logo:hover {
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  transform: translateY(2px);
+}
+
+.left-to-right-underline {
+  position: relative;
+}
+
+.left-to-right-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: var(--foreground);
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
+
+.left-to-right-underline:hover::after {
+  width: 100%;
+}
+
+/* Mejorado el estilo para los logos en el hero */
+.logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
+  transition: all 0.3s ease;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo:hover {
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  transform: translateY(2px);
+}
+
+.logo a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagen-enzo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+/* Mejoras para el timeline responsive */
+@media (max-width: 768px) {
+  .timeline-content {
+    padding-left: 2.5rem;
+  }
+
+  .timeline-icon {
+    left: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .timeline-line {
+    left: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline-content {
+    padding-left: 2rem;
+  }
+
+  .timeline-icon {
+    left: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .timeline-line {
+    left: 1rem;
+  }
+}
+
+/* Estilos para los iconos de tecnología */
+.tech-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
+  transition: all 0.3s ease;
+  background-color: var(--background);
+}
+
+.tech-icon:hover {
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  transform: translateY(2px);
+}
+
+/* Estilos para los iconos sociales */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
+  transition: all 0.3s ease;
+  background-color: var(--background);
+}
+
+.social-icon:hover {
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  transform: translateY(2px);
+}
+
+/* Asegurar que los elementos interactivos estén siempre por encima */
+a,
+button,
+.neumorphic-button,
+.tech-icon,
+.social-icon,
+.logo {
+  position: relative;
+  z-index: 20;
+}
+
+/* Asegurar que los efectos de hover no bloqueen la interacción */
+.group-hover\:opacity-100 {
+  pointer-events: none;
+}
+
+/* Mejorar la visibilidad de las secciones */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Efecto de hover para las cards */
+.neumorphic {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neumorphic:hover {
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 20px var(--neumorphic-shadow-light), -10px -10px 20px var(--neumorphic-shadow-dark);
+}
+
+/* Mejorar la visibilidad de los enlaces de navegación */
+nav a {
+  position: relative;
+  font-weight: 500;
+}
+
+/* Asegurar que las secciones sean detectables para la navegación */
+section#skills {
+  scroll-margin-top: 100px;
+}
+
+/* Animaciones para Angular */
+.animate-in {
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.slide-in-from-top-5 {
+  animation-name: slideInFromTop;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-1.25rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

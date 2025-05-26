@@ -1,0 +1,65 @@
+// Estilos específicos para el componente de certificaciones
+// Usa las mismas clases neumórficas que otros componentes
+
+:host {
+  display: block;
+}
+
+.neumorphic {
+  background-color: var(--background);
+  box-shadow: var(--shadow-elevation-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: var(--shadow-elevation-high);
+  }
+}
+
+/* Estilos neumórficos para las tarjetas de certificación */
+.certification-card {
+  background-color: var(--background) !important;
+  border-radius: 15px !important;
+  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark) !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.certification-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 7px 7px 14px var(--neumorphic-shadow-light), -7px -7px 14px var(--neumorphic-shadow-dark) !important;
+}
+
+/* Estilos neumórficos para las etiquetas de fecha */
+.date-badge {
+  background-color: var(--background) !important;
+  border-radius: 10px !important;
+  box-shadow: inset 3px 3px 5px var(--neumorphic-shadow-light), inset -3px -3px 5px var(--neumorphic-shadow-dark) !important;
+  color: var(--foreground) !important;
+  padding: 4px 10px !important;
+  font-weight: 500 !important;
+}
+
+/* Estilos neumórficos para los niveles de idioma */
+.language-badge {
+  background-color: var(--background) !important;
+  border-radius: 20px !important;
+  box-shadow: inset 3px 3px 5px var(--neumorphic-shadow-light), inset -3px -3px 5px var(--neumorphic-shadow-dark) !important;
+  color: var(--foreground) !important;
+  padding: 5px 15px !important;
+  font-weight: 500 !important;
+}
+
+/* Mejoras de texto para mejor legibilidad */
+.cert-name {
+  font-weight: 600 !important;
+  background: linear-gradient(to right, #8b5cf6, #3b82f6) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.cert-issuer {
+  font-weight: 500 !important;
+  color: var(--foreground) !important;
+  opacity: 0.8 !important;
+}

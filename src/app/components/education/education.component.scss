@@ -1,0 +1,16 @@
+// Estilos específicos para el componente de educación
+// Usa las mismas clases neumórficas que otros componentes
+
+:host {
+  display: block;
+}
+
+.neumorphic {
+  background-color: var(--background);
+  box-shadow: var(--shadow-elevation-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: var(--shadow-elevation-high);
+  }
+}

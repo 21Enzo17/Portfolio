@@ -1,0 +1,25 @@
+<main class="min-h-screen relative">
+  <app-background-animation></app-background-animation>
+  <app-navbar></app-navbar>
+  <app-language-switch-indicator></app-language-switch-indicator>
+  
+  <div *ngIf="!isLoaded" class="min-h-screen flex items-center justify-center">
+    <div class="neumorphic p-8 rounded-xl text-xl">
+      <div class="animate-pulse">Cargando portfolio...</div>
+    </div>
+  </div>
+  
+  <div *ngIf="isLoaded" 
+       class="container mx-auto px-4 pt-24 transition-opacity duration-500"
+       [class.opacity-100]="showContent"
+       [class.opacity-0]="!showContent">
+    <app-hero></app-hero>
+    <app-experience></app-experience>
+    <app-education></app-education>
+    <app-projects></app-projects>
+    <app-skills></app-skills>
+    <app-certifications></app-certifications>
+  </div>
+  
+  <app-footer *ngIf="isLoaded"></app-footer>
+</main>

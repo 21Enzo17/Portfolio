@@ -1,0 +1,264 @@
+{  "metadata": {
+    "language": "en",
+    "lastUpdate": "2025-05-26",
+    "version": "1.2.1"
+  },
+  "nav": {
+    "about": "About Me",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Technologies",
+    "education": "Education",
+    "certifications": "Certifications",
+    "contact": "Contact",
+    "downloadCV": "Download CV",
+    "generating": "Generating..."
+  },
+  "hero": {
+    "title": "Full Stack Developer specialized in Angular and Java",
+    "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "Critical systems", "Infrastructure", "Backend"],
+    "bio": "Full Stack Developer with <span class=\"font-bold\">2 years of experience</span> in web development, specialized in <span class=\"font-bold\">Angular and Java</span>. Passionate about <span class=\"font-bold\">critical and innovative systems</span>, with experience in projects that impact hundreds of thousands of users. <br class=\"hidden md:block\"> I stand out for my strong <span class=\"font-bold\">problem-solving skills</span>, acquired through legacy system migrations and the design of secure and scalable solutions. <br class=\"hidden md:block\"> My technical background, along with experience in <span class=\"font-bold\">infrastructure, networks, and support</span>, makes me a versatile professional. <br class=\"hidden md:block\"> My goal is to grow as a <span class=\"font-bold\">Backend Developer</span>, lead impactful projects, and continue solving problems that matter."
+  },
+  "experience": {
+    "title": "Work Experience",
+    "items": [
+      {
+        "jobTitle": "Jr Full Stack Developer",
+        "company": "Jujuy Water Utility",
+        "period": "August 2024 - Present",
+        "location": "Jujuy, Argentina · On-site",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Key impact and responsibilities:",
+            "icon": "💻",
+            "content": [
+              "Migration of legacy systems from Genexus to modern technologies (Java/Angular), including the invoicing system and water account registration",
+              "Technical leadership in LAN/WAN support and networks: critical repairs, team coordination, and peer training",
+              "Development of applications impacting 3,000+ employees and 100,000+ people in the province",
+              "Involvement in the full development cycle: from requirements gathering to production deployment",
+              "Redesign and migration of the institutional website from WordPress to Angular/Genexus, leading a multidisciplinary team"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
+            "content": ["Java", "Angular", "Genexus", "Spring Boot", "MySQL", "LAN/WAN Networks", "Node.js"]
+          }
+        ]
+      },
+      {
+        "jobTitle": "Freelance Full Stack Developer",
+        "company": "Independent Projects",
+        "period": "2022 - Present",
+        "location": "Remote",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Highlighted projects:",
+            "icon": "💼",
+            "content": [
+              "Complete backend development for a secure assistance app with JWT, role control, and password hashing using bcrypt",
+              "Implementation of advanced security: encryption of sensitive data, input validation, restricted CORS",
+              "Protection against vulnerabilities: rate limiting, automatic scanning with Dependabot",
+              "Deployment best practices: mandatory HTTPS, firewall, and suspicious traffic monitoring",
+              "Design of secure and scalable architectures for REST APIs"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
+            "content": ["Node.js", "Express", "MongoDB", "JWT", "bcrypt", "Docker", "GitHub Actions"]
+          }
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [      {
+        "degree": "University Systems Analyst",
+        "institution": "National University of Jujuy (UNJu)",
+        "period": "2022 - 2025",
+        "location": "Jujuy, Argentina",
+        "description": "Graduated on time (GPA 8.33/10). Trained in systems analysis, data structures, algorithms, OOP, databases, and solving complex problems."
+      },
+      {
+        "degree": "PC Hardware and Network Technician",
+        "institution": "National University of Catamarca",
+        "period": "190 lecture hours",
+        "location": "Argentina",
+        "description": "Training in repair, maintenance, and configuration of hardware, LAN/WAN networks, and technical support."
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications and Languages",
+    "hasCertificates": false,
+    "certificates": {
+      "title": "Certifications"
+    },
+    "languages": {
+      "title": "Languages",
+      "items": [
+        {
+          "language": "Spanish",
+          "level": "Native",
+          "comment": "Mother tongue"
+        },
+        {
+          "language": "English",
+          "level": "Advanced (C1)",
+          "comment": "Fluent in reading and writing, needs practice in conversation"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "items": [
+      {
+        "name": "Legacy System Migration",
+        "description": "Participation in the migration of critical systems from Genexus to Java, including invoice generation and water account registration systems. This process required advanced analysis of undocumented systems.",
+        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "proyectoLegacy.webp"
+      },
+      {
+        "name": "Jujuy Water Utility Website",
+        "description": "Redesign and development of the corporate website, improving user experience and accessibility. Led a multidisciplinary team and made key decisions in UI/UX, ensuring business goals were met.",
+        "technologies": ["Angular", "Java", "Spring Boot"],
+        "githubUrl": null,
+        "demoUrl": "https://web.aguapotablejujuy.com/home",
+        "image": "agua-jujuy.webp"
+      },
+      {
+        "name": "Attendance System with Strong Security",
+        "description": "Development of a student attendance system focused on security, implementing JWT authentication and authorization, secure password storage, role validation, sensitive data encryption, and protection against common attacks.",
+        "technologies": ["Java", "MySQL", "Spring Boot", "JWT", "bcrypt"],
+        "githubUrl": "https://github.com/21Enzo17/asist.io",
+        "image": "sistema-asistencia.jpg"
+      },
+      {
+        "name": "Digital Signal Generator",
+        "description": "Web application to visualize different types of digital signal encoding, including NRZ-L, NRZ-I, Manchester, and Differential Manchester. Features include start level selection and chart export.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "githubUrl": "https://github.com/21Enzo17/Signal-Modulator-web",
+        "demoUrl": "https://21enzo17.github.io/Signal-Modulator-web/",
+        "image": "generador-senales.png"
+      },
+      {
+        "name": "URL Shortener API",
+        "description": "API for shortening URLs, providing detailed visit statistics and ensuring security and scalability. Includes authentication and authorization features.",
+        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "githubUrl": "https://github.com/21Enzo17/url-shortener",
+        "demoUrl": null,
+        "image": "tech-fallback-3.svg"
+      },
+      {
+        "name": "Imagemin UI",
+        "description": "Desktop app built with Electron that serves as a graphical interface for the Imagemin library, allowing easy image optimization with drag and drop, quality selection, and preview.",
+        "technologies": ["Electron", "JavaScript", "Imagemin"],
+        "githubUrl": "https://github.com/21Enzo17/ImageminUI",
+        "demoUrl": null,
+        "image": "tech-fallback-2.svg"
+      },      {
+        "name": "Multilingual Personal Portfolio",
+        "description": "Personal portfolio developed with Angular and TypeScript, implementing scalable architecture with centralized services, lazy loading, internationalization (i18n) for Spanish and English, responsive design with Tailwind CSS, dynamic PDF CV generation, and advanced SEO optimizations. Features reusable components, efficient state management, and frontend development best practices.",
+        "technologies": ["Angular", "TypeScript", "Tailwind CSS"],
+        "githubUrl": "https://github.com/21Enzo17/PortfolioMultiLenguajeAngular",
+        "demoUrl": "https://enzo-meneghini.netlify.app",
+        "image": "tech-fallback-4.svg"
+      }
+    ],
+    "buttons": {
+      "demo": "Demo",
+      "github": "GitHub",
+      "docs": "Docs",
+      "download": "Download"
+    }
+  },
+  "skills": {
+    "title": "Technologies and Skills",
+    "frontend": {
+      "title": "Frontend",
+      "items": [
+        { "name": "Angular", "icon": "logos:angular-icon" },
+        { "name": "JavaScript", "icon": "logos:javascript" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "HTML5", "icon": "logos:html-5" },
+        { "name": "CSS3", "icon": "logos:css-3" },
+        { "name": "Bootstrap", "icon": "logos:bootstrap" },
+        { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
+      ]
+    },
+    "backend": {
+      "title": "Backend",
+      "items": [
+        { "name": "Java", "icon": "logos:java" },
+        { "name": "Spring Boot", "icon": "logos:spring-icon" },
+        { "name": "Hibernate/JPA", "icon": "logos:hibernate" },
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "Genexus", "icon": "carbon:application" }
+      ]
+    },
+    "databases": {
+      "title": "Databases",
+      "items": [
+        { "name": "MySQL", "icon": "logos:mysql" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "InfluxDB", "icon": "logos:influxdb" },
+        { "name": "MongoDB", "icon": "logos:mongodb-icon" }
+      ]
+    },
+    "devops": {
+      "title": "DevOps & Tools",
+      "items": [
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "Git/GitHub/GitLab", "icon": "logos:git-icon" },
+        { "name": "CI/CD (GitHub Actions)", "icon": "carbon:deploy" },
+        { "name": "NGINX", "icon": "logos:nginx" },
+        { "name": "Linux Server Admin", "icon": "logos:linux-tux" },
+        { "name": "Bash Scripting", "icon": "carbon:terminal" },
+        { "name": "Proxmox", "icon": "simple-icons:proxmox" },
+        { "name": "LAN/WAN Networks", "icon": "carbon:network-4" }
+      ]
+    },
+    "soft": {
+      "title": "Soft Skills",
+      "items": [
+        { "name": "Technical leadership and decision-making", "icon": "carbon:leadership" },
+        { "name": "Complex problem-solving", "icon": "carbon:problem" },
+        { "name": "Effective communication", "icon": "carbon:communication" },
+        { "name": "Proactive and detail-oriented mindset", "icon": "carbon:zoom-in" },
+        { "name": "Working under pressure", "icon": "carbon:stress" },
+        { "name": "Collaborative spirit", "icon": "carbon:group" },
+        { "name": "Continuous learning", "icon": "carbon:education" }
+      ]
+    }
+  },
+  "footer": {
+    "contact": {
+      "title": "Contact",
+      "location": "Jujuy, Argentina",
+      "email": "enzo.meneghini@hotmail.com",
+      "phone": "+54 388 460-0584"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "about": "About Me",
+      "experience": "Experience",
+      "education": "Education",
+      "projects": "Projects",
+      "skills": "Technologies",
+      "certifications": "Certifications"
+    },
+    "connect": {
+      "title": "Let's Connect"
+    },
+    "copyright": "© 2025 Enzo Meneghini. All rights reserved."
+  }
+}

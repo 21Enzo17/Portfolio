@@ -1,0 +1,52 @@
+# Dependencias
+node_modules
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Angular
+.angular
+dist
+/dist
+/.angular/cache
+.sass-cache/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IDE - JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*~
+
+# Archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Pruebas y cobertura
+/coverage
+/reports
+
+# Compilados
+*.log
+*.js.map
+*.ngfactory.ts
+*.ngstyle.ts
+*.ngsummary.json

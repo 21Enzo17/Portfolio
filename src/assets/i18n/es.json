@@ -1,0 +1,264 @@
+{  "metadata": {
+    "language": "es",
+    "lastUpdate": "2025-05-26",
+    "version": "1.2.1"
+  },
+  "nav": {
+    "about": "Sobre Mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Tecnologías",
+    "education": "Educación", 
+    "certifications": "Certificaciones",
+    "contact": "Contacto",
+    "downloadCV": "Descargar CV",
+    "generating": "Generando..."
+  },
+  "hero": {
+    "title": "Desarrollador Full Stack especializado en Angular y Java",
+    "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "Sistemas críticos", "Infraestructura", "Backend"],
+    "bio": "Desarrollador Full Stack con <span class=\"font-bold\">2 años de experiencia</span> en desarrollo web, especializado en <span class=\"font-bold\">Angular y Java</span>. Apasionado por los <span class=\"font-bold\">sistemas críticos e innovadores</span>, con experiencia en proyectos que impactan a cientos de miles de usuarios. <br class=\"hidden md:block\"> Me destaco por una fuerte capacidad de <span class=\"font-bold\">resolución de problemas complejos</span>, adquirida tanto en migraciones de sistemas legacy como en el diseño de soluciones seguras y escalables. <br class=\"hidden md:block\"> Mi formación técnica, sumada a experiencia en <span class=\"font-bold\">infraestructura, redes y soporte</span>, me convierte en un profesional versátil. <br class=\"hidden md:block\"> Mi objetivo es crecer como <span class=\"font-bold\">Backend Developer</span>, liderar proyectos de impacto real y seguir resolviendo problemas que importan."
+},
+  "experience": {
+    "title": "Experiencia Laboral",
+    "items": [
+      {
+        "jobTitle": "Desarrollador Full Stack Jr",
+        "company": "Agua Potable de Jujuy",
+        "period": "Agosto 2024 - Presente",
+        "location": "Jujuy, Argentina · Presencial",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Impacto y responsabilidades clave:",
+            "icon": "💻",
+            "content": [
+              "Migración de sistemas legacy desde Genexus hacia tecnologías modernas (Java/Angular), incluyendo el sistema de generación de facturas y adhesión de cuentas de agua",
+              "Liderazgo técnico en soporte y redes LAN/WAN: reparaciones críticas, coordinación de equipos y capacitación de compañeros",
+              "Desarrollo de aplicaciones con impacto en 3,000+ empleados y 100,000+ personas en la provincia",
+              "Participación en ciclo completo de desarrollo: desde toma de requerimientos hasta puesta en producción",
+              "Rediseño y migración del sitio web institucional desde WordPress a Angular/Genexus, liderando equipo multidisciplinario"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Tecnologías utilizadas:",
+            "icon": "⚙️",
+            "content": ["Java", "Angular", "Genexus", "Spring Boot", "MySQL", "Redes LAN/WAN", "Node.js"]
+          }
+        ]
+      },
+      {
+        "jobTitle": "Desarrollador Full Stack Freelance",
+        "company": "Proyectos Independientes",
+        "period": "2022 - Presente",
+        "location": "Remoto",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Proyectos destacados:",
+            "icon": "💼",
+            "content": [
+              "Desarrollo completo de backend seguro para app de asistencia con JWT, control de roles y hash con bcrypt",
+              "Implementación de seguridad avanzada: encriptación de datos sensibles, validación de inputs, CORS restringido",
+              "Protección contra vulnerabilidades: rate limiting, escaneo automático con Dependabot",
+              "Buenas prácticas de despliegue: HTTPS obligatorio, firewall y monitoreo de tráfico sospechoso",
+              "Diseño de arquitecturas seguras y escalables para APIs REST"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Tecnologías utilizadas:",
+            "icon": "⚙️",
+            "content": ["Node.js", "Express", "MongoDB", "JWT", "bcrypt", "Docker", "GitHub Actions"]
+          }
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Educación",
+    "items": [      {
+        "degree": "Analista Programador Universitario",
+        "institution": "Universidad Nacional de Jujuy (UNJu)",
+        "period": "2022 - 2025",
+        "location": "Jujuy, Argentina",
+        "description": "Carrera finalizada en tiempo estimado (promedio 8.33/10). Formación en análisis de sistemas, estructuras de datos, algoritmos, POO, bases de datos y resolución de problemas complejos."
+      },
+      {
+        "degree": "Tecnicatura en Hardware de PC y Redes",
+        "institution": "Universidad Nacional de Catamarca",
+        "period": "Carga horaria: 190 horas cátedra",
+        "location": "Argentina",
+        "description": "Formación en reparación, mantenimiento y configuración de hardware, redes LAN/WAN y soporte técnico."
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certificaciones e Idiomas",
+    "hasCertificates": false,
+    "certificates": {
+      "title": "Certificaciones"
+    },
+    "languages": {
+      "title": "Idiomas",
+      "items": [
+        {
+          "language": "Español",
+          "level": "Nativo",
+          "comment": "Lengua materna"
+        },
+        {
+          "language": "Inglés",
+          "level": "Avanzado (C1)",
+          "comment": "Fluido en lectura y escritura, con necesidad de práctica en conversación"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "items": [
+      {
+        "name": "Migración de Sistemas Legacy",
+        "description": "Participación en la migración de sistemas críticos de Genexus a Java, incluyendo el sistema de generación de facturas y la creación de un sistema de adhesión de cuentas de agua. Este proceso implicó el análisis avanzado de sistemas sin documentación previa.",
+        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "proyectoLegacy.jpg"
+      },
+      {
+        "name": "Sitio Web de Agua Potable de Jujuy",
+        "description": "Rediseño y desarrollo del sitio web corporativo, mejorando la experiencia del usuario y la accesibilidad. Se lideró un equipo multidisciplinario, tomando decisiones clave en UI/UX y asegurando el cumplimiento de los objetivos empresariales.",
+        "technologies": ["Angular", "Java", "Spring Boot"],
+        "githubUrl": null,
+        "demoUrl": "https://web.aguapotablejujuy.com/home",
+        "image": "agua-jujuy.webp"
+      },
+      {
+        "name": "Sistema de Asistencia con Seguridad Robusta",
+        "description": "Desarrollo de un sistema de asistencia estudiantil con enfoque en seguridad, implementando autenticación y autorización con JWT, almacenamiento seguro de contraseñas, validación de roles, encriptación de datos sensibles y medidas de protección contra ataques comunes.",
+        "technologies": ["Java", "MySQL", "Spring Boot", "JWT", "bcrypt"],
+        "githubUrl": "https://github.com/21Enzo17/asist.io",
+        "image": "sistema-asistencia.jpg"
+      },
+      {
+        "name": "Generador de Señales Digitales",
+        "description": "Aplicación web que permite visualizar diferentes tipos de codificación de señales digitales, incluyendo NRZ-L, NRZ-I, Manchester y Manchester Diferencial. Ofrece funcionalidades como selección de nivel de inicio y exportación de gráficos.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "githubUrl": "https://github.com/21Enzo17/Signal-Modulator-web",
+        "demoUrl": "https://21enzo17.github.io/Signal-Modulator-web/",
+        "image": "generador-senales.png"
+      },
+      {
+        "name": "URL Shortener API",
+        "description": "API para acortar URLs, proporcionando estadísticas detalladas sobre las visitas y garantizando seguridad y escalabilidad. Incluye funcionalidades de autenticación y autorización.",
+        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "githubUrl": "https://github.com/21Enzo17/url-shortener",
+        "demoUrl": null,
+        "image": "tech-fallback-3.svg"
+      },
+      {
+        "name": "Imagemin UI",
+        "description": "Aplicación de escritorio desarrollada con Electron que sirve como interfaz gráfica para la librería Imagemin, permitiendo optimizar imágenes fácilmente con funcionalidades como arrastrar y soltar, selección de calidad y vista previa.",
+        "technologies": ["Electron", "JavaScript", "Imagemin"],
+        "githubUrl": "https://github.com/21Enzo17/ImageminUI",
+        "demoUrl": null,
+        "image": "tech-fallback-2.svg"
+      },      {
+        "name": "Portfolio Personal Multilenguaje",
+        "description": "Portfolio personal desarrollado con Angular y TypeScript, implementando arquitectura escalable con servicios centralizados, lazy loading, internacionalización (i18n) para español e inglés, diseño responsive con Tailwind CSS, generación dinámica de CV en PDF, y optimizaciones de SEO avanzadas. Incluye componentes reutilizables, gestión de estado eficiente y mejores prácticas de desarrollo frontend.",
+        "technologies": ["Angular", "TypeScript", "Tailwind CSS"],
+        "githubUrl": "https://github.com/21Enzo17/PortfolioMultiLenguajeAngular",
+        "demoUrl": "https://enzo-meneghini.netlify.app",
+        "image": "tech-fallback-4.svg"
+      }
+    ],
+    "buttons": {
+      "demo": "Demo",
+      "github": "GitHub",
+      "docs": "Documentación",
+      "download": "Descargar"
+    }
+  },
+    "skills": {
+    "title": "Tecnologías y Habilidades",
+    "frontend": {
+      "title": "Frontend",
+      "items": [
+        { "name": "Angular", "icon": "logos:angular-icon" },
+        { "name": "JavaScript", "icon": "logos:javascript" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "HTML5", "icon": "logos:html-5" },
+        { "name": "CSS3", "icon": "logos:css-3" },
+        { "name": "Bootstrap", "icon": "logos:bootstrap" },
+        { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
+      ]
+    },
+    "backend": {
+      "title": "Backend",
+      "items": [
+        { "name": "Java", "icon": "logos:java" },
+        { "name": "Spring Boot", "icon": "logos:spring-icon" },
+        { "name": "Hibernate/JPA", "icon": "logos:hibernate" },
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "Genexus", "icon": "Genexus" }
+      ]
+    },
+    "databases": {
+      "title": "Bases de Datos",
+      "items": [
+        { "name": "MySQL", "icon": "logos:mysql" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "InfluxDB", "icon": "logos:influxdb" },
+        { "name": "MongoDB", "icon": "logos:mongodb-icon" }
+      ]
+    },
+    "devops": {
+      "title": "DevOps & Herramientas",
+      "items": [
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "Git/GitHub/GitLab", "icon": "logos:git-icon" },
+        { "name": "CI/CD (GitHub Actions)", "icon": "carbon:deploy" },
+        { "name": "NGINX", "icon": "logos:nginx" },
+        { "name": "Linux Server Admin", "icon": "logos:linux-tux" },
+        { "name": "Bash Scripting", "icon": "carbon:terminal" },
+        { "name": "Proxmox", "icon": "simple-icons:proxmox" },
+        { "name": "Redes LAN/WAN", "icon": "carbon:network-4" }
+      ]
+    },
+    "soft": {
+      "title": "Habilidades Blandas",
+      "items": [
+        { "name": "Liderazgo técnico y toma de decisiones", "icon": "carbon:leadership" },
+        { "name": "Resolución de problemas complejos", "icon": "carbon:problem" },
+        { "name": "Comunicación efectiva", "icon": "carbon:communication" },
+        { "name": "Mentalidad proactiva y orientada al detalle", "icon": "carbon:zoom-in" },
+        { "name": "Trabajo bajo presión", "icon": "carbon:stress" },
+        { "name": "Espíritu colaborativo", "icon": "carbon:group" },
+        { "name": "Aprendizaje continuo", "icon": "carbon:education" }
+      ]
+    }
+  },
+  "footer": {
+    "contact": {
+      "title": "Contacto",
+      "location": "Jujuy, Argentina",
+      "email": "enzo.meneghini@hotmail.com",
+      "phone": "+54 388 460-0584"
+    },
+    "quickLinks": {
+      "title": "Navegación rápida",
+      "about": "Sobre Mí",
+      "experience": "Experiencia",
+      "education": "Educación",
+      "projects": "Proyectos",
+      "skills": "Tecnologías",
+      "certifications": "Certificaciones"
+    },
+    "connect": {
+      "title": "Conectémonos"
+    },
+    "copyright": "© 2025 Enzo Meneghini. Todos los derechos reservados."
+  }
+}

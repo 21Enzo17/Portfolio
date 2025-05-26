@@ -1,0 +1,160 @@
+<div>
+  <header class="w-full py-4 fixed top-0 left-0 z-50 transition-all duration-300" [class.bg-background-80]="scrolled" [class.backdrop-blur-md]="scrolled" [class.shadow-md]="scrolled">
+    <div class="container mx-auto px-4">
+      <nav class="flex items-center justify-between rounded-xl p-3 transition-all duration-300" [class.neumorphic]="!scrolled">
+        <!-- Logo/Brand -->
+        <div class="flex items-center">
+          <span class="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+            Enzo Meneghini
+          </span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="#" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+            {{ 'nav.about' | translate }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#experience" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+            {{ 'nav.experience' | translate }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#education" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+            {{ 'nav.education' | translate }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#projects" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+            {{ 'nav.projects' | translate }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#skills" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+            {{ 'nav.skills' | translate }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#certifications" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+            {{ 'nav.certifications' | translate }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#contact" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+            {{ 'nav.contact' | translate }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <!-- Language & Theme Controls - Desktop -->
+          <div class="flex items-center ml-2 space-x-1">
+            <!-- Language Selector -->
+            <div class="relative">
+              <button (click)="toggleLanguageDropdown()" class="neumorphic-button rounded-full w-10 h-10 flex items-center justify-center relative overflow-hidden">
+                <img *ngIf="currentLanguage === 'es'" src="assets/flags/es.svg" alt="Español" class="rounded-md object-cover   w-5 h-5">
+                <img *ngIf="currentLanguage === 'en'" src="assets/flags/en.svg" alt="English" class="rounded-md object-cover   w-5 h-5">
+              </button>
+              <div id="language-dropdown" class="hidden absolute right-0 mt-2 neumorphic min-w-[150px] z-50">
+                <div (click)="setLanguage('es')" class="flex items-center justify-between px-3 py-3 cursor-pointer" [class.bg-gradient-to-r]="currentLanguage === 'es'" [class.from-purple-500-20]="currentLanguage === 'es'" [class.to-blue-500-20]="currentLanguage === 'es'">
+                  <div class="flex items-center">
+                    <img src="assets/flags/es.svg" alt="Español" class="mr-2 rounded-sm w-6 h-6">
+                    <span>Español</span>
+                  </div>
+                  <span *ngIf="currentLanguage === 'es'" class="ml-2 text-xs">✓</span>
+                </div>
+                <div (click)="setLanguage('en')" class="flex items-center justify-between px-3 py-3 cursor-pointer" [class.bg-gradient-to-r]="currentLanguage === 'en'" [class.from-purple-500-20]="currentLanguage === 'en'" [class.to-blue-500-20]="currentLanguage === 'en'">
+                  <div class="flex items-center">
+                    <img src="assets/flags/en.svg" alt="English" class="mr-2 rounded-sm w-6 h-6">
+                    <span>English</span>
+                  </div>
+                  <span *ngIf="currentLanguage === 'en'" class="ml-2 text-xs">✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Theme Toggle -->
+            <button (click)="toggleTheme()" class="neumorphic-button rounded-full w-10 h-10 flex items-center justify-center" aria-label="Toggle theme">
+              <svg *ngIf="isDarkTheme" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg *ngIf="!isDarkTheme" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 A7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="flex items-center md:hidden space-x-2">
+          <!-- Language Selector Mobile -->
+          <div class="relative">
+            <button (click)="toggleLanguageDropdown()" class="neumorphic-button rounded-full w-10 h-10 flex items-center justify-center relative overflow-hidden">
+              <img *ngIf="currentLanguage === 'es'" src="assets/flags/es.svg" alt="Español" class="rounded-sm object-cover p-1 w-8 h-8">
+              <img *ngIf="currentLanguage === 'en'" src="assets/flags/en.svg" alt="English" class="rounded-sm object-cover p-1 w-8 h-8">
+            </button>
+          </div>
+
+          <!-- Theme Toggle Mobile -->
+          <button (click)="toggleTheme()" class="neumorphic-button rounded-full w-10 h-10 flex items-center justify-center" aria-label="Toggle theme">
+            <svg *ngIf="isDarkTheme" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg *ngIf="!isDarkTheme" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 A7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <button (click)="toggleMobileMenu()" class="neumorphic-button rounded-full w-10 h-10 flex items-center justify-center" aria-label="Toggle mobile menu">
+            <svg *ngIf="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg *ngIf="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation Menu -->
+      <div *ngIf="mobileMenuOpen" class="md:hidden mt-2 neumorphic rounded-xl p-4 animate-in slide-in-from-top-5 duration-300">
+        <div class="flex flex-col space-y-3">
+          <a href="#" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+            {{ 'nav.about' | translate }}
+          </a>
+          <a href="#experience" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+            {{ 'nav.experience' | translate }}
+          </a>
+          <a href="#education" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+            {{ 'nav.education' | translate }}
+          </a>
+          <a href="#projects" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+            {{ 'nav.projects' | translate }}
+          </a>
+          <a href="#skills" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+            {{ 'nav.skills' | translate }}
+          </a>
+          <a href="#certifications" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+            {{ 'nav.certifications' | translate }}
+          </a>
+          <a href="#contact" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+            {{ 'nav.contact' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>

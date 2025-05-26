@@ -1,0 +1,19 @@
+/* Estilos globales del componente principal */
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-top: 60px; // Espacio para la navbar fija
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  main {
+    padding-top: 56px;
+  }
+}

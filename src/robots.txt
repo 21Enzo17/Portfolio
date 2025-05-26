@@ -1,0 +1,20 @@
+# Permitir acceso a todos los rastreadores
+User-agent: *
+Allow: /
+ 
+# Rutas específicas a indexar prioritariamente
+Allow: /index.html
+Allow: /#experience
+Allow: /#projects
+Allow: /#skills
+Allow: /#education
+Allow: /#certifications
+
+# No indexar archivos de traducción directamente
+Disallow: /assets/i18n/
+
+# Localización del sitemap
+Sitemap: https://enzo-meneghini.netlify.app/sitemap.xml
+
+# Tiempo de demora entre solicitudes para evitar sobrecargar el servidor
+Crawl-delay: 1

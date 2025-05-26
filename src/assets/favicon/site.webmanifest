@@ -1,0 +1,39 @@
+﻿{
+  "name": "Enzo Meneghini | Full Stack Developer",
+  "short_name": "Enzo Portfolio",
+  "description": "Portfolio profesional de Enzo Meneghini, desarrollador Full Stack con experiencia en Angular, Java y tecnologías web modernas",
+  "lang": "es",
+  "orientation": "any",
+  "start_url": "/?source=pwa",
+  "background_color": "#121212",
+  "theme_color": "#8B5CF6",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/assets/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/favicon/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope": "/",
+  "categories": ["development", "productivity", "portfolio"]
+}

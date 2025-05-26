@@ -1,0 +1,127 @@
+<section id="experience" class="mx-auto my-16 max-w-6xl w-full p-4 sm:p-8 relative z-10">
+  <div class="opacity-0 transform translate-y-5" 
+       [ngClass]="{'opacity-100 translate-y-0': true}"
+       style="transition: opacity 0.5s ease, transform 0.5s ease">
+    <h2 class="text-3xl font-bold mb-12 relative inline-block">
+      {{ 'experience.title' | translate }}
+      <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></span>
+    </h2>
+  </div>
+
+  <div class="relative">
+    <!-- Línea vertical - Centrada y mejorada para responsive -->
+    <div class="timeline-line absolute left-4 sm:left-8 md:left-8 top-6 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500 rounded-full"></div>
+
+    <!-- Iterar sobre cada experiencia -->
+    <div *ngFor="let experience of experiences; let i = index" 
+         class="timeline-content relative pl-16 sm:pl-20 md:pl-24 pb-12 opacity-0 transform translate-y-5"
+         [ngClass]="{'opacity-100 translate-y-0': true}"
+         [style]="{'transition': 'opacity 0.5s ease, transform 0.5s ease', 'transition-delay': (i * 0.1) + 's'}">
+      <!-- Ícono - Centrado con la línea -->
+      <div class="timeline-icon absolute left-0 sm:left-2 md:left-2 top-0 w-8 sm:w-12 h-8 sm:h-12 flex items-center justify-center">
+        <!-- Alineación con la línea -->
+        <div class="neumorphic-icon !w-8 sm:!w-11 !h-8 sm:!h-11 flex items-center justify-center bg-gradient-to-br from-purple-500/10 to-blue-500/10">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 sm:h-5 w-4 sm:w-5 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Contenido con mayor padding para evitar superposición -->
+      <div class="flex">
+        <div class="flex-grow">
+          <h3 class="text-lg sm:text-xl font-black bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+            {{ experience.jobTitle }}
+          </h3>
+          <div class="text-md font-bold mb-2">
+            {{ experience.company }}
+          </div>
+          <div class="text-xs sm:text-sm font-mono italic mb-2 text-foreground/70">
+            {{ experience.period }}
+          </div>
+          <div class="text-xs sm:text-sm font-mono italic mb-3 text-foreground/70">
+            {{ experience.location }}
+          </div>
+
+          <!-- Secciones dinámicas -->
+          <div class="space-y-4 sm:space-y-6 mt-4 sm:mt-6">
+            <!-- Iterar sobre cada sección -->
+            <div *ngFor="let section of experience.sections" 
+                 class="neumorphic p-4 sm:p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px]">
+              
+              <!-- Título de la sección con icono opcional -->
+              <span class="text-md font-bold flex items-center">
+                <span *ngIf="section.icon" [innerHTML]="section.icon" class="mr-2"></span>
+                {{ section.title }}
+              </span>
+              
+              <!-- Contenido según tipo de sección -->
+              
+              <!-- Tipo: projects - Para proyectos con título y descripciones -->
+              <ng-container *ngIf="section.type === 'projects'">
+                <ul class="list-disc list-inside mt-2 sm:mt-4 pl-2 sm:pl-4 space-y-2 sm:space-y-4 text-sm sm:text-base">
+                  <li *ngFor="let project of section.content">
+                    <span class="font-semibold text-purple-500">{{ project.title }}</span>
+                    <br />
+                    <ng-container *ngFor="let description of project.descriptions; let last = last">
+                      {{ description }}
+                      <br *ngIf="!last" />
+                    </ng-container>
+                  </li>
+                </ul>
+              </ng-container>
+              
+              <!-- Tipo: list - Para listas simples -->
+              <ng-container *ngIf="section.type === 'list'">
+                <ul class="list-disc list-inside mt-2 sm:mt-4 pl-2 sm:pl-4 space-y-1 sm:space-y-2 text-sm sm:text-base">
+                  <li *ngFor="let item of section.content">{{ item }}</li>
+                </ul>
+              </ng-container>
+              
+              <!-- Tipo: technologies - Para mostrar tecnologías con íconos -->
+              <ng-container *ngIf="section.type === 'technologies'">
+                <div class="mt-2 sm:mt-4 flex flex-wrap gap-3">
+                  <div *ngFor="let tech of section.content" 
+                       class="tech-icon w-12 h-12 flex flex-col items-center justify-center gap-1 group relative"
+                       [title]="tech">
+                    <!-- Ícono personalizado -->
+                    <ng-container *ngIf="hasCustomIcon(tech)">
+                      <div *ngIf="getCustomIcon(tech).type === 'text'" 
+                           [ngStyle]="getCustomIconStyles(tech)">
+                        {{ getCustomIcon(tech).content }}
+                      </div>
+                      <div *ngIf="getCustomIcon(tech).type === 'html'" 
+                           [ngStyle]="getCustomIconStyles(tech)" 
+                           [innerHTML]="getCustomIcon(tech).content">
+                      </div>
+                    </ng-container>
+                    <!-- Ícono de Iconify por defecto -->
+                    <iconify-icon *ngIf="!hasCustomIcon(tech)" [icon]="getTechIcon(tech)" width="28" height="28"></iconify-icon>
+                    <span class="text-xs opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">
+                      {{ tech }}
+                    </span>
+                  </div>
+                </div>
+              </ng-container>
+              
+              <!-- Tipo: text - Para bloques de texto simple -->
+              <ng-container *ngIf="section.type === 'text'">
+                <div class="mt-2 sm:mt-4 text-sm sm:text-base">
+                  <p *ngFor="let paragraph of section.content" class="mb-2">{{ paragraph }}</p>
+                </div>
+              </ng-container>
+              
+              <!-- Tipo: html - Para contenido HTML personalizado -->
+              <ng-container *ngIf="section.type === 'html'">
+                <div class="mt-2 sm:mt-4" [innerHTML]="section.content"></div>
+              </ng-container>
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
