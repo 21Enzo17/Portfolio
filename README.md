@@ -1,319 +1,324 @@
-# Manual para actualizar el sitio web
+# 🚀 Portfolio Personal Angular - README
 
-Este manual te guiará en el proceso de actualización de las diferentes secciones de tu sitio web, permitiéndote agregar experiencias laborales, proyectos y personalizar todo el contenido.
+[![Angular](https://img.shields.io/badge/Angular-18.x-red?style=flat-square&logo=angular)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![NgxTranslate](https://img.shields.io/badge/ngx--translate-15.x-orange?style=flat-square)](https://github.com/ngx-translate/core)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-## Tabla de contenidos
+> **Portfolio profesional multilenguaje desarrollado con Angular, diseñado para mostrar experiencia, proyectos y habilidades de manera moderna y responsive.**
 
-1. [Estructura del proyecto](#estructura-del-proyecto)
-2. [Archivos de traducción](#archivos-de-traducción)
-3. [Cómo agregar experiencias laborales](#cómo-agregar-experiencias-laborales)
-4. [Cómo agregar proyectos](#cómo-agregar-proyectos)
-5. [Cómo modificar habilidades](#cómo-modificar-habilidades)
-6. [Gestión de iconos](#gestión-de-iconos)
-7. [Ejecutar el proyecto](#ejecutar-el-proyecto)
+## 📋 Tabla de Contenidos
 
----
+- [🎯 Características Principales](#-características-principales)
+- [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
+- [📁 Estructura del Proyecto](#-estructura-del-proyecto)
+- [🚀 Instalación y Configuración](#-instalación-y-configuración)
+- [📝 Configuración de Contenido](#-configuración-de-contenido)
+- [🌐 Internacionalización](#-internacionalización)
+- [🎨 Personalización](#-personalización)
+- [📄 Generador de CV](#-generador-de-cv)
+- [🔧 Comandos Disponibles](#-comandos-disponibles)
+- [🤝 Contribuir](#-contribuir)
 
-## Estructura del proyecto
+## 🎯 Características Principales
 
-El proyecto está construido con Angular y utiliza un sistema de componentes por sección:
+### ✨ Funcionalidades Destacadas
 
-- `experience`: Componente para mostrar experiencia laboral
-- `projects`: Componente para mostrar proyectos
-- `skills`: Componente para mostrar habilidades y tecnologías
-- `hero`: Componente para la sección de presentación
-- `navbar`: Componente de navegación
-- `footer`: Pie de página
+- 🌍 **Soporte multilenguaje** (Español/Inglés) con ngx-translate
+- 📱 **Diseño completamente responsive** con Tailwind CSS
+- 🎨 **Efectos neumórficos** modernos y animaciones fluidas
+- 📄 **Generador dinámico de CV en PDF** optimizado para ATS
+- 🔍 **SEO optimizado** con metadatos dinámicos y JSON-LD
+- ⚡ **Carga rápida** con lazy loading y optimizaciones
+- 🎭 **Temas adaptativos** (claro/oscuro)
+- 📊 **Gestión de estado centralizada** con servicios Angular
+- 🖼️ **Sistema inteligente de imágenes** con fallbacks automáticos
+- 🔧 **Configuración modular** para fácil personalización
 
-Los textos e información se almacenan en archivos de traducción, lo que facilita la modificación de contenidos sin tocar el código.
+### 🏗️ Arquitectura Técnica
 
----
+- **Componentes standalone** para mejor modularidad
+- **Servicios centralizados** para lógica de negocio
+- **Directivas personalizadas** para funcionalidades específicas
+- **Pipes customizados** para transformación de datos
+- **Configuración por archivos** para fácil mantenimiento
 
-## Archivos de traducción
+## 🛠️ Tecnologías Utilizadas
 
-Todo el contenido textual del sitio se gestiona a través de los archivos de traducción ubicados en:
-
-- `/src/assets/i18n/es.json` - Para el contenido en español
-- `/src/assets/i18n/en.json` - Para el contenido en inglés
-
-Para modificar cualquier texto del sitio, debes editar estos archivos siguiendo la estructura JSON existente.
-
----
-
-## Cómo agregar experiencias laborales
-
-El sistema está diseñado para permitir múltiples experiencias laborales con secciones totalmente personalizables.
-
-### Estructura básica de una experiencia
-
-```json
-{
-  "jobTitle": "Título del puesto",
-  "company": "Nombre de la empresa",
-  "period": "Periodo de trabajo",
-  "location": "Ubicación · Modalidad",
-  "sections": [
-    // Aquí van las diferentes secciones
-  ]
-}
-```
-
-### Tipos de secciones disponibles
-
-1. **Sección de proyectos** - Para mostrar proyectos con título y descripciones:
-
-```json
-{
-  "type": "projects",
-  "title": "💻 Desarrollo:",
-  "icon": "💻",
-  "content": [
-    {
-      "title": "Nombre del proyecto:",
-      "descriptions": [
-        "- Primera descripción del proyecto",
-        "- Segunda descripción del proyecto"
-      ]
-    },
-    // Más proyectos...
-  ]
-}
-```
-
-2. **Sección de lista simple** - Para mostrar listas con viñetas:
-
-```json
-{
-  "type": "list",
-  "title": "🔧 Título de la sección:",
-  "icon": "🔧",
-  "content": [
-    "Primer elemento de la lista",
-    "Segundo elemento de la lista",
-    "Tercer elemento de la lista"
-  ]
-}
-```
-
-3. **Sección de tecnologías** - Para mostrar tecnologías con iconos:
-
-```json
-{
-  "type": "technologies",
-  "title": "⚙️ Stack Tecnológico:",
-  "icon": "⚙️",
-  "content": ["Angular", "TypeScript", "Java", "MySQL"]
-}
-```
-
-4. **Sección de texto** - Para párrafos simples:
-
-```json
-{
-  "type": "text",
-  "title": "📝 Descripción:",
-  "icon": "📝",
-  "content": [
-    "Primer párrafo de texto.",
-    "Segundo párrafo de texto."
-  ]
-}
-```
-
-5. **Sección HTML** - Para contenido HTML personalizado:
-
-```json
-{
-  "type": "html",
-  "title": "📊 Estadísticas:",
-  "icon": "📊",
-  "content": "<div class='custom-stats'>Contenido HTML personalizado</div>"
-}
-```
-
-### Agregando una nueva experiencia laboral
-
-Para agregar una nueva experiencia laboral, debes editar los archivos de traducción (`es.json` y `en.json`) y añadir un nuevo objeto al array `experience.items`:
-
-```json
-"experience": {
-  "title": "Experiencia",
-  "items": [
-    {
-      // Experiencia laboral existente...
-    },
-    {
-      // Nueva experiencia laboral
-      "jobTitle": "Desarrollador Frontend",
-      "company": "Empresa XYZ",
-      "period": "Enero 2022 - Diciembre 2022",
-      "location": "Remoto",
-      "sections": [
-        {
-          "type": "text",
-          "title": "📝 Descripción:",
-          "icon": "📝",
-          "content": [
-            "Trabajé en el equipo de frontend desarrollando componentes React para una plataforma de e-commerce."
-          ]
-        },
-        {
-          "type": "technologies",
-          "title": "⚙️ Tecnologías utilizadas:",
-          "icon": "⚙️",
-          "content": ["React", "JavaScript", "CSS", "HTML"]
-        }
-      ]
-    }
-  ]
-}
-```
-
-> 💡 **Nota importante**: Debes agregar la misma estructura en ambos archivos de traducción (es.json y en.json) para mantener la coherencia del sitio web. La diferencia estará en los textos traducidos.
-
----
-
-## Cómo agregar proyectos
-
-Los proyectos se gestionan de manera similar, utilizando un array en los archivos de traducción.
-
-### Estructura de un proyecto
-
-```json
-{
-  "name": "Nombre del Proyecto",
-  "description": "Descripción detallada del proyecto.",
-  "technologies": ["React", "Next.js", "Tailwind CSS"],
-  "demoUrl": "https://ejemplo.com/demo",
-  "githubUrl": "https://github.com/usuario/repositorio",
-  "image": "nombre-imagen.jpg"  // Nombre del archivo de imagen
-}
-```
-
-### Agregando un nuevo proyecto
-
-Para agregar un nuevo proyecto, añade un objeto al array `projects.items` en los archivos de traducción:
-
-```json
-"projects": {
-  "title": "Mis Proyectos",
-  "items": [
-    {
-      // Proyectos existentes...
-    },
-    {
-      // Nuevo proyecto
-      "name": "Nuevo Proyecto",
-      "description": "Descripción del nuevo proyecto.",
-      "technologies": ["Angular", "TypeScript", "Firebase"],
-      "demoUrl": "#",
-      "githubUrl": "#"
-    }
-  ],
-  "buttons": {
-    // ...
-  }
-}
-```
-
-### Imágenes de proyectos
-
-Cada proyecto puede tener una imagen asociada. Para añadir una imagen a un proyecto:
-
-1. Agrega la propiedad `image` al objeto proyecto:
-
-```json
-{
-  "name": "Nombre del Proyecto",
-  "description": "Descripción detallada del proyecto.",
-  "technologies": ["React", "Next.js", "Tailwind CSS"],
-  "demoUrl": "https://ejemplo.com/demo",
-  "githubUrl": "https://github.com/usuario/repositorio",
-  "image": "nombre-imagen.jpg"  // Nombre del archivo de imagen
-}
-```
-
-2. Coloca la imagen en la carpeta `/src/assets/projects/`
-
-El sistema tiene un mecanismo de fallback que:
-- Primero intentará usar la imagen específica del proyecto si está definida
-- Si la imagen no existe o no se ha definido, usará una de las imágenes de fallback temáticas basadas en el nombre del proyecto
-- Si todo falla, se mostrará una imagen placeholder genérica
-
-Las imágenes de fallback están ubicadas en `/src/assets/projects/fallbacks/`.
-
----
-
-## Cómo modificar habilidades
-
-Las habilidades están organizadas por categorías (frontend, backend, databases, devops).
-
-### Estructura de una habilidad
-
-```json
-{
-  "name": "Nombre de la Tecnología",
-  "icon": "logos:nombre-del-icono"
-}
-```
-
-### Agregando nuevas habilidades
-
-Para agregar una nueva habilidad, añádela al array correspondiente:
-
-```json
-"skills": {
-  "title": "Tecnologías y Habilidades",
-  "frontend": {
-    "title": "Frontend",
-    "items": [
-      // Habilidades existentes...
-      {
-        "name": "Nueva Tecnología",
-        "icon": "logos:nueva-tecnologia"
-      }
-    ]
-  }
-}
-```
-
----
-
-## Gestión de iconos
-
-El proyecto utiliza la librería Iconify para los iconos. Para agregar un nuevo icono a las tecnologías, debes:
-
-1. Buscar el icono en [Iconify](https://icon-sets.iconify.design/)
-2. Agregar el nombre del icono en el archivo correspondiente
-3. Si es una nueva tecnología, añadirla al objeto `techIcons` en `experience.component.ts`
-
+### Frontend Core
 ```typescript
-techIcons: Record<string, string> = {
-  // Iconos existentes...
-  "Nueva Tecnología": "logos:nueva-tecnologia",
+Angular 18.x           // Framework principal
+TypeScript 5.x         // Lenguaje de programación
+Tailwind CSS 3.x       // Framework de estilos
+SCSS                   // Preprocesador CSS
+```
+
+### Librerías Principales
+```typescript
+@ngx-translate/core    // Internacionalización
+jsPDF                  // Generación de PDFs
+html2canvas            // Captura de elementos HTML
+iconify-icon           // Sistema de iconos
+RxJS                   // Programación reactiva
+```
+
+### Herramientas de Desarrollo
+```typescript
+Angular CLI            // Herramientas de desarrollo
+Karma + Jasmine        // Testing
+ESLint + Prettier      // Linting y formateo
+webpack-bundle-analyzer // Análisis de bundles
+```
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── app/
+│   ├── components/           # Componentes de UI
+│   │   ├── hero/            # Sección principal
+│   │   ├── experience/      # Experiencia laboral
+│   │   ├── projects/        # Proyectos destacados
+│   │   ├── skills/          # Habilidades técnicas
+│   │   ├── education/       # Formación académica
+│   │   ├── certifications/  # Certificaciones e idiomas
+│   │   ├── navbar/          # Navegación
+│   │   └── footer/          # Pie de página
+│   ├── config/              # Configuraciones globales
+│   │   ├── personal-info.config.ts
+│   │   ├── seo.config.ts
+│   │   └── social.config.ts
+│   ├── services/            # Servicios de negocio
+│   │   ├── cv-generator.service.ts
+│   │   ├── language.service.ts
+│   │   ├── enhanced-seo.service.ts
+│   │   ├── icon.service.ts
+│   │   └── theme.service.ts
+│   ├── directives/          # Directivas personalizadas
+│   ├── pipes/               # Pipes customizados
+│   └── pages/               # Páginas principales
+├── assets/
+│   ├── i18n/               # Archivos de traducción
+│   │   ├── es.json         # Contenido en español
+│   │   └── en.json         # Contenido en inglés
+│   ├── projects/           # Imágenes de proyectos
+│   └── favicon/            # Iconos del sitio
+└── styles.scss             # Estilos globales
+```
+
+## 🚀 Instalación y Configuración
+
+### Prerrequisitos
+```bash
+Node.js >= 18.x
+npm >= 9.x
+Angular CLI >= 18.x
+```
+
+### Instalación
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/portfolio-angular.git
+cd portfolio-angular
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm start
+
+# El sitio estará disponible en http://localhost:4200
+```
+
+### Configuración Inicial
+
+1. **Configurar información personal** en `src/app/config/personal-info.config.ts`
+2. **Actualizar redes sociales** en `src/app/config/social.config.ts`
+3. **Personalizar SEO** en `src/app/config/seo.config.ts`
+4. **Modificar contenido** en archivos de traducción `src/assets/i18n/`
+
+## 📝 Configuración de Contenido
+
+### Información Personal
+```typescript
+// src/app/config/personal-info.config.ts
+export const PERSONAL_INFO = {
+  name: 'Tu Nombre',
+  title: 'Tu Título Profesional',
+  email: 'tu@email.com',
+  phone: '+XX XXX XXX-XXXX',
+  // ... más configuraciones
+};
+```
+
+### Archivos de Traducción
+Los contenidos se gestionan mediante archivos JSON ubicados en `src/assets/i18n/`:
+
+```json
+{
+  "hero": {
+    "bio": "Tu biografía profesional...",
+    "title": "Tu título..."
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "items": [/* experiencias */]
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "items": [/* proyectos */]
+  }
 }
 ```
 
-Para emojis, simplemente puedes usarlos directamente en los textos o como valores de la propiedad `icon` en las secciones.
+### Agregar Nueva Experiencia
+```json
+{
+  "jobTitle": "Desarrollador Full Stack",
+  "company": "Nombre Empresa",
+  "period": "2023 - Presente",
+  "location": "Ciudad, País",
+  "sections": [
+    {
+      "type": "technologies",
+      "title": "Tecnologías:",
+      "content": ["Angular", "Java", "Spring Boot"]
+    }
+  ]
+}
+```
+
+### Agregar Nuevo Proyecto
+```json
+{
+  "name": "Nombre del Proyecto",
+  "description": "Descripción detallada...",
+  "technologies": ["React", "Node.js", "MongoDB"],
+  "githubUrl": "https://github.com/usuario/proyecto",
+  "demoUrl": "https://proyecto-demo.com",
+  "image": "proyecto-imagen.webp"
+}
+```
+
+## 🌐 Internacionalización
+
+El portfolio soporta múltiples idiomas utilizando ngx-translate:
+
+### Idiomas Soportados
+- 🇪🇸 Español (es)
+- 🇺🇸 Inglés (en)
+
+### Cambio de Idioma
+- Automático basado en navegador
+- Selector manual en la interfaz
+- Persistencia en localStorage
+- URLs canónicas por idioma
+
+### Agregar Nuevo Idioma
+1. Crear archivo `src/assets/i18n/[código].json`
+2. Configurar en `language.service.ts`
+3. Añadir flag en `src/assets/flags/`
+
+## 🎨 Personalización
+
+### Temas y Colores
+```scss
+// src/styles.scss
+:root {
+  --primary: #your-color;
+  --secondary: #your-color;
+  --accent: #your-color;
+  // ... más variables CSS
+}
+```
+
+### Efectos Neumórficos
+Los componentes utilizan clases CSS personalizadas:
+```css
+.neumorphic {
+  box-shadow: 
+    8px 8px 16px var(--neumorphic-shadow-dark),
+    -8px -8px 16px var(--neumorphic-shadow-light);
+}
+```
+
+### Iconos
+Sistema basado en Iconify con soporte para iconos personalizados:
+```typescript
+// Uso en componentes
+<iconify-icon icon="logos:angular" width="24" height="24"></iconify-icon>
+```
+
+## 📄 Generador de CV
+
+### Características del CV
+- ✅ **Optimizado para ATS** (Applicant Tracking Systems)
+- 📋 **Múltiples temas** predefinidos
+- 🎨 **Personalización** de colores y estilos
+- 🌍 **Soporte multilenguaje**
+- 👀 **Vista previa HTML** antes de descargar
+- 🔗 **Enlaces a proyectos** y perfiles
+
+### Uso del Generador
+```typescript
+// Generar CV básico
+await this.cvService.generateCV();
+
+// CV con foto y tema personalizado
+await this.cvService.generateCV(
+  'url-foto.jpg',
+  'ats_professional',
+  { accent: '#4A90E2' },
+  ['JavaScript', 'Angular', 'Node.js']
+);
+
+// Vista previa
+const preview = await this.cvService.previewAtsCV();
+```
+
+### Temas Disponibles
+- `ats_professional` - Diseño clásico y profesional
+- `ats_modern` - Estilo moderno con acentos de color
+- `ats_elegant` - Diseño elegante con tipografía serif
+
+## 🔧 Comandos Disponibles
+
+```bash
+# Desarrollo
+npm start                 # Servidor de desarrollo (ng serve)
+npm run watch             # Build con observación de cambios
+
+# Construcción
+npm run build             # Build de desarrollo
+npm run build:prod        # Build de producción optimizado
+npm run build:analyze     # Build con análisis de bundle
+
+# Testing
+npm test                  # Ejecutar tests unitarios
+
+# Despliegue
+npm run deploy            # Build y preparación para deploy
+```
+
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+
+## 👨‍💻 Autor
+
+**Enzo Meneghini** - Desarrollador Full Stack
+- 🌐 Website: [enzomeneghini.com](https://enzomeneghini.com)
+- 💼 LinkedIn: [/in/enzomeneghini](https://linkedin.com/in/enzomeneghini)
+- 🐱 GitHub: [@21Enzo17](https://github.com/21Enzo17)
 
 ---
 
-## Ejecutar el proyecto
+<div align="center">
 
-Para ejecutar el proyecto en modo desarrollo:
+**⭐ Si este proyecto te fue útil, no olvides darle una estrella ⭐**
 
-```bash
-ng serve
-```
+*Portfolio desarrollado con ❤️ y Angular*
 
-Para construir el proyecto para producción:
-
-```bash
-ng build --prod
-```
-
----
-
-Este manual te ayudará a mantener y actualizar tu sitio web fácilmente. Recuerda siempre mantener la coherencia entre los archivos de traducción para que la experiencia sea consistente en ambos idiomas.
-
-Si necesitas agregar nuevas funcionalidades o componentes, considera extender este manual con las instrucciones correspondientes.
+</div>
