@@ -169,7 +169,7 @@
         "name": "Multilingual Personal Portfolio",
         "description": "Personal portfolio developed with Angular and TypeScript, implementing scalable architecture with centralized services, lazy loading, internationalization (i18n) for Spanish and English, responsive design with Tailwind CSS, dynamic PDF CV generation, and advanced SEO optimizations. Features reusable components, efficient state management, and frontend development best practices.",
         "technologies": ["Angular", "TypeScript", "Tailwind CSS"],
-        "githubUrl": "https://github.com/21Enzo17/PortfolioMultiLenguajeAngular",
+        "githubUrl": "https://github.com/21Enzo17/Portfolio",
         "demoUrl": "https://enzo-meneghini.netlify.app",
         "image": "tech-fallback-4.svg"
       }
