@@ -9,8 +9,8 @@ export const SOCIAL_CONFIG = {
   portfolio: 'https://enzo-meneghini.netlify.app/',
   
   // Información de contacto
-  email: 'enzo.meneghini@example.com', // TODO: Actualizar con email real
-  phone: '+54 9 388 123-4567', // TODO: Actualizar con teléfono real
+  email: 'enzo.meneghini@hotmail.com', // TODO: Actualizar con email real
+  phone: '+54 9 388 460-0584', // TODO: Actualizar con teléfono real
   
   // WhatsApp (versión limpia para enlaces)
   get whatsappUrl(): string {

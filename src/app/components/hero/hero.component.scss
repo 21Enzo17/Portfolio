@@ -1,1 +1,45 @@
 /* Estilos específicos para el componente de hero */
+
+/* Animaciones para el modal */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal styles */
+.cv-modal-backdrop {
+  animation: backdropFadeIn 0.2s ease-out;
+}
+
+.cv-modal-content {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Hover effects para las opciones del modal */
+.option-card {
+  @apply transition-all duration-200 ease-out;
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}

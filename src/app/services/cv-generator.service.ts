@@ -1372,16 +1372,6 @@ export class CvGeneratorAtsService {  // Constantes para márgenes y tamaños de
         <p>${data.heroData.bio.replace(/<[^>]*>/g, "")}</p>
       </div>
       
-      <!-- Palabras Clave -->
-      <div class="section">
-        <h2 class="section-title">
-          ${currentLang === "es" ? "Competencias Clave" : "Core Competencies"}
-        </h2>
-        <div style="background-color: ${theme.sectionBackground || "#f9f9f9"}; padding: 10px;">
-          ${allKeywords.map((keyword) => `<span class="keyword-tag">${keyword}</span>`).join("")}
-        </div>
-      </div>
-      
       <!-- Experiencia -->
       <div class="section">
         <h2 class="section-title">${data.experienceData.title}</h2>

@@ -84,7 +84,7 @@ export class ProjectsComponent {
   
   // Método para obtener una imagen para el proyecto con sistema de fallback
   getProjectImage(project: Project): string {
-    const isDevMode = true; // En producción esto se puede cambiar
+    const isDevMode = false; // En producción esto se puede cambiar
     
     // Si el proyecto tiene una imagen especificada, intentamos usarla
     if (project.image) {

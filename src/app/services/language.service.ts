@@ -18,11 +18,11 @@ export class LanguageService {
     // Configurar idiomas disponibles
     this.translate.addLangs(["es", "en"])
 
-    // Recuperar el idioma guardado o usar el predeterminado
+    // Recuperar el idioma guardado o usar español como predeterminado
     const savedLang = localStorage.getItem("language")
-    const browserLang = this.translate.getBrowserLang()
 
-    const defaultLang = savedLang || (browserLang && ["es", "en"].includes(browserLang) ? browserLang : "es")
+    // Usar español como idioma predeterminado, ignorando la detección del navegador
+    const defaultLang = savedLang || "es"
 
     this.translate.setDefaultLang("es")
     this.setLanguage(defaultLang as "es" | "en")

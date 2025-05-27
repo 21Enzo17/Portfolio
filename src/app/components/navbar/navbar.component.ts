@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common"
 import { TranslateModule, TranslateService } from "@ngx-translate/core"
 import { ThemeService } from "@app/services/theme.service"
 import { LanguageService } from "@app/services/language.service"
-import { CvGeneratorAtsService } from "@app/services/cv-generator.service"
 import type { Subscription } from "rxjs"
 
 @Component({
@@ -19,13 +18,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
   currentLanguage = "es"
   mobileMenuOpen = false
   scrolled = false
-  isGeneratingCV = false;
   private subscriptions: Subscription[] = []
+  private handleScrollBound = this.handleScroll.bind(this)
+  private handleClickOutsideBound = this.handleClickOutside.bind(this)
 
   private themeService = inject(ThemeService)
   private languageService = inject(LanguageService)
   private translate = inject(TranslateService)
-  private cvGeneratorService: CvGeneratorAtsService = inject(CvGeneratorAtsService)
 
   ngOnInit() {
     // Suscribirse a cambios de tema
@@ -43,11 +42,30 @@ export class NavbarComponent implements OnInit, OnDestroy {
     )
 
     // Detectar scroll para cambiar el estilo del navbar
-    window.addEventListener("scroll", this.handleScroll.bind(this))
+    window.addEventListener("scroll", this.handleScrollBound)
+    
+    // Detectar clics fuera de los dropdowns para cerrarlos
+    document.addEventListener("click", this.handleClickOutsideBound)
   }
 
   handleScroll() {
     this.scrolled = window.scrollY > 20
+  }
+
+  handleClickOutside(event: Event) {
+    const target = event.target as HTMLElement
+    const dropdowns = ["language-dropdown", "language-dropdown-mobile"]
+    
+    dropdowns.forEach(dropdownId => {
+      const dropdown = document.getElementById(dropdownId)
+      const button = dropdown?.previousElementSibling as HTMLElement
+      
+      if (dropdown && !dropdown.classList.contains("hidden")) {
+        if (!dropdown.contains(target) && !button?.contains(target)) {
+          dropdown.classList.add("hidden")
+        }
+      }
+    })
   }
 
   toggleTheme() {
@@ -64,7 +82,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   toggleLanguageDropdown(show?: boolean) {
-    const dropdown = document.getElementById("language-dropdown")
+    // Detectar si estamos en móvil
+    const isMobile = window.innerWidth < 768
+    const dropdownId = isMobile ? "language-dropdown-mobile" : "language-dropdown"
+    const dropdown = document.getElementById(dropdownId)
+    
     if (dropdown) {
       if (show !== undefined) {
         dropdown.classList.toggle("hidden", !show)
@@ -78,26 +100,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.mobileMenuOpen = false
   }
 
-  /**
-   * Genera y descarga el CV en formato PDF
-   */
-  async generateCV() {
-    if (this.isGeneratingCV) {
-      return; // Evitar múltiples clics
-    }
-    
-    try {
-      this.isGeneratingCV = true;
-      await this.cvGeneratorService.generateCV();
-    } catch (error) {
-      console.error('Error al generar el CV:', error);
-    } finally {
-      this.isGeneratingCV = false;
-    }
-  }
-
   ngOnDestroy() {
-    window.removeEventListener("scroll", this.handleScroll.bind(this))
+    window.removeEventListener("scroll", this.handleScrollBound)
+    document.removeEventListener("click", this.handleClickOutsideBound)
     this.subscriptions.forEach((sub) => sub.unsubscribe())
   }
 }

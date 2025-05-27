@@ -88,12 +88,30 @@
 
         <!-- Mobile menu button -->
         <div class="flex items-center md:hidden space-x-2">
+
+
           <!-- Language Selector Mobile -->
           <div class="relative">
             <button (click)="toggleLanguageDropdown()" class="neumorphic-button rounded-full w-10 h-10 flex items-center justify-center relative overflow-hidden">
               <img *ngIf="currentLanguage === 'es'" src="assets/flags/es.svg" alt="Español" class="rounded-sm object-cover p-1 w-8 h-8">
               <img *ngIf="currentLanguage === 'en'" src="assets/flags/en.svg" alt="English" class="rounded-sm object-cover p-1 w-8 h-8">
             </button>
+            <div id="language-dropdown-mobile" class="hidden absolute right-0 mt-2 neumorphic min-w-[150px] z-50">
+              <div (click)="setLanguage('es')" class="flex items-center justify-between px-3 py-3 cursor-pointer" [class.bg-gradient-to-r]="currentLanguage === 'es'" [class.from-purple-500-20]="currentLanguage === 'es'" [class.to-blue-500-20]="currentLanguage === 'es'">
+                <div class="flex items-center">
+                  <img src="assets/flags/es.svg" alt="Español" class="mr-2 rounded-sm w-6 h-6">
+                  <span>Español</span>
+                </div>
+                <span *ngIf="currentLanguage === 'es'" class="ml-2 text-xs">✓</span>
+              </div>
+              <div (click)="setLanguage('en')" class="flex items-center justify-between px-3 py-3 cursor-pointer" [class.bg-gradient-to-r]="currentLanguage === 'en'" [class.from-purple-500-20]="currentLanguage === 'en'" [class.to-blue-500-20]="currentLanguage === 'en'">
+                <div class="flex items-center">
+                  <img src="assets/flags/en.svg" alt="English" class="mr-2 rounded-sm w-6 h-6">
+                  <span>English</span>
+                </div>
+                <span *ngIf="currentLanguage === 'en'" class="ml-2 text-xs">✓</span>
+              </div>
+            </div>
           </div>
 
           <!-- Theme Toggle Mobile -->
