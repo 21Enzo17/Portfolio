@@ -13,7 +13,7 @@ export const SEO_CONFIG = {  // Configuración general
     description: 'Desarrollador Full Stack con experiencia en Angular, React, Node.js y más tecnologías. Conoce mi portafolio, CV y proyectos destacados.',
     keywords: 'desarrollador full stack, angular, react, node.js, desarrollador web, frontend, backend, jujuy, argentina, java, spring boot, typescript',
     author: 'Enzo Meneghini',
-    image: `${SOCIAL_CONFIG.portfolioUrl}/assets/FotoPerfil.png`,
+    image: `${SOCIAL_CONFIG.portfolioUrl}/assets/fotoPerfil.webp`,
   },
   
   // Configuración de redes sociales (Open Graph y Twitter)
@@ -56,7 +56,7 @@ export const SEO_CONFIG = {  // Configuración general
       "@context": "https://schema.org",
       "@type": "Person",      "name": "Enzo Meneghini",
       "url": SOCIAL_CONFIG.portfolioUrl,
-      "image": `${SOCIAL_CONFIG.portfolioUrl}/assets/FotoPerfil.png`,
+      "image": `${SOCIAL_CONFIG.portfolioUrl}/assets/fotoPerfil.webp`,
       "jobTitle": "Full Stack Developer",
       "worksFor": {
         "@type": "Organization",

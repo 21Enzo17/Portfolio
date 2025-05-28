@@ -88,7 +88,15 @@ export class ProjectsComponent {
     
     // Si el proyecto tiene una imagen especificada, intentamos usarla
     if (project.image) {
-      // Extraer el nombre del archivo y la extensión
+      // PRIMERO: Si la imagen especificada es una fallback, la usamos directamente
+      if (project.image.startsWith('tech-fallback-')) {
+        if (isDevMode) {
+          console.log(`Proyecto ${project.name} usa imagen fallback: ${project.image}`);
+        }
+        return `assets/projects/fallbacks/${project.image}`;
+      }
+      
+      // SEGUNDO: Extraer el nombre del archivo y la extensión para imágenes específicas
       const parts = project.image.split('.');
       if (parts.length >= 2) {
         const fileName = parts.slice(0, -1).join('.');
@@ -123,11 +131,6 @@ export class ProjectsComponent {
             return `assets/projects/${project.image}.${ext}`;
           }
         }
-      }
-      
-      // Si la imagen especificada está en la carpeta de fallbacks, la usamos directamente
-      if (project.image.startsWith('tech-fallback-')) {
-        return `assets/projects/fallbacks/${project.image}`;
       }
     }
     

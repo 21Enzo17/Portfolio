@@ -14,8 +14,7 @@ import { SOCIAL_CONFIG } from "@app/config/social.config"
 })
 export class HeroComponent implements OnInit {
   language = "es"
-  profileImage = "/assets/placeholder-user.jpg"
-  cvExists = false
+  profileImage = "/assets/FotoPerfil.webp" // Imagen directa ya que existe
   isGeneratingCV = false
   showCVModal = false
   socialConfig = SOCIAL_CONFIG
@@ -28,33 +27,6 @@ export class HeroComponent implements OnInit {
     this.languageService.currentLanguage$.subscribe((lang) => {
       this.language = lang
     })
-
-    // Verificar si la imagen de perfil existe
-    this.checkProfileImage()
-
-    // Verificar si el CV existe
-    this.checkCvExists()
-  }
-
-  private checkProfileImage() {
-    const imgLoader = new Image()
-    imgLoader.src = "/assets/yo2.png"
-    imgLoader.onload = () => {
-      this.profileImage = "/assets/yo2.png"
-    }
-    imgLoader.onerror = () => {
-      this.profileImage = "/assets/placeholder-user.jpg"
-    }
-  }
-
-  private checkCvExists() {
-    fetch("/assets/ENZO MENEGHINI.pdf", { method: "HEAD" })
-      .then((response) => {
-        this.cvExists = response.ok
-      })
-      .catch(() => {
-        this.cvExists = false
-      })
   }
 
   /**
