@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AnalyticsService } from '../../services/analytics.service';
 
 interface Certificate {
   name: string;
@@ -26,10 +27,16 @@ export class CertificationsComponent implements OnInit {
   languages: Language[] = [];
   hasCertificates: boolean = false;
   
-  constructor(private translateService: TranslateService) {}
+  constructor(
+    private translateService: TranslateService,
+    private analyticsService: AnalyticsService
+  ) {}
   
   ngOnInit(): void {
     this.loadCertificationsData();
+    
+    // Rastrear vista de la sección de certificaciones
+    this.analyticsService.trackSectionView('certifications');
     
     this.translateService.onLangChange.subscribe(() => {
       this.loadCertificationsData();
@@ -53,5 +60,14 @@ export class CertificationsComponent implements OnInit {
     this.translateService.get('certifications.languages.items').subscribe((data: Language[]) => {
       this.languages = data || [];
     });
+  }
+
+  // Métodos para rastrear eventos
+  onCertificateClick(certificateName: string): void {
+    this.analyticsService.trackCertificateView(certificateName);
+  }
+
+  onLanguageHover(languageName: string): void {
+    this.analyticsService.trackEvent('language_hover', 'certifications', languageName);
   }
 }

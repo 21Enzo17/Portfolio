@@ -32,7 +32,7 @@
 
 /* Hover effects para las opciones del modal */
 .option-card {
-  @apply transition-all duration-200 ease-out;
+  transition: all 0.2s ease-out;
   
   &:hover:not(:disabled) {
     transform: translateY(-2px);
@@ -41,5 +41,127 @@
   
   &:active:not(:disabled) {
     transform: translateY(0);
+  }
+}
+
+/* Keyframes para el efecto breathing del botón - SIN SCALE PARA EVITAR SALTO DE FUENTE */
+@keyframes breathingButton {
+  0% {
+    box-shadow: 
+      5px 5px 10px var(--neumorphic-shadow-light), 
+      -5px -5px 10px var(--neumorphic-shadow-dark),
+      0 0 0 0 rgba(147, 51, 234, 0.3),
+      0 0 0 0 rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 
+      8px 8px 16px var(--neumorphic-shadow-light), 
+      -8px -8px 16px var(--neumorphic-shadow-dark),
+      0 0 25px 4px rgba(147, 51, 234, 0.6),
+      0 0 35px 8px rgba(59, 130, 246, 0.4);
+  }
+  100% {
+    box-shadow: 
+      5px 5px 10px var(--neumorphic-shadow-light), 
+      -5px -5px 10px var(--neumorphic-shadow-dark),
+      0 0 0 0 rgba(147, 51, 234, 0.3),
+      0 0 0 0 rgba(59, 130, 246, 0.2);
+  }
+}
+
+/* Estilos para keywords resaltadas en el texto biografía */
+:host ::ng-deep .font-bold {
+  /* En modo claro: mantener el estilo actual con mejor contraste */
+  font-weight: 700;
+  color: var(--foreground);
+  text-shadow: none;
+  
+  /* En modo oscuro: agregar color y efectos para mejor visibilidad */
+  .dark & {
+    color: #e2e8f0;
+    text-shadow: 0 0 8px rgba(147, 51, 234, 0.4);
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1));
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      text-shadow: 0 0 12px rgba(147, 51, 234, 0.6);
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(59, 130, 246, 0.2));
+    }
+  }
+}
+
+/* Versión alternativa más sutil para keywords en modo oscuro */
+/* Descomenta esta versión si prefieres un efecto más discreto */
+/*
+:host ::ng-deep .font-bold {
+  font-weight: 700;
+  
+  .dark & {
+    color: #f1f5f9;
+    font-weight: 800;
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(59, 130, 246, 0.05));
+    padding: 0.05rem 0.2rem;
+    border-radius: 0.2rem;
+    border-left: 2px solid rgba(147, 51, 234, 0.3);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: #ffffff;
+      border-left-color: rgba(147, 51, 234, 0.6);
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1));
+    }
+  }
+}
+*/
+
+/* CV Destacado - Efecto breathing + hover inset */
+.cv-highlight-button {
+  background-color: var(--background);
+  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
+  border-radius: 2rem;
+  transition: transform 0.3s ease; /* Solo transición para transform, no para box-shadow */
+  min-width: fit-content;
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+  
+  /* Efecto breathing continuo */
+  animation: breathingButton 2.5s ease-in-out infinite;
+  
+  &:hover {
+    /* Solo cambiar el transform, el box-shadow lo maneja la animación + pseudo-elemento */
+    transform: translateY(2px);
+    
+    /* Usar pseudo-elemento para el efecto inset sin interrumpir la animación */
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+  
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    position: relative;
+    z-index: 2; /* Asegurar que esté encima del halo */
+    
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
   }
 }

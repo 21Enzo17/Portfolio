@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AnalyticsService } from '../../services/analytics.service';
 
 interface Education {
   degree: string;
@@ -20,7 +21,10 @@ interface Education {
 export class EducationComponent implements OnInit {
   educationItems: Education[] = [];
   
-  constructor(private translateService: TranslateService) {}
+  constructor(
+    private translateService: TranslateService,
+    private analyticsService: AnalyticsService
+  ) {}
   
   ngOnInit(): void {
     this.loadEducationData();
@@ -34,5 +38,14 @@ export class EducationComponent implements OnInit {
     this.translateService.get('education.items').subscribe((data: Education[]) => {
       this.educationItems = data;
     });
+  }
+
+  // Analytics method for education item interactions
+  onEducationClick(educationTitle: string): void {
+    this.analyticsService.trackEvent('education_click', 'education', educationTitle);
+  }
+
+  onEducationHover(educationTitle: string): void {
+    this.analyticsService.trackEvent('education_hover', 'education', educationTitle);
   }
 }

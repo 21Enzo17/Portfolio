@@ -25,7 +25,7 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient],
         },
         defaultLanguage: "es",
-      }),
+      })
     ),
   ],
 }

@@ -249,8 +249,8 @@ body {
 
 /* Estilos para los iconos de tecnología */
 .tech-icon {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -258,11 +258,57 @@ body {
   box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
   transition: all 0.3s ease;
   background-color: var(--background);
+  flex-shrink: 0;
 }
 
 .tech-icon:hover {
   box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
   transform: translateY(2px);
+}
+
+/* Contenedor de tecnología con icono y texto */
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 60px;
+  max-width: 80px;
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: scale(1.1);
+}
+
+.tech-label {
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 1.2;
+  color: var(--foreground);
+  opacity: 0.8;
+  max-width: 70px;
+  word-wrap: break-word;
+  hyphens: auto;
+  font-weight: 500;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 640px) {
+  .tech-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .tech-item {
+    min-width: 50px;
+    max-width: 65px;
+  }
+  
+  .tech-label {
+    font-size: 0.7rem;
+    max-width: 60px;
+  }
 }
 
 /* Estilos para los iconos sociales */

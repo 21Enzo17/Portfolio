@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common"
 import { TranslateModule } from "@ngx-translate/core"
 import { LanguageService } from "@app/services/language.service"
 import { CvGeneratorLazyService } from "@app/services/cv-generator-lazy.service"
+import { AnalyticsService } from "@app/services/analytics.service"
 import { SOCIAL_CONFIG } from "@app/config/social.config"
 
 @Component({
@@ -24,6 +25,7 @@ export class FooterComponent implements AfterViewInit, OnDestroy, OnInit {
 
   private languageService = inject(LanguageService)
   private cvGeneratorService = inject(CvGeneratorLazyService)
+  private analyticsService = inject(AnalyticsService)
 
   ngOnInit() {
     // Suscribirse a cambios de idioma
@@ -71,6 +73,8 @@ export class FooterComponent implements AfterViewInit, OnDestroy, OnInit {
     
     try {
       this.isGeneratingCV = true;
+      // Rastrear previsualización de CV
+      this.analyticsService.trackEvent('cv_preview', 'cv', 'footer');
       // Obtener el elemento HTML de la previsualización
       const previewElement = await this.cvGeneratorService.previewCV();
       
@@ -153,6 +157,8 @@ export class FooterComponent implements AfterViewInit, OnDestroy, OnInit {
     
     try {
       this.isGeneratingCV = true;
+      // Rastrear descarga de CV
+      this.analyticsService.trackCVDownload();
       await this.cvGeneratorService.generateCV();
       this.closeCVModal();
     } catch (error) {
@@ -160,6 +166,15 @@ export class FooterComponent implements AfterViewInit, OnDestroy, OnInit {
     } finally {
       this.isGeneratingCV = false;
     }
+  }
+
+  // Métodos para rastrear clics en redes sociales
+  onSocialClick(platform: string): void {
+    this.analyticsService.trackSocialClick(platform);
+  }
+
+  onContactClick(contactType: string): void {
+    this.analyticsService.trackContactClick(contactType);
   }
 
   ngOnDestroy() {

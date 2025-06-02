@@ -12,6 +12,7 @@ import { BackgroundAnimationComponent } from "@app/components/background-animati
 import { LanguageSwitchIndicatorComponent } from "@app/components/language-switch-indicator/language-switch-indicator.component"
 import { LanguageService } from "@app/services/language.service"
 import { EnhancedSeoService } from "@app/services/enhanced-seo.service"
+import { AnalyticsService } from "@app/services/analytics.service"
 import type { Subscription } from "rxjs"
 
 @Component({
@@ -40,6 +41,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private languageService = inject(LanguageService)
   private enhancedSeoService = inject(EnhancedSeoService)
+  private analyticsService = inject(AnalyticsService)
 
   ngOnInit() {
     // Detectar cuando la ventana está inactiva para reducir el uso de recursos
@@ -51,6 +53,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (isLoaded) {
         // Inicializar el servicio de SEO mejorado cuando el contenido está listo
         this.enhancedSeoService.initDefaultSeo()
+        
+        // Rastrear vista de página principal
+        this.analyticsService.trackPage('Portfolio Home', window.location.pathname)
         
         // Agregar un pequeño retraso para asegurar una animación suave
         setTimeout(() => {

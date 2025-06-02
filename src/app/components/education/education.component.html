@@ -12,7 +12,9 @@
     <div *ngFor="let education of educationItems; let i = index" 
          class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5"
          [ngClass]="{'opacity-100 translate-y-0': true}"
-         [style]="{'transition': 'opacity 0.5s ease, transform 0.5s ease', 'transition-delay': (i * 0.1) + 's'}">
+         [style]="{'transition': 'opacity 0.5s ease, transform 0.5s ease', 'transition-delay': (i * 0.1) + 's'}"
+         (click)="onEducationClick(education.degree)"
+         (mouseenter)="onEducationHover(education.degree)">
       
       <div class="flex items-center mb-4">
         <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full mr-4">

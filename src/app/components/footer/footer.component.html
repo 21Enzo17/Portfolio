@@ -1,4 +1,4 @@
-<footer id="contact" class="mt-24 pt-16 pb-8 px-4 relative z-10">
+<footer id="contact" class="mt-24 pt-16 pb-8 px-4 relative">
   <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-background/50 pointer-events-none"></div>
   <div class="max-w-6xl mx-auto">
     <!-- Main Footer Content -->
@@ -79,14 +79,14 @@
             </span>
           </h3>          <!-- Social Icons -->
           <div class="flex flex-wrap gap-4">
-            <a [href]="socialConfig.linkedinUrl" target="_blank" aria-label="LinkedIn Profile" class="social-icon hover:scale-110 active:scale-95" rel="noreferrer" style="transition: transform 0.2s ease">
+            <a [href]="socialConfig.linkedinUrl" target="_blank" aria-label="LinkedIn Profile" class="social-icon hover:scale-110 active:scale-95" rel="noreferrer" style="transition: transform 0.2s ease" (click)="onSocialClick('linkedin')">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                 <rect x="2" y="9" width="4" height="12"></rect>
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </a>
-            <a [href]="socialConfig.githubUrl" target="_blank" aria-label="GitHub Profile" class="social-icon hover:scale-110 active:scale-95" rel="noreferrer" style="transition: transform 0.2s ease">
+            <a [href]="socialConfig.githubUrl" target="_blank" aria-label="GitHub Profile" class="social-icon hover:scale-110 active:scale-95" rel="noreferrer" style="transition: transform 0.2s ease" (click)="onSocialClick('github')">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
               </svg>
@@ -148,173 +148,94 @@
     </div>
   </div>
 
-  <!-- CV Modal -->
-  <div *ngIf="showCVModal" class="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" (click)="closeCVModal()"></div>
-    
-    <!-- Modal Content -->
-    <div class="relative bg-background border border-border rounded-xl shadow-2xl max-w-md w-full mx-4 p-6" 
-         (click)="$event.stopPropagation()">
-      <!-- Header -->
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {{ language === 'es' ? 'Opciones de CV' : 'CV Options' }}
-        </h3>
-        <button (click)="closeCVModal()" class="text-foreground/70 hover:text-foreground transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Options -->
-      <div class="space-y-4">
-        <!-- Preview Option -->
-        <div class="neumorphic rounded-lg p-4 hover:bg-purple-500/5 transition-colors cursor-pointer" 
-             (click)="previewCV()">
-          <div class="flex items-center space-x-3">
-            <div class="flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
-            </div>
-            <div class="flex-grow">
-              <h4 class="font-semibold text-foreground">
-                {{ language === 'es' ? 'Previsualizar CV' : 'Preview CV' }}
-              </h4>
-              <p class="text-sm text-foreground/70">
-                {{ language === 'es' ? 'Ver el CV en una nueva pestaña' : 'View CV in a new tab' }}
-              </p>
-            </div>
-            <div class="flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-foreground/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- Download Option -->
-        <div class="neumorphic rounded-lg p-4 hover:bg-blue-500/5 transition-colors cursor-pointer" 
-             (click)="generateCV()">
-          <div class="flex items-center space-x-3">
-            <div class="flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </div>
-            <div class="flex-grow">
-              <h4 class="font-semibold text-foreground">
-                {{ language === 'es' ? 'Descargar CV' : 'Download CV' }}
-              </h4>
-              <p class="text-sm text-foreground/70">
-                {{ language === 'es' ? 'Descargar el archivo PDF directamente' : 'Download the PDF file directly' }}
-              </p>
-            </div>
-            <div class="flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-foreground/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Modal de opciones de CV -->
-  <div *ngIf="showCVModal" 
-       class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
-       (click)="closeCVModal()">
-    
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 m-4 max-w-md w-full transform transition-all duration-300 ease-out scale-100"
-         (click)="$event.stopPropagation()">
-      
-      <!-- Título del modal -->
-      <div class="text-center mb-6">
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
-          {{ language === 'es' ? 'Opciones de CV' : 'CV Options' }}
-        </h3>
-        <p class="text-gray-600 dark:text-gray-300 mt-2">
-          {{ language === 'es' ? 'Elige cómo quieres ver mi CV' : 'Choose how you want to view my CV' }}
-        </p>
-      </div>
-
-      <!-- Opciones -->
-      <div class="grid grid-cols-2 gap-4 mb-6">
-        <!-- Opción Previsualizar -->
-        <button 
-          (click)="previewCV()"
-          [disabled]="isGeneratingCV"
-          class="group relative bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 border-2 border-purple-200 dark:border-purple-700 hover:border-purple-300 dark:hover:border-purple-600 rounded-lg p-6 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
-          
-          <div class="flex flex-col items-center space-y-3">
-            <!-- Icono de ojo -->
-            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-800 rounded-full flex items-center justify-center group-hover:bg-purple-200 dark:group-hover:bg-purple-700 transition-colors">
-              <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-              </svg>
-            </div>
-            
-            <div class="text-center">
-              <div class="font-semibold text-purple-700 dark:text-purple-300">
-                {{ language === 'es' ? 'Previsualizar' : 'Preview' }}
-              </div>
-              <div class="text-xs text-purple-600 dark:text-purple-400 mt-1">
-                {{ language === 'es' ? 'Ver en navegador' : 'View in browser' }}
-              </div>
-            </div>
-          </div>
-
-          <!-- Indicador de carga para previsualizar -->
-          <div *ngIf="isGeneratingCV" 
-               class="absolute inset-0 bg-purple-50 dark:bg-purple-900/20 rounded-lg flex items-center justify-center">
-            <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-purple-600"></div>
-          </div>
-        </button>
-
-        <!-- Opción Descargar -->
-        <button 
-          (click)="generateCV()"
-          [disabled]="isGeneratingCV"
-          class="group relative bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-700 hover:border-blue-300 dark:hover:border-blue-600 rounded-lg p-6 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
-          
-          <div class="flex flex-col items-center space-y-3">
-            <!-- Icono de descarga -->
-            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-800 rounded-full flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-700 transition-colors">
-              <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-              </svg>
-            </div>
-            
-            <div class="text-center">
-              <div class="font-semibold text-blue-700 dark:text-blue-300">
-                {{ language === 'es' ? 'Descargar' : 'Download' }}
-              </div>
-              <div class="text-xs text-blue-600 dark:text-blue-400 mt-1">
-                {{ language === 'es' ? 'Archivo PDF' : 'PDF File' }}
-              </div>
-            </div>
-          </div>
-
-          <!-- Indicador de carga para descargar -->
-          <div *ngIf="isGeneratingCV" 
-               class="absolute inset-0 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
-            <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
-          </div>
-        </button>
-      </div>
-
-      <!-- Botón cerrar -->
+<div *ngIf="showCVModal" class="fixed inset-0 z-50 flex items-center justify-center p-4">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" (click)="closeCVModal()"></div>
+  
+  <!-- Modal content -->
+  <div class="relative  bg-background border border-border rounded-2xl shadow-2xl max-w-md w-full p-6 transform transition-all duration-300 scale-100">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-xl font-semibold text-foreground">
+        {{ language === 'es' ? '¿Qué te gustaría hacer?' : 'What would you like to do?' }}
+      </h3>
       <button 
         (click)="closeCVModal()"
-        class="w-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500">
-        {{ language === 'es' ? 'Cerrar' : 'Close' }}
+        class="text-muted-foreground hover:text-foreground transition-colors duration-200 p-1 rounded-full hover:bg-muted"
+        [attr.aria-label]="language === 'es' ? 'Cerrar' : 'Close'">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
       </button>
     </div>
+
+    <!-- Options -->
+    <div class="space-y-3">
+      <!-- Preview option -->
+      <button 
+        (click)="previewCV()"
+        [disabled]="isGeneratingCV"
+        class="w-full p-4 rounded-xl border border-border hover:border-purple-500/50 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
+        <div class="flex items-center space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors duration-200">
+            <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <div class="flex-1 text-left">
+            <h4 class="text-base font-medium text-foreground group-hover:text-purple-500 transition-colors duration-200">
+              {{ language === 'es' ? 'Previsualizar' : 'Preview' }}
+            </h4>
+            <p class="text-sm text-muted-foreground">
+              {{ language === 'es' ? 'Ver el CV antes de descargar' : 'View CV before downloading' }}
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <svg class="w-5 h-5 text-muted-foreground group-hover:text-purple-500 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </div>
+      </button>
+
+      <!-- Download option -->
+      <button 
+        (click)="generateCV()"
+        [disabled]="isGeneratingCV"
+        class="w-full p-4 rounded-xl border border-border hover:border-blue-500/50 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
+        <div class="flex items-center space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors duration-200">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <div class="flex-1 text-left">
+            <h4 class="text-base font-medium text-foreground group-hover:text-blue-500 transition-colors duration-200">
+              {{ language === 'es' ? 'Descargar' : 'Download' }}
+            </h4>
+            <p class="text-sm text-muted-foreground">
+              {{ language === 'es' ? 'Obtener archivo PDF directamente' : 'Get PDF file directly' }}
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <svg class="w-5 h-5 text-muted-foreground group-hover:text-blue-500 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <!-- Loading indicator -->
+    <div *ngIf="isGeneratingCV" class="mt-4 flex items-center justify-center space-x-2 text-muted-foreground">
+      <div class="w-4 h-4 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+      <span class="text-sm">
+        {{ language === 'es' ? 'Procesando...' : 'Processing...' }}
+      </span>
+    </div>
   </div>
+</div>
 
 </footer>

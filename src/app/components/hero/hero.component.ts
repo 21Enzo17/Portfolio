@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common"
 import { TranslateModule } from "@ngx-translate/core"
 import { LanguageService } from "@app/services/language.service"
 import { CvGeneratorAtsService } from "@app/services/cv-generator.service"
+import { AnalyticsService } from "@app/services/analytics.service"
 import { SOCIAL_CONFIG } from "@app/config/social.config"
 
 @Component({
@@ -21,6 +22,7 @@ export class HeroComponent implements OnInit {
 
   private languageService = inject(LanguageService)
   private cvGeneratorService: CvGeneratorAtsService = inject(CvGeneratorAtsService)
+  private analyticsService = inject(AnalyticsService)
 
   ngOnInit() {
     // Suscribirse a cambios de idioma
@@ -50,6 +52,9 @@ export class HeroComponent implements OnInit {
     if (this.isGeneratingCV) {
       return;
     }
+    
+    // Rastrear evento de previsualización de CV
+    this.analyticsService.trackCVPreview();
     
     try {
       this.isGeneratingCV = true;
@@ -133,6 +138,9 @@ export class HeroComponent implements OnInit {
       return; // Evitar múltiples clics
     }
     
+    // Rastrear evento de descarga de CV
+    this.analyticsService.trackCVDownload();
+    
     try {
       this.isGeneratingCV = true;
       this.closeCVModal();
@@ -142,5 +150,14 @@ export class HeroComponent implements OnInit {
     } finally {
       this.isGeneratingCV = false;
     }
+  }
+
+  // Métodos para rastrear clics en redes sociales del hero
+  onSocialClick(platform: string): void {
+    this.analyticsService.trackSocialClick(platform);
+  }
+
+  onContactClick(contactType: string): void {
+    this.analyticsService.trackContactClick(contactType);
   }
 }

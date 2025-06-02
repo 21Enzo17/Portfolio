@@ -13,11 +13,10 @@
     "contact": "Contact",
     "downloadCV": "Download CV",
     "generating": "Generating..."
-  },
-  "hero": {
+  },  "hero": {
     "title": "Full Stack Developer specialized in Angular and Java",
-    "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "Critical systems", "Infrastructure", "Backend"],
-    "bio": "Full Stack Developer with <span class=\"font-bold\">2 years of experience</span> in web development, specialized in <span class=\"font-bold\">Angular and Java</span>. Passionate about <span class=\"font-bold\">critical and innovative systems</span>, with experience in projects that impact hundreds of thousands of users. <br class=\"hidden md:block\"> I stand out for my strong <span class=\"font-bold\">problem-solving skills</span>, acquired through legacy system migrations and the design of secure and scalable solutions. <br class=\"hidden md:block\"> My technical background, along with experience in <span class=\"font-bold\">infrastructure, networks, and support</span>, makes me a versatile professional. <br class=\"hidden md:block\"> My goal is to grow as a <span class=\"font-bold\">Backend Developer</span>, lead impactful projects, and continue solving problems that matter."
+    "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "English C1", "Critical systems", "Backend"],
+    "bio": "Full Stack Developer with <span class=\"font-bold\">2 years of experience</span> in web development, specialized in <span class=\"font-bold\">Angular and Java</span>. Passionate about <span class=\"font-bold\">critical and innovative systems</span>, with experience in projects that impact hundreds of thousands of users. <br class=\"hidden md:block\"> I stand out for my strong <span class=\"font-bold\">problem-solving skills</span>, acquired through legacy system migrations and the design of secure and scalable solutions. <br class=\"hidden md:block\"> My technical background, along with experience in <span class=\"font-bold\">infrastructure, networks, and support</span>, and <span class=\"font-bold\">advanced English level (C1)</span>, makes me a versatile professional for international projects. <br class=\"hidden md:block\"> My goal is to grow as a <span class=\"font-bold\">Backend Developer</span>, lead impactful projects, and continue solving problems that matter."
   },
   "experience": {
     "title": "Work Experience",
@@ -44,7 +43,7 @@
             "type": "technologies",
             "title": "Technologies used:",
             "icon": "⚙️",
-            "content": ["Java", "Angular", "Genexus", "Spring Boot", "MySQL", "LAN/WAN Networks", "Node.js"]
+            "content": ["Java", "Angular", "Genexus", "Spring Boot", "MySQL", "Networks", "Node.js"]
           }
         ]
       },
@@ -234,7 +233,6 @@
         { "name": "Complex problem-solving", "icon": "carbon:problem" },
         { "name": "Effective communication", "icon": "carbon:communication" },
         { "name": "Proactive and detail-oriented mindset", "icon": "carbon:zoom-in" },
-        { "name": "Working under pressure", "icon": "carbon:stress" },
         { "name": "Collaborative spirit", "icon": "carbon:group" },
         { "name": "Continuous learning", "icon": "carbon:education" }
       ]

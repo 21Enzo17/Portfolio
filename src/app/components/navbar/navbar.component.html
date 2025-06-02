@@ -11,31 +11,45 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-1">
-          <a href="#" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+          <a href="#" 
+             class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group"
+             (click)="onNavLinkClick('about')">
             {{ 'nav.about' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#experience" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+          <a href="#experience" 
+             class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group"
+             (click)="onNavLinkClick('experience')">
             {{ 'nav.experience' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#education" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+          <a href="#education" 
+             class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group"
+             (click)="onNavLinkClick('education')">
             {{ 'nav.education' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#projects" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+          <a href="#projects" 
+             class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group"
+             (click)="onNavLinkClick('projects')">
             {{ 'nav.projects' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#skills" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+          <a href="#skills" 
+             class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group"
+             (click)="onNavLinkClick('skills')">
             {{ 'nav.skills' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#certifications" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+          <a href="#certifications" 
+             class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group"
+             (click)="onNavLinkClick('certifications')">
             {{ 'nav.certifications' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#contact" class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group">
+          <a href="#contact" 
+             class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group"
+             (click)="onNavLinkClick('contact')">
             {{ 'nav.contact' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
@@ -150,25 +164,39 @@
       <!-- Mobile Navigation Menu -->
       <div *ngIf="mobileMenuOpen" class="md:hidden mt-2 neumorphic rounded-xl p-4 animate-in slide-in-from-top-5 duration-300">
         <div class="flex flex-col space-y-3">
-          <a href="#" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+          <a href="#" 
+             (click)="closeMobileMenu(); onNavLinkClick('about')" 
+             class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
             {{ 'nav.about' | translate }}
           </a>
-          <a href="#experience" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+          <a href="#experience" 
+             (click)="closeMobileMenu(); onNavLinkClick('experience')" 
+             class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
             {{ 'nav.experience' | translate }}
           </a>
-          <a href="#education" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+          <a href="#education" 
+             (click)="closeMobileMenu(); onNavLinkClick('education')" 
+             class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
             {{ 'nav.education' | translate }}
           </a>
-          <a href="#projects" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+          <a href="#projects" 
+             (click)="closeMobileMenu(); onNavLinkClick('projects')" 
+             class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
             {{ 'nav.projects' | translate }}
           </a>
-          <a href="#skills" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+          <a href="#skills" 
+             (click)="closeMobileMenu(); onNavLinkClick('skills')" 
+             class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
             {{ 'nav.skills' | translate }}
           </a>
-          <a href="#certifications" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+          <a href="#certifications" 
+             (click)="closeMobileMenu(); onNavLinkClick('certifications')" 
+             class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
             {{ 'nav.certifications' | translate }}
           </a>
-          <a href="#contact" (click)="closeMobileMenu()" class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
+          <a href="#contact" 
+             (click)="closeMobileMenu(); onNavLinkClick('contact')" 
+             class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
             {{ 'nav.contact' | translate }}
           </a>
         </div>
