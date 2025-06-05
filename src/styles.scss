@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* ================================================
+   VARIABLES CSS PERSONALIZADAS
+   ================================================ */
+
 :root {
   --background: #e0e5ec;
   --foreground: #2d3748;
@@ -55,6 +59,10 @@
   color-scheme: dark;
 }
 
+/* ================================================
+   ESTILOS BASE Y BODY
+   ================================================ */
+
 /* Clase para reducir animaciones cuando la ventana está inactiva */
 .reduced-animations * {
   animation-play-state: paused !important;
@@ -72,6 +80,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ================================================
+   EFECTOS NEUMÓRFICOS
+   ================================================ */
+
+/* Estilos neumórficos principales */
 .neumorphic {
   box-shadow: 8px 8px 16px var(--neumorphic-shadow-light), -8px -8px 16px var(--neumorphic-shadow-dark);
   border-radius: 20px;
@@ -79,9 +92,21 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/*
 .neumorphic:hover {
   transform: translateY(-5px);
   box-shadow: 10px 10px 20px var(--neumorphic-shadow-light), -10px -10px 20px var(--neumorphic-shadow-dark);
+}*/
+
+.neumorphic-inset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  background-color: var(--background);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 /* Estilo para tooltips */
@@ -103,20 +128,8 @@ body {
   box-shadow: 3px 3px 6px var(--neumorphic-shadow-light), -3px -3px 6px var(--neumorphic-shadow-dark);
 }
 
-.neumorphic-inset {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
-  background-color: var(--background);
-  aspect-ratio: 1 / 1; /* Garantiza la proporción cuadrada */
-  overflow: hidden; /* Asegura que el contenido no sobresalga del círculo */
-}
-
 .neumorphic-icon {
   background: var(--background);
-  box-shadow: inset 4px 4px 6px var(--neumorphic-shadow-light), inset -4px -4px 6px var(--neumorphic-shadow-dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -124,6 +137,7 @@ body {
   width: 50px;
   height: 50px;
   aspect-ratio: 1;
+  box-shadow: inset 4px 4px 6px var(--neumorphic-shadow-light), inset -4px -4px 6px var(--neumorphic-shadow-dark);
 }
 
 .neumorphic-button {
@@ -140,24 +154,11 @@ body {
   transform: translateY(2px);
 }
 
-/* Clase mejorada para el efecto inset al hacer hover */
-.hover-inset {
-  transition: all 0.3s ease;
-  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
-}
-
-.hover-inset:hover {
-  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
-  transform: translateY(2px);
-}
+/* ================================================
+   EFECTOS ESPECIALES Y ANIMACIONES
+   ================================================ */
 
 /* Aplicar el efecto inset a todos los botones y elementos interactivos */
-.tech-icon:hover,
-.social-icon:hover,
-.logo:hover {
-  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
-  transform: translateY(2px);
-}
 
 .left-to-right-underline {
   position: relative;
@@ -179,24 +180,23 @@ body {
   width: 100%;
 }
 
-/* Mejorado el estilo para los logos en el hero */
+/* ================================================
+   ICONOS Y ELEMENTOS INTERACTIVOS
+   ================================================ */
+
+/* Logos en el hero */
 .logo {
   width: 60px;
   height: 60px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
   box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
   transition: all 0.3s ease;
   background-color: var(--background);
   position: relative;
   overflow: hidden;
-}
-
-.logo:hover {
-  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
-  transform: translateY(2px);
 }
 
 .logo a {
@@ -210,9 +210,12 @@ body {
 .imagen-enzo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  margin-top: 10px;
+  object-fit: cover;  margin-top: 10px;
 }
+
+/* ================================================
+   RESPONSIVE TIMELINE
+   ================================================ */
 
 /* Mejoras para el timeline responsive */
 @media (max-width: 768px) {
@@ -247,10 +250,15 @@ body {
   }
 }
 
-/* Estilos para los iconos de tecnología */
+/* ================================================
+   ESTILOS PARA ICONOS ESPECÍFICOS
+   ================================================ */
+
+/* Iconos de tecnología */
 .tech-icon {
   width: 48px;
   height: 48px;
+  flex-shrink: 0;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -258,10 +266,45 @@ body {
   box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
   transition: all 0.3s ease;
   background-color: var(--background);
-  flex-shrink: 0;
 }
 
 .tech-icon:hover {
+  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  transform: translateY(2px);
+}
+
+.tech-icon-projects {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
+  transition: all 0.3s ease;
+  background-color: var(--background);
+}
+
+.tech-icon-projects:hover {
+  //box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
+  transform: translateY(2px);
+}
+
+/* Iconos sociales */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
+  transition: all 0.3s ease;
+  background-color: var(--background);
+}
+
+.social-icon:hover {
   box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
   transform: translateY(2px);
 }
@@ -275,10 +318,6 @@ body {
   min-width: 60px;
   max-width: 80px;
   transition: transform 0.3s ease;
-}
-
-.tech-item:hover {
-  transform: scale(1.1);
 }
 
 .tech-label {
@@ -311,24 +350,6 @@ body {
   }
 }
 
-/* Estilos para los iconos sociales */
-.social-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 5px 5px 10px var(--neumorphic-shadow-light), -5px -5px 10px var(--neumorphic-shadow-dark);
-  transition: all 0.3s ease;
-  background-color: var(--background);
-}
-
-.social-icon:hover {
-  box-shadow: inset 6px 6px 10px var(--neumorphic-shadow-light), inset -6px -6px 10px var(--neumorphic-shadow-dark);
-  transform: translateY(2px);
-}
-
 /* Asegurar que los elementos interactivos estén siempre por encima */
 a,
 button,
@@ -336,9 +357,12 @@ button,
 .tech-icon,
 .social-icon,
 .logo {
-  position: relative;
-  z-index: 20;
+  position: relative;  z-index: 20;
 }
+
+/* ================================================
+   INTERACTIVIDAD Y NAVEGACIÓN
+   ================================================ */
 
 /* Asegurar que los efectos de hover no bloqueen la interacción */
 .group-hover\:opacity-100 {
@@ -350,16 +374,6 @@ section {
   scroll-margin-top: 80px;
 }
 
-/* Efecto de hover para las cards */
-.neumorphic {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.neumorphic:hover {
-  transform: translateY(-5px);
-  box-shadow: 10px 10px 20px var(--neumorphic-shadow-light), -10px -10px 20px var(--neumorphic-shadow-dark);
-}
-
 /* Mejorar la visibilidad de los enlaces de navegación */
 nav a {
   position: relative;
@@ -367,9 +381,12 @@ nav a {
 }
 
 /* Asegurar que las secciones sean detectables para la navegación */
-section#skills {
-  scroll-margin-top: 100px;
+section#skills {  scroll-margin-top: 100px;
 }
+
+/* ================================================
+   ANIMACIONES
+   ================================================ */
 
 /* Animaciones para Angular */
 .animate-in {

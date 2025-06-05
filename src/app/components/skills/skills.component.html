@@ -23,16 +23,15 @@
           </svg>
         </span>
         <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {{ skillsData.frontend.title }}
+          {{ 'skills.frontend.title' | translate }}
         </span>
       </h3>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div *ngFor="let skill of skillsData.frontend.items" 
-             class="tech-item hover:scale-110 transition-transform"
-             style="transition: transform 0.3s ease"
-             (mouseenter)="onSkillHover(skill.name, 'frontend')">
-          <div class="tech-icon w-14 h-14 flex items-center justify-center">
+        <div *ngFor="let skill of 'skills.frontend.items' | translate" 
+             class="flex flex-col items-center hover:scale-110 transition-transform"
+             style="transition: transform 0.3s ease">
+          <div class="tech-icon w-14 h-14 mb-2 flex items-center justify-center">
             <!-- Renderizado condicional para íconos personalizados o estándar -->
             <ng-container *ngIf="hasCustomIcon(skill.name)">
               <div [ngStyle]="getCustomIconStyles(skill.name)" class="flex items-center justify-center">
@@ -41,7 +40,7 @@
             </ng-container>
             <iconify-icon *ngIf="!hasCustomIcon(skill.name)" [icon]="getIcon('frontend', skill.name, 'mdi:code-tags')" width="28" height="28"></iconify-icon>
           </div>
-          <span class="tech-label">{{ skill.name }}</span>
+          <span class="text-sm text-center">{{ skill.name }}</span>
         </div>
       </div>
     </div>
@@ -58,16 +57,15 @@
           </svg>
         </span>
         <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {{ skillsData.backend.title }}
+          {{ 'skills.backend.title' | translate }}
         </span>
       </h3>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div *ngFor="let skill of skillsData.backend.items" 
-             class="tech-item hover:scale-110 transition-transform"
-             style="transition: transform 0.3s ease"
-             (mouseenter)="onSkillHover(skill.name, 'backend')">
-          <div class="tech-icon w-14 h-14 flex items-center justify-center">
+        <div *ngFor="let skill of 'skills.backend.items' | translate" 
+             class="flex flex-col items-center hover:scale-110 transition-transform"
+             style="transition: transform 0.3s ease">
+          <div class="tech-icon w-14 h-14 mb-2 flex items-center justify-center">
             <!-- Renderizado condicional para íconos personalizados o estándar -->
             <ng-container *ngIf="hasCustomIcon(skill.name)">
               <div [ngStyle]="getCustomIconStyles(skill.name)" class="flex items-center justify-center">
@@ -76,7 +74,7 @@
             </ng-container>
             <iconify-icon *ngIf="!hasCustomIcon(skill.name)" [icon]="getIcon('backend', skill.name, 'mdi:code-braces')" width="28" height="28"></iconify-icon>
           </div>
-          <span class="tech-label">{{ skill.name }}</span>
+          <span class="text-sm text-center">{{ skill.name }}</span>
         </div>
       </div>
     </div>
@@ -94,16 +92,15 @@
           </svg>
         </span>
         <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {{ skillsData.databases.title }}
+          {{ 'skills.databases.title' | translate }}
         </span>
       </h3>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div *ngFor="let skill of skillsData.databases.items" 
-             class="tech-item hover:scale-110 transition-transform"
-             style="transition: transform 0.3s ease"
-             (mouseenter)="onSkillHover(skill.name, 'databases')">
-          <div class="tech-icon w-14 h-14 flex items-center justify-center">
+        <div *ngFor="let skill of 'skills.databases.items' | translate" 
+             class="flex flex-col items-center hover:scale-110 transition-transform"
+             style="transition: transform 0.3s ease">
+          <div class="tech-icon w-14 h-14 mb-2 flex items-center justify-center">
             <!-- Renderizado condicional para íconos personalizados o estándar -->
             <ng-container *ngIf="hasCustomIcon(skill.name)">
               <div [ngStyle]="getCustomIconStyles(skill.name)" class="flex items-center justify-center">
@@ -112,7 +109,7 @@
             </ng-container>
             <iconify-icon *ngIf="!hasCustomIcon(skill.name)" [icon]="getIcon('databases', skill.name, 'mdi:database')" width="28" height="28"></iconify-icon>
           </div>
-          <span class="tech-label">{{ skill.name }}</span>
+          <span class="text-sm text-center">{{ skill.name }}</span>
         </div>
       </div>
     </div>
@@ -129,16 +126,15 @@
           </svg>
         </span>
         <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {{ skillsData.devops.title }}
+          {{ 'skills.devops.title' | translate }}
         </span>
       </h3>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div *ngFor="let skill of skillsData.devops.items" 
-             class="tech-item hover:scale-110 transition-transform"
-             style="transition: transform 0.3s ease"
-             (mouseenter)="onSkillHover(skill.name, 'devops')">
-          <div class="tech-icon w-14 h-14 flex items-center justify-center">
+        <div *ngFor="let skill of 'skills.devops.items' | translate" 
+             class="flex flex-col items-center hover:scale-110 transition-transform"
+             style="transition: transform 0.3s ease">
+          <div class="tech-icon w-14 h-14 mb-2 flex items-center justify-center">
             <!-- Renderizado condicional para íconos personalizados o estándar -->
             <ng-container *ngIf="hasCustomIcon(skill.name)">
               <div [ngStyle]="getCustomIconStyles(skill.name)" class="flex items-center justify-center">
@@ -147,7 +143,7 @@
             </ng-container>
             <iconify-icon *ngIf="!hasCustomIcon(skill.name)" [icon]="getIcon('devops', skill.name, 'mdi:tools')" width="28" height="28"></iconify-icon>
           </div>
-          <span class="tech-label">{{ skill.name }}</span>
+          <span class="text-sm text-center">{{ skill.name }}</span>
         </div>
       </div>
     </div>
@@ -166,16 +162,15 @@
           </svg>
         </span>
         <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {{ skillsData.soft.title }}
+          {{ 'skills.soft.title' | translate }}
         </span>
       </h3>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-        <div *ngFor="let skill of skillsData.soft.items" 
-             class="tech-item hover:scale-110 transition-transform"
-             style="transition: transform 0.3s ease"
-             (mouseenter)="onSkillHover(skill.name, 'soft')">
-          <div class="tech-icon w-14 h-14 flex items-center justify-center">
+        <div *ngFor="let skill of 'skills.soft.items' | translate" 
+             class="flex flex-col items-center hover:scale-110 transition-transform"
+             style="transition: transform 0.3s ease">
+          <div class="tech-icon w-14 h-14 mb-2 flex items-center justify-center">
             <!-- Renderizado condicional para íconos personalizados o estándar -->
             <ng-container *ngIf="hasCustomIcon(skill.name)">
               <div [ngStyle]="getCustomIconStyles(skill.name)" class="flex items-center justify-center">
@@ -184,7 +179,7 @@
             </ng-container>
             <iconify-icon *ngIf="!hasCustomIcon(skill.name)" [icon]="getIcon('soft', skill.name, 'carbon:user-profile')" width="28" height="28"></iconify-icon>
           </div>
-          <span class="tech-label">{{ skill.name }}</span>
+          <span class="text-sm text-center">{{ skill.name }}</span>
         </div>
       </div>
     </div>

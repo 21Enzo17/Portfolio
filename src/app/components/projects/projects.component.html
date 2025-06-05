@@ -36,7 +36,7 @@
       <div class="flex flex-wrap gap-3 mb-4 justify-center">
         <div *ngFor="let tech of project.technologies" class="tech-item hover:scale-110 transition-transform"
              style="transition: transform 0.3s ease">
-          <div class="tech-icon w-12 h-12 flex items-center justify-center">
+          <div class="tech-icon-projects w-12 h-12 flex items-center justify-center">
             <!-- Ícono personalizado -->
             <ng-container *ngIf="hasCustomIcon(tech)">
               <div *ngIf="getCustomIcon(tech).type === 'text'" 
