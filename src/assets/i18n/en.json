@@ -5,18 +5,18 @@
   },
   "nav": {
     "about": "About Me",
-    "experience": "Experience",
+    "experience": "Experience",    
     "projects": "Projects",
     "skills": "Technologies",
     "education": "Education",
-    "certifications": "Certifications",
+    "languages": "Languages",
     "contact": "Contact",
     "downloadCV": "Download CV",
     "generating": "Generating..."
   },  "hero": {
     "title": "Full Stack Developer specialized in Angular and Java",
     "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "English C1", "Critical systems", "Backend"],
-    "bio": "Full Stack Developer with <span class=\"font-bold\">2 years of experience</span> in web development, specialized in <span class=\"font-bold\">Angular and Java</span>. Passionate about <span class=\"font-bold\">critical and innovative systems</span>, with experience in projects that impact hundreds of thousands of users. <br class=\"hidden md:block\"> I stand out for my strong <span class=\"font-bold\">problem-solving skills</span>, acquired through legacy system migrations and the design of secure and scalable solutions. <br class=\"hidden md:block\"> My technical background, along with experience in <span class=\"font-bold\">infrastructure, networks, and support</span>, and <span class=\"font-bold\">advanced English level (C1)</span>, makes me a versatile professional for international projects. <br class=\"hidden md:block\"> My goal is to grow as a <span class=\"font-bold\">Backend Developer</span>, lead impactful projects, and continue solving problems that matter."
+    "bio": "Full Stack Developer with <span class=\"font-bold\">2 years of experience</span> in web development, specialized in <span class=\"font-bold\">Angular and Java</span>. <br> My technical background, along with experience in <span class=\"font-bold\">infrastructure, networks, and support</span>, and <span class=\"font-bold\">advanced English level (C2)</span>, makes me a versatile professional for international projects. <br> My goal is to grow as a <span class=\"font-bold\">Backend Developer</span>, lead impactful projects, and continue solving problems that matter."
   },
   "experience": {
     "title": "Work Experience",
@@ -74,46 +74,106 @@
         ]
       }
     ]
-  },
-  "education": {
+  },  "education": {
     "title": "Education",
-    "items": [      {
+    "achievements": "Key Achievements",
+    "relatedSkills": "Acquired Skills",
+    "viewCertificate": "View Certificate",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "types": {
+      "all": "All",
+      "formal": "Formal Education",
+      "course": "Courses",
+      "certification": "Certification"
+    },
+    "items": [      
+      {
         "degree": "University Systems Analyst",
         "institution": "National University of Jujuy (UNJu)",
         "period": "2022 - 2025",
         "location": "Jujuy, Argentina",
-        "description": "Graduated on time (GPA 8.33/10). Trained in systems analysis, data structures, algorithms, OOP, databases, and solving complex problems."
+        "description": "Graduated on time (GPA 8.35/10). Trained in systems analysis, data structures, algorithms, OOP, databases, and solving complex problems.",
+        "type": "formal",
+        "gpa": "GPA: 8.35/10",
+        "url": "https://unju.edu.ar",
+        "achievements": [
+          "Top student of the 2025 class",
+          "Recognition for outstanding integrative project",
+          "Participation in programming competitions"
+        ],
+        "skills": [
+          "Java", "Algorithms", "Data Structures", "Systems Analysis", "SQL", "OOP", "UML"
+        ]
       },
       {
         "degree": "PC Hardware and Network Technician",
         "institution": "National University of Catamarca",
         "period": "190 lecture hours",
         "location": "Argentina",
-        "description": "Training in repair, maintenance, and configuration of hardware, LAN/WAN networks, and technical support."
+        "description": "Training in repair, maintenance, and configuration of hardware, LAN/WAN networks, and technical support.",
+        "type": "certification",
+        "achievements": [
+          "Final project with special mention",
+          "Full LAN network implementation as practical work"
+        ],
+        "skills": [
+          "LAN/WAN Networks", "Hardware Maintenance", "Router Configuration", "Technical Support", "Fault Diagnosis"
+        ]
       }
     ]
   },
-  "certifications": {
-    "title": "Certifications and Languages",
-    "hasCertificates": false,
-    "certificates": {
-      "title": "Certifications"
-    },
-    "languages": {
-      "title": "Languages",
-      "items": [
-        {
-          "language": "Spanish",
-          "level": "Native",
-          "comment": "Mother tongue"
+  "languages": {
+    "title": "Languages",
+    "certifications": "Certifications",
+    "reading": "Reading",
+    "writing": "Writing",
+    "speaking": "Speaking",    "listening": "Listening",
+    "viewCertificate": "View certificate",
+    "viewDetails": "View more",
+    "notSpecified": "Not specified",
+    "certificateDescription": "This certification validates my proficiency level in this language according to international standards.",
+    "items": [
+      {
+        "language": "Spanish",
+        "level": "Native",
+        "levelScore": 10,
+        "comment": "Mother tongue",
+        "skills": {
+          "reading": 5,
+          "writing": 5,
+          "speaking": 5,
+          "listening": 5
         },
-        {
-          "language": "English",
-          "level": "Advanced (C1)",
-          "comment": "Fluent in reading and writing, needs practice in conversation"
-        }
-      ]
-    }
+        "certifications": []
+      },
+      {
+        "language": "English",
+        "level": "Proficient (C2)",
+        "levelScore": 8,
+        "comment": "Fluent in reading and writing, needs practice in conversation",
+        "skills": {
+          "reading": 5,
+          "writing": 4,
+          "speaking": 4,
+          "listening": 5
+        },        "certifications": [
+          {
+            "name": "C2 Proficient",
+            "issuer": "EF SET Certificate",
+            "date": "2024-06",
+            "url": "https://cert.efset.org/1hRRsJ",
+            "description": "EF SET English Certificate 77/100 (C2 Proficient)"
+          },
+          {
+            "name": "B2 Upper Intermediate",
+            "issuer": "Trinity College London",
+            "date": "2013-12",
+            "description": "Trinity College London ISE II (B2 Upper Intermediate)"
+          }
+        ]
+      }
+    ]
   },
   "projects": {
     "title": "My Projects",
@@ -223,7 +283,7 @@
         { "name": "Linux Server Admin", "icon": "logos:linux-tux" },
         { "name": "Bash Scripting", "icon": "carbon:terminal" },
         { "name": "Proxmox", "icon": "simple-icons:proxmox" },
-        { "name": "LAN/WAN Networks", "icon": "carbon:network-4" }
+        { "name": "Networks", "icon": "Redes" }
       ]
     },
     "soft": {
@@ -244,15 +304,14 @@
       "location": "Jujuy, Argentina",
       "email": "enzo.meneghini@hotmail.com",
       "phone": "+54 388 460-0584"
-    },
-    "quickLinks": {
+    },    "quickLinks": {
       "title": "Quick Links",
       "about": "About Me",
       "experience": "Experience",
       "education": "Education",
       "projects": "Projects",
       "skills": "Technologies",
-      "certifications": "Certifications"
+      "languages": "Languages"
     },
     "connect": {
       "title": "Let's Connect"

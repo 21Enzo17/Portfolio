@@ -9,12 +9,6 @@ interface Certificate {
   date: string;
 }
 
-interface Language {
-  language: string;
-  level: string;
-  comment?: string;
-}
-
 @Component({
   selector: 'app-certifications',
   standalone: true,
@@ -24,8 +18,6 @@ interface Language {
 })
 export class CertificationsComponent implements OnInit {
   certificates: Certificate[] = [];
-  languages: Language[] = [];
-  hasCertificates: boolean = false;
   
   constructor(
     private translateService: TranslateService,
@@ -42,32 +34,15 @@ export class CertificationsComponent implements OnInit {
       this.loadCertificationsData();
     });
   }
-    private loadCertificationsData(): void {
-    this.translateService.get('certifications.hasCertificates').subscribe((hasData: boolean) => {
-      this.hasCertificates = hasData;
-    });
-    
-    this.translateService.get('certifications.certificates').subscribe((data: any) => {
-      if (data && Array.isArray(data)) {
-        this.certificates = data;
-      } else if (data && data.items && Array.isArray(data.items)) {
-        this.certificates = data.items;
-      } else {
-        this.certificates = [];
-      }
-    });
-    
-    this.translateService.get('certifications.languages.items').subscribe((data: Language[]) => {
-      this.languages = data || [];
+
+  private loadCertificationsData(): void {
+    this.translateService.get('certifications.items').subscribe((data: Certificate[]) => {
+      this.certificates = data || [];
     });
   }
 
   // Métodos para rastrear eventos
   onCertificateClick(certificateName: string): void {
-    this.analyticsService.trackCertificateView(certificateName);
-  }
-
-  onLanguageHover(languageName: string): void {
-    this.analyticsService.trackEvent('language_hover', 'certifications', languageName);
+    this.analyticsService.trackEvent('certificate_click', 'certifications', certificateName);
   }
 }

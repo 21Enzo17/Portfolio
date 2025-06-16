@@ -41,10 +41,10 @@
             {{ 'nav.skills' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#certifications" 
+          <a href="#languages" 
              class="relative px-3 py-2 rounded-lg text-foreground/80 hover:text-foreground transition-colors group"
-             (click)="onNavLinkClick('certifications')">
-            {{ 'nav.certifications' | translate }}
+             (click)="onNavLinkClick('languages')">
+            {{ 'nav.languages' | translate }}
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
           </a>
           <a href="#contact" 
@@ -188,11 +188,6 @@
              (click)="closeMobileMenu(); onNavLinkClick('skills')" 
              class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
             {{ 'nav.skills' | translate }}
-          </a>
-          <a href="#certifications" 
-             (click)="closeMobileMenu(); onNavLinkClick('certifications')" 
-             class="block py-2 px-4 rounded-lg hover:bg-accent transition-colors">
-            {{ 'nav.certifications' | translate }}
           </a>
           <a href="#contact" 
              (click)="closeMobileMenu(); onNavLinkClick('contact')" 

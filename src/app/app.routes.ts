@@ -24,6 +24,10 @@ export const routes: Routes = [
     redirectTo: "/#experience",  
   },
   {
+    path: "idiomas",
+    redirectTo: "/#languages",
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
