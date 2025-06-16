@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common"
 import { TranslateModule, TranslateService } from "@ngx-translate/core"
 import { ThemeService } from "@app/services/theme.service"
 import { LanguageService } from "@app/services/language.service"
+import { AnalyticsService } from "@app/services/analytics.service"
 import type { Subscription } from "rxjs"
 
 @Component({
@@ -25,6 +26,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private themeService = inject(ThemeService)
   private languageService = inject(LanguageService)
   private translate = inject(TranslateService)
+  private analyticsService = inject(AnalyticsService)
 
   ngOnInit() {
     // Suscribirse a cambios de tema
@@ -70,11 +72,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   toggleTheme() {
     this.themeService.toggleTheme()
+    // Rastrear cambio de tema
+    const newTheme = this.isDarkTheme ? 'light' : 'dark'
+    this.analyticsService.trackThemeChange(newTheme)
   }
 
   setLanguage(lang: "es" | "en") {
     this.languageService.setLanguage(lang)
     this.toggleLanguageDropdown(false)
+    // Rastrear cambio de idioma
+    this.analyticsService.trackLanguageChange(lang)
   }
 
   toggleMobileMenu() {
@@ -98,6 +105,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   closeMobileMenu() {
     this.mobileMenuOpen = false
+  }
+
+  // Analytics method for navigation link clicks
+  onNavLinkClick(linkName: string): void {
+    this.analyticsService.trackEvent('navigation_click', 'navbar', linkName);
   }
 
   ngOnDestroy() {

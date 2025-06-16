@@ -81,26 +81,27 @@
               
               <!-- Tipo: technologies - Para mostrar tecnologías con íconos -->
               <ng-container *ngIf="section.type === 'technologies'">
-                <div class="mt-2 sm:mt-4 flex flex-wrap gap-3">
+                <div class="mt-2 sm:mt-4 flex flex-wrap gap-4">
                   <div *ngFor="let tech of section.content" 
-                       class="tech-icon w-12 h-12 flex flex-col items-center justify-center gap-1 group relative"
-                       [title]="tech">
-                    <!-- Ícono personalizado -->
-                    <ng-container *ngIf="hasCustomIcon(tech)">
-                      <div *ngIf="getCustomIcon(tech).type === 'text'" 
-                           [ngStyle]="getCustomIconStyles(tech)">
-                        {{ getCustomIcon(tech).content }}
-                      </div>
-                      <div *ngIf="getCustomIcon(tech).type === 'html'" 
-                           [ngStyle]="getCustomIconStyles(tech)" 
-                           [innerHTML]="getCustomIcon(tech).content">
-                      </div>
-                    </ng-container>
-                    <!-- Ícono de Iconify por defecto -->
-                    <iconify-icon *ngIf="!hasCustomIcon(tech)" [icon]="getTechIcon(tech)" width="28" height="28"></iconify-icon>
-                    <span class="text-xs opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">
-                      {{ tech }}
-                    </span>
+                       class="tech-item hover:scale-110 transition-transform"
+                       style="transition: transform 0.3s ease"
+                       (mouseenter)="onTechnologyHover(tech)">
+                    <div class="tech-icon w-12 h-12 flex items-center justify-center">
+                      <!-- Ícono personalizado -->
+                      <ng-container *ngIf="hasCustomIcon(tech)">
+                        <div *ngIf="getCustomIcon(tech).type === 'text'" 
+                             [ngStyle]="getCustomIconStyles(tech)">
+                          {{ getCustomIcon(tech).content }}
+                        </div>
+                        <div *ngIf="getCustomIcon(tech).type === 'html'" 
+                             [ngStyle]="getCustomIconStyles(tech)" 
+                             [innerHTML]="getCustomIcon(tech).content">
+                        </div>
+                      </ng-container>
+                      <!-- Ícono de Iconify por defecto -->
+                      <iconify-icon *ngIf="!hasCustomIcon(tech)" [icon]="getTechIcon(tech)" width="28" height="28"></iconify-icon>
+                    </div>
+                    <span class="tech-label">{{ tech }}</span>
                   </div>
                 </div>
               </ng-container>

@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common"
 import { TranslateModule, TranslateService } from "@ngx-translate/core"
 import { FallbackImageDirective } from "../../directives/fallback-image.directive"
 import { IconService, CustomIcon } from "../../services/icon.service"
+import { AnalyticsService } from "../../services/analytics.service"
 
 interface Project {
   name: string;
@@ -28,7 +29,8 @@ export class ProjectsComponent {
 
   constructor(
     private translateService: TranslateService,
-    private iconService: IconService
+    private iconService: IconService,
+    private analyticsService: AnalyticsService // Inyectar el servicio de Analytics
   ) {
     this.loadProjects();
     
@@ -88,7 +90,15 @@ export class ProjectsComponent {
     
     // Si el proyecto tiene una imagen especificada, intentamos usarla
     if (project.image) {
-      // Extraer el nombre del archivo y la extensión
+      // PRIMERO: Si la imagen especificada es una fallback, la usamos directamente
+      if (project.image.startsWith('tech-fallback-')) {
+        if (isDevMode) {
+          console.log(`Proyecto ${project.name} usa imagen fallback: ${project.image}`);
+        }
+        return `assets/projects/fallbacks/${project.image}`;
+      }
+      
+      // SEGUNDO: Extraer el nombre del archivo y la extensión para imágenes específicas
       const parts = project.image.split('.');
       if (parts.length >= 2) {
         const fileName = parts.slice(0, -1).join('.');
@@ -123,11 +133,6 @@ export class ProjectsComponent {
             return `assets/projects/${project.image}.${ext}`;
           }
         }
-      }
-      
-      // Si la imagen especificada está en la carpeta de fallbacks, la usamos directamente
-      if (project.image.startsWith('tech-fallback-')) {
-        return `assets/projects/fallbacks/${project.image}`;
       }
     }
     
@@ -181,5 +186,26 @@ export class ProjectsComponent {
       console.log(`Error cargando imagen: ${imgElement.src}`);
       imgElement.src = 'assets/placeholder.svg';
     }
+  }
+
+  // Métodos para rastrear eventos de proyectos
+  onProjectDemo(projectName: string): void {
+    this.analyticsService.trackEvent('project_demo_click', 'projects', projectName);
+  }
+
+  onProjectGithub(projectName: string): void {
+    this.analyticsService.trackEvent('project_github_click', 'projects', projectName);
+  }
+
+  onProjectDocs(projectName: string): void {
+    this.analyticsService.trackEvent('project_docs_click', 'projects', projectName);
+  }
+
+  onProjectDownload(projectName: string): void {
+    this.analyticsService.trackEvent('project_download_click', 'projects', projectName);
+  }
+
+  onProjectView(projectName: string): void {
+    this.analyticsService.trackProjectView(projectName);
   }
 }

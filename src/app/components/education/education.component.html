@@ -2,36 +2,77 @@
   <div class="opacity-0 transform translate-y-5" 
        [ngClass]="{'opacity-100 translate-y-0': true}"
        style="transition: opacity 0.5s ease, transform 0.5s ease">
-    <h2 class="text-3xl font-bold mb-12 relative inline-block">
-      {{ 'education.title' | translate }}
-      <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></span>
-    </h2>
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-3xl font-bold relative inline-block">
+        {{ 'education.title' | translate }}
+        <span class="absolute -bottom-1 left-0 w-1/2 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></span>
+      </h2>
+      
+      <div class="flex space-x-2" *ngIf="filterTypes.length > 1">
+        <button 
+          *ngFor="let type of filterTypes" 
+          (click)="filterEducationByType(type)" 
+          class="px-3 py-1.5 rounded-md text-xs font-medium transition-all shadow-sm"
+          [ngClass]="{'bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-md': currentFilter === type,
+                      'bg-foreground/10 hover:bg-foreground/15 hover:translate-y-[-2px]': currentFilter !== type}">
+          {{ 'education.types.' + type | translate }}
+        </button>
+      </div>
+    </div>
   </div>
 
+    <!-- Enhanced Grid view -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div *ngFor="let education of educationItems; let i = index" 
-         class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5"
-         [ngClass]="{'opacity-100 translate-y-0': true}"
-         [style]="{'transition': 'opacity 0.5s ease, transform 0.5s ease', 'transition-delay': (i * 0.1) + 's'}">
+    <div *ngFor="let education of filteredEducationItems; let i = index; trackBy: trackByDegree" 
+         class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5 cursor-pointer relative overflow-hidden group"
+         [ngClass]="{'opacity-100 translate-y-0': true, 'border-l-4 border-purple-500': isExpanded(education)}"
+         [style]="{'transition': 'opacity 0.5s ease, transform 0.5s ease', 'transition-delay': (i * 0.1) + 's'}"
+         (click)="toggleExpand(education)"
+         (mouseenter)="onEducationHover(education.degree)">
       
-      <div class="flex items-center mb-4">
-        <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full mr-4">
+      <!-- Subtle background decoration -->
+      <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-500/5 to-blue-500/10 rounded-bl-[100px] transform translate-x-8 -translate-y-8 group-hover:translate-x-6 group-hover:-translate-y-6 transition-transform duration-300"></div>
+      
+      <div class="flex items-start mb-4 relative z-10">
+        <div *ngIf="education.logo" class="w-12 h-12 flex-shrink-0 mr-4 overflow-hidden rounded-lg">
+          <img [src]="education.logo" [alt]="education.institution + ' logo'" class="w-full h-full object-cover"
+               appFallbackImage="assets/placeholder.svg">
+        </div>
+        <div *ngIf="!education.logo" class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-lg mr-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
             <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
           </svg>
         </div>
         <div>
-          <h3 class="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            {{ education.degree }}
-          </h3>
-          <p class="text-md font-semibold">{{ education.institution }}</p>
+          <div class="mb-1">
+            <h3 class="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+              {{ education.degree }}
+            </h3>
+            <div *ngIf="education.type" class="mt-1.5 mb-1">
+              <div class="inline-flex items-center px-2.5 py-0.5 text-xs rounded-md bg-gradient-to-r from-purple-500/10 to-blue-500/10 text-foreground/90 border border-purple-500/25 font-medium shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 mr-1.5"></span>
+                {{ 'education.types.' + education.type | translate }}
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <p class="text-md font-semibold">{{ education.institution }}</p>
+            <a *ngIf="education.url" [href]="education.url" target="_blank" rel="noopener noreferrer" 
+               class="ml-2 text-blue-500 hover:text-blue-600" (click)="$event.stopPropagation()">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
       
-      <div class="ml-16">
-        <div class="text-sm font-mono italic mb-2 text-foreground/70 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="ml-16 space-y-2">
+        <div class="text-sm font-mono italic text-foreground/70 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="16" y1="2" x2="16" y2="6"></line>
             <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -39,14 +80,104 @@
           </svg>
           {{ education.period }}
         </div>
-        <div class="text-sm font-mono italic mb-4 text-foreground/70 flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="text-sm font-mono italic text-foreground/70 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
           {{ education.location }}
         </div>
-        <p class="text-sm text-foreground/80">{{ education.description }}</p>
+        <div *ngIf="education.gpa" class="text-sm font-mono italic text-foreground/70 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          {{ education.gpa }}
+        </div>
+        
+        <p class="text-sm text-foreground/80 mt-2">{{ education.description }}</p>
+        
+        <!-- Ver más button -->
+        <div class="flex justify-center mt-3" *ngIf="!isExpanded(education)">
+          <button 
+            class="inline-flex items-center px-4 py-1.5 rounded-md text-sm font-medium bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 transition-all transform hover:translate-y-[-2px] text-foreground/90"
+            (click)="toggleExpand(education); $event.stopPropagation()">
+            {{ 'education.seeMore' | translate }}
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Expanded content -->
+        <div *ngIf="isExpanded(education)" class="mt-4 pt-4 border-t border-foreground/10 animate-fadeIn relative">
+          <!-- Decorative element -->
+          <div class="absolute right-0 top-0 w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 transform -translate-y-0.5"></div>
+          
+          <!-- Achievements -->
+          <div *ngIf="education.achievements && education.achievements.length > 0" class="mb-4">
+            <h4 class="text-sm font-bold mb-2 text-foreground/90 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+              {{ 'education.achievements' | translate }}:
+            </h4>
+            <ul class="space-y-1.5">
+              <li *ngFor="let achievement of education.achievements" class="text-xs text-foreground/80 pl-4 relative">
+                <div class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-purple-500/60"></div>
+                {{ achievement }}
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Skills -->
+          <div *ngIf="education.skills && education.skills.length > 0" class="mb-4">
+            <h4 class="text-sm font-bold mb-2 text-foreground/90 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              {{ 'education.relatedSkills' | translate }}:
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span *ngFor="let skill of education.skills" 
+                    class="inline-block px-2.5 py-1 bg-gradient-to-r from-purple-500/10 to-blue-500/10 
+                          rounded-full text-xs font-medium text-foreground/80 hover:from-purple-500/20 hover:to-blue-500/20 transition-colors">
+                {{ skill }}
+              </span>
+            </div>
+          </div>
+          
+          <!-- Certificate -->
+          <div *ngIf="education.certificateUrl" class="mt-4 text-center">
+            <a [href]="education.certificateUrl" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white 
+                     rounded-lg text-sm font-medium hover:from-purple-600 hover:to-blue-600 transition-colors shadow-md hover:shadow-lg"
+               (click)="$event.stopPropagation(); onCertificateClick(education.degree)">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              {{ 'education.viewCertificate' | translate }}
+            </a>
+          </div>
+          
+          <!-- Ver menos button -->
+          <div class="flex justify-center mt-4">
+            <button 
+              class="inline-flex items-center px-4 py-1.5 rounded-md text-sm font-medium bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/30 hover:to-blue-500/30 transition-all transform hover:translate-y-[-2px] text-foreground/90"
+              (click)="toggleExpand(education); $event.stopPropagation()">
+              {{ 'education.seeLess' | translate }}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

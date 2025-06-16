@@ -173,7 +173,23 @@ export class IconService {
         'font-size': '9px'
       }
     },
-    'redes lan/wan': {
+    'redes': {
+      type: 'text',
+      content: 'LAN',
+      styles: {
+        'background-color': '#0078d7',
+        'color': 'white',
+        'border-radius': '4px',
+        'width': '28px',
+        'height': '24px',
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'font-weight': 'bold',
+        'font-size': '9px'
+      }
+    },
+    'networks': {
       type: 'text',
       content: 'LAN',
       styles: {

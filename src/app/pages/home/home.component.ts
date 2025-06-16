@@ -4,7 +4,7 @@ import { NavbarComponent } from "@app/components/navbar/navbar.component"
 import { HeroComponent } from "@app/components/hero/hero.component"
 import { ExperienceComponent } from "@app/components/experience/experience.component"
 import { EducationComponent } from "@app/components/education/education.component"
-import { CertificationsComponent } from "@app/components/certifications/certifications.component"
+import { LanguagesComponent } from "@app/components/languages/languages.component"
 import { ProjectsComponent } from "@app/components/projects/projects.component"
 import { SkillsComponent } from "@app/components/skills/skills.component"
 import { FooterComponent } from "@app/components/footer/footer.component"
@@ -12,6 +12,7 @@ import { BackgroundAnimationComponent } from "@app/components/background-animati
 import { LanguageSwitchIndicatorComponent } from "@app/components/language-switch-indicator/language-switch-indicator.component"
 import { LanguageService } from "@app/services/language.service"
 import { EnhancedSeoService } from "@app/services/enhanced-seo.service"
+import { AnalyticsService } from "@app/services/analytics.service"
 import type { Subscription } from "rxjs"
 
 @Component({
@@ -25,7 +26,7 @@ import type { Subscription } from "rxjs"
     EducationComponent,
     ProjectsComponent,
     SkillsComponent,
-    CertificationsComponent,
+    LanguagesComponent,
     FooterComponent,
     BackgroundAnimationComponent,
     LanguageSwitchIndicatorComponent,
@@ -40,6 +41,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private languageService = inject(LanguageService)
   private enhancedSeoService = inject(EnhancedSeoService)
+  private analyticsService = inject(AnalyticsService)
 
   ngOnInit() {
     // Detectar cuando la ventana está inactiva para reducir el uso de recursos
@@ -51,6 +53,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (isLoaded) {
         // Inicializar el servicio de SEO mejorado cuando el contenido está listo
         this.enhancedSeoService.initDefaultSeo()
+        
+        // Rastrear vista de página principal
+        this.analyticsService.trackPage('Portfolio Home', window.location.pathname)
         
         // Agregar un pequeño retraso para asegurar una animación suave
         setTimeout(() => {

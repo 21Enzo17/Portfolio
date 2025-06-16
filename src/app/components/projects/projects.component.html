@@ -14,7 +14,8 @@
     <div *ngFor="let project of projects; let i = index" 
          class="neumorphic rounded-xl p-5 transition-all duration-300 hover:translate-y-[-5px] group overflow-hidden flex flex-col h-full relative z-10 opacity-0 transform translate-y-5"
          [ngClass]="{'opacity-100 translate-y-0': true}"
-         [style]="{'transition': 'opacity 0.5s ease, transform 0.5s ease', 'transition-delay': (i * 0.1) + 's'}">
+         [style]="{'transition': 'opacity 0.5s ease, transform 0.5s ease', 'transition-delay': (i * 0.1) + 's'}"
+         (mouseenter)="onProjectView(project.name)">
       <!-- Imagen del proyecto -->
       <div class="w-full h-48 rounded-lg mb-4 overflow-hidden relative">
         <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-1 rounded-lg pointer-events-none"></div>
@@ -32,22 +33,25 @@
       <p class="mb-4 text-foreground/80">{{ project.description }}</p>
 
       <!-- Tecnologías -->
-      <div class="flex flex-wrap gap-2 mb-4">
-        <div *ngFor="let tech of project.technologies" class="tech-icon w-10 h-10 flex items-center justify-center group relative">
-          <!-- Ícono personalizado -->
-          <ng-container *ngIf="hasCustomIcon(tech)">
-            <div *ngIf="getCustomIcon(tech).type === 'text'" 
-                 [ngStyle]="getCustomIconStyles(tech)">
-              {{ getCustomIcon(tech).content }}
-            </div>
-            <div *ngIf="getCustomIcon(tech).type === 'html'" 
-                 [ngStyle]="getCustomIconStyles(tech)" 
-                 [innerHTML]="getCustomIcon(tech).content">
-            </div>
-          </ng-container>
-          <!-- Ícono de Iconify por defecto -->
-          <iconify-icon *ngIf="!hasCustomIcon(tech)" [icon]="getTechIcon(tech)" width="24" height="24"></iconify-icon>
-          
+      <div class="flex flex-wrap gap-3 mb-4 justify-center">
+        <div *ngFor="let tech of project.technologies" class="tech-item hover:scale-110 transition-transform"
+             style="transition: transform 0.3s ease">
+          <div class="tech-icon-projects w-12 h-12 flex items-center justify-center">
+            <!-- Ícono personalizado -->
+            <ng-container *ngIf="hasCustomIcon(tech)">
+              <div *ngIf="getCustomIcon(tech).type === 'text'" 
+                   [ngStyle]="getCustomIconStyles(tech)">
+                {{ getCustomIcon(tech).content }}
+              </div>
+              <div *ngIf="getCustomIcon(tech).type === 'html'" 
+                   [ngStyle]="getCustomIconStyles(tech)" 
+                   [innerHTML]="getCustomIcon(tech).content">
+              </div>
+            </ng-container>
+            <!-- Ícono de Iconify por defecto -->
+            <iconify-icon *ngIf="!hasCustomIcon(tech)" [icon]="getTechIcon(tech)" width="28" height="28"></iconify-icon>
+          </div>
+          <span class="tech-label">{{ tech }}</span>
         </div>
       </div>
 
@@ -58,7 +62,8 @@
            [href]="project.demoUrl" 
            target="_blank"
            class="inline-flex items-center justify-center neumorphic-button px-3 py-2 rounded-lg text-sm font-medium hover:scale-105 active:scale-95"
-           style="transition: transform 0.2s ease">
+           style="transition: transform 0.2s ease"
+           (click)="onProjectDemo(project.name)">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
             <line x1="8" y1="21" x2="16" y2="21"></line>
@@ -72,7 +77,8 @@
            [href]="project.docsUrl" 
            target="_blank"
            class="inline-flex items-center justify-center neumorphic-button px-3 py-2 rounded-lg text-sm font-medium hover:scale-105 active:scale-95"
-           style="transition: transform 0.2s ease">
+           style="transition: transform 0.2s ease"
+           (click)="onProjectDocs(project.name)">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
@@ -87,7 +93,8 @@
            [href]="project.githubUrl" 
            target="_blank"
            class="inline-flex items-center justify-center neumorphic-button px-3 py-2 rounded-lg text-sm font-medium hover:scale-105 active:scale-95"
-           style="transition: transform 0.2s ease">
+           style="transition: transform 0.2s ease"
+           (click)="onProjectGithub(project.name)">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
           </svg>
@@ -99,7 +106,8 @@
            [href]="project.downloadUrl" 
            target="_blank"
            class="inline-flex items-center justify-center neumorphic-button px-3 py-2 rounded-lg text-sm font-medium hover:scale-105 active:scale-95"
-           style="transition: transform 0.2s ease">
+           style="transition: transform 0.2s ease"
+           (click)="onProjectDownload(project.name)">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>

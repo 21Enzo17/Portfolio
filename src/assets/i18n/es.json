@@ -2,23 +2,25 @@
     "language": "es",
     "lastUpdate": "2025-05-26",
     "version": "1.2.1"
-  },
-  "nav": {
-    "about": "Sobre Mí",
-    "experience": "Experiencia",
+  },  "nav": {
+    "about": "Sobre Mi",
+    "viewCertificate": "Ver certificado",
+    "viewDetails": "Ver más",
+    "notSpecified": "No especificado",
+    "certificateDescription": "Esta certificación valida mi nivel de competencia en este idioma según estándares internacionales", 
+    "experience": "Experiencia",    
     "projects": "Proyectos",
     "skills": "Tecnologías",
     "education": "Educación", 
-    "certifications": "Certificaciones",
+    "languages": "Idiomas",
     "contact": "Contacto",
     "downloadCV": "Descargar CV",
     "generating": "Generando..."
-  },
-  "hero": {
+  },"hero": {
     "title": "Desarrollador Full Stack especializado en Angular y Java",
-    "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "Sistemas críticos", "Infraestructura", "Backend"],
-    "bio": "Desarrollador Full Stack con <span class=\"font-bold\">2 años de experiencia</span> en desarrollo web, especializado en <span class=\"font-bold\">Angular y Java</span>. Apasionado por los <span class=\"font-bold\">sistemas críticos e innovadores</span>, con experiencia en proyectos que impactan a cientos de miles de usuarios. <br class=\"hidden md:block\"> Me destaco por una fuerte capacidad de <span class=\"font-bold\">resolución de problemas complejos</span>, adquirida tanto en migraciones de sistemas legacy como en el diseño de soluciones seguras y escalables. <br class=\"hidden md:block\"> Mi formación técnica, sumada a experiencia en <span class=\"font-bold\">infraestructura, redes y soporte</span>, me convierte en un profesional versátil. <br class=\"hidden md:block\"> Mi objetivo es crecer como <span class=\"font-bold\">Backend Developer</span>, liderar proyectos de impacto real y seguir resolviendo problemas que importan."
-},
+    "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "Inglés C2", "Sistemas críticos", "Backend"],
+    "bio": "Desarrollador Full Stack con <span class=\"font-bold\">2 años de experiencia</span> en desarrollo web, especializado en <span class=\"font-bold\">Angular y Java</span>. <br> Mi formación técnica, sumada a experiencia en <span class=\"font-bold\">infraestructura, redes y soporte</span>, y <span class=\"font-bold\">nivel avanzado de inglés (C2)</span>, me convierte en un profesional versátil para proyectos internacionales. <br>  Mi objetivo es crecer como <span class=\"font-bold\">Backend Developer</span>, liderar proyectos de impacto real y seguir resolviendo problemas que importan."
+  },
   "experience": {
     "title": "Experiencia Laboral",
     "items": [
@@ -44,7 +46,7 @@
             "type": "technologies",
             "title": "Tecnologías utilizadas:",
             "icon": "⚙️",
-            "content": ["Java", "Angular", "Genexus", "Spring Boot", "MySQL", "Redes LAN/WAN", "Node.js"]
+            "content": ["Java", "Angular", "Genexus", "Spring Boot", "MySQL", "Redes", "Node.js"]
           }
         ]
       },
@@ -75,46 +77,106 @@
         ]
       }
     ]
-  },
-  "education": {
+  },  "education": {
     "title": "Educación",
-    "items": [      {
+    "achievements": "Logros destacados",
+    "relatedSkills": "Competencias adquiridas",
+    "viewCertificate": "Ver Certificado",
+    "seeMore": "Ver más",
+    "seeLess": "Ver menos",
+    "types": {
+      "all": "Todos",
+      "formal": "Educación Formal",
+      "course": "Cursos",
+      "certification": "Certificación"
+    },
+    "items": [      
+      {
         "degree": "Analista Programador Universitario",
         "institution": "Universidad Nacional de Jujuy (UNJu)",
         "period": "2022 - 2025",
         "location": "Jujuy, Argentina",
-        "description": "Carrera finalizada en tiempo estimado (promedio 8.33/10). Formación en análisis de sistemas, estructuras de datos, algoritmos, POO, bases de datos y resolución de problemas complejos."
+        "description": "Carrera finalizada en tiempo estimado (promedio 8.35/10). Formación en análisis de sistemas, estructuras de datos, algoritmos, POO, bases de datos y resolución de problemas complejos.",
+        "type": "formal",
+        "gpa": "Promedio: 8.35/10",
+        "url": "https://unju.edu.ar",
+        "achievements": [
+          "Mejor promedio de la promoción 2025",
+          "Reconocimiento por proyecto integrador destacado",
+          "Participación en olimpiadas de programación"
+        ],
+        "skills": [
+          "Java", "Algoritmos", "Estructuras de datos", "Análisis de sistemas", "SQL", "POO", "UML"
+        ]
       },
       {
         "degree": "Tecnicatura en Hardware de PC y Redes",
         "institution": "Universidad Nacional de Catamarca",
         "period": "Carga horaria: 190 horas cátedra",
         "location": "Argentina",
-        "description": "Formación en reparación, mantenimiento y configuración de hardware, redes LAN/WAN y soporte técnico."
+        "description": "Formación en reparación, mantenimiento y configuración de hardware, redes LAN/WAN y soporte técnico.",
+        "type": "certification",
+        "achievements": [
+          "Proyecto final con mención especial",
+          "Implementación de red LAN completa como trabajo práctico"
+        ],
+        "skills": [
+          "Redes LAN/WAN", "Mantenimiento de hardware", "Configuración de routers", "Soporte técnico", "Diagnóstico de fallas"
+        ]
       }
     ]
   },
-  "certifications": {
-    "title": "Certificaciones e Idiomas",
-    "hasCertificates": false,
-    "certificates": {
-      "title": "Certificaciones"
-    },
-    "languages": {
-      "title": "Idiomas",
-      "items": [
-        {
-          "language": "Español",
-          "level": "Nativo",
-          "comment": "Lengua materna"
+  "languages": {
+    "title": "Idiomas",
+    "certifications": "Certificaciones",
+    "reading": "Lectura",
+    "writing": "Escritura",
+    "speaking": "Conversación",    "listening": "Comprensión",
+    "viewCertificate": "Ver certificado",
+    "viewDetails": "Ver más",
+    "notSpecified": "No especificado",
+    "certificateDescription": "Esta certificación valida mi nivel de competencia en este idioma según estándares internacionales.",
+    "items": [
+      {
+        "language": "Español",
+        "level": "Nativo",
+        "levelScore": 10,
+        "comment": "Lengua materna",
+        "skills": {
+          "reading": 5,
+          "writing": 5,
+          "speaking": 5,
+          "listening": 5
         },
-        {
-          "language": "Inglés",
-          "level": "Avanzado (C1)",
-          "comment": "Fluido en lectura y escritura, con necesidad de práctica en conversación"
-        }
-      ]
-    }
+        "certifications": []
+      },
+      {
+        "language": "Inglés",
+        "level": "Proficiente (C2)",
+        "levelScore": 8,
+        "comment": "Fluido en lectura y escritura, con necesidad de práctica en conversación",
+        "skills": {
+          "reading": 5,
+          "writing": 4,
+          "speaking": 4,
+          "listening": 5
+        },        "certifications": [
+          {
+            "name": "C2 Proficient",
+            "issuer": "EF SET Certificate",
+            "date": "2024-06",
+            "url": "https://cert.efset.org/1hRRsJ",
+            "description": "EF SET English Certificate 77/100 (C2 Proficient)"
+          },
+          {
+            "name": "B2 Upper Intermediate",
+            "issuer": "Trinity College London",
+            "date": "2013-12",
+            "description": "Trinity College London ISE II (B2 Upper Intermediate)"
+          }
+        ]
+      }
+    ]
   },
   "projects": {
     "title": "Mis Proyectos",
@@ -224,7 +286,7 @@
         { "name": "Linux Server Admin", "icon": "logos:linux-tux" },
         { "name": "Bash Scripting", "icon": "carbon:terminal" },
         { "name": "Proxmox", "icon": "simple-icons:proxmox" },
-        { "name": "Redes LAN/WAN", "icon": "carbon:network-4" }
+        { "name": "Redes", "icon": "Redes" }
       ]
     },
     "soft": {
@@ -234,7 +296,6 @@
         { "name": "Resolución de problemas complejos", "icon": "carbon:problem" },
         { "name": "Comunicación efectiva", "icon": "carbon:communication" },
         { "name": "Mentalidad proactiva y orientada al detalle", "icon": "carbon:zoom-in" },
-        { "name": "Trabajo bajo presión", "icon": "carbon:stress" },
         { "name": "Espíritu colaborativo", "icon": "carbon:group" },
         { "name": "Aprendizaje continuo", "icon": "carbon:education" }
       ]
@@ -247,14 +308,13 @@
       "email": "enzo.meneghini@hotmail.com",
       "phone": "+54 388 460-0584"
     },
-    "quickLinks": {
+  "quickLinks": {
       "title": "Navegación rápida",
       "about": "Sobre Mí",
-      "experience": "Experiencia",
-      "education": "Educación",
+      "experience": "Experiencia",      "education": "Educación",
       "projects": "Proyectos",
       "skills": "Tecnologías",
-      "certifications": "Certificaciones"
+      "languages": "Idiomas"
     },
     "connect": {
       "title": "Conectémonos"

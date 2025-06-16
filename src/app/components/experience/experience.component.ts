@@ -2,6 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { TranslateModule, TranslateService } from "@ngx-translate/core"
 import { IconService, CustomIcon } from "../../services/icon.service"
+import { AnalyticsService } from "../../services/analytics.service"
 
 // Interfaz para una sección genérica
 interface ExperienceSection {
@@ -33,7 +34,8 @@ export class ExperienceComponent {
   
   constructor(
     private translateService: TranslateService,
-    private iconService: IconService
+    private iconService: IconService,
+    private analyticsService: AnalyticsService
   ) {
     this.loadExperiences();
     
@@ -66,5 +68,10 @@ export class ExperienceComponent {
   // Método para obtener el icono correcto para cada tecnología
   getTechIcon(tech: string): string {
     return this.iconService.getTechIcon(tech);
+  }
+
+  // Analytics method for technology hover tracking
+  onTechnologyHover(technologyName: string): void {
+    this.analyticsService.trackEvent('technology_hover', 'experience', technologyName);
   }
 }

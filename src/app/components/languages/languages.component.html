@@ -1,0 +1,106 @@
+<section id="languages" class="mx-auto my-16 max-w-6xl w-full p-4 sm:p-8 relative">
+  <div class="opacity-0 transform translate-y-5" 
+       [ngClass]="{'opacity-100 translate-y-0': true}"
+       style="transition: opacity 0.5s ease, transform 0.5s ease">    <h2 class="text-3xl font-bold mb-12 relative inline-block">
+      {{ getSectionTranslation('title') }}
+      <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></span>
+    </h2>
+  </div>
+  
+  <!-- Modal para detalles de certificación -->
+  <div *ngIf="selectedCertificate" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+       (click)="closeCertificateDetails()">
+    <div class="certificate-modal max-w-md w-full p-6 rounded-xl" 
+         (click)="$event.stopPropagation()">      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h3 class="text-xl font-bold">{{selectedCertificate.name}}</h3>
+          <p class="text-sm opacity-80">{{selectedCertificate.issuer}}</p>
+        </div>
+        <button class="certificate-close-btn" (click)="closeCertificateDetails()" aria-label="Close">×</button>
+      </div>
+      
+      <div class="certificate-content">
+        <div class="flex items-center mb-3 certificate-info-item">
+          <span class="certificate-info-icon">📅</span>          <span>{{ selectedCertificate.date || getSectionTranslation('notSpecified') }}</span>
+        </div>
+        
+        <div class="certificate-description mb-4">
+          <p>{{ getSectionTranslation('certificateDescription') }}</p>
+        </div>
+        
+        <div *ngIf="selectedCertificate.url" class="certificate-actions">
+          <a [href]="selectedCertificate.url" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="certificate-view-btn">
+            {{ getSectionTranslation('viewCertificate') }}
+            <span class="ml-1">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Idiomas -->
+  <div class="neumorphic p-6 rounded-xl opacity-0 transform translate-y-5"
+       [ngClass]="{'opacity-100 translate-y-0': true}"
+       style="transition: opacity 0.5s ease, transform 0.5s ease; transition-delay: 0.1s">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div *ngFor="let lang of languages; let i = index" 
+           class="language-card p-6 rounded-xl transition-all duration-300 relative overflow-hidden group"
+           [style]="{'transition-delay': (i * 0.1) + 's'}"
+           (mouseenter)="onLanguageHover(lang.language)">
+           
+        <!-- Decorative corner -->
+        <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-purple-500/5 to-blue-500/10 rounded-bl-[100px] transform translate-x-4 -translate-y-4 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-300"></div>        <!-- Encabezado del idioma -->
+        <div class="flex justify-between items-center mb-6">
+          <div class="font-bold text-xl bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent flex items-center">
+            <span class="language-icon mr-2.5">{{ getLanguageFlag(lang.language) }}</span>
+            {{ lang.language }}
+          </div>
+          <div class="language-level-badge flex items-center">
+            <span class="level-icon mr-1.5">⭐</span>
+            {{ lang.level }}
+          </div>
+        </div>
+        
+        <!-- Barra de progreso global -->
+        <div class="w-full bg-background-secondary rounded-full h-2 mb-6 overflow-hidden">
+          <div class="h-full rounded-full bg-gradient-to-r from-purple-500 to-blue-500"
+               [style.width]="getLevelPercentage(lang.levelScore) + '%'"
+               [style.transition]="'width 1s ease-in-out ' + (i * 0.2) + 's'"></div>
+        </div>        <!-- Habilidades específicas -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div *ngFor="let skill of lang.skills | keyvalue" class="language-skill">
+            <div class="flex justify-between text-sm mb-1">              <span class="flex items-center">
+                <span class="skill-icon mr-1.5" [innerHTML]="getSkillIcon(skill.key)"></span>
+                <span>{{ getSkillTranslation(skill.key) }}</span>
+              </span>
+              <span class="font-medium">{{ skill.value }}/5</span>
+            </div>
+            <div class="w-full bg-background-secondary rounded-full h-1.5 overflow-hidden">
+              <div class="h-full rounded-full bg-gradient-to-r from-purple-400 to-blue-400"
+                   [style.width]="(skill.value / 5) * 100 + '%'"
+                   [style.transition]="'width 1s ease-in-out ' + (i * 0.2) + 's'"></div>
+            </div>
+          </div>
+        </div>        <!-- Certificaciones -->
+        <div *ngIf="lang.certifications && lang.certifications.length > 0" class="mt-6">          <h4 class="text-sm font-semibold mb-3 flex items-center">
+            <span class="certificate-section-icon mr-2">🎓</span>
+            <span [innerHTML]="getSectionTranslation('certifications')"></span>
+          </h4>
+          <div class="flex flex-wrap gap-3">              <button *ngFor="let cert of lang.certifications" 
+                 class="certification-badge text-xs py-2 px-3 rounded-lg flex items-center gap-2"
+                 [title]="cert.name + ' - ' + cert.issuer"
+                 (click)="showCertificateDetails(cert)">
+              <span class="cert-icon">📜</span>
+              <span>{{ cert.name }}</span>
+              <span class="view-details-btn">{{ getSectionTranslation('viewDetails') }}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,17 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AnalyticsService } from '../../services/analytics.service';
 
 interface Certificate {
   name: string;
   issuer: string;
   date: string;
-}
-
-interface Language {
-  language: string;
-  level: string;
-  comment?: string;
 }
 
 @Component({
@@ -23,35 +18,31 @@ interface Language {
 })
 export class CertificationsComponent implements OnInit {
   certificates: Certificate[] = [];
-  languages: Language[] = [];
-  hasCertificates: boolean = false;
   
-  constructor(private translateService: TranslateService) {}
+  constructor(
+    private translateService: TranslateService,
+    private analyticsService: AnalyticsService
+  ) {}
   
   ngOnInit(): void {
     this.loadCertificationsData();
+    
+    // Rastrear vista de la sección de certificaciones
+    this.analyticsService.trackSectionView('certifications');
     
     this.translateService.onLangChange.subscribe(() => {
       this.loadCertificationsData();
     });
   }
-    private loadCertificationsData(): void {
-    this.translateService.get('certifications.hasCertificates').subscribe((hasData: boolean) => {
-      this.hasCertificates = hasData;
+
+  private loadCertificationsData(): void {
+    this.translateService.get('certifications.items').subscribe((data: Certificate[]) => {
+      this.certificates = data || [];
     });
-    
-    this.translateService.get('certifications.certificates').subscribe((data: any) => {
-      if (data && Array.isArray(data)) {
-        this.certificates = data;
-      } else if (data && data.items && Array.isArray(data.items)) {
-        this.certificates = data.items;
-      } else {
-        this.certificates = [];
-      }
-    });
-    
-    this.translateService.get('certifications.languages.items').subscribe((data: Language[]) => {
-      this.languages = data || [];
-    });
+  }
+
+  // Métodos para rastrear eventos
+  onCertificateClick(certificateName: string): void {
+    this.analyticsService.trackEvent('certificate_click', 'certifications', certificateName);
   }
 }

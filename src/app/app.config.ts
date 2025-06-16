@@ -14,7 +14,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideClientHydration(),
+    // provideClientHydration(), // Deshabilitado - solo necesario para SSR
     provideHttpClient(withFetch()),
     importProvidersFrom(
       HttpClientModule,
@@ -25,7 +25,7 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient],
         },
         defaultLanguage: "es",
-      }),
+      })
     ),
   ],
 }
