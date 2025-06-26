@@ -6,6 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from './services/theme.service';
 import { LanguageService } from './services/language.service';
 import { EnhancedSeoService } from './services/enhanced-seo.service';
+import { AnalyticsInitService } from './services/analytics-init.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
   constructor(
     private themeService: ThemeService,
     private languageService: LanguageService,
-    private enhancedSeoService: EnhancedSeoService
+    private enhancedSeoService: EnhancedSeoService,
+    private analyticsInitService: AnalyticsInitService
   ) {}
 
   ngOnInit() {
@@ -30,5 +32,8 @@ export class AppComponent implements OnInit {
     
     // Inicializar SEO
     this.enhancedSeoService.initDefaultSeo();
+    
+    // Inicializar Google Analytics
+    this.analyticsInitService.initializeAnalytics();
   }
 }
