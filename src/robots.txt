@@ -14,7 +14,7 @@ Allow: /#certifications
 Disallow: /assets/i18n/
 
 # Localización del sitemap
-Sitemap: https://enzo-meneghini.netlify.app/sitemap.xml
+Sitemap: https://www.enzo-meneghini.com/sitemap.xml
 
 # Tiempo de demora entre solicitudes para evitar sobrecargar el servidor
 Crawl-delay: 1

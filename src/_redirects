@@ -9,8 +9,7 @@
 /certifications    /#certifications    301
 
 # Redirección para asegurar consistencia de dominio
-# Descomenta y modifica cuando tengas un dominio personalizado
-# https://enzo-meneghini.netlify.app/*    https://enzomeneghini.com/:splat    301!
+https://enzo-meneghini.netlify.app/*    https://www.enzo-meneghini.com/:splat    301!
 
 # Headers de seguridad y rendimiento
 /* 

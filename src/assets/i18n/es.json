@@ -198,6 +198,14 @@
         "image": "agua-jujuy.webp"
       },
       {
+        "name": "IFS Consultora",
+        "description": "Sitio web oficial para IFS Consultora, una empresa especializada en auditorías de calidad alimentaria y consultoría para servicios gastronómicos. Incluye diseño responsive, animaciones optimizadas, formulario de contacto con Netlify Forms, feed de Instagram y optimización SEO.",
+        "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+        "githubUrl": null,
+        "demoUrl": "https://www.ifsconsultora.com",
+        "image": "IFS.webp"
+      },
+      {
         "name": "Sistema de Asistencia con Seguridad Robusta",
         "description": "Desarrollo de un sistema de asistencia estudiantil con enfoque en seguridad, implementando autenticación y autorización con JWT, almacenamiento seguro de contraseñas, validación de roles, encriptación de datos sensibles y medidas de protección contra ataques comunes.",
         "technologies": ["Java", "MySQL", "Spring Boot", "JWT", "bcrypt"],
@@ -232,7 +240,7 @@
         "description": "Portfolio personal desarrollado con Angular y TypeScript, implementando arquitectura escalable con servicios centralizados, lazy loading, internacionalización (i18n) para español e inglés, diseño responsive con Tailwind CSS, generación dinámica de CV en PDF, y optimizaciones de SEO avanzadas. Incluye componentes reutilizables, gestión de estado eficiente y mejores prácticas de desarrollo frontend.",
         "technologies": ["Angular", "TypeScript", "Tailwind CSS"],
         "githubUrl": "https://github.com/21Enzo17/Portfolio",
-        "demoUrl": "https://enzo-meneghini.netlify.app",
+        "demoUrl": "https://www.enzo-meneghini.com",
         "image": "tech-fallback-4.svg"
       }
     ],

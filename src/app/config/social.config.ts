@@ -6,7 +6,7 @@ export const SOCIAL_CONFIG = {
   // URLs principales
   linkedin: 'https://www.linkedin.com/in/enzo-meneghini/',
   github: 'https://github.com/21Enzo17',
-  portfolio: 'https://enzo-meneghini.netlify.app/',
+  portfolio: 'https://www.enzo-meneghini.com/',
   
   // Información de contacto
   email: 'enzo.meneghini@hotmail.com', // TODO: Actualizar con email real
