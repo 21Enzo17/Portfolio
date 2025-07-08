@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillas de Email Email-Friendly - Enzo Meneghini</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #e0e5ec;
+        }
+        .template {
+            background: white;
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border-left: 4px solid #805ad5;
+            transition: all 0.3s ease;
+        }
+        .template:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .template h2 {
+            background: linear-gradient(to right, #805ad5, #4299e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            margin-top: 0;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+        .email-preview {
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+        .email-preview:hover {
+            border-color: #805ad5;
+        }
+        .email-html {
+            margin-bottom: 30px;
+        }
+        .email-header {
+            background-color: #f8fafc;
+            padding: 10px 15px;
+            border-bottom: 1px solid #cbd5e0;
+        }
+        .email-body {
+            padding: 20px;
+            background-color: #fff;
+        }
+        .signature {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        .copy-btn {
+            background: linear-gradient(to right, #805ad5, #4299e1);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 0;
+            font-weight: 600;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+        .copy-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+        .instructions {
+            background: #fef9e7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .social-link {
+            color: #805ad5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .social-link:hover {
+            color: #4299e1;
+            text-decoration: underline;
+        }
+        /* Selector de idioma */
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: #e0e5ec;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #4a5568;
+            box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover {
+            color: #805ad5;
+        }
+        .lang-btn.active {
+            background: linear-gradient(to right, #805ad5, #4299e1);
+            color: white;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+        }
+        .en-template {
+            display: none;
+        }
+        .template-tag {
+            display: inline-block;
+            background: #805ad5;
+            color: white;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            margin-left: 10px;
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+        .accessibility-note {
+            background: #e6f7ff;
+            border-left: 4px solid #0284c7;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .personalization-tip {
+            border: 1px dashed #805ad5;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 15px 0;
+            background-color: #f8f4ff;
+            font-style: italic;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function copyHTML(id) {
+            const htmlContent = document.getElementById(id).innerHTML;
+            navigator.clipboard.writeText(htmlContent).then(() => {
+                const btn = document.querySelector(`button[onclick="copyHTML('${id}')"]`);
+                const originalText = btn.textContent;
+                btn.textContent = "¡Copiado!";
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+                alert("Error al copiar. Por favor, inténtalo manualmente.");
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cambio de idioma
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Actualizar botones
+                    langButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Mostrar/ocultar plantillas según idioma
+                    if (lang === 'es') {
+                        document.querySelectorAll('.es-template').forEach(el => el.style.display = 'block');
+                        document.querySelectorAll('.en-template').forEach(el => el.style.display = 'none');
+                    } else {
+                        document.querySelectorAll('.es-template').forEach(el => el.style.display = 'none');
+                        document.querySelectorAll('.en-template').forEach(el => el.style.display = 'block');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center; background: linear-gradient(to right, #805ad5, #4299e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">📧 Plantillas Email-Friendly</h1>
+    <h2 style="text-align: center; color: #2d3748;">Enzo Meneghini - Full Stack Developer</h2>
+
+    <div class="instructions">
+        <h3>Instrucciones</h3>
+        <p>Estas plantillas están diseñadas para funcionar en la mayoría de clientes de correo. Para usarlas:</p>
+        <ol>
+            <li>Haz clic en "Copiar HTML" para la plantilla que necesites</li>
+            <li>Pega el código en un editor HTML o directamente en servicios como SendGrid, MailChimp, etc.</li>
+            <li>Personaliza el contenido según tus necesidades</li>
+            <li>Para clientes como Gmail u Outlook que no permiten HTML directo, utiliza las versiones en el archivo convert-to-email-friendly.ps1</li>
+        </ol>
+    </div>
+    
+    <!-- Selector de idioma -->
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="es">Español</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
+    <!-- PLANTILLA 1: ENVÍO DE CV -->
+    <div class="template es-template">
+        <h2>1. Plantilla de Envío de CV</h2>
+        <p>Ideal para postulaciones espontáneas o respuestas a ofertas laborales.</p>
+        
+        <div class="email-preview">
+            <div class="email-header">
+                <strong>Asunto:</strong> Desarrollador Full Stack - Angular/Java - Enzo Meneghini
+            </div>
+            <div class="email-body" id="cv-template">
+                <!-- INICIO DEL CÓDIGO HTML PARA CORREO -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;padding:0;margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+                    <tr>
+                        <td align="center" style="padding:20px 10px;">
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;">
+                                <!-- ENCABEZADO CON GRADIENTE -->
+                                <tr>
+                                    <td style="background:linear-gradient(to right, #805ad5, #4299e1);padding:20px;text-align:center;">
+                                        <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:bold;">Enzo Meneghini</h1>
+                                        <p style="color:#ffffff;margin:5px 0 0;font-size:16px;">Full Stack Developer</p>
+                                    </td>
+                                </tr>
+                                <!-- CONTENIDO PRINCIPAL -->
+                                <tr>
+                                    <td style="padding:25px 30px;">
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Estimado/a [Nombre del Reclutador/Empresa],</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Espero que se encuentre bien. Mi nombre es <strong>Enzo Meneghini</strong> y soy Desarrollador Full Stack con 2 años de experiencia especializado en <strong>Angular y Java</strong>. Me pongo en contacto porque me interesa formar parte de su equipo de desarrollo.</p>
+                                        
+                                        <p style="margin:20px 0 15px;font-size:16px;color:#2d3748;font-weight:bold;">¿Por qué podría ser valioso para su empresa?</p>
+                                        
+                                        <ul style="margin:0 0 20px;padding-left:20px;color:#2d3748;">
+                                            <li style="margin-bottom:10px;">📊 <strong>Experiencia comprobada</strong>: Actualmente trabajo en Agua Potable de Jujuy migrando sistemas legacy (Genexus) a tecnologías modernas (Java/Angular), impactando a más de 100,000 usuarios</li>
+                                            <li style="margin-bottom:10px;">🔧 <strong>Stack técnico sólido</strong>: Java, Spring Boot, Angular, TypeScript, MySQL, Node.js, Docker</li>
+                                            <li style="margin-bottom:10px;">🌐 <strong>Inglés avanzado (C2)</strong>: Preparado para proyectos internacionales</li>
+                                            <li style="margin-bottom:10px;">🎓 <strong>Formación sólida</strong>: Analista Programador Universitario (Promedio 8.35/10)</li>
+                                        </ul>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">He adjuntado mi CV para su revisión. Estaría encantado de conversar sobre cómo puedo contribuir a sus proyectos y objetivos.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Quedo a disposición para una entrevista en el momento que considere conveniente.</p>
+                                        
+                                        <!-- FIRMA -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;border-top:1px solid #e5e7eb;padding-top:20px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://enzo-meneghini.com/assets/FotoPerfil.webp" alt="Enzo Meneghini" style="border-radius:50%;width:80px;height:80px;">
+                                                </td>
+                                                <td style="vertical-align:top;padding-left:15px;">
+                                                    <p style="margin:0 0 5px;font-size:18px;font-weight:bold;color:#2d3748;">Enzo Meneghini</p>
+                                                    <p style="margin:0 0 10px;font-size:14px;color:#4a5568;">Full Stack Developer</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📧 enzo.meneghini@hotmail.com</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📱 +54 9 388 460-0584</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">💼 <a href="https://www.linkedin.com/in/enzo-meneghini/" style="color:#805ad5;text-decoration:none;" target="_blank">linkedin.com/in/enzo-meneghini/</a></p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">🌐 <a href="https://www.enzo-meneghini.com" style="color:#4299e1;text-decoration:none;" target="_blank">www.enzo-meneghini.com</a></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIN DEL CÓDIGO HTML PARA CORREO -->
+            </div>
+        </div>
+        <div class="personalization-tip">
+            <strong>💡 Tip de personalización:</strong> Investiga la empresa antes de aplicar y menciona por qué te interesa específicamente trabajar con ellos o en ese proyecto.
+        </div>
+        <button class="copy-btn" onclick="copyHTML('cv-template')">Copiar HTML</button>
+    </div>
+
+    <!-- PLANTILLA 2: SEGUIMIENTO DE POSTULACIÓN -->
+    <div class="template es-template">
+        <h2>2. Plantilla de Seguimiento</h2>
+        <p>Para hacer seguimiento a postulaciones previas.</p>
+        
+        <div class="email-preview">
+            <div class="email-header">
+                <strong>Asunto:</strong> Seguimiento postulación: [Puesto] - Enzo Meneghini
+            </div>
+            <div class="email-body" id="follow-up-template">
+                <!-- INICIO DEL CÓDIGO HTML PARA CORREO -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;padding:0;margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+                    <tr>
+                        <td align="center" style="padding:20px 10px;">
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;">
+                                <!-- ENCABEZADO CON GRADIENTE -->
+                                <tr>
+                                    <td style="background:linear-gradient(to right, #805ad5, #4299e1);padding:15px;text-align:center;">
+                                        <h2 style="color:#ffffff;margin:0;font-size:20px;font-weight:bold;">Seguimiento de Postulación</h2>
+                                    </td>
+                                </tr>
+                                <!-- CONTENIDO PRINCIPAL -->
+                                <tr>
+                                    <td style="padding:25px 30px;">
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Estimado/a [Nombre del Reclutador],</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Espero que este correo le encuentre bien. Me comunico con usted para hacer seguimiento a mi postulación para el puesto de <strong>[Nombre del puesto]</strong> que envié el pasado [fecha de envío].</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Sigo muy interesado/a en la oportunidad de formar parte de [Nombre de la empresa] y aportar mis habilidades en desarrollo Full Stack con Angular y Java al equipo. Si necesita información adicional o documentos complementarios, estaré encantado de proporcionarlos.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Entiendo que los procesos de selección pueden llevar tiempo, pero quería asegurarme de que mi solicitud haya sido recibida correctamente y si hay alguna actualización sobre el estado del proceso.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Agradezco su tiempo y consideración.</p>
+                                        
+                                        <!-- FIRMA -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;border-top:1px solid #e5e7eb;padding-top:20px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://enzo-meneghini.com/assets/FotoPerfil.webp" alt="Enzo Meneghini" style="border-radius:50%;width:80px;height:80px;">
+                                                </td>
+                                                <td style="vertical-align:top;padding-left:15px;">
+                                                    <p style="margin:0 0 5px;font-size:18px;font-weight:bold;color:#2d3748;">Enzo Meneghini</p>
+                                                    <p style="margin:0 0 10px;font-size:14px;color:#4a5568;">Full Stack Developer</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📧 enzo.meneghini@hotmail.com</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📱 +54 9 388 460-0584</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">💼 <a href="https://www.linkedin.com/in/enzo-meneghini/" style="color:#805ad5;text-decoration:none;" target="_blank">linkedin.com/in/enzo-meneghini/</a></p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">🌐 <a href="https://www.enzo-meneghini.com" style="color:#4299e1;text-decoration:none;" target="_blank">www.enzo-meneghini.com</a></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIN DEL CÓDIGO HTML PARA CORREO -->
+            </div>
+        </div>
+        <div class="personalization-tip">
+            <strong>💡 Tip de seguimiento:</strong> Envía este correo 7-10 días después de tu postulación inicial. Mantén un tono profesional y comprensivo, entendiendo que los procesos de selección pueden tomar tiempo.
+        </div>
+        <button class="copy-btn" onclick="copyHTML('follow-up-template')">Copiar HTML</button>
+    </div>
+
+    <!-- PLANTILLA 3: AGRADECIMIENTO POST-ENTREVISTA -->
+    <div class="template es-template">
+        <h2>3. Plantilla de Agradecimiento Post-Entrevista</h2>
+        <p>Para enviar después de completar una entrevista.</p>
+        
+        <div class="email-preview">
+            <div class="email-header">
+                <strong>Asunto:</strong> Agradecimiento por la entrevista - [Puesto] - Enzo Meneghini
+            </div>
+            <div class="email-body" id="thank-you-template">
+                <!-- INICIO DEL CÓDIGO HTML PARA CORREO -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;padding:0;margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+                    <tr>
+                        <td align="center" style="padding:20px 10px;">
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;">
+                                <!-- ENCABEZADO CON GRADIENTE -->
+                                <tr>
+                                    <td style="background:linear-gradient(to right, #805ad5, #4299e1);padding:15px;text-align:center;">
+                                        <h2 style="color:#ffffff;margin:0;font-size:20px;font-weight:bold;">Agradecimiento por la Entrevista</h2>
+                                    </td>
+                                </tr>
+                                <!-- CONTENIDO PRINCIPAL -->
+                                <tr>
+                                    <td style="padding:25px 30px;">
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Estimado/a [Nombre del Entrevistador],</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Quiero expresar mi sincero agradecimiento por la oportunidad de entrevistarme para el puesto de [Nombre del puesto] el día [fecha de la entrevista]. Fue un placer conversar con usted y conocer más sobre [Nombre de la empresa] y el equipo.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Me entusiasmó especialmente conocer [mencionar algo específico que te haya llamado la atención durante la entrevista, como los proyectos, la cultura, etc.]. Después de nuestra conversación, estoy aún más convencido de que mi experiencia en desarrollo con Angular y Java, junto con mi enfoque en [mencionar alguna habilidad relevante], podrían aportar valor al equipo.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Si necesita información adicional o referencias, no dude en contactarme. Quedo atento a los próximos pasos en el proceso de selección.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Gracias nuevamente por su tiempo y consideración.</p>
+                                        
+                                        <!-- FIRMA -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;border-top:1px solid #e5e7eb;padding-top:20px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://enzo-meneghini.com/assets/FotoPerfil.webp" alt="Enzo Meneghini" style="border-radius:50%;width:80px;height:80px;">
+                                                </td>
+                                                <td style="vertical-align:top;padding-left:15px;">
+                                                    <p style="margin:0 0 5px;font-size:18px;font-weight:bold;color:#2d3748;">Enzo Meneghini</p>
+                                                    <p style="margin:0 0 10px;font-size:14px;color:#4a5568;">Full Stack Developer</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📧 enzo.meneghini@hotmail.com</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📱 +54 9 388 460-0584</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">💼 <a href="https://www.linkedin.com/in/enzo-meneghini/" style="color:#805ad5;text-decoration:none;" target="_blank">linkedin.com/in/enzo-meneghini/</a></p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">🌐 <a href="https://www.enzo-meneghini.com" style="color:#4299e1;text-decoration:none;" target="_blank">www.enzo-meneghini.com</a></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIN DEL CÓDIGO HTML PARA CORREO -->
+            </div>
+        </div>
+        <div class="personalization-tip">
+            <strong>💡 Tip de agradecimiento:</strong> Envía este correo dentro de las 24 horas después de la entrevista. Menciona algo específico que se discutió durante la entrevista para demostrar interés y atención al detalle.
+        </div>
+        <button class="copy-btn" onclick="copyHTML('thank-you-template')">Copiar HTML</button>
+    </div>
+
+    <!-- PLANTILLA 4: RESPUESTA A OFERTA LABORAL -->
+    <div class="template es-template">
+        <h2>4. Plantilla de Respuesta a Oferta Laboral</h2>
+        <p>Para responder a ofertas laborales específicas.</p>
+        
+        <div class="email-preview">
+            <div class="email-header">
+                <strong>Asunto:</strong> Postulación: [Nombre del Puesto] - Ref: [Referencia/Código] - Enzo Meneghini
+            </div>
+            <div class="email-body" id="job-application-template">
+                <!-- INICIO DEL CÓDIGO HTML PARA CORREO -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;padding:0;margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+                    <tr>
+                        <td align="center" style="padding:20px 10px;">
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;">
+                                <!-- ENCABEZADO CON GRADIENTE -->
+                                <tr>
+                                    <td style="background:linear-gradient(to right, #805ad5, #4299e1);padding:20px;text-align:center;">
+                                        <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:bold;">Enzo Meneghini</h1>
+                                        <p style="color:#ffffff;margin:5px 0 0;font-size:16px;">Full Stack Developer</p>
+                                    </td>
+                                </tr>
+                                <!-- CONTENIDO PRINCIPAL -->
+                                <tr>
+                                    <td style="padding:25px 30px;">
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Estimado/a [Nombre del Reclutador/Empresa],</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Me dirijo a ustedes en relación a la oferta de empleo para <strong>[Nombre del Puesto]</strong> publicada en [fuente donde encontraste la oferta]. Como Desarrollador Full Stack con experiencia en el stack tecnológico que requieren, me entusiasma la posibilidad de formar parte de su equipo.</p>
+                                        
+                                        <p style="margin:20px 0 15px;font-size:16px;color:#2d3748;font-weight:bold;">Mi experiencia se alinea perfectamente con sus requerimientos:</p>
+                                        
+                                        <ul style="margin:0 0 20px;padding-left:20px;color:#2d3748;">
+                                            <li style="margin-bottom:10px;">✅ <strong>Desarrollo Full Stack</strong>: 2 años trabajando con Angular en frontend y Java/Spring Boot en backend</li>
+                                            <li style="margin-bottom:10px;">✅ <strong>Sistemas empresariales</strong>: Experiencia migrando aplicaciones críticas con impacto en miles de usuarios</li>
+                                            <li style="margin-bottom:10px;">✅ <strong>Ciclo completo</strong>: Desde toma de requerimientos hasta despliegue en producción</li>
+                                            <li style="margin-bottom:10px;">✅ <strong>Inglés fluido</strong>: Certificación C2, preparado para equipos internacionales</li>
+                                        </ul>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Adjunto mi CV donde podrán encontrar más detalles sobre mis proyectos y logros profesionales. Me interesa especialmente [mencionar algo específico de la empresa o el puesto que te atraiga].</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Agradezco la consideración de mi perfil y quedo a su disposición para una entrevista donde pueda demostrar cómo mis habilidades pueden contribuir a los objetivos de [nombre de la empresa].</p>
+                                        
+                                        <!-- FIRMA -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;border-top:1px solid #e5e7eb;padding-top:20px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://enzo-meneghini.com/assets/FotoPerfil.webp" alt="Enzo Meneghini" style="border-radius:50%;width:80px;height:80px;">
+                                                </td>
+                                                <td style="vertical-align:top;padding-left:15px;">
+                                                    <p style="margin:0 0 5px;font-size:18px;font-weight:bold;color:#2d3748;">Enzo Meneghini</p>
+                                                    <p style="margin:0 0 10px;font-size:14px;color:#4a5568;">Full Stack Developer</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📧 enzo.meneghini@hotmail.com</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📱 +54 9 388 460-0584</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">💼 <a href="https://www.linkedin.com/in/enzo-meneghini/" style="color:#805ad5;text-decoration:none;" target="_blank">linkedin.com/in/enzo-meneghini/</a></p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">🌐 <a href="https://www.enzo-meneghini.com" style="color:#4299e1;text-decoration:none;" target="_blank">www.enzo-meneghini.com</a></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIN DEL CÓDIGO HTML PARA CORREO -->
+            </div>
+        </div>
+        <button class="copy-btn" onclick="copyHTML('job-application-template')">Copiar HTML</button>
+    </div>
+
+    <!-- PLANTILLA 5: NETWORKING PROFESIONAL -->
+    <div class="template es-template">
+        <h2>5. Plantilla de Networking Profesional <span class="template-tag">Nuevo</span></h2>
+        <p>Para establecer conexiones con profesionales de la industria o solicitar mentorías.</p>
+        
+        <div class="email-preview">
+            <div class="email-header">
+                <strong>Asunto:</strong> Desarrollador Full Stack interesado en conectar - Enzo Meneghini
+            </div>
+            <div class="email-body" id="networking-template">
+                <!-- INICIO DEL CÓDIGO HTML PARA CORREO -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;padding:0;margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+                    <tr>
+                        <td align="center" style="padding:20px 10px;">
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;">
+                                <!-- ENCABEZADO CON GRADIENTE -->
+                                <tr>
+                                    <td style="background:linear-gradient(to right, #805ad5, #4299e1);padding:15px;text-align:center;">
+                                        <h2 style="color:#ffffff;margin:0;font-size:20px;font-weight:bold;">Solicitud de Conexión Profesional</h2>
+                                    </td>
+                                </tr>
+                                <!-- CONTENIDO PRINCIPAL -->
+                                <tr>
+                                    <td style="padding:25px 30px;">
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Estimado/a [Nombre del Profesional],</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Mi nombre es Enzo Meneghini, desarrollador Full Stack especializado en Angular y Java. He seguido con interés su trayectoria profesional en [mencionar empresa/proyecto/artículo] y realmente admiro [mencionar algo específico que te haya impresionado].</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Actualmente me encuentro [describe brevemente tu situación actual: "trabajando en...", "buscando oportunidades en...", "desarrollando un proyecto de..."]. Me encantaría tener la oportunidad de conversar con usted y recibir algún consejo sobre [tema específico: desarrollo de carrera, tecnologías específicas, sector de la industria, etc.].</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">¿Sería posible coordinar una breve llamada de 15-20 minutos en las próximas semanas? Entiendo lo valioso que es su tiempo, por lo que me aseguraré de ser conciso y venir preparado con preguntas específicas.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Agradezco mucho su consideración y quedo atento a su respuesta.</p>
+                                        
+                                        <!-- FIRMA -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;border-top:1px solid #e5e7eb;padding-top:20px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://enzo-meneghini.com/assets/FotoPerfil.webp" alt="Enzo Meneghini" style="border-radius:50%;width:80px;height:80px;">
+                                                </td>
+                                                <td style="vertical-align:top;padding-left:15px;">
+                                                    <p style="margin:0 0 5px;font-size:18px;font-weight:bold;color:#2d3748;">Enzo Meneghini</p>
+                                                    <p style="margin:0 0 10px;font-size:14px;color:#4a5568;">Full Stack Developer</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📧 enzo.meneghini@hotmail.com</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📱 +54 9 388 460-0584</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">💼 <a href="https://www.linkedin.com/in/enzo-meneghini/" style="color:#805ad5;text-decoration:none;" target="_blank">linkedin.com/in/enzo-meneghini/</a></p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">🌐 <a href="https://www.enzo-meneghini.com" style="color:#4299e1;text-decoration:none;" target="_blank">www.enzo-meneghini.com</a></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIN DEL CÓDIGO HTML PARA CORREO -->
+            </div>
+        </div>
+        <div class="personalization-tip">
+            <strong>💡 Tip de personalización:</strong> Investiga a la persona antes de contactarla. Menciona algo específico de su trabajo o trayectoria para demostrar interés genuino y aumentar las probabilidades de respuesta.
+        </div>
+        <button class="copy-btn" onclick="copyHTML('networking-template')">Copiar HTML</button>
+    </div>
+
+    <!-- PLANTILLA 6: PROPUESTA FREELANCE -->
+    <div class="template es-template">
+        <h2>6. Plantilla de Propuesta Freelance <span class="template-tag">Nuevo</span></h2>
+        <p>Para proponer servicios como desarrollador freelance a potenciales clientes.</p>
+        
+        <div class="email-preview">
+            <div class="email-header">
+                <strong>Asunto:</strong> Desarrollo web profesional para [Nombre de la Empresa/Proyecto] - Enzo Meneghini
+            </div>
+            <div class="email-body" id="freelance-template">
+                <!-- INICIO DEL CÓDIGO HTML PARA CORREO -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;padding:0;margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+                    <tr>
+                        <td align="center" style="padding:20px 10px;">
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;">
+                                <!-- ENCABEZADO CON GRADIENTE -->
+                                <tr>
+                                    <td style="background:linear-gradient(to right, #805ad5, #4299e1);padding:20px;text-align:center;">
+                                        <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:bold;">Desarrollo Web Profesional</h1>
+                                        <p style="color:#ffffff;margin:5px 0 0;font-size:16px;">Soluciones a medida para su empresa</p>
+                                    </td>
+                                </tr>
+                                <!-- CONTENIDO PRINCIPAL -->
+                                <tr>
+                                    <td style="padding:25px 30px;">
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Estimado/a [Nombre del Cliente Potencial],</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Me dirijo a usted porque he observado que [mencionar algo específico sobre la empresa/sitio web/aplicación, por ejemplo: "su sitio web podría beneficiarse de una experiencia de usuario más moderna" o "su empresa está expandiéndose y podría necesitar soluciones digitales escalables"].</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Como desarrollador Full Stack con 2 años de experiencia especializado en Angular y Java, ofrezco soluciones digitales completas que pueden ayudar a su empresa a [beneficio principal: "aumentar conversiones", "mejorar la experiencia de usuario", "optimizar procesos internos", etc.].</p>
+                                        
+                                        <p style="margin:20px 0 15px;font-size:16px;color:#2d3748;font-weight:bold;">¿Cómo puedo ayudarle?</p>
+                                        
+                                        <ul style="margin:0 0 20px;padding-left:20px;color:#2d3748;">
+                                            <li style="margin-bottom:10px;">🚀 <strong>Desarrollo de aplicaciones web</strong>: Sitios modernos, responsivos y optimizados para SEO</li>
+                                            <li style="margin-bottom:10px;">⚙️ <strong>Sistemas empresariales</strong>: Aplicaciones a medida para gestión interna, CRM, inventarios</li>
+                                            <li style="margin-bottom:10px;">🔄 <strong>Migración de sistemas legacy</strong>: Actualización de tecnologías antiguas a plataformas modernas</li>
+                                            <li style="margin-bottom:10px;">🛠️ <strong>Mantenimiento y mejora</strong>: Optimización de aplicaciones existentes</li>
+                                        </ul>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Me encantaría programar una llamada de 20 minutos para discutir sus necesidades específicas y cómo podría ayudar a su empresa a alcanzar sus objetivos. Puedo ofrecer un presupuesto sin compromiso adaptado a su proyecto.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">¿Le parece bien conversar esta semana? Puede responder a este correo o agendar directamente en mi calendario: [enlace a tu calendario de citas].</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Agradezco su tiempo y quedo a la espera de su respuesta.</p>
+                                        
+                                        <!-- FIRMA -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;border-top:1px solid #e5e7eb;padding-top:20px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://enzo-meneghini.com/assets/FotoPerfil.webp" alt="Enzo Meneghini" style="border-radius:50%;width:80px;height:80px;">
+                                                </td>
+                                                <td style="vertical-align:top;padding-left:15px;">
+                                                    <p style="margin:0 0 5px;font-size:18px;font-weight:bold;color:#2d3748;">Enzo Meneghini</p>
+                                                    <p style="margin:0 0 10px;font-size:14px;color:#4a5568;">Full Stack Developer</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📧 enzo.meneghini@hotmail.com</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📱 +54 9 388 460-0584</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">💼 <a href="https://www.linkedin.com/in/enzo-meneghini/" style="color:#805ad5;text-decoration:none;" target="_blank">linkedin.com/in/enzo-meneghini/</a></p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">🌐 <a href="https://www.enzo-meneghini.com" style="color:#4299e1;text-decoration:none;" target="_blank">www.enzo-meneghini.com</a></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- NOTA DE PROYECTOS ANTERIORES -->
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="margin-top:15px;background-color:#f8f4ff;border-radius:8px;">
+                                <tr>
+                                    <td style="padding:15px 20px;text-align:center;">
+                                        <p style="margin:0;font-size:14px;color:#4a5568;">
+                                            <strong>¿Quiere ver ejemplos de mi trabajo?</strong><br>
+                                            Visite mi portfolio en <a href="https://www.enzo-meneghini.com" style="color:#805ad5;" target="_blank">www.enzo-meneghini.com</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIN DEL CÓDIGO HTML PARA CORREO -->
+            </div>
+        </div>
+        <div class="personalization-tip">
+            <strong>💡 Tip de personalización:</strong> Investiga al cliente potencial y personaliza la propuesta mencionando problemas específicos que has identificado y cómo puedes resolverlos.
+        </div>
+        <button class="copy-btn" onclick="copyHTML('freelance-template')">Copiar HTML</button>
+    </div>
+
+    <!-- ENGLISH TEMPLATES -->
+    
+    <!-- ENGLISH TEMPLATE 1: CV SUBMISSION -->
+    <div class="template en-template">
+        <h2>1. CV Submission Template</h2>
+        <p>Ideal for spontaneous applications or responses to job offers.</p>
+        
+        <div class="email-preview">
+            <div class="email-header">
+                <strong>Subject:</strong> Full Stack Developer - Angular/Java - Enzo Meneghini
+            </div>
+            <div class="email-body" id="cv-template-en">
+                <!-- INICIO DEL CÓDIGO HTML PARA CORREO -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;padding:0;margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+                    <tr>
+                        <td align="center" style="padding:20px 10px;">
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;">
+                                <!-- ENCABEZADO CON GRADIENTE -->
+                                <tr>
+                                    <td style="background:linear-gradient(to right, #805ad5, #4299e1);padding:20px;text-align:center;">
+                                        <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:bold;">Enzo Meneghini</h1>
+                                        <p style="color:#ffffff;margin:5px 0 0;font-size:16px;">Full Stack Developer</p>
+                                    </td>
+                                </tr>
+                                <!-- CONTENIDO PRINCIPAL -->
+                                <tr>
+                                    <td style="padding:25px 30px;">
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Dear [Recruiter/Company Name],</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">I hope this email finds you well. My name is <strong>Enzo Meneghini</strong> and I am a Full Stack Developer with 2 years of experience specializing in <strong>Angular and Java</strong>. I am reaching out because I am interested in joining your development team.</p>
+                                        
+                                        <p style="margin:20px 0 15px;font-size:16px;color:#2d3748;font-weight:bold;">Why I could bring value to your company:</p>
+                                        
+                                        <ul style="margin:0 0 20px;padding-left:20px;color:#2d3748;">
+                                            <li style="margin-bottom:10px;">📊 <strong>Proven experience</strong>: Currently working at Agua Potable de Jujuy migrating legacy systems (Genexus) to modern technologies (Java/Angular), impacting over 100,000 users</li>
+                                            <li style="margin-bottom:10px;">🔧 <strong>Strong technical stack</strong>: Java, Spring Boot, Angular, TypeScript, MySQL, Node.js, Docker</li>
+                                            <li style="margin-bottom:10px;">🌐 <strong>Advanced English (C2)</strong>: Ready for international projects</li>
+                                            <li style="margin-bottom:10px;">🎓 <strong>Solid education</strong>: University Programming Analyst (GPA 8.35/10)</li>
+                                        </ul>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">I have attached my resume for your review. I would be delighted to discuss how I can contribute to your projects and objectives.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">I am available for an interview at your convenience.</p>
+                                        
+                                        <!-- FIRMA -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;border-top:1px solid #e5e7eb;padding-top:20px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://enzo-meneghini.com/assets/FotoPerfil.webp" alt="Enzo Meneghini" style="border-radius:50%;width:80px;height:80px;">
+                                                </td>
+                                                <td style="vertical-align:top;padding-left:15px;">
+                                                    <p style="margin:0 0 5px;font-size:18px;font-weight:bold;color:#2d3748;">Enzo Meneghini</p>
+                                                    <p style="margin:0 0 10px;font-size:14px;color:#4a5568;">Full Stack Developer</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📧 enzo.meneghini@hotmail.com</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📱 +54 9 388 460-0584</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">💼 <a href="https://www.linkedin.com/in/enzo-meneghini/" style="color:#805ad5;text-decoration:none;" target="_blank">linkedin.com/in/enzo-meneghini/</a></p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">🌐 <a href="https://www.enzo-meneghini.com" style="color:#4299e1;text-decoration:none;" target="_blank">www.enzo-meneghini.com</a></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIN DEL CÓDIGO HTML PARA CORREO -->
+            </div>
+        </div>
+        <button class="copy-btn" onclick="copyHTML('cv-template-en')">Copy HTML</button>
+    </div>
+
+    <!-- ENGLISH TEMPLATE 2: FOLLOW-UP -->
+    <div class="template en-template">
+        <h2>2. Follow-up Template</h2>
+        <p>For following up on previous applications.</p>
+        
+        <div class="email-preview">
+            <div class="email-header">
+                <strong>Subject:</strong> Follow-up on application: [Position] - Enzo Meneghini
+            </div>
+            <div class="email-body" id="follow-up-template-en">
+                <!-- INICIO DEL CÓDIGO HTML PARA CORREO -->
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f5;padding:0;margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">
+                    <tr>
+                        <td align="center" style="padding:20px 10px;">
+                            <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;">
+                                <!-- ENCABEZADO CON GRADIENTE -->
+                                <tr>
+                                    <td style="background:linear-gradient(to right, #805ad5, #4299e1);padding:15px;text-align:center;">
+                                        <h2 style="color:#ffffff;margin:0;font-size:20px;font-weight:bold;">Application Follow-up</h2>
+                                    </td>
+                                </tr>
+                                <!-- CONTENIDO PRINCIPAL -->
+                                <tr>
+                                    <td style="padding:25px 30px;">
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">Dear [Recruiter's Name],</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">I hope this email finds you well. I am writing to follow up on my application for the <strong>[Position Name]</strong> position that I submitted on [submission date].</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">I remain very interested in the opportunity to join [Company Name] and contribute my Full Stack development skills with Angular and Java to the team. If you need any additional information or complementary documents, I would be happy to provide them.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">I understand that selection processes can take time, but I wanted to make sure that my application has been received correctly and if there are any updates on the status of the process.</p>
+                                        
+                                        <p style="margin:0 0 15px;font-size:16px;color:#2d3748;">I appreciate your time and consideration.</p>
+                                        
+                                        <!-- FIRMA -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:30px;border-top:1px solid #e5e7eb;padding-top:20px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://enzo-meneghini.com/assets/FotoPerfil.webp" alt="Enzo Meneghini" style="border-radius:50%;width:80px;height:80px;">
+                                                </td>
+                                                <td style="vertical-align:top;padding-left:15px;">
+                                                    <p style="margin:0 0 5px;font-size:18px;font-weight:bold;color:#2d3748;">Enzo Meneghini</p>
+                                                    <p style="margin:0 0 10px;font-size:14px;color:#4a5568;">Full Stack Developer</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📧 enzo.meneghini@hotmail.com</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">📱 +54 9 388 460-0584</p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">💼 <a href="https://www.linkedin.com/in/enzo-meneghini/" style="color:#805ad5;text-decoration:none;" target="_blank">linkedin.com/in/enzo-meneghini/</a></p>
+                                                    <p style="margin:0 0 3px;font-size:14px;color:#4a5568;">🌐 <a href="https://www.enzo-meneghini.com" style="color:#4299e1;text-decoration:none;" target="_blank">www.enzo-meneghini.com</a></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- FIN DEL CÓDIGO HTML PARA CORREO -->
+            </div>
+        </div>
+        <button class="copy-btn" onclick="copyHTML('follow-up-template-en')">Copy HTML</button>
+    </div>
+
+    <div class="accessibility-note">
+        <h3>🌐 Email Accessibility Tips</h3>
+        <p>Para asegurar que tus correos sean accesibles para personas con discapacidad:</p>
+        <ul>
+            <li><strong>Contraste de colores:</strong> Las plantillas utilizan un contraste adecuado entre texto y fondo.</li>
+            <li><strong>Textos alternativos:</strong> Siempre incluye atributos "alt" en las imágenes para lectores de pantalla.</li>
+            <li><strong>Estructura jerárquica:</strong> Usa encabezados lógicos para organizar el contenido.</li>
+            <li><strong>Enlaces descriptivos:</strong> Evita textos como "haz clic aquí" y usa descripciones significativas.</li>
+            <li><strong>Formato sencillo:</strong> Estas plantillas evitan diseños complejos para mayor compatibilidad.</li>
+        </ul>
+    </div>
+
+    <div class="instructions">
+        <h3>Personalizando la Imagen</h3>
+        <p>Para usar tu propia imagen en la firma:</p>
+        <ol>
+            <li>Sube tu foto de perfil a un servidor web (puedes usar tu propio sitio o servicios como Imgur)</li>
+            <li>La imagen debe ser cuadrada, idealmente 200x200 píxeles</li>
+            <li>Reemplaza la URL en cada plantilla: <code>src="https://enzo-meneghini.com/assets/FotoPerfil.webp"</code></li>
+            <li>Asegúrate de actualizar también el atributo "alt" con tu nombre</li>
+        </ol>
+        <p>Si tu servicio de correo electrónico bloquea imágenes externas, considera usar un servicio como SendGrid o MailChimp que permite incorporar las imágenes directamente.</p>
+    </div>
+
+    <div class="instructions">
+        <h3>Consideraciones sobre compatibilidad en clientes de correo</h3>
+        <p>Las plantillas han sido diseñadas siguiendo las mejores prácticas para correos HTML:</p>
+        <ul>
+            <li>Estructura basada en tablas para mayor compatibilidad</li>
+            <li>Estilos inline para asegurar el renderizado correcto</li>
+            <li>Fuentes web seguras (Segoe UI, con fallbacks)</li>
+            <li>Dimensiones fijas para mejor visualización en distintos dispositivos</li>
+            <li>Colores y diseño visual que corresponden con tu portfolio</li>
+            <li>Evita características no soportadas como JavaScript o CSS avanzado</li>
+        </ul>
+        <p>Si utilizas servicios como Gmail u Outlook que tienen limitaciones para HTML, puedes utilizar las versiones en texto plano del script PowerShell <code>convert-to-email-friendly.ps1</code>.</p>
+    </div>
+
+    <footer style="text-align:center;margin-top:50px;padding:20px;color:#4a5568;border-top:1px solid #e5e7eb;">
+        <p>© 2025 Enzo Meneghini - Plantillas Email-Friendly</p>
+    </footer>
+
+    <script>
+        // Verificar si el navegador es compatible con navigator.clipboard API
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!navigator.clipboard) {
+                document.querySelectorAll('.copy-btn').forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        alert('Tu navegador no soporta la API de Clipboard. Por favor, selecciona y copia el código manualmente.');
+                    });
+                });
+            }
+            
+            // Añadir clases para la primera carga
+            document.querySelectorAll('.es-template').forEach(el => el.style.display = 'block');
+            document.querySelectorAll('.en-template').forEach(el => el.style.display = 'none');
+        });
+    </script>
+</body>
+</html>
