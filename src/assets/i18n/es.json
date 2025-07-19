@@ -18,16 +18,43 @@
     "generating": "Generando..."
   },"hero": {
     "title": "Desarrollador Full Stack especializado en Angular y Java",
+    "subtitle": "Encargado de Infraestructura & Desarrollador Full Stack",
     "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "Inglés C2", "Sistemas críticos", "Backend"],
-    "bio": "Desarrollador Full Stack con <span class=\"font-bold\">2 años de experiencia</span> en desarrollo web, especializado en <span class=\"font-bold\">Angular y Java</span>. <br> Mi formación técnica, sumada a experiencia en <span class=\"font-bold\">infraestructura, redes y soporte</span>, y <span class=\"font-bold\">nivel avanzado de inglés (C2)</span>, me convierte en un profesional versátil para proyectos internacionales. <br>  Mi objetivo es crecer como <span class=\"font-bold\">Backend Developer</span>, liderar proyectos de impacto real y seguir resolviendo problemas que importan."
+    "bio": "Desarrollador Full Stack con <span class=\"font-bold\">3 años de experiencia</span> en desarrollo web e infraestructura, especializado en <span class=\"font-bold\">Angular y Java</span>. <br> Mi formación técnica, sumada a experiencia en <span class=\"font-bold\">infraestructura, redes y soporte</span>, y <span class=\"font-bold\">nivel avanzado de inglés (C2)</span>, me convierte en un profesional versátil para proyectos internacionales. <br>  Mi objetivo es crecer como <span class=\"font-bold\">Backend Developer</span>, liderar proyectos de impacto real y seguir resolviendo problemas que importan."
   },
   "experience": {
     "title": "Experiencia Laboral",
     "items": [
       {
+        "jobTitle": "Encargado de Infraestructura",
+        "company": "Agua Potable de Jujuy",
+        "period": "Julio 2025 - Presente",
+        "location": "Jujuy, Argentina · Presencial",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Responsabilidades clave:",
+            "icon": "carbon:server",
+            "content": [
+              "Configuro y administro servidores físicos y virtuales en entornos Linux y Windows (Hyper-V, Proxmox)",
+              "Gestiono redes LAN/WAN, VLANs, DNS, DHCP y políticas de firewall",
+              "Realizo tareas de backup, restauración y mantenimiento en SQL Server y otros servicios críticos",
+              "Trabajo con contenedores Docker para entornos de desarrollo y pruebas",
+              "Administro proxy reverso, certificados SSL y dominios, garantizando estabilidad y seguridad"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Tecnologías utilizadas:",
+            "icon": "⚙️",
+            "content": ["Linux", "Windows Server", "Hyper-V", "Proxmox", "Docker", "SQL Server", "VLANs", "DNS", "DHCP", "SSL", "Firewall"]
+          }
+        ]
+      },
+      {
         "jobTitle": "Desarrollador Full Stack Jr",
         "company": "Agua Potable de Jujuy",
-        "period": "Agosto 2024 - Presente",
+        "period": "Agosto 2024 - Julio 2025",
         "location": "Jujuy, Argentina · Presencial",
         "sections": [
           {

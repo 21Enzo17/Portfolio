@@ -15,16 +15,43 @@
     "generating": "Generating..."
   },  "hero": {
     "title": "Full Stack Developer specialized in Angular and Java",
+    "subtitle": "Infrastructure Manager & Full Stack Developer", 
     "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "English C1", "Critical systems", "Backend"],
-    "bio": "Full Stack Developer with <span class=\"font-bold\">2 years of experience</span> in web development, specialized in <span class=\"font-bold\">Angular and Java</span>. <br> My technical background, along with experience in <span class=\"font-bold\">infrastructure, networks, and support</span>, and <span class=\"font-bold\">advanced English level (C2)</span>, makes me a versatile professional for international projects. <br> My goal is to grow as a <span class=\"font-bold\">Backend Developer</span>, lead impactful projects, and continue solving problems that matter."
+    "bio": "Full Stack Developer with <span class=\"font-bold\">3 years of experience</span> in web development and infrastructure, specialized in <span class=\"font-bold\">Angular and Java</span>. <br> My technical background, along with experience in <span class=\"font-bold\">infrastructure, networks, and support</span>, and <span class=\"font-bold\">advanced English level (C2)</span>, makes me a versatile professional for international projects. <br> My goal is to grow as a <span class=\"font-bold\">Backend Developer</span>, lead impactful projects, and continue solving problems that matter."
   },
   "experience": {
     "title": "Work Experience",
     "items": [
       {
+        "jobTitle": "Infrastructure Manager",
+        "company": "Jujuy Water Utility",
+        "period": "July 2025 - Present",
+        "location": "Jujuy, Argentina · On-site",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Key responsibilities:",
+            "icon": "carbon:server",
+            "content": [
+              "Configure and manage physical and virtual servers in Linux and Windows environments (Hyper-V, Proxmox)",
+              "Manage LAN/WAN networks, VLANs, DNS, DHCP and firewall policies",
+              "Perform backup, restoration and maintenance tasks on SQL Server and other critical services",
+              "Work with Docker containers for development and testing environments",
+              "Manage reverse proxy, SSL certificates and domains, ensuring stability and security"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
+            "content": ["Linux", "Windows Server", "Hyper-V", "Proxmox", "Docker", "SQL Server", "VLANs", "DNS", "DHCP", "SSL", "Firewall"]
+          }
+        ]
+      },
+      {
         "jobTitle": "Jr Full Stack Developer",
         "company": "Jujuy Water Utility",
-        "period": "August 2024 - Present",
+        "period": "August 2024 - July 2025",
         "location": "Jujuy, Argentina · On-site",
         "sections": [
           {

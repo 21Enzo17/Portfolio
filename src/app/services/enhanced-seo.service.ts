@@ -134,7 +134,7 @@ export class EnhancedSeoService {
         "mainEntity": {
           "@type": "Person",
           "name": "Enzo Meneghini",
-          "jobTitle": "Full Stack Developer",
+          "jobTitle": "Full Stack Developer | Jefe de Infraestructura",
           "workLocation": {
             "@type": "Place", 
             "address": {

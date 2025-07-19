@@ -57,7 +57,7 @@ export const SEO_CONFIG = {  // Configuración general
       "@type": "Person",      "name": "Enzo Meneghini",
       "url": SOCIAL_CONFIG.portfolioUrl,
       "image": `${SOCIAL_CONFIG.portfolioUrl}/assets/fotoPerfil.webp`,
-      "jobTitle": "Full Stack Developer",
+      "jobTitle": "Full Stack Developer | Jefe de Infraestructura",
       "worksFor": {
         "@type": "Organization",
         "name": "Agua Potable de Jujuy"

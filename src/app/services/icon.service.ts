@@ -85,6 +85,16 @@ export class IconService {
     'proxmox': 'simple-icons:proxmox',
     'lan/wan networks': 'carbon:network-4',
     'redes lan/wan': 'carbon:network-4',
+    
+    // Infrastructure & System Administration
+    'windows server': 'logos:microsoft-windows',
+    'hyper-v': 'simple-icons:hyper',
+    'sql server': 'simple-icons:microsoftsqlserver',
+    'vlans': 'carbon:network-4',
+    'dns': 'carbon:dns-services',
+    'dhcp': 'carbon:network-4',
+    'ssl': 'carbon:security',
+    'firewall': 'carbon:firewall-classic',
 
     // Cloud & Services
     'aws': 'logos:aws',
@@ -247,7 +257,15 @@ export class IconService {
       'Bash Scripting': 'carbon:terminal',
       'Proxmox': 'simple-icons:proxmox',
       'LAN/WAN Networks': 'carbon:network-4',
-      'Redes LAN/WAN': 'carbon:network-4'
+      'Redes LAN/WAN': 'carbon:network-4',
+      'Windows Server': 'logos:microsoft-windows',
+      'Hyper-V': 'simple-icons:hyper',
+      'SQL Server': 'simple-icons:microsoftsqlserver',
+      'VLANs': 'carbon:network-4',
+      'DNS': 'carbon:dns-services',
+      'DHCP': 'carbon:network-4',
+      'SSL': 'carbon:security',
+      'Firewall': 'carbon:firewall-classic'
     },
     soft: {
       'Liderazgo técnico y toma de decisiones': 'carbon:leadership',
