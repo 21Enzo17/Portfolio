@@ -9,7 +9,7 @@
     </h2>
   </div>
 
-  <!-- Grid de habilidades con espaciado mejorado para mobile -->
+  <!-- Grid de habilidades en dos columnas (Soft y Ops+DB ocupan todo el ancho) -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <!-- Frontend -->
     <div class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5"
@@ -79,45 +79,10 @@
       </div>
     </div>
 
-    <!-- Bases de Datos -->
-    <div class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5"
+    <!-- DevOps & Herramientas + Bases de Datos (combinado y a ancho completo) -->
+    <div class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5 md:col-span-2"
          [ngClass]="{'opacity-100 translate-y-0': true}"
          style="transition: opacity 0.5s ease, transform 0.5s ease; transition-delay: 0.3s">
-      <h3 class="text-xl font-bold mb-6 flex items-center">
-        <span class="icon-container flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-purple-100 dark:bg-purple-900">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-          </svg>
-        </span>
-        <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {{ 'skills.databases.title' | translate }}
-        </span>
-      </h3>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div *ngFor="let skill of 'skills.databases.items' | translate" 
-             class="flex flex-col items-center hover:scale-110 transition-transform"
-             style="transition: transform 0.3s ease">
-          <div class="tech-icon w-14 h-14 mb-2 flex items-center justify-center">
-            <!-- Renderizado condicional para íconos personalizados o estándar -->
-            <ng-container *ngIf="hasCustomIcon(skill.name)">
-              <div [ngStyle]="getCustomIconStyles(skill.name)" class="flex items-center justify-center">
-                {{ getCustomIcon(skill.name).content }}
-              </div>
-            </ng-container>
-            <iconify-icon *ngIf="!hasCustomIcon(skill.name)" [icon]="getIcon('databases', skill.name, 'mdi:database')" width="28" height="28"></iconify-icon>
-          </div>
-          <span class="text-sm text-center">{{ skill.name }}</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- DevOps & Herramientas -->
-    <div class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5"
-         [ngClass]="{'opacity-100 translate-y-0': true}"
-         style="transition: opacity 0.5s ease, transform 0.5s ease; transition-delay: 0.4s">
       <h3 class="text-xl font-bold mb-6 flex items-center">
         <span class="icon-container flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-blue-100 dark:bg-blue-900">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -126,30 +91,30 @@
           </svg>
         </span>
         <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          {{ 'skills.devops.title' | translate }}
+          {{ 'skills.opsdb.title' | translate }}
         </span>
       </h3>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div *ngFor="let skill of 'skills.devops.items' | translate" 
-             class="flex flex-col items-center hover:scale-110 transition-transform"
-             style="transition: transform 0.3s ease">
-          <div class="tech-icon w-14 h-14 mb-2 flex items-center justify-center">
-            <!-- Renderizado condicional para íconos personalizados o estándar -->
-            <ng-container *ngIf="hasCustomIcon(skill.name)">
-              <div [ngStyle]="getCustomIconStyles(skill.name)" class="flex items-center justify-center">
-                {{ getCustomIcon(skill.name).content }}
-              </div>
-            </ng-container>
-            <iconify-icon *ngIf="!hasCustomIcon(skill.name)" [icon]="getIcon('devops', skill.name, 'mdi:tools')" width="28" height="28"></iconify-icon>
+      <!-- Grid unificado con una sola lista (opsdb.items) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        <ng-container *ngFor="let skill of 'skills.opsdb.items' | translate">
+          <div class="flex flex-col items-center hover:scale-110 transition-transform" style="transition: transform 0.3s ease">
+            <div class="tech-icon w-14 h-14 mb-2 flex items-center justify-center">
+              <ng-container *ngIf="hasCustomIcon(skill.name)">
+                <div [ngStyle]="getCustomIconStyles(skill.name)" class="flex items-center justify-center">
+                  {{ getCustomIcon(skill.name).content }}
+                </div>
+              </ng-container>
+              <iconify-icon *ngIf="!hasCustomIcon(skill.name)" [icon]="getIcon('devops', skill.name, 'mdi:tools')" width="28" height="28"></iconify-icon>
+            </div>
+            <span class="text-sm text-center">{{ skill.name }}</span>
           </div>
-          <span class="text-sm text-center">{{ skill.name }}</span>
-        </div>
+        </ng-container>
       </div>
     </div>
 
-    <!-- Habilidades Blandas (Soft Skills) -->
-    <div class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5 md:col-span-2"
+  <!-- Habilidades Blandas (Soft Skills) -->
+  <div class="neumorphic p-6 rounded-xl transition-all duration-300 hover:translate-y-[-5px] opacity-0 transform translate-y-5 md:col-span-2"
          [ngClass]="{'opacity-100 translate-y-0': true}"
          style="transition: opacity 0.5s ease, transform 0.5s ease; transition-delay: 0.5s">
       <h3 class="text-xl font-bold mb-6 flex items-center">

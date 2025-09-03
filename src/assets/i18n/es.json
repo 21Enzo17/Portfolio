@@ -17,10 +17,10 @@
     "downloadCV": "Descargar CV",
     "generating": "Generando..."
   },"hero": {
-    "title": "Desarrollador Full Stack especializado en Angular y Java",
-    "subtitle": "Encargado de Infraestructura & Desarrollador Full Stack",
+    "title": "Encargado de Infraestructura TI | DevOps Engineer | Fullstack Developer",
+    "subtitle": "Encargado de Infraestructura TI | DevOps Engineer | Fullstack Developer",
     "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "Inglés C2", "Sistemas críticos", "Backend"],
-    "bio": "Desarrollador Full Stack con <span class=\"font-bold\">3 años de experiencia</span> en desarrollo web e infraestructura, especializado en <span class=\"font-bold\">Angular y Java</span>. <br> Mi formación técnica, sumada a experiencia en <span class=\"font-bold\">infraestructura, redes y soporte</span>, y <span class=\"font-bold\">nivel avanzado de inglés (C2)</span>, me convierte en un profesional versátil para proyectos internacionales. <br>  Mi objetivo es crecer como <span class=\"font-bold\">Backend Developer</span>, liderar proyectos de impacto real y seguir resolviendo problemas que importan."
+    "bio": "<span class=\"font-bold\">Encargado de Infraestructura TI</span> con experiencia en <span class=\"font-bold\">redes, servidores y soporte nivel 3</span>, asegurando la estabilidad y continuidad de entornos críticos. <br>Mi formación técnica, sumada a experiencia en <span class=\"font-bold\">infraestructura, desarrollo</span>, y <span class=\"font-bold\">nivel avanzado de inglés (C2)</span>, me convierte en un profesional versátil para proyectos internacionales. <br>Además, cuento con experiencia en <span class=\"font-bold\">desarrollo Full Stack (Angular y Java)</span>, lo que me brinda una visión integral para resolver problemas con impacto real."
   },
   "experience": {
     "title": "Experiencia Laboral",
@@ -34,20 +34,34 @@
           {
             "type": "list",
             "title": "Responsabilidades clave:",
-            "icon": "carbon:server",
+            "icon": "🖥️",
             "content": [
-              "Configuro y administro servidores físicos y virtuales en entornos Linux y Windows (Hyper-V, Proxmox)",
-              "Gestiono redes LAN/WAN, VLANs, DNS, DHCP y políticas de firewall",
-              "Realizo tareas de backup, restauración y mantenimiento en SQL Server y otros servicios críticos",
-              "Trabajo con contenedores Docker para entornos de desarrollo y pruebas",
-              "Administro proxy reverso, certificados SSL y dominios, garantizando estabilidad y seguridad"
+              "Administración de servidores físicos y virtuales en Debian y Windows Server sobre Hyper‑V y Proxmox; mantenimiento preventivo/correctivo y gestión de RAIDs",
+              "Operación de red a gran escala: diseño y administración de LAN/WAN, VLANs, QoS, DNS/DHCP, ruteo y políticas de firewall",
+              "Gestión de red multi‑sede con Mikrotik: VPN site‑to‑site/cliente, monitoreo y troubleshooting de enlaces a nivel provincial",
+              "Administración de Wi‑Fi corporativo Aruba (controladores y APs), segmentación y seguridad",
+              "Telefonía IP con Issabel: provisión, troncales, grabaciones y políticas",
+              "Servicios contenerizados con Docker; orquestación ligera y automatización con scripting (Bash/Python)",
+              "Proxy reverso y balanceo (NGINX/HAProxy), terminación TLS y renovación automatizada de certificados; hardening y gestión de dominios",
+              "Bases de datos y clústeres (MySQL/PostgreSQL/SQL Server): respaldos, restauraciones y tuning; SQL avanzado",
+              "Observabilidad y monitoreo con Prometheus/Alertmanager y logging centralizado; tableros y alertas",
+              "CI/CD para despliegues internos (GitHub Actions/GitLab)",
+              "Coordinación con proveedores (Iplan/Google Workspace y carriers); gestión de incidentes y escalamiento",
+              "Soporte Nivel 3 desde el primer día; referente técnico del equipo",
+              "Aprendizaje activo de AWS y fundamentos de nube"
             ]
           },
           {
             "type": "technologies",
             "title": "Tecnologías utilizadas:",
             "icon": "⚙️",
-            "content": ["Linux", "Windows Server", "Hyper-V", "Proxmox", "Docker", "SQL Server", "VLANs", "DNS", "DHCP", "SSL", "Firewall"]
+            "content": [
+              "Debian/Linux", "Windows Server", "Hyper‑V", "Proxmox", "Docker",
+              "NGINX", "HAProxy", "Prometheus",
+              "Mikrotik", "Aruba", "Issabel", "VPN",
+              "MySQL", "PostgreSQL", "SQL Server",
+              "GitHub Actions", "Bash", "Python", "TLS/SSL", "RAID", "DNS/DHCP", "Firewall"
+            ]
           }
         ]
       },
@@ -62,18 +76,18 @@
             "title": "Impacto y responsabilidades clave:",
             "icon": "💻",
             "content": [
-              "Migración de sistemas legacy desde Genexus hacia tecnologías modernas (Java/Angular), incluyendo el sistema de generación de facturas y adhesión de cuentas de agua",
-              "Liderazgo técnico en soporte y redes LAN/WAN: reparaciones críticas, coordinación de equipos y capacitación de compañeros",
-              "Desarrollo de aplicaciones con impacto en 3,000+ empleados y 100,000+ personas en la provincia",
-              "Participación en ciclo completo de desarrollo: desde toma de requerimientos hasta puesta en producción",
-              "Rediseño y migración del sitio web institucional desde WordPress a Angular/Genexus, liderando equipo multidisciplinario"
+              "Migración de sistemas legacy desde Genexus hacia tecnologías modernas (Java/Angular): facturación y adhesión de cuentas de agua, integraciones y análisis sin documentación",
+              "Participación end‑to‑end: levantamiento, diseño, desarrollo, pruebas y despliegue a producción",
+              "Rediseño y migración del sitio institucional WordPress → Angular/Genexus; coordinación de equipo multidisciplinario",
+              "Automatización y CI/CD para builds y despliegues; buenas prácticas de seguridad (JWT, control de roles, validaciones)",
+              "Soporte Nivel 3 en paralelo: resolución de incidentes críticos de redes/servidores y coordinación con proveedores"
             ]
           },
           {
             "type": "technologies",
             "title": "Tecnologías utilizadas:",
             "icon": "⚙️",
-            "content": ["Java", "Angular", "Genexus", "Spring Boot", "MySQL", "Redes", "Node.js"]
+            "content": ["Java", "Spring Boot", "Angular", "MySQL", "SQL", "Docker", "GitHub Actions", "Redes", "Node.js"]
           }
         ]
       },
@@ -280,6 +294,40 @@
   },
     "skills": {
     "title": "Tecnologías y Habilidades",
+    "opsdb": {
+      "title": "DevOps, Herramientas y Bases de Datos",
+      "items": [
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "NGINX", "icon": "logos:nginx" },
+        { "name": "HAProxy", "icon": "haproxy" },
+        { "name": "Prometheus", "icon": "logos:prometheus" },
+        { "name": "Proxmox", "icon": "simple-icons:proxmox" },
+        { "name": "Hyper-V", "icon": "simple-icons:hyper" },
+        { "name": "Windows Server", "icon": "logos:microsoft-windows" },
+        { "name": "Debian/Linux", "icon": "logos:debian" },
+        { "name": "Mikrotik", "icon": "simple-icons:mikrotik" },
+        { "name": "Aruba", "icon": "aruba" },
+        { "name": "Issabel", "icon": "mdi:phone-voip" },
+        { "name": "VLANs", "icon": "carbon:network-4" },
+        { "name": "VPN", "icon": "carbon:vpn" },
+        { "name": "DNS/DHCP", "icon": "carbon:dns-services" },
+        { "name": "Firewall", "icon": "carbon:firewall-classic" },
+        { "name": "TLS/SSL", "icon": "carbon:security" },
+        { "name": "RAID", "icon": "mdi:harddisk" },
+        { "name": "Bash Scripting", "icon": "carbon:terminal" },
+        { "name": "GitHub Actions", "icon": "logos:github-actions" },
+        { "name": "GitLab CI", "icon": "logos:gitlab" },
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "Redes LAN/WAN", "icon": "carbon:network-4" },
+        { "name": "MySQL", "icon": "logos:mysql" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "InfluxDB", "icon": "logos:influxdb" },
+        { "name": "MongoDB", "icon": "logos:mongodb-icon" },
+        { "name": "SQL Server", "icon": "simple-icons:microsoftsqlserver" }
+      ]
+    },
+  "seeMore": "Ver más",
+  "seeLess": "Ver menos",
     "frontend": {
       "title": "Frontend",
       "items": [
@@ -308,31 +356,51 @@
         { "name": "MySQL", "icon": "logos:mysql" },
         { "name": "PostgreSQL", "icon": "logos:postgresql" },
         { "name": "InfluxDB", "icon": "logos:influxdb" },
-        { "name": "MongoDB", "icon": "logos:mongodb-icon" }
+  { "name": "MongoDB", "icon": "logos:mongodb-icon" },
+  { "name": "SQL Server", "icon": "simple-icons:microsoftsqlserver" }
       ]
     },
     "devops": {
       "title": "DevOps & Herramientas",
       "items": [
-        { "name": "Docker", "icon": "logos:docker-icon" },
-        { "name": "Git/GitHub/GitLab", "icon": "logos:git-icon" },
-        { "name": "CI/CD (GitHub Actions)", "icon": "carbon:deploy" },
-        { "name": "NGINX", "icon": "logos:nginx" },
-        { "name": "Linux Server Admin", "icon": "logos:linux-tux" },
-        { "name": "Bash Scripting", "icon": "carbon:terminal" },
-        { "name": "Proxmox", "icon": "simple-icons:proxmox" },
-        { "name": "Redes", "icon": "Redes" }
+  { "name": "Docker", "icon": "logos:docker-icon" },
+  { "name": "NGINX", "icon": "logos:nginx" },
+  { "name": "HAProxy", "icon": "haproxy" },
+  { "name": "Prometheus", "icon": "logos:prometheus" },
+  { "name": "Proxmox", "icon": "simple-icons:proxmox" },
+  { "name": "Hyper-V", "icon": "simple-icons:hyper" },
+  { "name": "Windows Server", "icon": "logos:microsoft-windows" },
+  { "name": "Debian/Linux", "icon": "logos:debian" },
+  { "name": "Mikrotik", "icon": "simple-icons:mikrotik" },
+  { "name": "Aruba", "icon": "aruba" },
+  { "name": "Issabel", "icon": "mdi:phone-voip" },
+  { "name": "VLANs", "icon": "carbon:network-4" },
+  { "name": "VPN", "icon": "carbon:vpn" },
+  { "name": "DNS/DHCP", "icon": "carbon:dns-services" },
+  { "name": "Firewall", "icon": "carbon:firewall-classic" },
+  { "name": "TLS/SSL", "icon": "carbon:security" },
+  { "name": "RAID", "icon": "mdi:harddisk" },
+  { "name": "Bash Scripting", "icon": "carbon:terminal" },
+  { "name": "GitHub Actions", "icon": "logos:github-actions" },
+  { "name": "GitLab CI", "icon": "logos:gitlab" },
+  { "name": "AWS", "icon": "logos:aws" },
+  { "name": "Redes LAN/WAN", "icon": "carbon:network-4" }
       ]
     },
     "soft": {
       "title": "Habilidades Blandas",
       "items": [
-        { "name": "Liderazgo técnico y toma de decisiones", "icon": "carbon:leadership" },
-        { "name": "Resolución de problemas complejos", "icon": "carbon:problem" },
-        { "name": "Comunicación efectiva", "icon": "carbon:communication" },
-        { "name": "Mentalidad proactiva y orientada al detalle", "icon": "carbon:zoom-in" },
-        { "name": "Espíritu colaborativo", "icon": "carbon:group" },
-        { "name": "Aprendizaje continuo", "icon": "carbon:education" }
+  { "name": "Liderazgo de equipos y toma de decisiones", "icon": "carbon:leadership" },
+  { "name": "Gestión de incidentes (Soporte Nivel 3)", "icon": "mdi:alert-decagram" },
+  { "name": "Coordinación con proveedores y negociación", "icon": "mdi:handshake" },
+  { "name": "Planificación, priorización y ownership", "icon": "mdi:clipboard-check" },
+  { "name": "Mentoría y capacitación técnica", "icon": "mdi:school-outline" },
+  { "name": "Comunicación efectiva con stakeholders", "icon": "carbon:communication" },
+  { "name": "Trabajo interdisciplinario (IT/Operaciones)", "icon": "carbon:group" },
+  { "name": "Orientación a la seguridad y cumplimiento", "icon": "mdi:shield-check" },
+  { "name": "Resolución de problemas complejos", "icon": "carbon:problem" },
+  { "name": "Mentalidad proactiva y orientada al detalle", "icon": "carbon:zoom-in" },
+  { "name": "Aprendizaje continuo", "icon": "carbon:education" }
       ]
     }
   },

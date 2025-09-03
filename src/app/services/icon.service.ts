@@ -77,24 +77,43 @@ export class IconService {
     'git/github/gitlab': 'logos:git-icon',
     'github': 'mdi:github',
     'github actions': 'logos:github-actions',
+  'github actions/gitlab': 'carbon:deploy',
+  'gitlab': 'logos:gitlab',
+  'gitlab ci': 'logos:gitlab',
     'ci/cd (github actions)': 'carbon:deploy',
     'nginx': 'logos:nginx',
+  'haproxy': 'simple-icons:haproxy',
     'linux': 'logos:linux-tux',
     'linux server admin': 'logos:linux-tux',
-    'bash scripting': 'carbon:terminal',
+  'bash scripting': 'carbon:terminal',
+  'bash': 'carbon:terminal',
     'proxmox': 'simple-icons:proxmox',
     'lan/wan networks': 'carbon:network-4',
     'redes lan/wan': 'carbon:network-4',
+  'networks': 'carbon:network-4',
+  'vpn': 'carbon:vpn',
     
     // Infrastructure & System Administration
     'windows server': 'logos:microsoft-windows',
-    'hyper-v': 'simple-icons:hyper',
+  'hyper-v': 'simple-icons:hyper',
+  'hyper‑v': 'simple-icons:hyper',
+  'debian': 'logos:debian',
+  'debian/linux': 'logos:debian',
     'sql server': 'simple-icons:microsoftsqlserver',
+  'sql': 'mdi:database',
     'vlans': 'carbon:network-4',
     'dns': 'carbon:dns-services',
+  'dns/dhcp': 'carbon:dns-services',
     'dhcp': 'carbon:network-4',
-    'ssl': 'carbon:security',
+  'ssl': 'carbon:security',
+  'tls': 'carbon:security',
+  'tls/ssl': 'carbon:security',
+  'raid': 'mdi:harddisk',
     'firewall': 'carbon:firewall-classic',
+  'mikrotik': 'simple-icons:mikrotik',
+  'aruba': 'simple-icons:arubanetworks',
+  'aruba networks': 'simple-icons:arubanetworks',
+  'issabel': 'mdi:phone-voip',
 
     // Cloud & Services
     'aws': 'logos:aws',
@@ -119,7 +138,9 @@ export class IconService {
     'resolución de problemas complejos': 'icon-park-outline:thinking-problem',
     'complex problem-solving': 'icon-park-outline:thinking-problem',
     'comunicación efectiva': 'material-symbols:communication-rounded',
+  'comunicación efectiva con stakeholders': 'mdi:handshake',
     'effective communication': 'material-symbols:communication-rounded',
+  'effective communication with stakeholders': 'mdi:handshake',
     'mentalidad proactiva y orientada al detalle': 'carbon:zoom-in',
     'proactive and detail-oriented mindset': 'carbon:zoom-in',
     'trabajo bajo presión': 'mdi:lightning-bolt',
@@ -127,7 +148,21 @@ export class IconService {
     'espíritu colaborativo': 'carbon:group',
     'collaborative spirit': 'carbon:group',
     'aprendizaje continuo': 'carbon:education',
-    'continuous learning': 'carbon:education'
+  'continuous learning': 'carbon:education',
+
+  // Additional Soft Skills (Head of Infrastructure)
+  'gestión de incidentes (soporte nivel 3)': 'mdi:alert-decagram',
+  'incident management (level 3 support)': 'mdi:alert-decagram',
+  'coordinación con proveedores y negociación': 'mdi:handshake',
+  'vendor coordination and negotiation': 'mdi:handshake',
+  'planificación, priorización y ownership': 'mdi:clipboard-check',
+  'planning, prioritization and ownership': 'mdi:clipboard-check',
+  'mentoría y capacitación técnica': 'mdi:school-outline',
+  'mentoring and technical training': 'mdi:school-outline',
+  'trabajo interdisciplinario (it/operaciones)': 'carbon:group',
+  'cross-functional collaboration (it/operations)': 'carbon:group',
+  'orientación a la seguridad y cumplimiento': 'mdi:shield-check',
+  'security- and compliance-oriented mindset': 'mdi:shield-check'
   };
 
   /**
@@ -149,6 +184,38 @@ export class IconService {
         'justify-content': 'center',
         'font-weight': 'bold',
         'font-size': '12px'
+      }
+    },
+    'haproxy': {
+      type: 'text',
+      content: 'HA',
+      styles: {
+        'background-color': '#1f2937',
+        'color': 'white',
+        'border-radius': '4px',
+        'width': '28px',
+        'height': '24px',
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'font-weight': 'bold',
+        'font-size': '10px'
+      }
+    },
+    'aruba': {
+      type: 'text',
+      content: 'AR',
+      styles: {
+        'background-color': '#ff7a00',
+        'color': 'white',
+        'border-radius': '4px',
+        'width': '28px',
+        'height': '24px',
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'font-weight': 'bold',
+        'font-size': '10px'
       }
     },
     'bcrypt': {
@@ -272,8 +339,10 @@ export class IconService {
       'Technical leadership and decision-making': 'carbon:leadership',
       'Resolución de problemas complejos': 'carbon:problem',
       'Complex problem-solving': 'carbon:problem',
-      'Comunicación efectiva': 'carbon:communication',
-      'Effective communication': 'carbon:communication',
+  'Comunicación efectiva': 'carbon:communication',
+  'Effective communication': 'carbon:communication',
+  'Comunicación efectiva con stakeholders': 'mdi:handshake',
+  'Effective communication with stakeholders': 'mdi:handshake',
       'Mentalidad proactiva y orientada al detalle': 'carbon:zoom-in',
       'Proactive and detail-oriented mindset': 'carbon:zoom-in',
       'Trabajo bajo presión': 'carbon:stress',
