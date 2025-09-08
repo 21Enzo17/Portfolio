@@ -25,7 +25,7 @@
       {
         "jobTitle": "Infrastructure Manager",
         "company": "Jujuy Water Utility",
-        "period": "July 2025 - Present",
+        "period": "January 2025 - Present",
         "location": "Jujuy, Argentina · On-site",
         "sections": [
           {
@@ -65,7 +65,7 @@
       {
         "jobTitle": "Jr Full Stack Developer",
         "company": "Jujuy Water Utility",
-        "period": "August 2024 - July 2025",
+        "period": "August 2024 - December 2024",
         "location": "Jujuy, Argentina · On-site",
         "sections": [
           {
@@ -89,28 +89,41 @@
         ]
       },
       {
-        "jobTitle": "Freelance Full Stack Developer",
-        "company": "Independent Projects",
-        "period": "2022 - Present",
-        "location": "Remote",
+        "jobTitle": "Infrastructure Analyst",
+        "company": "Instalaciones Eléctricas del Norte S.R.L",
+        "period": "February 2023 - November 2024",
+        "location": "Jujuy, Argentina · On-site",
         "sections": [
           {
             "type": "list",
-            "title": "Highlighted projects:",
-            "icon": "💼",
+            "title": "Key responsibilities:",
+            "icon": "🛠️",
             "content": [
-              "Complete backend development for a secure assistance app with JWT, role control, and password hashing using bcrypt",
-              "Implementation of advanced security: encryption of sensitive data, input validation, restricted CORS",
-              "Protection against vulnerabilities: rate limiting, automatic scanning with Dependabot",
-              "Deployment best practices: mandatory HTTPS, firewall, and suspicious traffic monitoring",
-              "Design of secure and scalable architectures for REST APIs"
+              "Provided L1 and L2 support to users both remotely and on-site",
+              "Equipment repair and workstation provisioning",
+              "Maintenance and monitoring of internal systems",
+              "Resolution of hardware, software, and network incidents",
+              "Ticket and incident management ensuring operational continuity"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "jobTitle": "Infrastructure Analyst (Freelance)",
+        "company": "Freelance",
+        "period": "July 2020 - January 2023",
+        "location": "Jujuy, Argentina · Freelance",
+        "sections": [
           {
-            "type": "technologies",
-            "title": "Technologies used:",
-            "icon": "⚙️",
-            "content": ["Node.js", "Express", "MongoDB", "JWT", "bcrypt", "Docker", "GitHub Actions"]
+            "type": "list",
+            "title": "Key responsibilities:",
+            "icon": "🛠️",
+            "content": [
+              "Designed and configured networks for Krass Coffee ensuring stable and secure connectivity",
+              "Provided L1 and L2 support to individual users on-site and remotely",
+              "Repair and maintenance of equipment and incident resolution",
+              "Technology solutions for small businesses and independent professionals"
+            ]
           }
         ]
       }

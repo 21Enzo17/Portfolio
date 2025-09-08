@@ -28,7 +28,7 @@
       {
         "jobTitle": "Encargado de Infraestructura",
         "company": "Agua Potable de Jujuy",
-        "period": "Julio 2025 - Presente",
+        "period": "Enero 2025 - Presente",
         "location": "Jujuy, Argentina · Presencial",
         "sections": [
           {
@@ -68,7 +68,7 @@
       {
         "jobTitle": "Desarrollador Full Stack Jr",
         "company": "Agua Potable de Jujuy",
-        "period": "Agosto 2024 - Julio 2025",
+        "period": "Agosto 2024 - Diciembre 2024",
         "location": "Jujuy, Argentina · Presencial",
         "sections": [
           {
@@ -92,28 +92,41 @@
         ]
       },
       {
-        "jobTitle": "Desarrollador Full Stack Freelance",
-        "company": "Proyectos Independientes",
-        "period": "2022 - Presente",
-        "location": "Remoto",
+        "jobTitle": "Analista de Infraestructura",
+        "company": "Instalaciones Eléctricas del Norte S.R.L",
+        "period": "Febrero 2023 - Noviembre 2024",
+        "location": "Jujuy, Argentina · Presencial",
         "sections": [
           {
             "type": "list",
-            "title": "Proyectos destacados:",
-            "icon": "💼",
+            "title": "Responsabilidades clave:",
+            "icon": "🛠️",
             "content": [
-              "Desarrollo completo de backend seguro para app de asistencia con JWT, control de roles y hash con bcrypt",
-              "Implementación de seguridad avanzada: encriptación de datos sensibles, validación de inputs, CORS restringido",
-              "Protección contra vulnerabilidades: rate limiting, escaneo automático con Dependabot",
-              "Buenas prácticas de despliegue: HTTPS obligatorio, firewall y monitoreo de tráfico sospechoso",
-              "Diseño de arquitecturas seguras y escalables para APIs REST"
+              "Brindé soporte L1 y L2 a usuarios en forma remota y presencial",
+              "Reparación de equipos y puesta en marcha de estaciones de trabajo",
+              "Mantenimiento y seguimiento de sistemas internos",
+              "Resolución de incidencias de hardware, software y redes",
+              "Gestión de tickets e incidencias para asegurar continuidad operativa"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "jobTitle": "Analista de Infraestructura (Freelance)",
+        "company": "Freelance",
+        "period": "Julio 2020 - Enero 2023",
+        "location": "Jujuy, Argentina · Freelance",
+        "sections": [
           {
-            "type": "technologies",
-            "title": "Tecnologías utilizadas:",
-            "icon": "⚙️",
-            "content": ["Node.js", "Express", "MongoDB", "JWT", "bcrypt", "Docker", "GitHub Actions"]
+            "type": "list",
+            "title": "Responsabilidades clave:",
+            "icon": "🛠️",
+            "content": [
+              "Diseñé y configuré redes para Krass Coffee asegurando conectividad estable y segura",
+              "Brindé soporte L1 y L2 a usuarios particulares de forma presencial y remota",
+              "Reparación y mantenimiento de equipos y resolución de incidencias",
+              "Atención y soluciones tecnológicas para pequeñas empresas y profesionales independientes"
+            ]
           }
         ]
       }
