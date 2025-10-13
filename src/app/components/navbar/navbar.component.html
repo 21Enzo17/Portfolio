@@ -4,9 +4,11 @@
       <nav class="flex items-center justify-between rounded-xl p-3 transition-all duration-300" [class.neumorphic]="!scrolled">
         <!-- Logo/Brand -->
         <div class="flex items-center">
-          <span class="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+          <a href="/" 
+             (click)="navigateToHome($event)"
+             class="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent cursor-pointer hover:opacity-80 transition-opacity">
             Enzo Meneghini
-          </span>
+          </a>
         </div>
 
         <!-- Desktop Navigation -->

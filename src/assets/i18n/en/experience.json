@@ -1,0 +1,117 @@
+{
+  "experience": {
+    "title": "Work Experience",
+    "items": [
+      {
+        "jobTitle": "Infrastructure Manager",
+        "company": "Jujuy Water Utility",
+        "period": "January 2025 - Present",
+        "location": "Jujuy, Argentina · On-site",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Key responsibilities:",
+            "icon": "🖥️",
+            "content": [
+              "Administration of physical and virtual servers on Debian and Windows Server using Hyper‑V and Proxmox; preventive/corrective maintenance and RAID management",
+              "Large‑scale network operations: design and administration of LAN/WAN, VLANs, QoS, DNS/DHCP, routing and firewall policies",
+              "Complete restructuring of corporate network infrastructure: comprehensive DNS management, network configuration, port forwarding, and resolution of critical issues (network loops) in collaboration with external vendors",
+              "Multi‑site network with Mikrotik: site‑to‑site/client VPNs, monitoring and troubleshooting of province‑wide links",
+              "Corporate Wi‑Fi with Aruba (controllers and APs), segmentation and security",
+              "IP telephony with Issabel: provisioning, trunks, recordings and policies",
+              "Containerized services with Docker; light orchestration and automation with Bash/Python scripting",
+              "Implementation and management of on-premise AI services: deployment of Large Language Models (Ollama with Qwen 4B), official corporate chatbot, vector databases (Chromadb) for RAG, and voice assistants with Whisper AI",
+              "Complete lifecycle management of web applications: deployment and maintenance of backend and frontend of corporate website with CI/CD, ensuring 24/7 availability",
+              "Reverse proxy and load balancing (NGINX/HAProxy), TLS termination and automated certificate renewal; hardening and domain management",
+              "Databases and clusters (MySQL/PostgreSQL/SQL Server): backups, restores and tuning; advanced SQL",
+              "Observability and monitoring with Prometheus/Alertmanager and centralized logging; dashboards and alerts",
+              "CI/CD for internal deployments (GitHub Actions/GitLab)",
+              "Vendor coordination (Iplan/Google Workspace and carriers); incident management and escalation",
+              "UPS installation and management to ensure 24/7 operational continuity of critical servers",
+              "Level 3 support since day one; technical point of reference for the team",
+              "Active learning of AWS and cloud fundamentals"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
+            "content": [
+              "Debian/Linux", "Windows Server", "Hyper‑V", "Proxmox", "Docker",
+              "NGINX", "HAProxy", "Prometheus",
+              "Mikrotik", "Aruba", "Issabel", "VPN",
+              "MySQL", "PostgreSQL", "SQL Server",
+              "Ollama", "Qwen", "Chromadb", "Whisper AI", "LLMs", "RAG",
+              "GitHub Actions", "GitLab CI", "Bash", "Python", "TLS/SSL", "RAID", "DNS/DHCP", "Firewall", "UPS"
+            ]
+          }
+        ]
+      },
+      {
+        "jobTitle": "Jr Full Stack Developer",
+        "company": "Jujuy Water Utility",
+        "period": "August 2024 - December 2024",
+        "location": "Jujuy, Argentina · On-site",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Key impact and responsibilities:",
+            "icon": "💻",
+            "content": [
+              "Migration of legacy systems from Genexus to modern technologies (Java/Angular): invoicing and water account onboarding, integrations and undocumented analysis",
+              "End‑to‑end participation: discovery, design, development, testing and production deployment",
+              "Redesign and migration of the institutional website WordPress → Angular/Genexus; coordination of a multidisciplinary team",
+              "Automation and CI/CD for builds and deployments; security best practices (JWT, role control, validations)",
+              "Level 3 support in parallel: resolution of critical network/server incidents and vendor coordination"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
+            "content": ["Java", "Spring Boot", "Angular", "MySQL", "SQL", "Docker", "GitHub Actions", "Networks", "Node.js"]
+          }
+        ]
+      },
+      {
+        "jobTitle": "Infrastructure Analyst",
+        "company": "Instalaciones Eléctricas del Norte S.R.L",
+        "period": "February 2023 - November 2024",
+        "location": "Jujuy, Argentina · On-site",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Key responsibilities:",
+            "icon": "🛠️",
+            "content": [
+              "Provided L1 and L2 support to users both remotely and on-site",
+              "Equipment repair and workstation provisioning",
+              "Maintenance and monitoring of internal systems",
+              "Resolution of hardware, software, and network incidents",
+              "Ticket and incident management ensuring operational continuity"
+            ]
+          }
+        ]
+      },
+      {
+        "jobTitle": "Infrastructure Analyst (Freelance)",
+        "company": "Freelance",
+        "period": "July 2020 - January 2023",
+        "location": "Jujuy, Argentina · Freelance",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Key responsibilities:",
+            "icon": "🛠️",
+            "content": [
+              "Designed and configured networks for Krass Coffee ensuring stable and secure connectivity",
+              "Provided L1 and L2 support to individual users on-site and remotely",
+              "Repair and maintenance of equipment and incident resolution",
+              "Technology solutions for small businesses and independent professionals"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

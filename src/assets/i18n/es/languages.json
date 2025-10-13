@@ -1,0 +1,56 @@
+{
+  "languages": {
+    "title": "Idiomas",
+    "certifications": "Certificaciones",
+    "reading": "Lectura",
+    "writing": "Escritura",
+    "speaking": "Conversación",
+    "listening": "Comprensión",
+    "viewCertificate": "Ver certificado",
+    "viewDetails": "Ver más",
+    "notSpecified": "No especificado",
+    "certificateDescription": "Esta certificación valida mi nivel de competencia en este idioma según estándares internacionales.",
+    "items": [
+      {
+        "language": "Español",
+        "level": "Nativo",
+        "levelScore": 10,
+        "comment": "Lengua materna",
+        "skills": {
+          "reading": 5,
+          "writing": 5,
+          "speaking": 5,
+          "listening": 5
+        },
+        "certifications": []
+      },
+      {
+        "language": "Inglés",
+        "level": "Proficiente (C2)",
+        "levelScore": 8,
+        "comment": "Fluido en lectura y escritura, con necesidad de práctica en conversación",
+        "skills": {
+          "reading": 5,
+          "writing": 4,
+          "speaking": 4,
+          "listening": 5
+        },
+        "certifications": [
+          {
+            "name": "C2 Proficient",
+            "issuer": "EF SET Certificate",
+            "date": "2024-06",
+            "url": "https://cert.efset.org/1hRRsJ",
+            "description": "EF SET English Certificate 77/100 (C2 Proficient)"
+          },
+          {
+            "name": "B2 Upper Intermediate",
+            "issuer": "Trinity College London",
+            "date": "2013-12",
+            "description": "Trinity College London ISE II (B2 Upper Intermediate)"
+          }
+        ]
+      }
+    ]
+  }
+}

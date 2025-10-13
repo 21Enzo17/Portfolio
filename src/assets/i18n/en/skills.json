@@ -1,0 +1,114 @@
+{
+  "skills": {
+    "title": "Technologies and Skills",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "opsdb": {
+      "title": "DevOps, Tools and Databases",
+      "items": [
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "NGINX", "icon": "logos:nginx" },
+        { "name": "HAProxy", "icon": "haproxy" },
+        { "name": "Prometheus", "icon": "logos:prometheus" },
+        { "name": "Proxmox", "icon": "simple-icons:proxmox" },
+        { "name": "Hyper-V", "icon": "simple-icons:hyper" },
+        { "name": "Windows Server", "icon": "logos:microsoft-windows" },
+        { "name": "Debian/Linux", "icon": "logos:debian" },
+        { "name": "Mikrotik", "icon": "simple-icons:mikrotik" },
+        { "name": "Aruba", "icon": "aruba" },
+        { "name": "Issabel", "icon": "mdi:phone-voip" },
+        { "name": "VLANs", "icon": "carbon:network-4" },
+        { "name": "VPN", "icon": "carbon:vpn" },
+        { "name": "DNS/DHCP", "icon": "carbon:dns-services" },
+        { "name": "Firewall", "icon": "carbon:firewall-classic" },
+        { "name": "TLS/SSL", "icon": "carbon:security" },
+        { "name": "RAID", "icon": "mdi:harddisk" },
+        { "name": "Bash Scripting", "icon": "carbon:terminal" },
+        { "name": "GitHub Actions", "icon": "logos:github-actions" },
+        { "name": "GitLab CI", "icon": "logos:gitlab" },
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "LAN/WAN Networks", "icon": "carbon:network-4" },
+        { "name": "MySQL", "icon": "logos:mysql" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "InfluxDB", "icon": "logos:influxdb" },
+        { "name": "MongoDB", "icon": "logos:mongodb-icon" },
+        { "name": "SQL Server", "icon": "simple-icons:microsoftsqlserver" }
+      ]
+    },
+    "frontend": {
+      "title": "Frontend",
+      "items": [
+        { "name": "Angular", "icon": "logos:angular-icon" },
+        { "name": "JavaScript", "icon": "logos:javascript" },
+        { "name": "TypeScript", "icon": "logos:typescript-icon" },
+        { "name": "HTML5", "icon": "logos:html-5" },
+        { "name": "CSS3", "icon": "logos:css-3" },
+        { "name": "Bootstrap", "icon": "logos:bootstrap" },
+        { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
+      ]
+    },
+    "backend": {
+      "title": "Backend",
+      "items": [
+        { "name": "Java", "icon": "logos:java" },
+        { "name": "Spring Boot", "icon": "logos:spring-icon" },
+        { "name": "Hibernate/JPA", "icon": "logos:hibernate" },
+        { "name": "Node.js", "icon": "logos:nodejs-icon" },
+        { "name": "Genexus", "icon": "Genexus" }
+      ]
+    },
+    "databases": {
+      "title": "Databases",
+      "items": [
+        { "name": "MySQL", "icon": "logos:mysql" },
+        { "name": "PostgreSQL", "icon": "logos:postgresql" },
+        { "name": "InfluxDB", "icon": "logos:influxdb" },
+        { "name": "MongoDB", "icon": "logos:mongodb-icon" },
+        { "name": "SQL Server", "icon": "simple-icons:microsoftsqlserver" }
+      ]
+    },
+    "devops": {
+      "title": "DevOps & Tools",
+      "items": [
+        { "name": "Docker", "icon": "logos:docker-icon" },
+        { "name": "NGINX", "icon": "logos:nginx" },
+        { "name": "HAProxy", "icon": "haproxy" },
+        { "name": "Prometheus", "icon": "logos:prometheus" },
+        { "name": "Proxmox", "icon": "simple-icons:proxmox" },
+        { "name": "Hyper-V", "icon": "simple-icons:hyper" },
+        { "name": "Windows Server", "icon": "logos:microsoft-windows" },
+        { "name": "Debian/Linux", "icon": "logos:debian" },
+        { "name": "Mikrotik", "icon": "simple-icons:mikrotik" },
+        { "name": "Aruba", "icon": "aruba" },
+        { "name": "Issabel", "icon": "mdi:phone-voip" },
+        { "name": "VLANs", "icon": "carbon:network-4" },
+        { "name": "VPN", "icon": "carbon:vpn" },
+        { "name": "DNS/DHCP", "icon": "carbon:dns-services" },
+        { "name": "Firewall", "icon": "carbon:firewall-classic" },
+        { "name": "TLS/SSL", "icon": "carbon:security" },
+        { "name": "RAID", "icon": "mdi:harddisk" },
+        { "name": "Bash Scripting", "icon": "carbon:terminal" },
+        { "name": "GitHub Actions", "icon": "logos:github-actions" },
+        { "name": "GitLab CI", "icon": "logos:gitlab" },
+        { "name": "AWS", "icon": "logos:aws" },
+        { "name": "LAN/WAN Networks", "icon": "carbon:network-4" }
+      ]
+    },
+    "soft": {
+      "title": "Soft Skills",
+      "items": [
+        { "name": "Team leadership and decision-making", "icon": "carbon:leadership" },
+        { "name": "Incident management (Level 3 Support)", "icon": "mdi:alert-decagram" },
+        { "name": "Vendor coordination and negotiation", "icon": "mdi:handshake" },
+        { "name": "Planning, prioritization and ownership", "icon": "mdi:clipboard-check" },
+        { "name": "Mentoring and technical training", "icon": "mdi:school-outline" },
+        { "name": "Effective communication with stakeholders", "icon": "carbon:communication" },
+        { "name": "Cross-functional collaboration (IT/Operations)", "icon": "carbon:group" },
+        { "name": "Security- and compliance-oriented mindset", "icon": "mdi:shield-check" },
+        { "name": "Complex problem-solving", "icon": "carbon:problem" },
+        { "name": "Proactive and detail-oriented mindset", "icon": "carbon:zoom-in" },
+        { "name": "Continuous learning", "icon": "carbon:education" }
+      ]
+    }
+  }
+}

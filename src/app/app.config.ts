@@ -5,10 +5,11 @@ import { provideClientHydration } from "@angular/platform-browser"
 import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from "@angular/common/http"
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core"
 import { TranslateHttpLoader } from "@ngx-translate/http-loader"
+import { MultiTranslateHttpLoader } from "./services/multi-translate-loader"
 
-// Función para cargar las traducciones
+// Función para cargar las traducciones desde múltiples archivos modulares
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, "./assets/i18n/", ".json")
+  return new MultiTranslateHttpLoader(http)
 }
 
 export const appConfig: ApplicationConfig = {

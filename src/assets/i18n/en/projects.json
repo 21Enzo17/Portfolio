@@ -1,0 +1,192 @@
+{
+  "projects": {
+    "title": "My Projects",
+    "featuredTitle": "Featured Projects",
+    "allProjects": "All Projects",
+    "viewAll": "View all projects",
+    "backToHome": "Back to home",
+    "search": {
+      "placeholder": "Search projects by name or description...",
+      "noResults": "No projects found",
+      "noResultsDescription": "Try different search terms or change category",
+      "showing": "Showing",
+      "project": "project",
+      "projects": "projects"
+    },
+    "filter": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Full Stack",
+      "infrastructure": "Infrastructure",
+      "devops": "DevOps"
+    },
+    "items": [
+      {
+        "name": "Legacy System Migration",
+        "description": "Participation in the migration of critical systems from Genexus to Java, including invoice generation and water account registration systems. This process required advanced analysis of undocumented systems.",
+        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "proyectoLegacy.jpg",
+        "category": "fullstack",
+        "featured": true
+      },
+      {
+        "name": "Jujuy Water Utility Website",
+        "description": "Redesign and development of the corporate website, improving user experience and accessibility. Led a multidisciplinary team and made key decisions in UI/UX, ensuring business goals were met.",
+        "technologies": ["Angular", "Java", "Spring Boot"],
+        "githubUrl": null,
+        "demoUrl": "https://web.aguapotablejujuy.com/home",
+        "image": "agua-jujuy.webp",
+        "category": "fullstack",
+        "featured": true
+      },
+      {
+        "name": "IFS Consultora",
+        "description": "Official website for IFS Consultora, a company specialized in food safety audits and consulting for food service establishments. Features responsive design, optimized animations, Netlify Forms contact form, Instagram feed, and SEO optimization.",
+        "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+        "githubUrl": null,
+        "demoUrl": "https://www.ifsconsultora.com",
+        "image": "IFS.webp",
+        "category": "frontend",
+        "featured": true
+      },
+      {
+        "name": "Vimo Congelados",
+        "description": "Development of the website for a frozen food factory, focused on presenting their product catalog and brand identity. The project centered on creating an attractive user experience and responsive design that adapts to any device, ensuring intuitive and accessible navigation for customers.",
+        "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+        "githubUrl": null,
+        "demoUrl": "https://www.vimocongelados.com",
+        "image": "vimo.webp",
+        "category": "frontend",
+        "featured": false
+      },
+      {
+        "name": "Attendance System with Strong Security",
+        "description": "Development of a student attendance system focused on security, implementing JWT authentication and authorization, secure password storage, role validation, sensitive data encryption, and protection against common attacks.",
+        "technologies": ["Java", "MySQL", "Spring Boot", "JWT", "bcrypt"],
+        "githubUrl": "https://github.com/21Enzo17/asist.io",
+        "image": "sistema-asistencia.jpg",
+        "category": "backend",
+        "featured": false
+      },
+      {
+        "name": "Digital Signal Generator",
+        "description": "Web application to visualize different types of digital signal encoding, including NRZ-L, NRZ-I, Manchester, and Differential Manchester. Features include start level selection and chart export.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "githubUrl": "https://github.com/21Enzo17/Signal-Modulator-web",
+        "demoUrl": "https://21enzo17.github.io/Signal-Modulator-web/",
+        "image": "generador-senales.png",
+        "category": "frontend",
+        "featured": false
+      },
+      {
+        "name": "URL Shortener API",
+        "description": "API for shortening URLs, providing detailed visit statistics and ensuring security and scalability. Includes authentication and authorization features.",
+        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "githubUrl": "https://github.com/21Enzo17/url-shortener",
+        "demoUrl": null,
+        "image": "",
+        "category": "backend",
+        "featured": false
+      },
+      {
+        "name": "Imagemin UI",
+        "description": "Desktop app built with Electron that serves as a graphical interface for the Imagemin library, allowing easy image optimization with drag and drop, quality selection, and preview.",
+        "technologies": ["Electron", "JavaScript", "Imagemin"],
+        "githubUrl": "https://github.com/21Enzo17/ImageminUI",
+        "demoUrl": null,
+        "image": "",
+        "category": "frontend",
+        "featured": false
+      },
+      {
+        "name": "Multilingual Personal Portfolio",
+        "description": "Personal portfolio developed with Angular and TypeScript, implementing scalable architecture with centralized services, lazy loading, internationalization (i18n) for Spanish and English, responsive design with Tailwind CSS, dynamic PDF CV generation, and advanced SEO optimizations. Features reusable components, efficient state management, and frontend development best practices.",
+        "technologies": ["Angular", "TypeScript", "Tailwind CSS"],
+        "githubUrl": "https://github.com/21Enzo17/Portfolio",
+        "demoUrl": "https://www.enzo-meneghini.com",
+        "image": "",
+        "category": "frontend",
+        "featured": true
+      },
+      {
+        "name": "Hybrid Server Infrastructure Management",
+        "description": "Comprehensive administration of a heterogeneous server environment. Responsible for maintenance, upgrades (hardware and software), and securing Windows Servers for Genexus systems and databases, as well as Linux servers (Debian) for critical services like Docker, PBX (Issabel), and reverse proxy. Includes UPS installation and management to ensure 24/7 operational continuity.",
+        "technologies": ["Windows Server", "Linux", "Docker", "Issabel", "Genexus", "SQL Server"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "infra-servers.svg",
+        "category": "infrastructure",
+        "featured": true
+      },
+      {
+        "name": "Enterprise Network Modernization and Management",
+        "description": "Leadership in the complete restructuring of corporate network infrastructure in collaboration with external vendors. Key tasks include managing all company DNS records, network configuration, port forwarding, and resolving complex issues such as network loops to optimize performance and stability.",
+        "technologies": ["DNS", "Networking", "Firewall", "TCP/IP", "Mikrotik"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "infra-network.svg",
+        "category": "infrastructure",
+        "featured": false
+      },
+      {
+        "name": "Multi-Site Enterprise Infrastructure",
+        "description": "Design and implementation of network infrastructure for multiple sites, including site-to-site VPN configuration, VLAN segmentation, firewall policies, QoS for critical traffic, and centralized monitoring with Prometheus and Grafana.",
+        "technologies": ["Mikrotik", "VPN", "VLANs", "Prometheus", "NGINX"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "",
+        "category": "infrastructure",
+        "featured": false
+      },
+      {
+        "name": "Enterprise Virtualization Platform",
+        "description": "Implementation of high-availability virtualization cluster using Proxmox, shared storage management, automated backup, live VM migration, and disaster recovery policies.",
+        "technologies": ["Proxmox", "Linux", "RAID", "Bash Scripting"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "",
+        "category": "infrastructure",
+        "featured": false
+      },
+      {
+        "name": "AI Application Deployment and Services",
+        "description": "Setup and management of multiple Docker environments for AI models, including implementation of Large Language Models (LLM) like Ollama, vector databases (Chromadb) for RAG systems, and voice assistants using Whisper AI. Focus on optimizing deployment to ensure efficient and scalable performance of AI services in production.",
+        "technologies": ["Docker", "Linux", "Ollama", "Chromadb", "Whisper AI", "Python"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "devops-ai.svg",
+        "category": "devops",
+        "featured": true
+      },
+      {
+        "name": "Enterprise CI/CD Pipeline",
+        "description": "Design and implementation of complete CI/CD pipeline using GitHub Actions and GitLab CI, including automated tests, static code analysis, Docker image building, automated deployment to multiple environments, and integrated notifications.",
+        "technologies": ["GitHub Actions", "Docker", "GitLab CI", "Bash"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "",
+        "category": "devops",
+        "featured": false
+      },
+      {
+        "name": "Monitoring and Observability Stack",
+        "description": "Implementation of complete monitoring stack including Prometheus for metrics, Alertmanager for alert management, centralized logging, custom Grafana dashboards, and exporters for critical services.",
+        "technologies": ["Prometheus", "Docker", "NGINX", "Bash Scripting"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "",
+        "category": "devops",
+        "featured": false
+      }
+    ],
+    "buttons": {
+      "demo": "Demo",
+      "github": "GitHub",
+      "docs": "Docs",
+      "download": "Download"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "about": "Sobre Mi",
+    "viewCertificate": "Ver certificado",
+    "viewDetails": "Ver más",
+    "notSpecified": "No especificado",
+    "certificateDescription": "Esta certificación valida mi nivel de competencia en este idioma según estándares internacionales",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Tecnologías",
+    "education": "Educación",
+    "languages": "Idiomas",
+    "contact": "Contacto",
+    "downloadCV": "Descargar CV",
+    "generating": "Generando..."
+  }
+}

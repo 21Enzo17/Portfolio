@@ -9,7 +9,8 @@ import type { Subscription } from "rxjs"
   standalone: true,
   imports: [CommonModule],
   template: `
-    <canvas #canvas class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none"></canvas>
+    <canvas #canvas class="fixed top-0 left-0 w-full h-full -z-10 opacity-70 pointer-events-none" 
+            style="will-change: contents;"></canvas>
   `,
   styles: [],
 })
@@ -21,6 +22,7 @@ export class BackgroundAnimationComponent implements OnInit, OnDestroy {
   private animationFrameId?: number
   private lastTime = 0
   private fpsInterval = 1000 / 30 // 30 fps
+  private isVisible = true
   private mouseX = 0
   private mouseY = 0
   private mouseActive = false
@@ -65,6 +67,9 @@ export class BackgroundAnimationComponent implements OnInit, OnDestroy {
     window.addEventListener("touchmove", this.handleTouchMove, { passive: true })
     window.addEventListener("resize", this.resizeCanvas)
 
+    // Detectar cuando el tab/ventana no es visible para pausar la animación
+    document.addEventListener("visibilitychange", this.handleVisibilityChange)
+
     // Inicializar partículas
     this.initParticles()
 
@@ -102,9 +107,18 @@ export class BackgroundAnimationComponent implements OnInit, OnDestroy {
     }, 2000)
   }
 
+  private handleVisibilityChange = () => {
+    this.isVisible = !document.hidden
+    if (this.isVisible && !this.animationFrameId) {
+      // Reanudar animación cuando la ventana vuelve a ser visible
+      this.animate(performance.now())
+    }
+  }
+
   private initParticles() {
     this.particlesArray = []
-    const numberOfParticles = this.isMobile ? 20 : 50
+    // Reducir número de partículas en móviles para mejor rendimiento
+    const numberOfParticles = this.isMobile ? 15 : 40
 
     for (let i = 0; i < numberOfParticles; i++) {
       this.particlesArray.push(
@@ -172,6 +186,12 @@ export class BackgroundAnimationComponent implements OnInit, OnDestroy {
   }
 
   private animate = (timestamp: number) => {
+    // Pausar animación si el tab no es visible
+    if (!this.isVisible) {
+      this.animationFrameId = undefined
+      return
+    }
+
     const elapsed = timestamp - this.lastTime
 
     if (elapsed > this.fpsInterval) {
@@ -208,6 +228,7 @@ export class BackgroundAnimationComponent implements OnInit, OnDestroy {
     window.removeEventListener("mousemove", this.handleMouseMove)
     window.removeEventListener("touchmove", this.handleTouchMove)
     window.removeEventListener("resize", this.resizeCanvas)
+    document.removeEventListener("visibilitychange", this.handleVisibilityChange)
 
     clearTimeout(this.inactivityTimer)
 

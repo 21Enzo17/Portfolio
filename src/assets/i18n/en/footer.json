@@ -1,0 +1,23 @@
+{
+  "footer": {
+    "contact": {
+      "title": "Contact",
+      "location": "Jujuy, Argentina",
+      "email": "contacto@enzo-meneghini.com",
+      "phone": "+54 388 460-0584"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "about": "About Me",
+      "experience": "Experience",
+      "education": "Education",
+      "projects": "Projects",
+      "skills": "Technologies",
+      "languages": "Languages"
+    },
+    "connect": {
+      "title": "Let's Connect"
+    },
+    "copyright": "© 2025 Enzo Meneghini. All rights reserved."
+  }
+}

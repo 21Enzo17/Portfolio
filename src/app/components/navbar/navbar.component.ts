@@ -1,5 +1,6 @@
 import { Component, type OnInit, inject, type OnDestroy, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core"
 import { CommonModule } from "@angular/common"
+import { Router } from "@angular/router"
 import { TranslateModule, TranslateService } from "@ngx-translate/core"
 import { ThemeService } from "@app/services/theme.service"
 import { LanguageService } from "@app/services/language.service"
@@ -27,6 +28,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private languageService = inject(LanguageService)
   private translate = inject(TranslateService)
   private analyticsService = inject(AnalyticsService)
+  private router = inject(Router)
 
   ngOnInit() {
     // Suscribirse a cambios de tema
@@ -105,6 +107,15 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   closeMobileMenu() {
     this.mobileMenuOpen = false
+  }
+
+  // Navigate to home page
+  navigateToHome(event: Event): void {
+    event.preventDefault();
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    this.analyticsService.trackEvent('navigation_click', 'navbar', 'home_logo');
   }
 
   // Analytics method for navigation link clicks

@@ -13,7 +13,13 @@ export const routes: Routes = [
   },
   {
     path: "proyectos",
-    redirectTo: "/#projects",
+    loadComponent: () => import("./pages/projects/projects-page.component").then((m) => m.ProjectsPageComponent),
+    data: { 
+      seo: { 
+        title: 'Proyectos | Enzo Meneghini - Portfolio',
+        canonicalUrl: '/proyectos'
+      }
+    }
   },
   {
     path: "skills",

@@ -1,0 +1,192 @@
+{
+  "projects": {
+    "title": "Mis Proyectos",
+    "featuredTitle": "Proyectos Destacados",
+    "allProjects": "Todos los Proyectos",
+    "viewAll": "Ver todos los proyectos",
+    "backToHome": "Volver al inicio",
+    "search": {
+      "placeholder": "Buscar proyectos por nombre o descripción...",
+      "noResults": "No se encontraron proyectos",
+      "noResultsDescription": "Intenta con otros términos de búsqueda o cambia de categoría",
+      "showing": "Mostrando",
+      "project": "proyecto",
+      "projects": "proyectos"
+    },
+    "filter": {
+      "all": "Todos",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Full Stack",
+      "infrastructure": "Infraestructura",
+      "devops": "DevOps"
+    },
+    "items": [
+      {
+        "name": "Migración de Sistemas Legacy",
+        "description": "Participación en la migración de sistemas críticos de Genexus a Java, incluyendo el sistema de generación de facturas y la creación de un sistema de adhesión de cuentas de agua. Este proceso implicó el análisis avanzado de sistemas sin documentación previa.",
+        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "proyectoLegacy.jpg",
+        "category": "fullstack",
+        "featured": true
+      },
+      {
+        "name": "Sitio Web de Agua Potable de Jujuy",
+        "description": "Rediseño y desarrollo del sitio web corporativo, mejorando la experiencia del usuario y la accesibilidad. Se lideró un equipo multidisciplinario, tomando decisiones clave en UI/UX y asegurando el cumplimiento de los objetivos empresariales.",
+        "technologies": ["Angular", "Java", "Spring Boot"],
+        "githubUrl": null,
+        "demoUrl": "https://web.aguapotablejujuy.com/home",
+        "image": "agua-jujuy.webp",
+        "category": "fullstack",
+        "featured": true
+      },
+      {
+        "name": "IFS Consultora",
+        "description": "Sitio web oficial para IFS Consultora, una empresa especializada en auditorías de calidad alimentaria y consultoría para servicios gastronómicos. Incluye diseño responsive, animaciones optimizadas, formulario de contacto con Netlify Forms, feed de Instagram y optimización SEO.",
+        "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+        "githubUrl": null,
+        "demoUrl": "https://www.ifsconsultora.com",
+        "image": "IFS.webp",
+        "category": "frontend",
+        "featured": true
+      },
+      {
+        "name": "Vimo Congelados",
+        "description": "Desarrollo del sitio web para una fábrica de productos congelados, enfocado en presentar su catálogo de productos y la identidad de la marca. El proyecto se centró en crear una experiencia de usuario atractiva y un diseño responsive que se adapta a cualquier dispositivo, asegurando una navegación intuitiva y accesible para los clientes.",
+        "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+        "githubUrl": null,
+        "demoUrl": "https://www.vimocongelados.com",
+        "image": "vimo.webp",
+        "category": "frontend",
+        "featured": false
+      },
+      {
+        "name": "Sistema de Asistencia con Seguridad Robusta",
+        "description": "Desarrollo de un sistema de asistencia estudiantil con enfoque en seguridad, implementando autenticación y autorización con JWT, almacenamiento seguro de contraseñas, validación de roles, encriptación de datos sensibles y medidas de protección contra ataques comunes.",
+        "technologies": ["Java", "MySQL", "Spring Boot", "JWT", "bcrypt"],
+        "githubUrl": "https://github.com/21Enzo17/asist.io",
+        "image": "sistema-asistencia.jpg",
+        "category": "backend",
+        "featured": false
+      },
+      {
+        "name": "Generador de Señales Digitales",
+        "description": "Aplicación web que permite visualizar diferentes tipos de codificación de señales digitales, incluyendo NRZ-L, NRZ-I, Manchester y Manchester Diferencial. Ofrece funcionalidades como selección de nivel de inicio y exportación de gráficos.",
+        "technologies": ["HTML", "CSS", "JavaScript"],
+        "githubUrl": "https://github.com/21Enzo17/Signal-Modulator-web",
+        "demoUrl": "https://21enzo17.github.io/Signal-Modulator-web/",
+        "image": "generador-senales.png",
+        "category": "frontend",
+        "featured": false
+      },
+      {
+        "name": "URL Shortener API",
+        "description": "API para acortar URLs, proporcionando estadísticas detalladas sobre las visitas y garantizando seguridad y escalabilidad. Incluye funcionalidades de autenticación y autorización.",
+        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "githubUrl": "https://github.com/21Enzo17/url-shortener",
+        "demoUrl": null,
+        "image": "",
+        "category": "backend",
+        "featured": false
+      },
+      {
+        "name": "Imagemin UI",
+        "description": "Aplicación de escritorio desarrollada con Electron que sirve como interfaz gráfica para la librería Imagemin, permitiendo optimizar imágenes fácilmente con funcionalidades como arrastrar y soltar, selección de calidad y vista previa.",
+        "technologies": ["Electron", "JavaScript", "Imagemin"],
+        "githubUrl": "https://github.com/21Enzo17/ImageminUI",
+        "demoUrl": null,
+        "image": "",
+        "category": "frontend",
+        "featured": false
+      },
+      {
+        "name": "Portfolio Personal Multilenguaje",
+        "description": "Portfolio personal desarrollado con Angular y TypeScript, implementando arquitectura escalable con servicios centralizados, lazy loading, internacionalización (i18n) para español e inglés, diseño responsive con Tailwind CSS, generación dinámica de CV en PDF, y optimizaciones de SEO avanzadas. Incluye componentes reutilizables, gestión de estado eficiente y mejores prácticas de desarrollo frontend.",
+        "technologies": ["Angular", "TypeScript", "Tailwind CSS"],
+        "githubUrl": "https://github.com/21Enzo17/Portfolio",
+        "demoUrl": "https://www.enzo-meneghini.com",
+        "image": "",
+        "category": "frontend",
+        "featured": true
+      },
+      {
+        "name": "Gestión de Infraestructura de Servidores Híbridos",
+        "description": "Administración integral de un entorno de servidores heterogéneo. Responsable del mantenimiento, actualización (hardware y software) y securización de Windows Servers para sistemas Genexus y bases de datos, así como servidores Linux (Debian) para servicios críticos como Docker, PBX (Issabel) y proxy reverso. Incluye la instalación y gestión de UPS para garantizar la continuidad operativa 24/7.",
+        "technologies": ["Windows Server", "Linux", "Docker", "Issabel", "Genexus", "SQL Server"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "infra-servers.svg",
+        "category": "infrastructure",
+        "featured": true
+      },
+      {
+        "name": "Modernización y Gestión de Red Empresarial",
+        "description": "Liderazgo en la reestructuración completa de la infraestructura de red corporativa en colaboración con proveedores externos. Tareas clave incluyen la gestión de todos los registros DNS de la empresa, configuración de red, apertura de puertos, y la resolución de problemas complejos como bucles de red (loops) para optimizar el rendimiento y la estabilidad.",
+        "technologies": ["DNS", "Networking", "Firewall", "TCP/IP", "Mikrotik"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "infra-network.svg",
+        "category": "infrastructure",
+        "featured": false
+      },
+      {
+        "name": "Infraestructura Multi-Sede Empresarial",
+        "description": "Diseño e implementación de infraestructura de red para múltiples sedes, incluyendo configuración de VPN site-to-site, segmentación de VLANs, políticas de firewall, QoS para tráfico crítico, y monitoreo centralizado con Prometheus y Grafana.",
+        "technologies": ["Mikrotik", "VPN", "VLANs", "Prometheus", "NGINX"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "",
+        "category": "infrastructure",
+        "featured": false
+      },
+      {
+        "name": "Plataforma de Virtualización Empresarial",
+        "description": "Implementación de cluster de virtualización con alta disponibilidad usando Proxmox, gestión de almacenamiento compartido, backup automatizado, migración en vivo de VMs, y políticas de recuperación ante desastres.",
+        "technologies": ["Proxmox", "Linux", "RAID", "Bash Scripting"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "",
+        "category": "infrastructure",
+        "featured": false
+      },
+      {
+        "name": "Despliegue de Aplicaciones y Servicios de IA",
+        "description": "Gestión del ciclo de vida completo para el despliegue de aplicaciones web, incluyendo el backend y frontend del sitio corporativo. Implementación y mantenimiento de servicios de inteligencia artificial on-premise, como un modelo de lenguaje (Qwen 4B) y el chatbot oficial de la empresa, utilizando servidores propios y asegurando su correcto funcionamiento y disponibilidad.",
+        "technologies": ["CI/CD", "Docker", "NGINX", "IA (LLMs)", "Linux", "DNS"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "devops-ai.svg",
+        "category": "devops",
+        "featured": true
+      },
+      {
+        "name": "Pipeline CI/CD Empresarial",
+        "description": "Diseño e implementación de pipeline completo de CI/CD usando GitHub Actions y GitLab CI, incluyendo tests automatizados, análisis de código estático, construcción de imágenes Docker, despliegue automatizado a múltiples entornos y notificaciones integradas.",
+        "technologies": ["GitHub Actions", "Docker", "GitLab CI", "Bash"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "",
+        "category": "devops",
+        "featured": false
+      },
+      {
+        "name": "Stack de Monitoreo y Observabilidad",
+        "description": "Implementación de stack completo de monitoreo incluyendo Prometheus para métricas, Alertmanager para gestión de alertas, logging centralizado, dashboards personalizados en Grafana, y exportadores para servicios críticos.",
+        "technologies": ["Prometheus", "Docker", "NGINX", "Bash Scripting"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "",
+        "category": "devops",
+        "featured": false
+      }
+    ],
+    "buttons": {
+      "demo": "Demo",
+      "github": "GitHub",
+      "docs": "Documentación",
+      "download": "Descargar"
+    }
+  }
+}

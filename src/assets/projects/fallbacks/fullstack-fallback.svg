@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="fullstackGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#43cea2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="fullstackGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  
+  <!-- Frontend (Left) -->
+  <rect x="30" y="80" width="150" height="140" rx="8" fill="#2d2d44" stroke="#667eea" stroke-width="2"/>
+  <rect x="30" y="80" width="150" height="25" rx="8" fill="url(#fullstackGradient1)" opacity="0.8"/>
+  <text x="105" y="98" font-family="monospace" font-size="14" fill="#ffffff" text-anchor="middle">Frontend</text>
+  <text x="105" y="145" font-family="monospace" font-size="35" fill="#667eea" text-anchor="middle">&lt;/&gt;</text>
+  <rect x="50" y="170" width="50" height="8" rx="4" fill="#667eea" opacity="0.4"/>
+  <rect x="50" y="185" width="70" height="8" rx="4" fill="#667eea" opacity="0.4"/>
+  <rect x="50" y="200" width="40" height="8" rx="4" fill="#667eea" opacity="0.4"/>
+  
+  <!-- Backend (Right) -->
+  <rect x="220" y="80" width="150" height="140" rx="8" fill="#2d2d44" stroke="#43cea2" stroke-width="2"/>
+  <rect x="220" y="80" width="150" height="25" rx="8" fill="url(#fullstackGradient1)" opacity="0.8"/>
+  <text x="295" y="98" font-family="monospace" font-size="14" fill="#ffffff" text-anchor="middle">Backend</text>
+  
+  <!-- Server Icon -->
+  <rect x="245" y="125" width="100" height="20" rx="3" fill="#43cea2" opacity="0.3"/>
+  <rect x="245" y="150" width="100" height="20" rx="3" fill="#43cea2" opacity="0.3"/>
+  <rect x="245" y="175" width="100" height="20" rx="3" fill="#43cea2" opacity="0.3"/>
+  <circle cx="260" cy="135" r="3" fill="#27c93f"/>
+  <circle cx="260" cy="160" r="3" fill="#27c93f"/>
+  <circle cx="260" cy="185" r="3" fill="#27c93f"/>
+  
+  <!-- Connection Lines -->
+  <path d="M 180 150 L 220 150" stroke="url(#fullstackGradient2)" stroke-width="3" opacity="0.8"/>
+  <circle cx="190" cy="150" r="4" fill="#f5576c"/>
+  <circle cx="210" cy="150" r="4" fill="#f093fb"/>
+  
+  <!-- Bidirectional Arrows -->
+  <path d="M 195 145 L 185 150 L 195 155" fill="none" stroke="#f5576c" stroke-width="2"/>
+  <path d="M 205 145 L 215 150 L 205 155" fill="none" stroke="#f093fb" stroke-width="2"/>
+</svg>

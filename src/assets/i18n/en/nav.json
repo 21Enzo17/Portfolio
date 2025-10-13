@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "about": "About Me",
+    "viewCertificate": "View certificate",
+    "viewDetails": "See more",
+    "notSpecified": "Not specified",
+    "certificateDescription": "This certification validates my level of proficiency in this language according to international standards",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Technologies",
+    "education": "Education",
+    "languages": "Languages",
+    "contact": "Contact",
+    "downloadCV": "Download CV",
+    "generating": "Generating..."
+  }
+}

@@ -2,41 +2,65 @@
   <div class="opacity-0 transform translate-y-5" 
        [ngClass]="{'opacity-100 translate-y-0': true}"
        style="transition: opacity 0.5s ease, transform 0.5s ease">
-    <h2 class="text-3xl font-bold mb-10 relative inline-block">
-      {{ 'projects.title' | translate }}
+    <h2 class="text-3xl font-bold mb-4 relative inline-block">
+      {{ 'projects.featuredTitle' | translate }}
       <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></span>
     </h2>
+    <p class="text-foreground/70 mb-8">
+      {{ 'projects.title' | translate }}
+    </p>
   </div>
 
-  <!-- Grid de proyectos -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <!-- Iteración sobre proyectos -->
-    <div *ngFor="let project of projects; let i = index" 
-         class="neumorphic rounded-xl p-5 transition-all duration-300 hover:translate-y-[-5px] group overflow-hidden flex flex-col h-full relative z-10 opacity-0 transform translate-y-5"
+  <!-- Grid de proyectos destacados -->
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-8">
+    <!-- Iteración sobre proyectos destacados -->
+    <div *ngFor="let project of featuredProjects; let i = index; trackBy: trackByProject" 
+         class="neumorphic rounded-2xl p-6 transition-all duration-300 hover:translate-y-[-5px] group overflow-hidden flex flex-col relative z-10 opacity-0 transform translate-y-5"
          [ngClass]="{'opacity-100 translate-y-0': true}"
          [style]="{'transition': 'opacity 0.5s ease, transform 0.5s ease', 'transition-delay': (i * 0.1) + 's'}"
          (mouseenter)="onProjectView(project.name)">
+      
+      <!-- Badge de destacado -->
+      <div class="absolute top-4 right-4 z-10 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+        ⭐ Destacado
+      </div>
+
       <!-- Imagen del proyecto -->
-      <div class="w-full h-48 rounded-lg mb-4 overflow-hidden relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-1 rounded-lg pointer-events-none"></div>
+      <div class="w-full aspect-video rounded-xl mb-4 overflow-hidden relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-1 rounded-xl pointer-events-none"></div>
         <img [src]="getProjectImage(project)" 
              [alt]="project.name" 
-             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
              appFallbackImage [appFallbackImage]="getFallbackForProject(project)"
              loading="lazy">
       </div>
 
       <!-- Contenido -->
-      <h3 class="text-xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+      <h3 class="text-xl font-bold mb-3 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
         {{ project.name }}
       </h3>
-      <p class="mb-4 text-foreground/80">{{ project.description }}</p>
+      
+      <!-- Badge de categoría -->
+      <div class="mb-3" *ngIf="project.category">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-medium"
+              [ngClass]="{
+                'bg-purple-500/20 text-purple-500': project.category === 'frontend',
+                'bg-blue-500/20 text-blue-500': project.category === 'backend',
+                'bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-purple-500': project.category === 'fullstack',
+                'bg-green-500/20 text-green-500': project.category === 'infrastructure',
+                'bg-orange-500/20 text-orange-500': project.category === 'devops'
+              }">
+          {{ 'projects.filter.' + project.category | translate }}
+        </span>
+      </div>
+
+      <p class="mb-4 text-foreground/80 flex-grow">{{ project.description }}</p>
 
       <!-- Tecnologías -->
-      <div class="flex flex-wrap gap-3 mb-4 justify-center">
-        <div *ngFor="let tech of project.technologies" class="tech-item hover:scale-110 transition-transform"
+      <div class="flex flex-wrap gap-2 mb-4 justify-center">
+        <div *ngFor="let tech of project.technologies; trackBy: trackByTechnology" class="tech-item hover:scale-110 transition-transform"
              style="transition: transform 0.3s ease">
-          <div class="tech-icon-projects w-12 h-12 flex items-center justify-center">
+          <div class="tech-icon-projects w-10 h-10 flex items-center justify-center">
             <!-- Ícono personalizado -->
             <ng-container *ngIf="hasCustomIcon(tech)">
               <div *ngIf="getCustomIcon(tech).type === 'text'" 
@@ -51,12 +75,12 @@
             <!-- Ícono de Iconify por defecto -->
             <iconify-icon *ngIf="!hasCustomIcon(tech)" [icon]="getTechIcon(tech)" width="28" height="28"></iconify-icon>
           </div>
-          <span class="tech-label">{{ tech }}</span>
+          <span class="tech-label text-xs">{{ tech }}</span>
         </div>
       </div>
 
       <!-- Enlaces -->
-      <div class="flex flex-wrap gap-3 mt-auto pt-4 relative z-20 justify-center">
+      <div class="flex flex-wrap gap-2 mt-auto pt-4 relative z-20 justify-center">
         <!-- Demo URL (si está disponible) -->
         <a *ngIf="hasDemoUrl(project)" 
            [href]="project.demoUrl" 
@@ -117,5 +141,18 @@
         </a>
       </div>
     </div>
+  </div>
+
+  <!-- Botón Ver Todos los Proyectos -->
+  <div class="mt-12 text-center opacity-0 transform translate-y-5"
+       [ngClass]="{'opacity-100 translate-y-0': true}"
+       style="transition: opacity 0.5s ease, transform 0.5s ease; transition-delay: 0.4s">
+    <a routerLink="/proyectos"
+       class="inline-block neumorphic px-8 py-4 rounded-xl font-medium text-lg transition-all duration-300 hover:translate-y-[-5px] hover:shadow-2xl"
+       (click)="onViewAllProjects()">
+      <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+        {{ 'projects.viewAll' | translate }} →
+      </span>
+    </a>
   </div>
 </section>

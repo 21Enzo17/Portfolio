@@ -121,6 +121,18 @@ export class IconService {
     'graphql': 'logos:graphql',
     'jwt': 'logos:jwt-icon',
 
+    // AI & Machine Learning
+    'ollama': 'mdi:robot',
+    'qwen': 'mdi:brain',
+    'chromadb': 'mdi:database-search',
+    'whisper ai': 'mdi:microphone',
+    'llms': 'mdi:robot-outline',
+    'rag': 'mdi:book-search',
+    'ia (llms)': 'mdi:robot-outline',
+
+    // Hardware & Infrastructure
+    'ups': 'mdi:battery-charging',
+
     // Development Tools
     'vscode': 'logos:visual-studio-code',
     'electron': 'logos:electron',

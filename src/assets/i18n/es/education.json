@@ -1,0 +1,51 @@
+{
+  "education": {
+    "title": "Educación",
+    "achievements": "Logros destacados",
+    "relatedSkills": "Competencias adquiridas",
+    "viewCertificate": "Ver Certificado",
+    "seeMore": "Ver más",
+    "seeLess": "Ver menos",
+    "types": {
+      "all": "Todos",
+      "formal": "Educación Formal",
+      "course": "Cursos",
+      "certification": "Certificación"
+    },
+    "items": [
+      {
+        "degree": "Analista Programador Universitario",
+        "institution": "Universidad Nacional de Jujuy (UNJu)",
+        "period": "2022 - 2025",
+        "location": "Jujuy, Argentina",
+        "description": "Carrera finalizada en tiempo estimado (promedio 8.35/10). Formación en análisis de sistemas, estructuras de datos, algoritmos, POO, bases de datos y resolución de problemas complejos.",
+        "type": "formal",
+        "gpa": "Promedio: 8.35/10",
+        "url": "https://unju.edu.ar",
+        "achievements": [
+          "Mejor promedio de la promoción 2025",
+          "Reconocimiento por proyecto integrador destacado",
+          "Participación en olimpiadas de programación"
+        ],
+        "skills": [
+          "Java", "Algoritmos", "Estructuras de datos", "Análisis de sistemas", "SQL", "POO", "UML"
+        ]
+      },
+      {
+        "degree": "Tecnicatura en Hardware de PC y Redes",
+        "institution": "Universidad Nacional de Catamarca",
+        "period": "Carga horaria: 190 horas cátedra",
+        "location": "Argentina",
+        "description": "Formación en reparación, mantenimiento y configuración de hardware, redes LAN/WAN y soporte técnico.",
+        "type": "certification",
+        "achievements": [
+          "Proyecto final con mención especial",
+          "Implementación de red LAN completa como trabajo práctico"
+        ],
+        "skills": [
+          "Redes LAN/WAN", "Mantenimiento de hardware", "Configuración de routers", "Soporte técnico", "Diagnóstico de fallas"
+        ]
+      }
+    ]
+  }
+}

@@ -1,10 +1,14 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef } from "@angular/core"
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, OnDestroy } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { TranslateModule, TranslateService } from "@ngx-translate/core"
 import { FallbackImageDirective } from "../../directives/fallback-image.directive"
 import { IconService, CustomIcon } from "../../services/icon.service"
 import { AnalyticsService } from "../../services/analytics.service"
-import { RouterModule } from "@angular/router"
+import { NavbarComponent } from "../../components/navbar/navbar.component"
+import { FooterComponent } from "../../components/footer/footer.component"
+import { BackgroundAnimationComponent } from "../../components/background-animation/background-animation.component"
+import { LanguageSwitchIndicatorComponent } from "../../components/language-switch-indicator/language-switch-indicator.component"
+import { Router } from "@angular/router"
 import { Subject, takeUntil } from "rxjs"
 
 interface Project {
@@ -15,31 +19,49 @@ interface Project {
   githubUrl?: string;
   docsUrl?: string;
   downloadUrl?: string;
-  image?: string; // Ruta a la imagen del proyecto
-  featured?: boolean;
+  image?: string;
   category?: string;
+  featured?: boolean;
 }
 
+type FilterCategory = 'all' | 'frontend' | 'backend' | 'fullstack' | 'infrastructure' | 'devops';
+
 @Component({
-  selector: "app-projects",
+  selector: "app-projects-page",
   standalone: true,
-  imports: [CommonModule, TranslateModule, FallbackImageDirective, RouterModule],
-  templateUrl: "./projects.component.html",
-  styleUrls: ["./projects.component.scss"],
+  imports: [
+    CommonModule, 
+    TranslateModule, 
+    FallbackImageDirective, 
+    NavbarComponent, 
+    FooterComponent, 
+    BackgroundAnimationComponent,
+    LanguageSwitchIndicatorComponent
+  ],
+  templateUrl: "./projects-page.component.html",
+  styleUrls: ["./projects-page.component.scss"],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProjectsComponent implements OnDestroy {
+export class ProjectsPageComponent implements OnInit, OnDestroy {
   projects: Project[] = [];
-  featuredProjects: Project[] = [];
+  filteredProjects: Project[] = [];
+  selectedCategory: FilterCategory = 'all';
+  searchTerm: string = '';
   private destroy$ = new Subject<void>();
+  
+  // Lista de categorías para los filtros
+  categories: FilterCategory[] = ['all', 'frontend', 'backend', 'fullstack', 'infrastructure', 'devops'];
 
   constructor(
     private translateService: TranslateService,
     private iconService: IconService,
     private analyticsService: AnalyticsService,
+    private router: Router,
     private cdr: ChangeDetectorRef
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.loadProjects();
     
     // Subscribe to language changes to update projects when language changes
@@ -48,6 +70,9 @@ export class ProjectsComponent implements OnDestroy {
       .subscribe(() => {
         this.loadProjects();
       });
+    
+    // Scroll to top when component loads
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   ngOnDestroy() {
@@ -58,10 +83,59 @@ export class ProjectsComponent implements OnDestroy {
   private loadProjects() {
     this.translateService.get('projects.items').subscribe((items: Project[]) => {
       this.projects = items;
-      // Filtrar solo los proyectos destacados
-      this.featuredProjects = items.filter(project => project.featured === true);
+      this.filterProjects();
       this.cdr.markForCheck(); // Notificar cambios con OnPush
     });
+  }
+  
+  // Filtra los proyectos por categoría y búsqueda
+  filterProjects() {
+    let result = this.projects;
+    
+    // Filtrar por categoría
+    if (this.selectedCategory !== 'all') {
+      result = result.filter(project => 
+        project.category === this.selectedCategory
+      );
+    }
+    
+    // Filtrar por búsqueda
+    if (this.searchTerm.trim()) {
+      const term = this.searchTerm.toLowerCase().trim();
+      result = result.filter(project => 
+        project.name.toLowerCase().includes(term) ||
+        project.description.toLowerCase().includes(term) ||
+        project.technologies.some(tech => tech.toLowerCase().includes(term))
+      );
+    }
+    
+    this.filteredProjects = result;
+    this.cdr.markForCheck(); // Notificar cambios con OnPush
+    
+    // Registrar el evento de búsqueda
+    if (this.searchTerm.trim()) {
+      this.analyticsService.trackEvent('search_projects', 'projects_page', this.searchTerm);
+    }
+  }
+  
+  // Cambia la categoría seleccionada
+  selectCategory(category: FilterCategory) {
+    this.selectedCategory = category;
+    this.filterProjects();
+    this.analyticsService.trackEvent('filter_projects', 'projects_page', category);
+  }
+  
+  // Maneja el cambio en el campo de búsqueda
+  onSearchChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.searchTerm = input.value;
+    this.filterProjects();
+  }
+  
+  // Limpia la búsqueda
+  clearSearch() {
+    this.searchTerm = '';
+    this.filterProjects();
   }
   
   // Determina si un proyecto tiene una URL de documentación
@@ -73,7 +147,8 @@ export class ProjectsComponent implements OnDestroy {
   hasDemoUrl(project: Project): boolean {
     return !!project.demoUrl && project.demoUrl !== '#';
   }
-    // Método para verificar si una tecnología tiene un ícono personalizado
+  
+  // Método para verificar si una tecnología tiene un ícono personalizado
   hasCustomIcon(tech: string): boolean {
     return this.iconService.hasCustomIcon(tech);
   }
@@ -215,28 +290,29 @@ export class ProjectsComponent implements OnDestroy {
 
   // Métodos para rastrear eventos de proyectos
   onProjectDemo(projectName: string): void {
-    this.analyticsService.trackEvent('project_demo_click', 'projects', projectName);
+    this.analyticsService.trackEvent('project_demo_click', 'projects_page', projectName);
   }
 
   onProjectGithub(projectName: string): void {
-    this.analyticsService.trackEvent('project_github_click', 'projects', projectName);
+    this.analyticsService.trackEvent('project_github_click', 'projects_page', projectName);
   }
 
   onProjectDocs(projectName: string): void {
-    this.analyticsService.trackEvent('project_docs_click', 'projects', projectName);
+    this.analyticsService.trackEvent('project_docs_click', 'projects_page', projectName);
   }
 
   onProjectDownload(projectName: string): void {
-    this.analyticsService.trackEvent('project_download_click', 'projects', projectName);
+    this.analyticsService.trackEvent('project_download_click', 'projects_page', projectName);
   }
 
   onProjectView(projectName: string): void {
     this.analyticsService.trackProjectView(projectName);
   }
 
-  // Método para rastrear cuando se hace clic en "Ver todos los proyectos"
-  onViewAllProjects(): void {
-    this.analyticsService.trackEvent('view_all_projects_click', 'projects', 'from_home');
+  // Método para volver a la página principal
+  goToHome(): void {
+    this.router.navigate(['/']);
+    this.analyticsService.trackEvent('go_to_home_click', 'projects_page', 'navigation');
   }
 
   // TrackBy functions para optimizar el rendering
@@ -246,5 +322,9 @@ export class ProjectsComponent implements OnDestroy {
 
   trackByTechnology(index: number, tech: string): string {
     return tech;
+  }
+
+  trackByCategory(index: number, category: FilterCategory): FilterCategory {
+    return category;
   }
 }
