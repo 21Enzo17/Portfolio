@@ -1,7 +1,50 @@
 <!doctype html>
 <html lang="es">
+<head>
+  <!-- CRITICAL: Script para prevenir FOUC (Flash of Unstyled Content) del tema -->
+  <!-- Este script DEBE ejecutarse ANTES de que Angular cargue para evitar parpadeo -->
+  <script>
+    (function() {
+      try {
+        // Agregar clase preload para deshabilitar transiciones durante la carga
+        document.documentElement.classList.add('preload');
+        
+        // Detectar tema guardado o preferencia del sistema
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldBeDark = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+        
+        // Aplicar clase 'dark' inmediatamente si es necesario
+        if (shouldBeDark) {
+          document.documentElement.classList.add('dark');
+        }
+        
+        // Remover clase preload después de que el DOM esté listo
+        window.addEventListener('DOMContentLoaded', function() {
+          // Pequeño delay para asegurar que el tema se aplicó
+          setTimeout(function() {
+            document.documentElement.classList.remove('preload');
+          }, 50);
+        });
+      } catch (e) {
+        // Si hay error (ej: localStorage bloqueado), no hacer nada
+        console.warn('No se pudo cargar el tema guardado:', e);
+      }
+    })();
+  </script>
+  
   <!-- Iconify -->
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  
+  <!-- Preload de recursos críticos para mejorar rendimiento -->
+  <link rel="preconnect" href="https://code.iconify.design" crossorigin>
+  <link rel="dns-prefetch" href="https://code.iconify.design">
+  
+  <!-- Preload de imagen crítica (LCP - Largest Contentful Paint) -->
+  <link rel="preload" as="image" href="assets/FotoPerfil.webp" type="image/webp" fetchpriority="high">
+  
+  <!-- Preload de estilos críticos (Angular los inyectará) -->
+  <link rel="preload" as="style" href="styles.css" onload="this.rel='stylesheet'">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.enzo-meneghini.com/">
@@ -9,6 +52,11 @@
   <title>Enzo Meneghini | Full Stack Developer | Portfolio</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Color de tema para navegadores móviles -->
+  <meta name="theme-color" content="#e0e5ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a202b" media="(prefers-color-scheme: dark)">
+  
   <meta name="description" content="Portfolio profesional de Enzo Meneghini, Full Stack Developer especializado en Angular, Java, Spring, React, Next.js, TypeScript, Node.js y más tecnologías web modernas.">
   <meta name="keywords" content="Enzo Meneghini, desarrollador full stack, portfolio, angular, java, spring, react, next.js, desarrollador web, programador">
   <meta name="author" content="Enzo Meneghini">

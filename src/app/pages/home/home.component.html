@@ -1,5 +1,8 @@
 <main class="min-h-screen relative">
+  <!-- Background siempre visible para el efecto visual -->
   <app-background-animation></app-background-animation>
+  
+  <!-- Navbar y Hero: Carga INMEDIATA (Above the Fold) -->
   <app-navbar></app-navbar>
   <app-language-switch-indicator></app-language-switch-indicator>
   
@@ -13,13 +16,93 @@
        class="container mx-auto px-4 pt-24 transition-opacity duration-500"
        [class.opacity-100]="showContent"
        [class.opacity-0]="!showContent">
+    
+    <!-- Hero: Carga INMEDIATA (crítico para LCP) -->
     <app-hero></app-hero>
-    <app-education></app-education>
-    <app-experience></app-experience>
-    <app-projects></app-projects>
-    <app-skills></app-skills>
-    <app-languages></app-languages>
+    
+    <!-- Education: Lazy load cuando entre en viewport -->
+    @defer (on viewport) {
+      <app-education></app-education>
+    } @placeholder {
+      <div class="min-h-[400px] flex items-center justify-center p-8">
+        <div class="animate-pulse w-full max-w-4xl space-y-6">
+          <div class="h-8 bg-muted/50 rounded w-1/3"></div>
+          <div class="space-y-4">
+            <div class="h-24 bg-muted/30 rounded-xl"></div>
+            <div class="h-24 bg-muted/30 rounded-xl"></div>
+          </div>
+        </div>
+      </div>
+    }
+    
+    <!-- Experience: Lazy load cuando entre en viewport -->
+    @defer (on viewport) {
+      <app-experience></app-experience>
+    } @placeholder {
+      <div class="min-h-[500px] flex items-center justify-center p-8">
+        <div class="animate-pulse w-full max-w-4xl space-y-6">
+          <div class="h-8 bg-muted/50 rounded w-1/3"></div>
+          <div class="space-y-4">
+            <div class="h-32 bg-muted/30 rounded-xl"></div>
+            <div class="h-32 bg-muted/30 rounded-xl"></div>
+          </div>
+        </div>
+      </div>
+    }
+    
+    <!-- Projects: Lazy load cuando entre en viewport (MUCHAS IMÁGENES) -->
+    @defer (on viewport) {
+      <app-projects></app-projects>
+    } @placeholder {
+      <div class="min-h-[600px] flex items-center justify-center p-8">
+        <div class="animate-pulse w-full max-w-6xl space-y-6">
+          <div class="h-8 bg-muted/50 rounded w-1/4"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div class="h-80 bg-muted/30 rounded-xl"></div>
+            <div class="h-80 bg-muted/30 rounded-xl"></div>
+            <div class="h-80 bg-muted/30 rounded-xl"></div>
+          </div>
+        </div>
+      </div>
+    }
+    
+    <!-- Skills: Lazy load cuando entre en viewport -->
+    @defer (on viewport) {
+      <app-skills></app-skills>
+    } @placeholder {
+      <div class="min-h-[400px] flex items-center justify-center p-8">
+        <div class="animate-pulse w-full max-w-4xl space-y-6">
+          <div class="h-8 bg-muted/50 rounded w-1/4"></div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="h-24 bg-muted/30 rounded-xl"></div>
+            <div class="h-24 bg-muted/30 rounded-xl"></div>
+            <div class="h-24 bg-muted/30 rounded-xl"></div>
+            <div class="h-24 bg-muted/30 rounded-xl"></div>
+          </div>
+        </div>
+      </div>
+    }
+    
+    <!-- Languages: Lazy load cuando entre en viewport -->
+    @defer (on viewport) {
+      <app-languages></app-languages>
+    } @placeholder {
+      <div class="min-h-[300px] flex items-center justify-center p-8">
+        <div class="animate-pulse w-full max-w-4xl space-y-6">
+          <div class="h-8 bg-muted/50 rounded w-1/4"></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="h-32 bg-muted/30 rounded-xl"></div>
+            <div class="h-32 bg-muted/30 rounded-xl"></div>
+          </div>
+        </div>
+      </div>
+    }
   </div>
   
-  <app-footer *ngIf="isLoaded"></app-footer>
+  <!-- Footer: Lazy load cuando entre en viewport -->
+  @defer (on viewport) {
+    <app-footer *ngIf="isLoaded"></app-footer>
+  } @placeholder {
+    <div class="h-20"></div>
+  }
 </main>

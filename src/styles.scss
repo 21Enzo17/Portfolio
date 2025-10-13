@@ -63,6 +63,12 @@
    ESTILOS BASE Y BODY
    ================================================ */
 
+/* Prevenir transiciones durante la carga inicial (evita flash visual) */
+.preload * {
+  transition: none !important;
+  animation: none !important;
+}
+
 /* Clase para reducir animaciones cuando la ventana está inactiva */
 .reduced-animations * {
   animation-play-state: paused !important;

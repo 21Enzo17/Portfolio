@@ -18,7 +18,8 @@ export const routes: Routes = [
       seo: { 
         title: 'Proyectos | Enzo Meneghini - Portfolio',
         canonicalUrl: '/proyectos'
-      }
+      },
+      preload: true // Esta ruta se precargará después de 2 segundos
     }
   },
   {

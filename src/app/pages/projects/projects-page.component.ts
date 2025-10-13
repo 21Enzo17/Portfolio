@@ -188,57 +188,12 @@ export class ProjectsPageComponent implements OnInit, OnDestroy {
   
   // Método para obtener una imagen para el proyecto con sistema de fallback
   getProjectImage(project: Project): string {
-    const isDevMode = false; // En producción esto se puede cambiar
-    
-    // Si el proyecto tiene una imagen especificada, intentamos usarla
+    // Si el proyecto tiene una imagen especificada, la usamos
     if (project.image && project.image.trim() !== '') {
-      // PRIMERO: Si la imagen especificada es una fallback, la usamos directamente
-      if (project.image.startsWith('tech-fallback-')) {
-        if (isDevMode) {
-          console.log(`Proyecto ${project.name} usa imagen fallback: ${project.image}`);
-        }
-        return `assets/projects/fallbacks/${project.image}`;
-      }
-      
-      // SEGUNDO: Extraer el nombre del archivo y la extensión para imágenes específicas
-      const parts = project.image.split('.');
-      if (parts.length >= 2) {
-        const fileName = parts.slice(0, -1).join('.');
-        const fileExtension = parts[parts.length - 1].toLowerCase();
-        
-        // Comprobar si la imagen especificada existe
-        if (this.imageExistsInAssets(`${fileName}.${fileExtension}`)) {
-          if (isDevMode) {
-            console.log(`Proyecto ${project.name} usa imagen específica: ${project.image}`);
-          }
-          return `assets/projects/${project.image}`;
-        }
-        
-        // Probar con diferentes extensiones comunes
-        const possibleExtensions = ['jpg', 'jpeg', 'png', 'webp', 'svg'];
-        for (const ext of possibleExtensions) {
-          if (ext !== fileExtension && this.imageExistsInAssets(`${fileName}.${ext}`)) {
-            if (isDevMode) {
-              console.log(`Proyecto ${project.name} usa imagen con extensión alternativa: ${fileName}.${ext}`);
-            }
-            return `assets/projects/${fileName}.${ext}`;
-          }
-        }
-      } else {
-        // Si no hay extensión, intentamos con las extensiones comunes
-        const possibleExtensions = ['jpg', 'jpeg', 'png', 'webp', 'svg'];
-        for (const ext of possibleExtensions) {
-          if (this.imageExistsInAssets(`${project.image}.${ext}`)) {
-            if (isDevMode) {
-              console.log(`Proyecto ${project.name} usa imagen sin extensión especificada: ${project.image}.${ext}`);
-            }
-            return `assets/projects/${project.image}.${ext}`;
-          }
-        }
-      }
+      return `assets/projects/${project.image}`;
     }
     
-    // Si no tiene imagen válida o está vacía, usamos el fallback por categoría
+    // Si no tiene imagen, usamos el fallback por categoría
     return this.getFallbackForProject(project);
   }
   
@@ -253,16 +208,6 @@ export class ProjectsPageComponent implements OnInit, OnDestroy {
     const projectNameHash = this.hashString(project.name);
     const fallbackIndex = projectNameHash % this.projectImageFallbacks.length;
     return `assets/projects/fallbacks/${this.projectImageFallbacks[fallbackIndex]}`;
-  }
-  
-  // Método para verificar si una imagen existe en assets
-  private imageExistsInAssets(filename: string): boolean {
-    // En un entorno browser real, no podemos verificar directamente si un archivo existe
-    // Así que asumimos que existe y dejamos que el manejo de error de la imagen se active si no existe
-    
-    // Esta función siempre debe retornar true ya que la verificación real se hace
-    // a través del evento de error de la imagen y la directiva appFallbackImage
-    return true;
   }
   
   // Método para generar un hash simple a partir de un string
