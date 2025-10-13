@@ -6,11 +6,8 @@
   <app-navbar></app-navbar>
   <app-language-switch-indicator></app-language-switch-indicator>
   
-  <div *ngIf="!isLoaded" class="min-h-screen flex items-center justify-center">
-    <div class="neumorphic p-8 rounded-xl text-xl">
-      <div class="animate-pulse">Cargando portfolio...</div>
-    </div>
-  </div>
+  <!-- Loader personalizado con foto de perfil -->
+  <app-custom-loader *ngIf="!isLoaded"></app-custom-loader>
   
   <div *ngIf="isLoaded" 
        class="container mx-auto px-4 pt-24 transition-opacity duration-500"
@@ -20,87 +17,44 @@
     <!-- Hero: Carga INMEDIATA (crítico para LCP) -->
     <app-hero></app-hero>
     
-    <!-- Education: Lazy load cuando entre en viewport -->
-    @defer (on viewport) {
+    <!-- Education: Lazy load después de 300ms (precarga antes del scroll) -->
+    @defer (on timer(300ms)) {
       <app-education></app-education>
     } @placeholder {
-      <div class="min-h-[400px] flex items-center justify-center p-8">
-        <div class="animate-pulse w-full max-w-4xl space-y-6">
-          <div class="h-8 bg-muted/50 rounded w-1/3"></div>
-          <div class="space-y-4">
-            <div class="h-24 bg-muted/30 rounded-xl"></div>
-            <div class="h-24 bg-muted/30 rounded-xl"></div>
-          </div>
-        </div>
-      </div>
+      <div class="min-h-[400px]"></div>
     }
     
-    <!-- Experience: Lazy load cuando entre en viewport -->
-    @defer (on viewport) {
+    <!-- Experience: Lazy load después de 500ms (precarga antes del scroll) -->
+    @defer (on timer(500ms)) {
       <app-experience></app-experience>
     } @placeholder {
-      <div class="min-h-[500px] flex items-center justify-center p-8">
-        <div class="animate-pulse w-full max-w-4xl space-y-6">
-          <div class="h-8 bg-muted/50 rounded w-1/3"></div>
-          <div class="space-y-4">
-            <div class="h-32 bg-muted/30 rounded-xl"></div>
-            <div class="h-32 bg-muted/30 rounded-xl"></div>
-          </div>
-        </div>
-      </div>
+      <div class="min-h-[500px]"></div>
     }
     
-    <!-- Projects: Lazy load cuando entre en viewport (MUCHAS IMÁGENES) -->
-    @defer (on viewport) {
+    <!-- Projects: Lazy load después de 700ms (precarga antes del scroll - MUCHAS IMÁGENES) -->
+    @defer (on timer(700ms)) {
       <app-projects></app-projects>
     } @placeholder {
-      <div class="min-h-[600px] flex items-center justify-center p-8">
-        <div class="animate-pulse w-full max-w-6xl space-y-6">
-          <div class="h-8 bg-muted/50 rounded w-1/4"></div>
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            <div class="h-80 bg-muted/30 rounded-xl"></div>
-            <div class="h-80 bg-muted/30 rounded-xl"></div>
-            <div class="h-80 bg-muted/30 rounded-xl"></div>
-          </div>
-        </div>
-      </div>
+      <div class="min-h-[600px]"></div>
     }
     
-    <!-- Skills: Lazy load cuando entre en viewport -->
-    @defer (on viewport) {
+    <!-- Skills: Lazy load después de 1000ms -->
+    @defer (on timer(1000ms)) {
       <app-skills></app-skills>
     } @placeholder {
-      <div class="min-h-[400px] flex items-center justify-center p-8">
-        <div class="animate-pulse w-full max-w-4xl space-y-6">
-          <div class="h-8 bg-muted/50 rounded w-1/4"></div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="h-24 bg-muted/30 rounded-xl"></div>
-            <div class="h-24 bg-muted/30 rounded-xl"></div>
-            <div class="h-24 bg-muted/30 rounded-xl"></div>
-            <div class="h-24 bg-muted/30 rounded-xl"></div>
-          </div>
-        </div>
-      </div>
+      <div class="min-h-[400px]"></div>
     }
     
-    <!-- Languages: Lazy load cuando entre en viewport -->
-    @defer (on viewport) {
+    <!-- Languages: Lazy load después de 1200ms -->
+    @defer (on timer(1200ms)) {
       <app-languages></app-languages>
     } @placeholder {
-      <div class="min-h-[300px] flex items-center justify-center p-8">
-        <div class="animate-pulse w-full max-w-4xl space-y-6">
-          <div class="h-8 bg-muted/50 rounded w-1/4"></div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="h-32 bg-muted/30 rounded-xl"></div>
-            <div class="h-32 bg-muted/30 rounded-xl"></div>
-          </div>
-        </div>
-      </div>
+      <div class="min-h-[300px]"></div>
     }
   </div>
   
-  <!-- Footer: Lazy load cuando entre en viewport -->
-  @defer (on viewport) {
+  <!-- Footer: Lazy load después de 1400ms -->
+  @defer (on timer(1400ms)) {
     <app-footer *ngIf="isLoaded"></app-footer>
   } @placeholder {
     <div class="h-20"></div>

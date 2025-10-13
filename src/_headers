@@ -1,0 +1,58 @@
+# Headers de seguridad aplicados a todas las rutas
+/*
+  # Prevenir clickjacking - no permite que el sitio se incruste en iframes
+  X-Frame-Options: DENY
+  
+  # Protección contra XSS (Cross-Site Scripting)
+  X-XSS-Protection: 1; mode=block
+  
+  # Prevenir MIME-sniffing
+  X-Content-Type-Options: nosniff
+  
+  # Controlar la información del referrer
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Política de seguridad de contenido
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.iconify.design https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://api.iconify.design; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  
+  # Permisos de características del navegador
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  
+  # Prevenir almacenamiento en caché de información sensible
+  Cache-Control: public, max-age=31536000, immutable
+
+# Headers específicos para archivos HTML (sin caché agresivo)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Headers para imágenes (caché largo)
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Headers para fuentes (caché largo)
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+/*.otf
+  Cache-Control: public, max-age=31536000, immutable
+
+# Headers para JavaScript y CSS (con versionado)
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Headers para archivos JSON (i18n)
+/*.json
+  Cache-Control: public, max-age=3600, must-revalidate

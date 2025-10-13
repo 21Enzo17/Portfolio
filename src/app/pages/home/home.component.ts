@@ -10,6 +10,7 @@ import { SkillsComponent } from "@app/components/skills/skills.component"
 import { FooterComponent } from "@app/components/footer/footer.component"
 import { BackgroundAnimationComponent } from "@app/components/background-animation/background-animation.component"
 import { LanguageSwitchIndicatorComponent } from "@app/components/language-switch-indicator/language-switch-indicator.component"
+import { CustomLoaderComponent } from "@app/components/custom-loader/custom-loader.component"
 import { LanguageService } from "@app/services/language.service"
 import { EnhancedSeoService } from "@app/services/enhanced-seo.service"
 import { AnalyticsService } from "@app/services/analytics.service"
@@ -30,6 +31,7 @@ import type { Subscription } from "rxjs"
     FooterComponent,
     BackgroundAnimationComponent,
     LanguageSwitchIndicatorComponent,
+    CustomLoaderComponent,
   ],
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
