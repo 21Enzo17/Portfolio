@@ -132,6 +132,22 @@ export class IconService {
 
     // Hardware & Infrastructure
     'ups': 'mdi:battery-charging',
+    
+    // Enterprise Support Tools
+    'windows 10/11': 'logos:microsoft-windows',
+    'active directory': 'mdi:server-network',
+    'servicenow': 'mdi:ticket-confirmation',
+    'mdt': 'mdi:laptop',
+    'sccm': 'mdi:microsoft',
+    'office 365': 'logos:microsoft-icon',
+    'lan/wifi': 'mdi:wifi',
+    'remote desktop': 'mdi:remote-desktop',
+    'powershell': 'vscode-icons:file-type-powershell',
+    'hardware diagnostics': 'mdi:laptop-account',
+    'imaging tools': 'mdi:harddisk-plus',
+    'ticketing systems': 'mdi:ticket',
+    'itil': 'mdi:book-cog',
+    'hse protocols': 'mdi:shield-alert',
 
     // Development Tools
     'vscode': 'logos:visual-studio-code',
@@ -228,6 +244,38 @@ export class IconService {
         'justify-content': 'center',
         'font-weight': 'bold',
         'font-size': '10px'
+      }
+    },
+    'servicenow': {
+      type: 'text',
+      content: 'SN',
+      styles: {
+        'background-color': '#62d84e',
+        'color': 'white',
+        'border-radius': '4px',
+        'width': '28px',
+        'height': '24px',
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'font-weight': 'bold',
+        'font-size': '10px'
+      }
+    },
+    'office 365': {
+      type: 'text',
+      content: '365',
+      styles: {
+        'background-color': '#d83b01',
+        'color': 'white',
+        'border-radius': '4px',
+        'width': '28px',
+        'height': '24px',
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'font-weight': 'bold',
+        'font-size': '9px'
       }
     },
     'bcrypt': {

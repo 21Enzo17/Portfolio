@@ -26,11 +26,11 @@
 
 /* Retraso progresivo para cada sección */
 :host ::ng-deep {
-  app-education {
+  app-experience {
     animation-delay: 0.1s;
   }
   
-  app-experience {
+  app-education {
     animation-delay: 0.15s;
   }
   

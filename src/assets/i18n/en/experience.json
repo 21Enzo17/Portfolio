@@ -3,6 +3,42 @@
     "title": "Work Experience",
     "items": [
       {
+        "jobTitle": "Support Engineer",
+        "company": "Accenture - Rio Tinto Project",
+        "period": "October 2025 - Present",
+        "location": "Jujuy, Argentina · On-site",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Key responsibilities:",
+            "icon": "⛏️",
+            "content": [
+              "On-site technical support in enterprise-level mining operations: resolution of critical hardware, software and network incidents in 24/7 environment",
+              "Imaging and mass deployment of workstations: preparation, configuration and deployment of Windows corporate images with enterprise tools (MDT/SCCM)",
+              "Preventive and corrective maintenance of equipment in operational areas: workstations, laptops, printers, scanners and specialized mining peripherals",
+              "Incident management through ServiceNow: creation, tracking, escalation and documentation of tickets according to corporate SLAs",
+              "End-user support in mining environment: on-site and remote technical assistance to operators, supervisors and administrative staff",
+              "Active Directory administration: management of accounts, permissions, groups and GPO policies for access control",
+              "Local network troubleshooting: diagnosis and resolution of LAN/WiFi connectivity issues in distributed mining infrastructure",
+              "Installation and configuration of corporate software: Office 365, specialized mining applications and productivity tools",
+              "Compliance with mining safety standards: working under HSE (Health, Safety, Environment) standards and industrial safety protocols",
+              "Coordination with Accenture global teams: collaboration with infrastructure, security and development teams for complex incident resolution"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
+            "content": [
+              "Windows 10/11", "Active Directory", "ServiceNow", "MDT", "SCCM",
+              "Office 365", "VPN", "LAN/WiFi", "Remote Desktop",
+              "PowerShell", "Bash", "Hardware Diagnostics", "Imaging Tools",
+              "Ticketing Systems", "ITIL", "HSE Protocols"
+            ]
+          }
+        ]
+      },
+      {
         "jobTitle": "Infrastructure Manager",
         "company": "Jujuy Water Utility",
         "period": "January 2025 - Present",

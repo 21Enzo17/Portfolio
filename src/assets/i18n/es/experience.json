@@ -3,6 +3,42 @@
     "title": "Experiencia Laboral",
     "items": [
       {
+        "jobTitle": "Support Engineer",
+        "company": "Accenture - Proyecto Rio Tinto",
+        "period": "Octubre 2025 - Presente",
+        "location": "Jujuy, Argentina · On-site",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Responsabilidades clave:",
+            "icon": "⛏️",
+            "content": [
+              "Soporte técnico in-situ en operaciones mineras de nivel enterprise: resolución de incidencias críticas de hardware, software y redes en entorno 24/7",
+              "Imaging y despliegue masivo de estaciones de trabajo: preparación, configuración y deploy de imágenes corporativas Windows con herramientas enterprise (MDT/SCCM)",
+              "Mantenimiento preventivo y correctivo de equipos en zonas operativas: workstations, laptops, impresoras, scanners y periféricos especializados para minería",
+              "Gestión de incidentes mediante ServiceNow: creación, seguimiento, escalamiento y documentación de tickets según SLAs corporativos",
+              "Soporte a usuarios finales en entorno minero: asistencia técnica presencial y remota a operadores, supervisores y personal administrativo",
+              "Administración de Active Directory: gestión de cuentas, permisos, grupos y políticas GPO para control de accesos",
+              "Troubleshooting de red local: diagnóstico y resolución de problemas de conectividad LAN/WiFi en infraestructura minera distribuida",
+              "Instalación y configuración de software corporativo: Office 365, aplicaciones mineras especializadas y herramientas de productividad",
+              "Cumplimiento de normas de seguridad minera: trabajo bajo estándares HSE (Health, Safety, Environment) y protocolos de seguridad industrial",
+              "Coordinación con equipos globales de Accenture: colaboración con equipos de infraestructura, seguridad y desarrollo para resolución de incidentes complejos"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Tecnologías utilizadas:",
+            "icon": "⚙️",
+            "content": [
+              "Windows 10/11", "Active Directory", "ServiceNow", "MDT", "SCCM",
+              "Office 365", "VPN", "LAN/WiFi", "Remote Desktop",
+              "PowerShell", "Bash", "Hardware Diagnostics", "Imaging Tools",
+              "Ticketing Systems", "ITIL", "HSE Protocols"
+            ]
+          }
+        ]
+      },
+      {
         "jobTitle": "Encargado de Infraestructura",
         "company": "Agua Potable de Jujuy",
         "period": "Enero 2025 - Presente",

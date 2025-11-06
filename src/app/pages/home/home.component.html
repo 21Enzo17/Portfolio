@@ -17,18 +17,18 @@
     <!-- Hero: Carga INMEDIATA (crítico para LCP) -->
     <app-hero></app-hero>
     
-    <!-- Education: Lazy load después de 300ms (precarga antes del scroll) -->
+    <!-- Experience: Lazy load después de 300ms (precarga antes del scroll) -->
     @defer (on timer(300ms)) {
-      <app-education></app-education>
-    } @placeholder {
-      <div class="min-h-[400px]"></div>
-    }
-    
-    <!-- Experience: Lazy load después de 500ms (precarga antes del scroll) -->
-    @defer (on timer(500ms)) {
       <app-experience></app-experience>
     } @placeholder {
       <div class="min-h-[500px]"></div>
+    }
+    
+    <!-- Education: Lazy load después de 500ms (precarga antes del scroll) -->
+    @defer (on timer(500ms)) {
+      <app-education></app-education>
+    } @placeholder {
+      <div class="min-h-[400px]"></div>
     }
     
     <!-- Projects: Lazy load después de 700ms (precarga antes del scroll - MUCHAS IMÁGENES) -->
