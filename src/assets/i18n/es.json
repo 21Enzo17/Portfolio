@@ -17,10 +17,10 @@
     "downloadCV": "Descargar CV",
     "generating": "Generando..."
   },"hero": {
-    "title": "Encargado de Infraestructura TI | DevOps Engineer | Fullstack Developer",
-    "subtitle": "Encargado de Infraestructura TI | DevOps Engineer | Fullstack Developer",
-    "keywords": ["Angular", "Java", "Spring Boot", "TypeScript", "Inglés C2", "Sistemas críticos", "Backend"],
-    "bio": "<span class=\"font-bold\">Encargado de Infraestructura TI</span> con experiencia en <span class=\"font-bold\">redes, servidores y soporte nivel 3</span>, asegurando la estabilidad y continuidad de entornos críticos. <br>Mi formación técnica, sumada a experiencia en <span class=\"font-bold\">infraestructura, desarrollo</span>, y <span class=\"font-bold\">nivel avanzado de inglés (C2)</span>, me convierte en un profesional versátil para proyectos internacionales. <br>Además, cuento con experiencia en <span class=\"font-bold\">desarrollo Full Stack (Angular y Java)</span>, lo que me brinda una visión integral para resolver problemas con impacto real."
+    "title": "Infrastructure Engineer | DevOps Engineer | IT Support Specialist",
+    "subtitle": "Infrastructure Engineer | DevOps Engineer | IT Support Specialist",
+    "keywords": ["Redes", "Virtualización", "Docker", "Linux", "Cisco CCNA", "Soporte Nivel 3", "DevOps", "Automatización"],
+    "bio": "<span class=\"font-bold\">Infrastructure Engineer</span> especializado en <span class=\"font-bold\">redes empresariales, virtualización y soporte nivel 3</span>, con experiencia probada asegurando la estabilidad de sistemas críticos en entornos de producción. <br>Experto en administración de <span class=\"font-bold\">servidores Linux/Windows, infraestructura de red multi-sede, Docker, CI/CD</span> y observabilidad con Prometheus. Certificado en <span class=\"font-bold\">Cisco CCNA</span> y con <span class=\"font-bold\">inglés avanzado (C2)</span> para entornos internacionales. <br>Mi enfoque combina conocimientos técnicos profundos en infraestructura con habilidades de automatización y scripting (Bash/Python), permitiéndome optimizar procesos y resolver problemas complejos de manera eficiente."
   },
   "experience": {
     "title": "Experiencia Laboral",
@@ -177,6 +177,22 @@
         "skills": [
           "Redes LAN/WAN", "Mantenimiento de hardware", "Configuración de routers", "Soporte técnico", "Diagnóstico de fallas"
         ]
+      },
+      {
+        "degree": "Cisco CCNA - Fundamentos de Networking para Redes IP",
+        "institution": "Udemy - Instructor: Josep Ricart",
+        "period": "Enero 2026",
+        "location": "Online",
+        "description": "Certificación en fundamentos de redes IP y tecnologías Cisco, cubriendo diseño, configuración y troubleshooting de redes empresariales.",
+        "type": "certification",
+        "certificateUrl": "https://ude.my/UC-d4e8526b-0773-4fab-9f8fa-f0f9224e67ff",
+        "achievements": [
+          "16 horas de formación intensiva",
+          "Certificado número: UC-d4e8526b-0773-4fab-9f8fa-f0f9224e67ff"
+        ],
+        "skills": [
+          "Cisco IOS", "Routing y Switching", "TCP/IP", "VLANs", "Protocolos de enrutamiento", "Configuración de routers y switches", "Troubleshooting de redes"
+        ]
       }
     ]
   },
@@ -256,6 +272,36 @@
     },
     "items": [
       {
+        "name": "Infraestructura Multi-Sede Empresarial",
+        "description": "Diseño e implementación de infraestructura de red para múltiples sedes, incluyendo configuración de VPN site-to-site, segmentación de VLANs, políticas de firewall, QoS para tráfico crítico, y monitoreo centralizado con Prometheus y Grafana.",
+        "technologies": ["Mikrotik", "VPN", "VLANs", "Prometheus", "NGINX"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "tech-fallback-5.svg",
+        "category": "infrastructure",
+        "featured": true
+      },
+      {
+        "name": "Stack de Monitoreo y Observabilidad",
+        "description": "Implementación de stack completo de monitoreo incluyendo Prometheus para métricas, Alertmanager para gestión de alertas, logging centralizado, dashboards personalizados en Grafana, y exportadores para servicios críticos.",
+        "technologies": ["Prometheus", "Docker", "NGINX", "Bash Scripting"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "tech-fallback-3.svg",
+        "category": "devops",
+        "featured": true
+      },
+      {
+        "name": "Plataforma de Virtualización Empresarial",
+        "description": "Implementación de cluster de virtualización con alta disponibilidad usando Proxmox, gestión de almacenamiento compartido, backup automatizado, migración en vivo de VMs, y políticas de recuperación ante desastres.",
+        "technologies": ["Proxmox", "Linux", "RAID", "Bash Scripting"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "tech-fallback-1.svg",
+        "category": "infrastructure",
+        "featured": true
+      },
+      {
         "name": "Migración de Sistemas Legacy",
         "description": "Participación en la migración de sistemas críticos de Genexus a Java, incluyendo el sistema de generación de facturas y la creación de un sistema de adhesión de cuentas de agua. Este proceso implicó el análisis avanzado de sistemas sin documentación previa.",
         "technologies": ["Java", "Spring Boot", "MySQL"],
@@ -263,7 +309,7 @@
         "demoUrl": null,
         "image": "proyectoLegacy.jpg",
         "category": "fullstack",
-        "featured": true
+        "featured": false
       },
       {
         "name": "Sitio Web de Agua Potable de Jujuy",
@@ -273,7 +319,7 @@
         "demoUrl": "https://web.aguapotablejujuy.com/home",
         "image": "agua-jujuy.webp",
         "category": "fullstack",
-        "featured": true
+        "featured": false
       },
       {
         "name": "IFS Consultora",
@@ -283,7 +329,7 @@
         "demoUrl": "https://www.ifsconsultora.com",
         "image": "IFS.webp",
         "category": "frontend",
-        "featured": true
+        "featured": false
       },
       {
         "name": "Sistema de Asistencia con Seguridad Robusta",

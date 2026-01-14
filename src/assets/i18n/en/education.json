@@ -45,7 +45,36 @@
         "skills": [
           "LAN/WAN Networks", "Hardware Maintenance", "Router Configuration", "Technical Support", "Fault Diagnosis"
         ]
-      }
+      },
+      {
+        "degree": "Cisco CCNA - Networking Fundamentals for IP Networks",
+        "institution": "Udemy - Instructor: Josep Ricart",
+        "period": "January 2026",
+        "location": "Online",
+        "description": "Comprehensive course in IP networking fundamentals and Cisco technologies, covering design, configuration, and troubleshooting of enterprise networks.",
+        "type": "course",
+        "certificateUrl": "https://www.udemy.com/certificate/UC-d4e8526b-0773-4fab-98fa-f0f9224e67ff/",
+        "achievements": [
+          "16 hours of intensive training",
+          "Completion certificate: UC-d4e8526b-0773-4fab-9f8fa-f0f9224e67ff"
+        ],
+        "skills": [
+          "Cisco IOS", "Routing and Switching", "TCP/IP", "VLANs", "Routing protocols", "Router and switch configuration", "Network troubleshooting"
+        ]      },
+      {
+        "degree": "Mikrotik - Advanced Administration and Configuration",
+        "institution": "Udemy - In progress",
+        "period": "January 2026 - In progress",
+        "location": "Online",
+        "description": "Advanced course in Mikrotik RouterOS router and switch configuration and administration. Hands-on experience managing complete multi-site network infrastructure with Mikrotik in production.",
+        "type": "course",
+        "achievements": [
+          "Real implementation of multi-site infrastructure with Mikrotik",
+          "Management of site-to-site VPN and advanced configurations in production"
+        ],
+        "skills": [
+          "RouterOS", "Site-to-site VPN", "VLANs", "QoS", "Advanced Firewall", "Dynamic Routing", "Bandwidth Management", "Advanced Troubleshooting"
+        ]      }
     ]
   }
 }

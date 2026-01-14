@@ -23,6 +23,36 @@
     },
     "items": [
       {
+        "name": "Hybrid Server Infrastructure Management",
+        "description": "Comprehensive administration of a heterogeneous server environment. Responsible for maintenance, upgrades (hardware and software), and securing Windows Servers for Genexus systems and databases, as well as Linux servers (Debian) for critical services like Docker, PBX (Issabel), and reverse proxy. Includes UPS installation and management to ensure 24/7 operational continuity.",
+        "technologies": ["Windows Server", "Linux", "Docker", "Issabel", "Genexus", "SQL Server"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "infra-servers.svg",
+        "category": "infrastructure",
+        "featured": true
+      },
+      {
+        "name": "AI Application Deployment and Services",
+        "description": "Setup and management of multiple Docker environments for AI models, including implementation of Large Language Models (LLM) like Ollama, vector databases (Chromadb) for RAG systems, and voice assistants using Whisper AI. Focus on optimizing deployment to ensure efficient and scalable performance of AI services in production.",
+        "technologies": ["Docker", "Linux", "Ollama", "Chromadb", "Whisper AI", "Python"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "devops-ai.svg",
+        "category": "devops",
+        "featured": true
+      },
+      {
+        "name": "Enterprise Network Modernization and Management",
+        "description": "Leadership in the complete restructuring of corporate network infrastructure in collaboration with external vendors. Key tasks include managing all company DNS records, network configuration, port forwarding, and resolving complex issues such as network loops to optimize performance and stability.",
+        "technologies": ["DNS", "Networking", "Firewall", "TCP/IP", "Mikrotik"],
+        "githubUrl": null,
+        "demoUrl": null,
+        "image": "infra-network.svg",
+        "category": "infrastructure",
+        "featured": false
+      },
+      {
         "name": "Legacy System Migration",
         "description": "Participation in the migration of critical systems from Genexus to Java, including invoice generation and water account registration systems. This process required advanced analysis of undocumented systems.",
         "technologies": ["Java", "Spring Boot", "MySQL"],
@@ -30,7 +60,7 @@
         "demoUrl": null,
         "image": "proyectoLegacy.jpg",
         "category": "fullstack",
-        "featured": true
+        "featured": false
       },
       {
         "name": "Jujuy Water Utility Website",
@@ -40,7 +70,7 @@
         "demoUrl": "https://web.aguapotablejujuy.com/home",
         "image": "agua-jujuy.webp",
         "category": "fullstack",
-        "featured": true
+        "featured": false
       },
       {
         "name": "IFS Consultora",
@@ -50,7 +80,7 @@
         "demoUrl": "https://www.ifsconsultora.com",
         "image": "IFS.webp",
         "category": "frontend",
-        "featured": true
+        "featured": false
       },
       {
         "name": "Vimo Congelados",
@@ -109,26 +139,6 @@
         "demoUrl": "https://www.enzo-meneghini.com",
         "image": "",
         "category": "frontend",
-        "featured": true
-      },
-      {
-        "name": "Hybrid Server Infrastructure Management",
-        "description": "Comprehensive administration of a heterogeneous server environment. Responsible for maintenance, upgrades (hardware and software), and securing Windows Servers for Genexus systems and databases, as well as Linux servers (Debian) for critical services like Docker, PBX (Issabel), and reverse proxy. Includes UPS installation and management to ensure 24/7 operational continuity.",
-        "technologies": ["Windows Server", "Linux", "Docker", "Issabel", "Genexus", "SQL Server"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "infra-servers.svg",
-        "category": "infrastructure",
-        "featured": true
-      },
-      {
-        "name": "Enterprise Network Modernization and Management",
-        "description": "Leadership in the complete restructuring of corporate network infrastructure in collaboration with external vendors. Key tasks include managing all company DNS records, network configuration, port forwarding, and resolving complex issues such as network loops to optimize performance and stability.",
-        "technologies": ["DNS", "Networking", "Firewall", "TCP/IP", "Mikrotik"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "infra-network.svg",
-        "category": "infrastructure",
         "featured": false
       },
       {
@@ -139,7 +149,7 @@
         "demoUrl": null,
         "image": "",
         "category": "infrastructure",
-        "featured": false
+        "featured": true
       },
       {
         "name": "Enterprise Virtualization Platform",
@@ -150,16 +160,6 @@
         "image": "",
         "category": "infrastructure",
         "featured": false
-      },
-      {
-        "name": "AI Application Deployment and Services",
-        "description": "Setup and management of multiple Docker environments for AI models, including implementation of Large Language Models (LLM) like Ollama, vector databases (Chromadb) for RAG systems, and voice assistants using Whisper AI. Focus on optimizing deployment to ensure efficient and scalable performance of AI services in production.",
-        "technologies": ["Docker", "Linux", "Ollama", "Chromadb", "Whisper AI", "Python"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "devops-ai.svg",
-        "category": "devops",
-        "featured": true
       },
       {
         "name": "Enterprise CI/CD Pipeline",
@@ -179,7 +179,7 @@
         "demoUrl": null,
         "image": "",
         "category": "devops",
-        "featured": false
+        "featured": true
       }
     ],
     "buttons": {
