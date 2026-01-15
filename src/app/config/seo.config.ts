@@ -4,12 +4,12 @@ import { SOCIAL_CONFIG } from './social.config';
  * Configuración SEO para el sitio web
  */
 export const SEO_CONFIG = {  // Configuración general
-  siteName: 'Enzo Meneghini - Desarrollador Full Stack',
+  siteName: 'Enzo Meneghini - Infrstructure Manager',
   siteUrl: SOCIAL_CONFIG.portfolioUrl,
   
   // Metadatos por defecto
   defaultMetaTags: {
-    title: 'Enzo Meneghini | Desarrollador Full Stack',
+    title: 'Enzo Meneghini - Infrstructure Manager',
     description: 'Desarrollador Full Stack con experiencia en Angular, React, Node.js y más tecnologías. Conoce mi portafolio, CV y proyectos destacados.',
     keywords: 'desarrollador full stack, angular, react, node.js, desarrollador web, frontend, backend, jujuy, argentina, java, spring boot, typescript',
     author: 'Enzo Meneghini',
@@ -32,7 +32,7 @@ export const SEO_CONFIG = {  // Configuración general
   // Configuración por ruta
   routes: {
     home: {
-      title: 'Inicio | Enzo Meneghini - Desarrollador Full Stack',
+      title: 'Inicio | Enzo Meneghini - Infrstructure Manager',
       description: 'Desarrollador Full Stack con enfoque en tecnologías web modernas. Servicios de desarrollo web profesional.',
       keywords: 'desarrollador web, full stack, angular, react, frontend, backend, jujuy',
       canonicalUrl: '/',

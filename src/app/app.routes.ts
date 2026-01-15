@@ -6,7 +6,7 @@ export const routes: Routes = [
     loadComponent: () => import("./pages/home/home.component").then((m) => m.HomeComponent),
     data: { 
       seo: { 
-        title: 'Inicio | Enzo Meneghini - Desarrollador Full Stack',
+        title: 'Inicio | Enzo Meneghini - Infrstructure Manager',
         canonicalUrl: '/'
       }
     }
