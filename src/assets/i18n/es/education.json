@@ -74,7 +74,25 @@
         ],
         "skills": [
           "RouterOS", "VPN site-to-site", "VLANs", "QoS", "Firewall avanzado", "Routing dinámico", "Gestión de ancho de banda", "Troubleshooting avanzado"
-        ]      }
+        ]      },
+      {
+        "degree": "Furukawa Professional Certified Fiber Optic",
+        "institution": "Furukawa Electric LatAm",
+        "period": "Febrero 2026",
+        "location": "Online",
+        "description": "Certificación profesional en tecnología de fibra óptica de Furukawa Electric. Capacitación integral que abarca diseño, instalación, pruebas y mantenimiento de redes ópticas. Incluye prácticas de laboratorio y contenidos multimedia en fibra monomodo (SMF) y multimodo (MMF), conectorización, pruebas OTDR, empalmes por fusión, multiplexación WDM, divisores ópticos y cumplimiento de estándares TIA-568.0 y TIA-568.3 para sistemas de cableado estructurado.",
+        "type": "certification",
+        "achievements": [
+          "24 horas de formación intensiva práctica con materiales oficiales de Furukawa Electric",
+          "Prácticas de laboratorio con equipamiento de última generación Furukawa",
+          "Certificación en diseño de redes ópticas y cálculos de presupuesto de pérdidas",
+          "Capacitación en cumplimiento de normas TIA-568.0 y TIA-568.3",
+          "Experiencia en sistemas WDM (Multiplexación de Longitud de Onda) y splitters ópticos"
+        ],
+        "skills": [
+          "Fibra Monomodo/Multimodo (SMF/MMF)", "Testing y Análisis OTDR", "Empalmes por Fusión", "Empalme Mecánico", "Conectores de Campo", "Multiplexación WDM", "Divisores Ópticos (Splitters)", "Normas TIA-568.0/568.3", "Cableado Estructurado", "Instalación DIO/ODF", "Cálculo de Presupuesto de Pérdidas", "Diseño de Redes Ópticas", "Instalación de Cables Drop", "Instalación de Microcables", "Testing y Certificación de Cables"
+        ]
+      }
     ]
   }
 }

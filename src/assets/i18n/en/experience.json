@@ -3,7 +3,7 @@
     "title": "Work Experience",
     "items": [
       {
-        "jobTitle": "Support Engineer",
+        "jobTitle": "Support Engineer | Site Lead",
         "company": "Accenture - Rio Tinto Project",
         "period": "October 2025 - Present",
         "location": "Jujuy, Argentina · On-site",
@@ -13,6 +13,7 @@
             "title": "Key responsibilities:",
             "icon": "⛏️",
             "content": [
+              "Site Lead: coordination and supervision of on-site technical support team, task assignment, SLA tracking, and primary point of contact with the client",
               "On-site technical support in enterprise-level mining operations: resolution of critical hardware, software and network incidents in 24/7 environment",
               "Imaging and mass deployment of workstations: preparation, configuration and deployment of Windows corporate images with enterprise tools (MDT/SCCM)",
               "Preventive and corrective maintenance of equipment in operational areas: workstations, laptops, printers, scanners and specialized mining peripherals",
@@ -49,23 +50,31 @@
             "title": "Key responsibilities:",
             "icon": "🖥️",
             "content": [
-              "Administration of physical and virtual servers on Debian and Windows Server using Hyper‑V and Proxmox; preventive/corrective maintenance and RAID management",
-              "Large‑scale network operations: design and administration of LAN/WAN, VLANs, QoS, DNS/DHCP, routing and firewall policies",
-              "Complete restructuring of corporate network infrastructure: comprehensive DNS management, network configuration, port forwarding, and resolution of critical issues (network loops) in collaboration with external vendors",
-              "Multi‑site network with Mikrotik: site‑to‑site/client VPNs, monitoring and troubleshooting of province‑wide links",
-              "Corporate Wi‑Fi with Aruba (controllers and APs), segmentation and security",
-              "IP telephony with Issabel: provisioning, trunks, recordings and policies",
-              "Containerized services with Docker; light orchestration and automation with Bash/Python scripting",
-              "Implementation and management of on-premise AI services: deployment of Large Language Models (Ollama with Qwen 4B), official corporate chatbot, vector databases (Chromadb) for RAG, and voice assistants with Whisper AI",
-              "Complete lifecycle management of web applications: deployment and maintenance of backend and frontend of corporate website with CI/CD, ensuring 24/7 availability",
-              "Reverse proxy and load balancing (NGINX/HAProxy), TLS termination and automated certificate renewal; hardening and domain management",
-              "Databases and clusters (MySQL/PostgreSQL/SQL Server): backups, restores and tuning; advanced SQL",
-              "Observability and monitoring with Prometheus/Alertmanager and centralized logging; dashboards and alerts",
-              "CI/CD for internal deployments (GitHub Actions/GitLab)",
-              "Vendor coordination (Iplan/Google Workspace and carriers); incident management and escalation",
-              "UPS installation and management to ensure 24/7 operational continuity of critical servers",
-              "Level 3 support since day one; technical point of reference for the team",
-              "Active learning of AWS and cloud fundamentals"
+              "Leadership and coordination of Support, Infrastructure and Applications teams: direct technical supervision, mentoring, critical task assignment, and IT team skills development",
+              "Comprehensive administration of physical and virtual servers on Debian and Windows Server using Hyper‑V and Proxmox; preventive/corrective maintenance, RAID management and provisioning of development/testing environments",
+              "Hybrid infrastructure management on-premise and cloud (Azure): Azure AD administration, corporate tenant, identity synchronization, conditional access policies, and progressive service migration to the cloud",
+              "Large‑scale enterprise network operations: design and administration of LAN/WAN, VLANs, QoS, DNS/DHCP Server, advanced routing and multi‑layer firewall policies",
+              "Complete restructuring of corporate network infrastructure: comprehensive DNS management, network configuration, port forwarding and resolution of critical issues (network loops) in collaboration with external vendors",
+              "Active Directory on-premise and Azure AD administration: user and group management, GPO policies, NTFS permissions, integration with corporate services, SSO and granular access control",
+              "Comprehensive IT inventory and asset management: hardware/software control, equipment lifecycle, licensing (Microsoft, Adobe, etc.), planned obsolescence management, and compliance audits",
+              "Multi‑site network with Mikrotik: site‑to‑site/client VPNs, dynamic routing, monitoring and troubleshooting of province‑wide WAN links",
+              "Corporate Wi‑Fi with Aruba (controllers and APs), VLAN segmentation and wireless security policies",
+              "Structured cabling infrastructure: design, implementation and certification of Cat6/Cat6A data networks, including fiber optic deployment and telecommunications cabinets",
+              "Enterprise IP telephony with Issabel: extension provisioning, SIP trunk configuration, call recordings and routing policies",
+              "Containerized services with Docker: deployment, light orchestration and automation with advanced scripting (Bash/Python) for digital transformation",
+              "On-premise AI services implementation: deployment of Large Language Models (Ollama with Qwen 4B), official corporate chatbot, vector databases (Chromadb) for RAG, voice assistants with Whisper AI, and intelligent automation initiatives (RPA)",
+              "Facial recognition systems deployment and integration: implementation of biometric solutions for access control and attendance tracking with IP cameras and processing servers",
+              "Complete lifecycle management of web applications: architecture, deployment and maintenance of backend and frontend of corporate website with automated CI/CD, ensuring 24/7 availability",
+              "Implementation and administration of Redmine: ticketing and project management system for IT department, including custom workflows and reporting",
+              "Reverse proxy and load balancing (NGINX/HAProxy): TLS termination, automated Let's Encrypt certificate renewal, security hardening and domain management",
+              "Advanced database administration (MySQL/PostgreSQL/SQL Server): provisioning instances for development/testing, automated backups, restores, performance tuning and advanced SQL",
+              "Proactive monitoring and observability with Nagios, Prometheus/Alertmanager and centralized logging; custom dashboards, critical metrics, SLAs, and multi‑channel alerting system ensuring 99.9% availability",
+              "CI/CD pipelines for automated internal deployments (GitHub Actions/GitLab CI) with automated testing, code quality analysis, and automatic rollback",
+              "Direct vendor coordination (Iplan, Google Workspace, carriers); SLA management, critical incidents and technical escalation",
+              "Comprehensive technical documentation of processes, standard operating procedures (SOPs), incident runbooks, and knowledge base for know-how transfer",
+              "UPS installation and management to ensure 24/7 operational continuity of critical servers and mission-critical systems",
+              "Level 1, 2 and 3 technical support since day one: complex incident resolution, root cause analysis, team technical reference, and final escalation point",
+              "Hands-on experience with Azure Cloud Services (VMs, Storage, Networking) and AWS (EC2, S3, RDS, VPC); cloud-native architectures for future hybrid migrations"
             ]
           },
           {
@@ -73,12 +82,18 @@
             "title": "Technologies used:",
             "icon": "⚙️",
             "content": [
-              "Debian/Linux", "Windows Server", "Hyper‑V", "Proxmox", "Docker",
-              "NGINX", "HAProxy", "Prometheus",
-              "Mikrotik", "Aruba", "Issabel", "VPN",
-              "MySQL", "PostgreSQL", "SQL Server",
-              "Ollama", "Qwen", "Chromadb", "Whisper AI", "LLMs", "RAG",
-              "GitHub Actions", "GitLab CI", "Bash", "Python", "TLS/SSL", "RAID", "DNS/DHCP", "Firewall", "UPS"
+              "Debian/Linux", "Windows Server", "Active Directory", "Azure AD", "GPO", "Hyper‑V", "Proxmox", "Docker",
+              "Microsoft Azure", "Azure VMs", "Azure Storage", "Azure Networking", "Entra ID",
+              "NGINX", "HAProxy", "Nagios", "Prometheus", "Alertmanager", "Grafana",
+              "Mikrotik RouterOS", "Cisco CCNA", "Aruba Controllers", "Issabel PBX", "VPN (IPSec/OpenVPN)",
+              "MySQL", "PostgreSQL", "SQL Server", "Redmine", "ServiceNow",
+              "IT Asset Management", "Hardware/Software Inventory", "License Management",
+              "Ollama", "Qwen", "Chromadb", "Whisper AI", "LLMs", "RAG", "RPA",
+              "Facial Recognition", "Biometric Systems", "IP Cameras",
+              "GitHub Actions", "GitLab CI", "Bash", "Python", "PowerShell",
+              "TLS/SSL", "Let's Encrypt", "RAID", "DNS/DHCP Server", "Firewall", "VLANs", "QoS",
+              "Structured Cabling", "Fiber Optics", "Cat6/6A", "UPS", "Patch Panels",
+              "Team Leadership", "Technical Mentoring", "Process Documentation", "SOPs"
             ]
           }
         ]

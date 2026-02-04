@@ -1,8 +1,8 @@
 {
   "hero": {
-    "title": "Support Engineer @ Accenture | Infrastructure Engineer | DevOps Specialist",
-    "subtitle": "Support Engineer @ Accenture | Infrastructure Engineer | DevOps Specialist",
-    "keywords": ["Accenture", "ServiceNow", "Active Directory", "Mikrotik", "Redes", "Virtualización", "Docker", "Linux", "Soporte Nivel 3", "DevOps", "Inglés C2"],
-    "bio": "<span class=\"font-bold\">Support Engineer en <span style=\"color: #A100FF; font-weight: 800;\">Accenture</span></span> para operaciones mineras enterprise y <span class=\"font-bold\">Infrastructure Engineer</span> en Agua Potable de Jujuy. <br>Especializado en <span class=\"font-bold\">soporte técnico nivel 3, administración de redes empresariales con Mikrotik, virtualización (Proxmox/Hyper-V), Docker y automatización DevOps</span>, garantizando continuidad operativa 24/7 de sistemas críticos. <br>Formado en <span class=\"font-bold\">Cisco CCNA y Mikrotik RouterOS</span>, con dominio de <span class=\"font-bold\">Linux/Windows Server, VPN site-to-site, CI/CD, monitoreo (Prometheus)</span> y <span class=\"font-bold\">nivel avanzado de inglés (C2)</span>, aportando valor en proyectos internacionales complejos de infraestructura y automatización."
+    "title": "Support Engineer & Site Lead @ Accenture | Infrastructure Manager",
+    "subtitle": "Support Engineer & Site Lead @ Accenture | Infrastructure Manager",
+    "keywords": ["Accenture", "Site Lead", "ServiceNow", "Fibra Óptica", "Active Directory", "Mikrotik", "Redes", "Virtualización", "Docker", "Linux", "Soporte Nivel 3", "DevOps", "Inglés C2"],
+    "bio": "<span class=\"font-bold\">Support Engineer & Site Lead</span> en <span style=\"color: #A100FF; font-weight: 800;\">Accenture</span> para operaciones mineras enterprise e <span class=\"font-bold\">Infrastructure Manager</span> en Agua Potable de Jujuy, <span class=\"font-bold\">liderando equipos técnicos</span> y coordinando infraestructura crítica 24/7. <br><br>Especializado en <span class=\"font-bold\">supervisión de equipos IT, Azure/cloud, redes Cisco, automatización y transformación digital</span>. Certificado <span class=\"font-bold\">Cisco CCNA, Furukawa Fiber Optic y MikroTik RouterOS</span>. <br><br>Experiencia en <span class=\"font-bold\">gestión de activos IT, mentoring técnico</span> y proyectos enterprise de alta complejidad."
   }
 }

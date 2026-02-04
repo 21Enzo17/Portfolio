@@ -74,7 +74,25 @@
         ],
         "skills": [
           "RouterOS", "Site-to-site VPN", "VLANs", "QoS", "Advanced Firewall", "Dynamic Routing", "Bandwidth Management", "Advanced Troubleshooting"
-        ]      }
+        ]      },
+      {
+        "degree": "Furukawa Professional Certified Fiber Optic",
+        "institution": "Furukawa Electric LatAm",
+        "period": "February 2026",
+        "location": "Online",
+        "description": "Professional certification in fiber optic technology by Furukawa Electric. Comprehensive training covering design, installation, testing, and maintenance of optical networks. Includes hands-on laboratory practices and multimedia content in single-mode (SMF) and multimode (MMF) fiber, connectorization, OTDR testing, fusion splicing, WDM multiplexing, optical splitters, and compliance with TIA-568.0 and TIA-568.3 standards for structured cabling systems.",
+        "type": "certification",
+        "achievements": [
+          "24 hours of intensive hands-on training with official Furukawa Electric materials",
+          "Laboratory practices with latest-generation Furukawa equipment",
+          "Certification in optical network design and loss budget calculations",
+          "Training in TIA-568.0 and TIA-568.3 standards compliance",
+          "Expertise in WDM (Wavelength Division Multiplexing) systems and optical splitters"
+        ],
+        "skills": [
+          "Single-mode/Multimode Fiber (SMF/MMF)", "OTDR Testing & Analysis", "Fusion Splicing", "Mechanical Splicing", "Field Connectors", "WDM Multiplexing", "Optical Splitters", "TIA-568.0/568.3 Standards", "Structured Cabling", "DIO/ODF Installation", "Link Loss Budget Calculation", "Optical Network Design", "Drop Cable Installation", "Micro-cable Installation", "Cable Testing & Certification"
+        ]
+      }
     ]
   }
 }
