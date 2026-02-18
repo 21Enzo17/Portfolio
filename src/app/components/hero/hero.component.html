@@ -1,7 +1,9 @@
 <section class="flex flex-col md:flex-row items-center p-4 mx-auto justify-between max-w-6xl w-full min-h-[80vh] py-16 md:py-4 gap-8 md:gap-4 relative z-10">
   <!-- Texto a la izquierda ocupando full en móvil, 3/4 en desktop -->
   <div class="w-full md:w-3/4 flex flex-col items-center md:items-start">
-    <h1 class="pb-3 text-4xl md:text-6xl font-bold text-center md:text-left bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+    <h1 class="pb-3 text-4xl md:text-6xl font-bold text-center md:text-left cursor-default select-none"
+        [ngClass]="nameGoldenGlow ? 'expedito-golden-name' : 'bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent'"
+        (click)="onNameClick()">
       Enzo Meneghini
     </h1>
     <h2 class="text-xl md:text-2xl mt-2 text-center md:text-left text-foreground/80">{{ 'hero.subtitle' | translate }}</h2>
@@ -179,6 +181,17 @@
           </div>
         </div>
       </a>
+    </div>
+  </div>
+</div>
+
+<!-- Easter Egg Toast: San Expedito -->
+<div *ngIf="showExpeditoToast" class="expedito-toast" (click)="closeExpeditoToast()">
+  <div class="expedito-toast-inner">
+    <div class="expedito-toast-cross">✝</div>
+    <div class="expedito-toast-text">
+      <span class="expedito-toast-title">San Expedito, ruega por nosotros</span>
+      <span class="expedito-toast-sub">«No dejes para mañana lo que puedas hacer hoy» — HODIE</span>
     </div>
   </div>
 </div>

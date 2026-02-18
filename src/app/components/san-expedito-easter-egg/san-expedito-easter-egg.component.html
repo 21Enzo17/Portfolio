@@ -1,0 +1,64 @@
+<!-- Sutil indicador en día de San Expedito (19 de abril) -->
+<div *ngIf="isFeastDay" class="feast-day-hint" title="✝ HODIE ✝" (click)="openModal()">
+  <span class="feast-cross">✝</span>
+</div>
+
+<!-- Modal del Easter Egg -->
+<div *ngIf="showModal" class="expedito-overlay" [class.closing]="isClosing">
+  <!-- Backdrop con efecto de luz divina -->
+  <div class="expedito-backdrop" (click)="closeModal()"></div>
+
+  <!-- Contenido del modal -->
+  <div class="expedito-modal" [class.closing]="isClosing">
+    <!-- Rayos de luz -->
+    <div class="light-rays">
+      <div class="ray" *ngFor="let r of [1,2,3,4,5,6,7,8,9,10,11,12]" [style.--ray-index]="r"></div>
+    </div>
+
+    <!-- Botón cerrar -->
+    <button class="close-btn" (click)="closeModal()" aria-label="Cerrar">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Cruz de San Expedito -->
+    <div class="cross-container">
+      <div class="cross">
+        <div class="cross-vertical"></div>
+        <div class="cross-horizontal"></div>
+        <span class="hodie-text">HODIE</span>
+      </div>
+      <!-- Cuervo bajo la cruz con "CRAS" -->
+      <div class="crow-container">
+        <span class="cras-text">CRAS</span>
+        <span class="crow">🐦‍⬛</span>
+      </div>
+    </div>
+
+    <!-- Texto -->
+    <div class="expedito-content">
+      <h2 class="expedito-title">San Expedito</h2>
+      <p class="expedito-subtitle">Patrono de las causas justas y urgentes</p>
+      
+      <div class="divider"></div>
+      
+      <p class="expedito-prayer">
+        «No dejes para mañana lo que puedas hacer hoy.»
+      </p>
+      <p class="expedito-prayer-small">
+        ¡Hoy, hoy, hoy! No mañana, sino hoy.<br>
+        San Expedito, ruega por nosotros.
+      </p>
+
+      <div class="feast-info">
+        <span class="feast-badge">Fiesta: 19 de Abril</span>
+      </div>
+    </div>
+
+    <!-- Firma sutil -->
+    <p class="expedito-footer">
+      ~ Devoto de San Expedito ~
+    </p>
+  </div>
+</div>
