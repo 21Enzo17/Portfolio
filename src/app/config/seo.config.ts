@@ -4,14 +4,14 @@ import { SOCIAL_CONFIG } from './social.config';
  * Configuración SEO para el sitio web
  */
 export const SEO_CONFIG = {  // Configuración general
-  siteName: 'Enzo Meneghini - Infrstructure Manager',
+  siteName: 'Enzo Meneghini - Site Lead en Accenture · Infrastructure Manager & DevOps',
   siteUrl: SOCIAL_CONFIG.portfolioUrl,
   
   // Metadatos por defecto
   defaultMetaTags: {
-    title: 'Enzo Meneghini - Infrstructure Manager',
-    description: 'Desarrollador Full Stack con experiencia en Angular, React, Node.js y más tecnologías. Conoce mi portafolio, CV y proyectos destacados.',
-    keywords: 'desarrollador full stack, angular, react, node.js, desarrollador web, frontend, backend, jujuy, argentina, java, spring boot, typescript',
+    title: 'Enzo Meneghini - Site Lead en Accenture · Infrastructure Manager & DevOps',
+    description: 'Site Lead en Accenture (Rio Tinto) e Infrastructure Manager. Especializado en redes, virtualización, Azure, Docker, CI/CD, DevOps y soluciones de IA on-premise. Jujuy, Argentina.',
+    keywords: 'Enzo Meneghini, Site Lead, Accenture, Infrastructure Manager, DevOps, redes, Azure, Docker, CI/CD, Cisco CCNA, MikroTik, Furukawa, virtualización, Prometheus, Linux, portfolio, Jujuy, Argentina',
     author: 'Enzo Meneghini',
     image: `${SOCIAL_CONFIG.portfolioUrl}/assets/fotoPerfil.webp`,
   },
@@ -32,21 +32,21 @@ export const SEO_CONFIG = {  // Configuración general
   // Configuración por ruta
   routes: {
     home: {
-      title: 'Inicio | Enzo Meneghini - Infrstructure Manager',
-      description: 'Desarrollador Full Stack con enfoque en tecnologías web modernas. Servicios de desarrollo web profesional.',
-      keywords: 'desarrollador web, full stack, angular, react, frontend, backend, jujuy',
+      title: 'Inicio | Enzo Meneghini - Site Lead & Infrastructure Manager',
+      description: 'Site Lead en Accenture para Rio Tinto e Infrastructure Manager. Redes, Azure, Docker, CI/CD, monitoreo y soluciones de IA on-premise.',
+      keywords: 'Site Lead, Accenture, Infrastructure Manager, DevOps, redes, Azure, Docker, Jujuy',
       canonicalUrl: '/',
     },
     projects: {
       title: 'Proyectos | Enzo Meneghini',
-      description: 'Portafolio de proyectos destacados de desarrollo web, aplicaciones y soluciones digitales.',
-      keywords: 'proyectos web, portafolio desarrollo, aplicaciones, soluciones digitales',
+      description: 'Proyectos destacados de infraestructura, DevOps, redes y desarrollo web.',
+      keywords: 'proyectos, infraestructura, DevOps, redes, desarrollo web, portfolio',
       canonicalUrl: '/projects',
     },
     cv: {
       title: 'Curriculum Vitae | Enzo Meneghini',
-      description: 'Curriculum Vitae de Enzo Meneghini, desarrollador Full Stack con experiencia en tecnologías frontend y backend.',
-      keywords: 'cv, curriculum, experiencia, habilidades, desarrollo web',
+      description: 'CV de Enzo Meneghini — Site Lead en Accenture, Infrastructure Manager, DevOps y redes.',
+      keywords: 'cv, curriculum, experiencia, infraestructura, DevOps, redes',
       canonicalUrl: '/cv',
     },
   },  
@@ -57,16 +57,22 @@ export const SEO_CONFIG = {  // Configuración general
       "@type": "Person",      "name": "Enzo Meneghini",
       "url": SOCIAL_CONFIG.portfolioUrl,
       "image": `${SOCIAL_CONFIG.portfolioUrl}/assets/fotoPerfil.webp`,
-      "jobTitle": "Full Stack Developer | Jefe de Infraestructura",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Agua Potable de Jujuy"
-      },
+      "jobTitle": "Site Lead & Support Engineer en Accenture | Infrastructure Manager & DevOps",
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Accenture"
+        },
+        {
+          "@type": "Organization",
+          "name": "Agua Potable de Jujuy"
+        }
+      ],
       "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "Universidad Nacional de Jujuy"
       },
-      "knowsAbout": ["Angular", "Java", "Spring Boot", "React", "TypeScript", "Node.js", "Full Stack Development"],      "sameAs": [
+      "knowsAbout": ["Infrastructure Management", "DevOps", "Networking", "Azure", "Docker", "CI/CD", "Cisco CCNA", "MikroTik", "Virtualization", "Prometheus", "Linux", "AI On-Premise", "Angular", "Java"],      "sameAs": [
         SOCIAL_CONFIG.linkedinUrl,
         SOCIAL_CONFIG.githubUrl
       ]
@@ -75,7 +81,7 @@ export const SEO_CONFIG = {  // Configuración general
       "@context": "https://schema.org",
       "@type": "WebSite",      "name": "Portfolio de Enzo Meneghini",
       "url": `${SOCIAL_CONFIG.portfolioUrl}/`,
-      "description": "Portfolio profesional de Enzo Meneghini, desarrollador Full Stack con experiencia en Angular, Java, Spring Boot y otras tecnologías web modernas",
+      "description": "Site Lead en Accenture (Rio Tinto) e Infrastructure Manager. Especializado en redes, DevOps, Azure, Docker y soluciones de IA on-premise.",
       "author": {
         "@type": "Person",
         "name": "Enzo Meneghini"

@@ -2,6 +2,7 @@
   "projects": {
     "title": "My Projects",
     "featuredTitle": "Featured Projects",
+    "featuredBadge": "Featured",
     "allProjects": "All Projects",
     "viewAll": "View all projects",
     "backToHome": "Back to home",

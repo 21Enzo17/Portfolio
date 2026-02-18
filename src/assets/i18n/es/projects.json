@@ -2,6 +2,7 @@
   "projects": {
     "title": "Mis Proyectos",
     "featuredTitle": "Proyectos Destacados",
+    "featuredBadge": "Destacado",
     "allProjects": "Todos los Proyectos",
     "viewAll": "Ver todos los proyectos",
     "backToHome": "Volver al inicio",

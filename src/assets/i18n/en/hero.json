@@ -1,8 +1,8 @@
 {
   "hero": {
-    "title": "Support Engineer & Site Lead @ Accenture | Infrastructure Manager",
-    "subtitle": "Support Engineer & Site Lead @ Accenture | Infrastructure Manager",
-    "keywords": ["Accenture", "Site Lead", "ServiceNow", "Fiber Optic", "Active Directory", "Mikrotik", "Networking", "Virtualization", "Docker", "Linux", "Level 3 Support", "DevOps", "English C2"],
-    "bio": "<span class=\"font-bold\">Support Engineer & Site Lead</span> at <span style=\"color: #A100FF; font-weight: 800;\">Accenture</span> for enterprise mining operations and <span class=\"font-bold\">Infrastructure Manager</span> at Jujuy Water Utility, <span class=\"font-bold\">leading technical teams</span> and coordinating 24/7 critical infrastructure. <br><br>Specialized in <span class=\"font-bold\">IT team supervision, Azure/cloud, Cisco networking, automation, and digital transformation</span>. Certified <span class=\"font-bold\">Cisco CCNA, Furukawa Fiber Optic, and MikroTik RouterOS</span>. <br><br>Experience in <span class=\"font-bold\">IT asset management, technical mentoring</span>, and high-complexity enterprise projects."
+    "title": "Site Lead at Accenture | Infrastructure Manager & DevOps",
+    "subtitle": "Site Lead at Accenture | Infrastructure Manager & DevOps",
+    "keywords": ["Accenture", "Site Lead", "ServiceNow", "Fiber Optic", "Active Directory", "Mikrotik", "Networking", "Virtualization", "Docker", "Linux", "Azure", "Level 3 Support", "DevOps", "English"],
+    "bio": "<span class=\"font-bold\">Site Lead & Support Engineer</span> at <span style=\"color: #A100FF; font-weight: 800;\">Accenture</span> for the <span class=\"font-bold\">Rio Tinto</span> project (world-class mining operations) and <span class=\"font-bold\">Infrastructure Manager</span> at Jujuy Water Utility — leading technical teams, managing hybrid on-premise/Azure infrastructure, and coordinating 24/7 critical operations. <br><br>Specialized in <span class=\"font-bold\">networking, virtualization, Docker, CI/CD pipelines, Prometheus monitoring</span>, and deployment of <span class=\"font-bold\">on-premise AI solutions</span> (LLMs, RAG, facial recognition). Trained in <span class=\"font-bold\">Cisco CCNA, MikroTik MCTNA, and Furukawa FCP</span>. Pursuing <span class=\"font-bold\">Azure AZ-104</span>. Advanced English with <span class=\"font-bold\">EF SET C2 certification</span>."
   }
 }
