@@ -45,6 +45,53 @@
         "skills": [
           "Redes LAN/WAN", "Mantenimiento de hardware", "Configuración de routers", "Soporte técnico", "Diagnóstico de fallas"
         ]
+      },
+      {
+        "degree": "Cisco CCNA - Fundamentos de Networking para Redes IP",
+        "institution": "Udemy - Instructor: Josep Ricart",
+        "period": "Enero 2026",
+        "location": "Online",
+        "description": "Curso completo en fundamentos de redes IP y tecnologías Cisco, cubriendo diseño, configuración y troubleshooting de redes empresariales.",
+        "type": "course",
+        "certificateUrl": "https://www.udemy.com/certificate/UC-d4e8526b-0773-4fab-98fa-f0f9224e67ff/",
+        "achievements": [
+          "16 horas de formación intensiva",
+          "Certificado de finalización: UC-d4e8526b-0773-4fab-9f8fa-f0f9224e67ff"
+        ],
+        "skills": [
+          "Cisco IOS", "Routing y Switching", "TCP/IP", "VLANs", "Protocolos de enrutamiento", "Configuración de routers y switches", "Troubleshooting de redes"
+        ]      },
+      {
+        "degree": "Mikrotik - Administración y Configuración Avanzada",
+        "institution": "Udemy - En curso",
+        "period": "Enero 2026 - En curso",
+        "location": "Online",
+        "description": "Curso avanzado en configuración y administración de routers y switches Mikrotik RouterOS. Experiencia práctica gestionando infraestructura de red multi-sede completa con Mikrotik en producción.",
+        "type": "course",
+        "achievements": [
+          "Implementación real de infraestructura multi-sede con Mikrotik",
+          "Gestión de VPN site-to-site y configuraciones avanzadas en producción"
+        ],
+        "skills": [
+          "RouterOS", "VPN site-to-site", "VLANs", "QoS", "Firewall avanzado", "Routing dinámico", "Gestión de ancho de banda", "Troubleshooting avanzado"
+        ]      },
+      {
+        "degree": "Furukawa Professional Certified Fiber Optic",
+        "institution": "Furukawa Electric LatAm",
+        "period": "Febrero 2026",
+        "location": "Online",
+        "description": "Certificación profesional en tecnología de fibra óptica de Furukawa Electric. Capacitación integral que abarca diseño, instalación, pruebas y mantenimiento de redes ópticas. Incluye prácticas de laboratorio y contenidos multimedia en fibra monomodo (SMF) y multimodo (MMF), conectorización, pruebas OTDR, empalmes por fusión, multiplexación WDM, divisores ópticos y cumplimiento de estándares TIA-568.0 y TIA-568.3 para sistemas de cableado estructurado.",
+        "type": "certification",
+        "achievements": [
+          "24 horas de formación intensiva práctica con materiales oficiales de Furukawa Electric",
+          "Prácticas de laboratorio con equipamiento de última generación Furukawa",
+          "Certificación en diseño de redes ópticas y cálculos de presupuesto de pérdidas",
+          "Capacitación en cumplimiento de normas TIA-568.0 y TIA-568.3",
+          "Experiencia en sistemas WDM (Multiplexación de Longitud de Onda) y splitters ópticos"
+        ],
+        "skills": [
+          "Fibra Monomodo/Multimodo (SMF/MMF)", "Testing y Análisis OTDR", "Empalmes por Fusión", "Empalme Mecánico", "Conectores de Campo", "Multiplexación WDM", "Divisores Ópticos (Splitters)", "Normas TIA-568.0/568.3", "Cableado Estructurado", "Instalación DIO/ODF", "Cálculo de Presupuesto de Pérdidas", "Diseño de Redes Ópticas", "Instalación de Cables Drop", "Instalación de Microcables", "Testing y Certificación de Cables"
+        ]
       }
     ]
   }

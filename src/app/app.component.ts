@@ -7,11 +7,12 @@ import { ThemeService } from './services/theme.service';
 import { LanguageService } from './services/language.service';
 import { EnhancedSeoService } from './services/enhanced-seo.service';
 import { AnalyticsInitService } from './services/analytics-init.service';
+import { SanExpeditoEasterEggComponent } from './components/san-expedito-easter-egg/san-expedito-easter-egg.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, TranslateModule],
+  imports: [RouterOutlet, CommonModule, TranslateModule, SanExpeditoEasterEggComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

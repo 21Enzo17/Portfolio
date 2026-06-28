@@ -6,7 +6,7 @@ import { SOCIAL_CONFIG } from './social.config';
  */
 export const PERSONAL_INFO = {
   name: 'Enzo Meneghini',
-  title: 'Full Stack Developer | Jefe de Infraestructura',
+  title: 'Site Lead en Accenture | Infrastructure Manager & DevOps',
   email: SOCIAL_CONFIG.email,
   phone: SOCIAL_CONFIG.phone,
   linkedin: SOCIAL_CONFIG.linkedinDisplay,

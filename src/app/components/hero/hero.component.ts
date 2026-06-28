@@ -20,6 +20,12 @@ export class HeroComponent implements OnInit {
   showCVModal = false
   socialConfig = SOCIAL_CONFIG
 
+  // Easter Egg: San Expedito
+  nameClickCount = 0
+  showExpeditoToast = false
+  nameGoldenGlow = false
+  private nameClickTimeout: ReturnType<typeof setTimeout> | null = null
+
   private languageService = inject(LanguageService)
   private cvGeneratorService: CvGeneratorAtsService = inject(CvGeneratorAtsService)
   private analyticsService = inject(AnalyticsService)
@@ -62,5 +68,51 @@ export class HeroComponent implements OnInit {
 
   onContactClick(contactType: string): void {
     this.analyticsService.trackContactClick(contactType);
+  }
+
+  /**
+   * Easter Egg: 7 clicks en el nombre activa a San Expedito
+   */
+  onNameClick(): void {
+    this.nameClickCount++;
+
+    // Reset después de 3 segundos de inactividad
+    if (this.nameClickTimeout) {
+      clearTimeout(this.nameClickTimeout);
+    }
+    this.nameClickTimeout = setTimeout(() => {
+      this.nameClickCount = 0;
+    }, 3000);
+
+    if (this.nameClickCount >= 7) {
+      this.nameClickCount = 0;
+      this.triggerExpeditoEasterEgg();
+    }
+  }
+
+  private triggerExpeditoEasterEgg(): void {
+    // Brillar el nombre en dorado
+    this.nameGoldenGlow = true;
+
+    // Mostrar toast
+    setTimeout(() => {
+      this.showExpeditoToast = true;
+    }, 300);
+
+    // Ocultar todo después de 6 segundos
+    setTimeout(() => {
+      this.showExpeditoToast = false;
+    }, 6500);
+
+    setTimeout(() => {
+      this.nameGoldenGlow = false;
+    }, 7000);
+  }
+
+  closeExpeditoToast(): void {
+    this.showExpeditoToast = false;
+    setTimeout(() => {
+      this.nameGoldenGlow = false;
+    }, 500);
   }
 }
