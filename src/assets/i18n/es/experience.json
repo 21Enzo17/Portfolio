@@ -3,9 +3,41 @@
     "title": "Experiencia Laboral",
     "items": [
       {
-        "jobTitle": "Support Engineer",
+        "jobTitle": "NOC Engineer",
+        "company": "Canal 4 Jujuy (ISP)",
+        "period": "Abril 2026 - Presente",
+        "location": "Jujuy, Argentina · Presencial",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Responsabilidades clave:",
+            "icon": "📡",
+            "content": [
+              "Monitoreo y operación de red 24/7 con Zabbix y Grafana: detección temprana de incidentes, diagnóstico avanzado y resolución en todos los niveles",
+              "Configuración y gestión de switches y routing a escala: VLANs avanzadas, BGP y segmentación de red para servicios FTTH y HFC",
+              "Administración de infraestructura GPON/FTTH y HFC: provisioning y troubleshooting de OLTs, ONTs y cablemodems en producción",
+              "Gestión de caches CDN: implementación y mantenimiento de Netflix OCA, Google GGC y Meta caches para optimizar tráfico y reducir latencia",
+              "Administración de servidores y virtualización con Proxmox; seguridad perimetral con FortiGate y gestión de red unificada con UniFi UDM",
+              "Liderazgo en proyectos de red de gran escala, incluyendo migraciones de aprovisionador",
+              "Documentación técnica continua de infraestructura, procedimientos y cambios"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Tecnologías utilizadas:",
+            "icon": "⚙️",
+            "content": [
+              "Zabbix", "Grafana", "GPON/FTTH", "HFC", "OLTs", "ONTs", "cablemodems",
+              "Netflix OCA", "Google GGC", "Meta Cache", "BGP", "VLANs",
+              "Proxmox", "FortiGate", "UniFi UDM", "switches", "routing"
+            ]
+          }
+        ]
+      },
+      {
+        "jobTitle": "Site Lead & Support Engineer",
         "company": "Accenture - Proyecto Rio Tinto",
-        "period": "Octubre 2025 - Presente",
+        "period": "Octubre 2025 - Abril 2026",
         "location": "Jujuy, Argentina · On-site",
         "sections": [
           {
@@ -41,7 +73,7 @@
       {
         "jobTitle": "Encargado de Infraestructura",
         "company": "Agua Potable de Jujuy",
-        "period": "Enero 2025 - Presente",
+        "period": "Enero 2025 - Abril 2026",
         "location": "Jujuy, Argentina · Presencial",
         "sections": [
           {

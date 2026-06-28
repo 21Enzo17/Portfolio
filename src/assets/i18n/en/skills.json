@@ -32,7 +32,15 @@
         { "name": "PostgreSQL", "icon": "logos:postgresql" },
         { "name": "InfluxDB", "icon": "logos:influxdb" },
         { "name": "MongoDB", "icon": "logos:mongodb-icon" },
-        { "name": "SQL Server", "icon": "simple-icons:microsoftsqlserver" }
+        { "name": "SQL Server", "icon": "simple-icons:microsoftsqlserver" },
+        { "name": "Zabbix", "icon": "simple-icons:zabbix" },
+        { "name": "Grafana", "icon": "logos:grafana" },
+        { "name": "GPON/FTTH", "icon": "mdi:access-point-network" },
+        { "name": "BGP", "icon": "mdi:router-network" },
+        { "name": "FortiGate", "icon": "simple-icons:fortinet" },
+        { "name": "UniFi", "icon": "simple-icons:ubiquiti" },
+        { "name": "Netflix OCA", "icon": "simple-icons:netflix" },
+        { "name": "Google GGC", "icon": "logos:google-icon" }
       ]
     },
     "frontend": {

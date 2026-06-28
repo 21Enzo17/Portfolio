@@ -130,6 +130,26 @@ export class IconService {
     'rag': 'mdi:book-search',
     'ia (llms)': 'mdi:robot-outline',
 
+    // Networking & ISP
+    'zabbix': 'mdi:monitor-eye',
+    'grafana': 'logos:grafana',
+    'gpon/ftth': 'mdi:access-point-network',
+    'hfc': 'mdi:cable-data',
+    'olts': 'mdi:server-network',
+    'onts': 'mdi:router',
+    'cablemodems': 'mdi:router',
+    'cable modems': 'mdi:router',
+    'bgp': 'mdi:router-network',
+    'cgnat': 'mdi:router-network',
+    'fortigate': 'simple-icons:fortinet',
+    'unifi udm': 'simple-icons:ubiquiti',
+    'unifi': 'simple-icons:ubiquiti',
+    'switches': 'mdi:switch',
+    'routing': 'mdi:router-network',
+    'netflix oca': 'simple-icons:netflix',
+    'google ggc': 'logos:google-icon',
+    'meta cache': 'simple-icons:meta',
+
     // Hardware & Infrastructure
     'ups': 'mdi:battery-charging',
     
@@ -315,6 +335,22 @@ export class IconService {
       content: 'LAN',
       styles: {
         'background-color': '#0078d7',
+        'color': 'white',
+        'border-radius': '4px',
+        'width': '28px',
+        'height': '24px',
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'font-weight': 'bold',
+        'font-size': '9px'
+      }
+    },
+    'zabbix': {
+      type: 'text',
+      content: 'ZBX',
+      styles: {
+        'background-color': '#d40000',
         'color': 'white',
         'border-radius': '4px',
         'width': '28px',

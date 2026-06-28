@@ -3,9 +3,41 @@
     "title": "Work Experience",
     "items": [
       {
-        "jobTitle": "Support Engineer",
+        "jobTitle": "NOC Engineer",
+        "company": "Canal 4 Jujuy (ISP)",
+        "period": "April 2026 - Present",
+        "location": "Jujuy, Argentina · On-site",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Key responsibilities:",
+            "icon": "📡",
+            "content": [
+              "24/7 network monitoring and operations with Zabbix and Grafana: early incident detection, advanced diagnostics and resolution at all levels",
+              "Switch configuration and routing management at scale: advanced VLANs, BGP and network segmentation for FTTH and HFC services",
+              "GPON/FTTH and HFC infrastructure management: provisioning and troubleshooting of OLTs, ONTs and cable modems in production",
+              "CDN cache management: deployment and maintenance of Netflix OCA, Google GGC and Meta caches to optimize traffic and reduce latency",
+              "Server administration and virtualization with Proxmox; perimeter security with FortiGate and unified network management with UniFi UDM",
+              "Leadership on large-scale network projects, including provisioner migrations",
+              "Continuous technical documentation of infrastructure, procedures and changes"
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
+            "content": [
+              "Zabbix", "Grafana", "GPON/FTTH", "HFC", "OLTs", "ONTs", "cable modems",
+              "Netflix OCA", "Google GGC", "Meta Cache", "BGP", "VLANs",
+              "Proxmox", "FortiGate", "UniFi UDM", "switches", "routing"
+            ]
+          }
+        ]
+      },
+      {
+        "jobTitle": "Site Lead & Support Engineer",
         "company": "Accenture - Rio Tinto Project",
-        "period": "October 2025 - Present",
+        "period": "October 2025 - April 2026",
         "location": "Jujuy, Argentina · On-site",
         "sections": [
           {
@@ -41,7 +73,7 @@
       {
         "jobTitle": "Infrastructure Manager",
         "company": "Jujuy Water Utility",
-        "period": "January 2025 - Present",
+        "period": "January 2025 - April 2026",
         "location": "Jujuy, Argentina · On-site",
         "sections": [
           {
