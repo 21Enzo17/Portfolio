@@ -9,8 +9,8 @@ export const SOCIAL_CONFIG = {
   portfolio: 'https://www.enzo-meneghini.com/',
   
   // Información de contacto
-  email: 'contacto@enzo-meneghini.com', // TODO: Actualizar con email real
-  phone: '+54 9 388 460-0584', // TODO: Actualizar con teléfono real
+  email: 'contacto@enzo-meneghini.com',
+  phone: '+54 9 388 460 0584',
   
   // WhatsApp (versión limpia para enlaces)
   get whatsappUrl(): string {

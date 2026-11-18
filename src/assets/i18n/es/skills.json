@@ -4,118 +4,299 @@
     "seeMore": "Ver más",
     "seeLess": "Ver menos",
     "opsdb": {
-      "title": "DevOps, Herramientas y Bases de Datos",
+      "title": "Infraestructura, redes y operación",
       "items": [
-        { "name": "Docker", "icon": "logos:docker-icon" },
-        { "name": "NGINX", "icon": "logos:nginx" },
-        { "name": "HAProxy", "icon": "haproxy" },
-        { "name": "Prometheus", "icon": "logos:prometheus" },
-        { "name": "Proxmox", "icon": "simple-icons:proxmox" },
-        { "name": "Hyper-V", "icon": "simple-icons:hyper" },
-        { "name": "Windows Server", "icon": "logos:microsoft-windows" },
-        { "name": "Debian/Linux", "icon": "logos:debian" },
-        { "name": "Mikrotik", "icon": "simple-icons:mikrotik" },
-        { "name": "Aruba", "icon": "aruba" },
-        { "name": "Issabel", "icon": "mdi:phone-voip" },
-        { "name": "VLANs", "icon": "carbon:network-4" },
-        { "name": "VPN", "icon": "carbon:vpn" },
-        { "name": "DNS/DHCP", "icon": "carbon:dns-services" },
-        { "name": "Firewall", "icon": "carbon:firewall-classic" },
-        { "name": "TLS/SSL", "icon": "carbon:security" },
-        { "name": "RAID", "icon": "mdi:harddisk" },
-        { "name": "Bash Scripting", "icon": "carbon:terminal" },
-        { "name": "GitHub Actions", "icon": "logos:github-actions" },
-        { "name": "GitLab CI", "icon": "logos:gitlab" },
-        { "name": "AWS", "icon": "logos:aws" },
-        { "name": "Redes LAN/WAN", "icon": "carbon:network-4" },
-        { "name": "MySQL", "icon": "logos:mysql" },
-        { "name": "PostgreSQL", "icon": "logos:postgresql" },
-        { "name": "InfluxDB", "icon": "logos:influxdb" },
-        { "name": "MongoDB", "icon": "logos:mongodb-icon" },
-        { "name": "SQL Server", "icon": "simple-icons:microsoftsqlserver" },
-        { "name": "Zabbix", "icon": "simple-icons:zabbix" },
-        { "name": "Grafana", "icon": "logos:grafana" },
-        { "name": "GPON/FTTH", "icon": "mdi:access-point-network" },
-        { "name": "BGP", "icon": "mdi:router-network" },
-        { "name": "FortiGate", "icon": "simple-icons:fortinet" },
-        { "name": "UniFi", "icon": "simple-icons:ubiquiti" },
-        { "name": "Netflix OCA", "icon": "simple-icons:netflix" },
-        { "name": "Google GGC", "icon": "logos:google-icon" }
+        {
+          "name": "GPON/FTTH",
+          "icon": "mdi:access-point-network"
+        },
+        {
+          "name": "OLT/ONT",
+          "icon": "mdi:router-wireless"
+        },
+        {
+          "name": "BGP",
+          "icon": "mdi:router-network"
+        },
+        {
+          "name": "OSPF",
+          "icon": "mdi:router-network"
+        },
+        {
+          "name": "IPv6",
+          "icon": "carbon:network-4"
+        },
+        {
+          "name": "VLANs",
+          "icon": "carbon:network-4"
+        },
+        {
+          "name": "MikroTik",
+          "icon": "simple-icons:mikrotik"
+        },
+        {
+          "name": "Cisco",
+          "icon": "simple-icons:cisco"
+        },
+        {
+          "name": "UniFi",
+          "icon": "simple-icons:ubiquiti"
+        },
+        {
+          "name": "Aruba",
+          "icon": "aruba"
+        },
+        {
+          "name": "WireGuard",
+          "icon": "simple-icons:wireguard"
+        },
+        {
+          "name": "Firewall",
+          "icon": "carbon:firewall-classic"
+        },
+        {
+          "name": "Cableado estructurado",
+          "icon": "mdi:ethernet-cable"
+        },
+        {
+          "name": "Fibra óptica",
+          "icon": "mdi:transit-connection-variant"
+        },
+        {
+          "name": "Netflix OCA",
+          "icon": "simple-icons:netflix"
+        },
+        {
+          "name": "Google GGC",
+          "icon": "logos:google-icon"
+        },
+        {
+          "name": "Proxmox VE",
+          "icon": "simple-icons:proxmox"
+        },
+        {
+          "name": "Hyper-V",
+          "icon": "simple-icons:hyper"
+        },
+        {
+          "name": "Windows Server",
+          "icon": "logos:microsoft-windows"
+        },
+        {
+          "name": "Active Directory",
+          "icon": "mdi:account-group"
+        },
+        {
+          "name": "Microsoft 365",
+          "icon": "logos:microsoft-icon"
+        },
+        {
+          "name": "Debian/Linux",
+          "icon": "logos:debian"
+        },
+        {
+          "name": "RAID",
+          "icon": "mdi:harddisk"
+        },
+        {
+          "name": "Azure / Entra ID",
+          "icon": "logos:microsoft-azure"
+        },
+        {
+          "name": "Intune",
+          "icon": "mdi:cellphone-cog"
+        },
+        {
+          "name": "AWS",
+          "icon": "logos:aws"
+        },
+        {
+          "name": "Grafana",
+          "icon": "logos:grafana"
+        },
+        {
+          "name": "Prometheus",
+          "icon": "logos:prometheus"
+        },
+        {
+          "name": "SNMP",
+          "icon": "mdi:lan-connect"
+        },
+        {
+          "name": "Wireshark",
+          "icon": "simple-icons:wireshark"
+        },
+        {
+          "name": "ServiceNow",
+          "icon": "simple-icons:servicenow"
+        },
+        {
+          "name": "Jira",
+          "icon": "logos:jira"
+        },
+        {
+          "name": "GLPI",
+          "icon": "mdi:clipboard-list"
+        },
+        {
+          "name": "Issabel (VoIP)",
+          "icon": "mdi:phone-voip"
+        },
+        {
+          "name": "DNS/DHCP",
+          "icon": "carbon:dns-services"
+        },
+        {
+          "name": "TLS/SSL",
+          "icon": "carbon:security"
+        },
+        {
+          "name": "NGINX",
+          "icon": "logos:nginx"
+        },
+        {
+          "name": "HAProxy",
+          "icon": "haproxy"
+        },
+        {
+          "name": "Docker",
+          "icon": "logos:docker-icon"
+        },
+        {
+          "name": "Git",
+          "icon": "logos:git-icon"
+        },
+        {
+          "name": "GitHub Actions",
+          "icon": "logos:github-actions"
+        },
+        {
+          "name": "GitLab CI",
+          "icon": "logos:gitlab"
+        },
+        {
+          "name": "Bash",
+          "icon": "carbon:terminal"
+        },
+        {
+          "name": "Python",
+          "icon": "logos:python"
+        }
       ]
     },
     "frontend": {
-      "title": "Frontend",
+      "title": "Desarrollo frontend",
       "items": [
-        { "name": "Angular", "icon": "logos:angular-icon" },
-        { "name": "JavaScript", "icon": "logos:javascript" },
-        { "name": "TypeScript", "icon": "logos:typescript-icon" },
-        { "name": "HTML5", "icon": "logos:html-5" },
-        { "name": "CSS3", "icon": "logos:css-3" },
-        { "name": "Bootstrap", "icon": "logos:bootstrap" },
-        { "name": "Tailwind CSS", "icon": "logos:tailwindcss-icon" }
+        {
+          "name": "Angular",
+          "icon": "logos:angular-icon"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "logos:typescript-icon"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "logos:javascript"
+        },
+        {
+          "name": "HTML5",
+          "icon": "logos:html-5"
+        },
+        {
+          "name": "CSS3",
+          "icon": "logos:css-3"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "logos:tailwindcss-icon"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "logos:bootstrap"
+        },
+        {
+          "name": "Next.js",
+          "icon": "logos:nextjs-icon"
+        }
       ]
     },
     "backend": {
-      "title": "Backend",
+      "title": "Desarrollo backend y bases de datos",
       "items": [
-        { "name": "Java", "icon": "logos:java" },
-        { "name": "Spring Boot", "icon": "logos:spring-icon" },
-        { "name": "Hibernate/JPA", "icon": "logos:hibernate" },
-        { "name": "Node.js", "icon": "logos:nodejs-icon" },
-        { "name": "Genexus", "icon": "Genexus" }
-      ]
-    },
-    "databases": {
-      "title": "Bases de Datos",
-      "items": [
-        { "name": "MySQL", "icon": "logos:mysql" },
-        { "name": "PostgreSQL", "icon": "logos:postgresql" },
-        { "name": "InfluxDB", "icon": "logos:influxdb" },
-        { "name": "MongoDB", "icon": "logos:mongodb-icon" },
-        { "name": "SQL Server", "icon": "simple-icons:microsoftsqlserver" }
-      ]
-    },
-    "devops": {
-      "title": "DevOps & Herramientas",
-      "items": [
-        { "name": "Docker", "icon": "logos:docker-icon" },
-        { "name": "NGINX", "icon": "logos:nginx" },
-        { "name": "HAProxy", "icon": "haproxy" },
-        { "name": "Prometheus", "icon": "logos:prometheus" },
-        { "name": "Proxmox", "icon": "simple-icons:proxmox" },
-        { "name": "Hyper-V", "icon": "simple-icons:hyper" },
-        { "name": "Windows Server", "icon": "logos:microsoft-windows" },
-        { "name": "Debian/Linux", "icon": "logos:debian" },
-        { "name": "Mikrotik", "icon": "simple-icons:mikrotik" },
-        { "name": "Aruba", "icon": "aruba" },
-        { "name": "Issabel", "icon": "mdi:phone-voip" },
-        { "name": "VLANs", "icon": "carbon:network-4" },
-        { "name": "VPN", "icon": "carbon:vpn" },
-        { "name": "DNS/DHCP", "icon": "carbon:dns-services" },
-        { "name": "Firewall", "icon": "carbon:firewall-classic" },
-        { "name": "TLS/SSL", "icon": "carbon:security" },
-        { "name": "RAID", "icon": "mdi:harddisk" },
-        { "name": "Bash Scripting", "icon": "carbon:terminal" },
-        { "name": "GitHub Actions", "icon": "logos:github-actions" },
-        { "name": "GitLab CI", "icon": "logos:gitlab" },
-        { "name": "AWS", "icon": "logos:aws" },
-        { "name": "Redes LAN/WAN", "icon": "carbon:network-4" }
+        {
+          "name": "Java",
+          "icon": "logos:java"
+        },
+        {
+          "name": "Spring Boot",
+          "icon": "logos:spring-icon"
+        },
+        {
+          "name": "Node.js",
+          "icon": "logos:nodejs-icon"
+        },
+        {
+          "name": "GeneXus",
+          "icon": "Genexus"
+        },
+        {
+          "name": "Flask",
+          "icon": "simple-icons:flask"
+        },
+        {
+          "name": "APIs REST",
+          "icon": "carbon:api"
+        },
+        {
+          "name": "MySQL",
+          "icon": "logos:mysql"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "logos:postgresql"
+        },
+        {
+          "name": "SQL Server",
+          "icon": "simple-icons:microsoftsqlserver"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "logos:mongodb-icon"
+        }
       ]
     },
     "soft": {
-      "title": "Habilidades Blandas",
+      "title": "Gestión y habilidades blandas",
       "items": [
-        { "name": "Liderazgo de equipos y toma de decisiones", "icon": "carbon:leadership" },
-        { "name": "Gestión de incidentes (Soporte Nivel 3)", "icon": "mdi:alert-decagram" },
-        { "name": "Coordinación con proveedores y negociación", "icon": "mdi:handshake" },
-        { "name": "Planificación, priorización y ownership", "icon": "mdi:clipboard-check" },
-        { "name": "Mentoría y capacitación técnica", "icon": "mdi:school-outline" },
-        { "name": "Comunicación efectiva con stakeholders", "icon": "carbon:communication" },
-        { "name": "Trabajo interdisciplinario (IT/Operaciones)", "icon": "carbon:group" },
-        { "name": "Orientación a la seguridad y cumplimiento", "icon": "mdi:shield-check" },
-        { "name": "Resolución de problemas complejos", "icon": "carbon:problem" },
-        { "name": "Mentalidad proactiva y orientada al detalle", "icon": "carbon:zoom-in" },
-        { "name": "Aprendizaje continuo", "icon": "carbon:education" }
+        {
+          "name": "Liderazgo de equipos técnicos (4 personas)",
+          "icon": "carbon:leadership"
+        },
+        {
+          "name": "Coordinación de relevos",
+          "icon": "carbon:group"
+        },
+        {
+          "name": "Gestión de proveedores y contratistas",
+          "icon": "mdi:handshake"
+        },
+        {
+          "name": "Presupuesto y compras del área",
+          "icon": "mdi:clipboard-check"
+        },
+        {
+          "name": "Reuniones técnicas en inglés",
+          "icon": "carbon:communication"
+        },
+        {
+          "name": "Documentación de incidentes y runbooks",
+          "icon": "mdi:alert-decagram"
+        },
+        {
+          "name": "Cambios con plan de rollback",
+          "icon": "mdi:shield-check"
+        }
       ]
     }
   }

@@ -18,8 +18,6 @@
   # Permisos de características del navegador
   Permissions-Policy: geolocation=(), microphone=(), camera=()
   
-  # Prevenir almacenamiento en caché de información sensible
-  Cache-Control: public, max-age=31536000, immutable
 
 # Headers específicos para archivos HTML (sin caché agresivo)
 /*.html
@@ -46,6 +44,14 @@
   Cache-Control: public, max-age=31536000, immutable
 /*.otf
   Cache-Control: public, max-age=31536000, immutable
+
+# CVs en URLs fijas: siempre la última versión
+/cv/es.pdf
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Disposition: inline; filename="Enzo_Meneghini_CV_ES.pdf"
+/cv/en.pdf
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Disposition: inline; filename="Enzo_Meneghini_CV_EN.pdf"
 
 # Headers para JavaScript y CSS (con versionado)
 /*.js

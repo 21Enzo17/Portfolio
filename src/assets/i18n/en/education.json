@@ -14,83 +14,105 @@
     },
     "items": [
       {
-        "degree": "University Systems Analyst",
+        "degree": "University Programmer Analyst",
         "institution": "National University of Jujuy (UNJu)",
-        "period": "2022 - 2025",
+        "period": "Feb 2022 – Nov 2024",
         "location": "Jujuy, Argentina",
-        "description": "Graduated on time (GPA 8.35/10). Trained in systems analysis, data structures, algorithms, OOP, databases, and solving complex problems.",
+        "description": "University degree in software development: Java, databases (Oracle, SQL Server, MongoDB), APIs and microservices.",
         "type": "formal",
         "gpa": "GPA: 8.35/10",
         "url": "https://unju.edu.ar",
         "achievements": [
-          "Top student of the 2025 class",
-          "Recognition for outstanding integrative project",
-          "Participation in programming competitions"
+          "GPA 8.35/10"
         ],
         "skills": [
-          "Java", "Algorithms", "Data Structures", "Systems Analysis", "SQL", "OOP", "UML"
+          "Java",
+          "Angular",
+          "Oracle",
+          "SQL Server",
+          "MongoDB",
+          "APIs REST",
+          "Microservices"
         ]
       },
       {
-        "degree": "PC Hardware and Network Technician",
+        "degree": "Technical Degree in PC Hardware and Networking",
         "institution": "National University of Catamarca",
-        "period": "190 lecture hours",
+        "period": "Feb 2013 – Dec 2013",
         "location": "Argentina",
-        "description": "Training in repair, maintenance, and configuration of hardware, LAN/WAN networks, and technical support.",
-        "type": "certification",
-        "achievements": [
-          "Final project with special mention",
-          "Full LAN network implementation as practical work"
-        ],
+        "description": "Degree completed.",
+        "type": "formal",
+        "achievements": [],
         "skills": [
-          "LAN/WAN Networks", "Hardware Maintenance", "Router Configuration", "Technical Support", "Fault Diagnosis"
+          "Hardware",
+          "LAN networking"
         ]
       },
       {
-        "degree": "Cisco CCNA - Networking Fundamentals for IP Networks",
-        "institution": "Udemy - Instructor: Josep Ricart",
-        "period": "January 2026",
+        "degree": "CCNA and CCNP training — NetDreamTeam scholarship",
+        "institution": "NetDreamTeam",
+        "period": "In progress",
         "location": "Online",
-        "description": "Comprehensive course in IP networking fundamentals and Cisco technologies, covering design, configuration, and troubleshooting of enterprise networks.",
+        "description": "Scholarship. CCNA 1, 2, 3 and CCNP 1, 2 program.",
+        "type": "course",
+        "achievements": [],
+        "skills": [
+          "Routing",
+          "Switching",
+          "Cisco IOS"
+        ]
+      },
+      {
+        "degree": "CCNA: Introduction to Networks",
+        "institution": "Cisco Networking Academy",
+        "period": "Nov 2026 · Credly badge",
+        "location": "Online",
+        "description": "First CCNA module completed. Now taking CCNA 2.",
+        "type": "course",
+        "achievements": [],
+        "skills": [
+          "TCP/IP",
+          "IPv4/IPv6",
+          "Ethernet"
+        ]
+      },
+      {
+        "degree": "CCNA course",
+        "institution": "Udemy",
+        "period": "Certificate of completion",
+        "location": "Online",
+        "description": "Course on networking fundamentals and Cisco technologies.",
         "type": "course",
         "certificateUrl": "https://www.udemy.com/certificate/UC-d4e8526b-0773-4fab-98fa-f0f9224e67ff/",
-        "achievements": [
-          "16 hours of intensive training",
-          "Completion certificate: UC-d4e8526b-0773-4fab-9f8fa-f0f9224e67ff"
-        ],
+        "achievements": [],
         "skills": [
-          "Cisco IOS", "Routing and Switching", "TCP/IP", "VLANs", "Routing protocols", "Router and switch configuration", "Network troubleshooting"
-        ]      },
+          "Cisco IOS",
+          "VLANs",
+          "Routing"
+        ]
+      },
       {
-        "degree": "Mikrotik - Advanced Administration and Configuration",
-        "institution": "Udemy - In progress",
-        "period": "January 2026 - In progress",
+        "degree": "Lightera (formerly Furukawa) — FCP Optical Fiber",
+        "institution": "Fundación Proydesa",
+        "period": "Feb 2026",
         "location": "Online",
-        "description": "Advanced course in Mikrotik RouterOS router and switch configuration and administration. Hands-on experience managing complete multi-site network infrastructure with Mikrotik in production.",
+        "description": "Course completed.",
         "type": "course",
-        "achievements": [
-          "Real implementation of multi-site infrastructure with Mikrotik",
-          "Management of site-to-site VPN and advanced configurations in production"
-        ],
+        "achievements": [],
         "skills": [
-          "RouterOS", "Site-to-site VPN", "VLANs", "QoS", "Advanced Firewall", "Dynamic Routing", "Bandwidth Management", "Advanced Troubleshooting"
-        ]      },
+          "Optical fiber"
+        ]
+      },
       {
-        "degree": "Furukawa Professional Certified Fiber Optic",
-        "institution": "Furukawa Electric LatAm",
-        "period": "February 2026",
+        "degree": "Lightera (formerly Furukawa) — DCS Base and DCS Lab (structured cabling)",
+        "institution": "Fundación Proydesa",
+        "period": "Mar 2026",
         "location": "Online",
-        "description": "Professional certification in fiber optic technology by Furukawa Electric. Comprehensive training covering design, installation, testing, and maintenance of optical networks. Includes hands-on laboratory practices and multimedia content in single-mode (SMF) and multimode (MMF) fiber, connectorization, OTDR testing, fusion splicing, WDM multiplexing, optical splitters, and compliance with TIA-568.0 and TIA-568.3 standards for structured cabling systems.",
-        "type": "certification",
-        "achievements": [
-          "24 hours of intensive hands-on training with official Furukawa Electric materials",
-          "Laboratory practices with latest-generation Furukawa equipment",
-          "Certification in optical network design and loss budget calculations",
-          "Training in TIA-568.0 and TIA-568.3 standards compliance",
-          "Expertise in WDM (Wavelength Division Multiplexing) systems and optical splitters"
-        ],
+        "description": "Courses completed, theory and lab.",
+        "type": "course",
+        "achievements": [],
         "skills": [
-          "Single-mode/Multimode Fiber (SMF/MMF)", "OTDR Testing & Analysis", "Fusion Splicing", "Mechanical Splicing", "Field Connectors", "WDM Multiplexing", "Optical Splitters", "TIA-568.0/568.3 Standards", "Structured Cabling", "DIO/ODF Installation", "Link Loss Budget Calculation", "Optical Network Design", "Drop Cable Installation", "Micro-cable Installation", "Cable Testing & Certification"
+          "Structured cabling"
         ]
       }
     ]

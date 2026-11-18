@@ -1,5 +1,7 @@
 # Estructura de Traducciones (i18n)
 
+> **Ojo:** `hero`, `experience`, `projects`, `education`, `skills`, `footer` y `metadata` se generan desde el CV Maestro (ver el README principal, sección "Contenido y CV"). Si los editás a mano, la próxima generación pisa el cambio. Lo que sí se edita acá son los textos de la interfaz (`nav`, `languages` y las claves de UI).
+
 Este directorio contiene las traducciones del portfolio en una estructura modular y organizada.
 
 ## Estructura de Archivos

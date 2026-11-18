@@ -1,8 +1,17 @@
 {
   "hero": {
-    "title": "Especialista en Infraestructura & Redes · NOC Engineer · DevOps",
-    "subtitle": "Especialista en Infraestructura & Redes · NOC Engineer · DevOps",
-    "keywords": ["NOC Engineer", "Infraestructura", "Redes", "GPON/FTTH", "DevOps", "ISP", "Accenture", "Inglés C1"],
-    "bio": "<span class=\"font-bold\">ISPs, organismos del Estado y proyectos enterprise internacionales</span> — <span class=\"font-bold\">+6 años</span> en <span class=\"font-bold\">infraestructura, redes y DevOps</span> en entornos completamente distintos. Desde <span class=\"font-bold\">fibra óptica y GPON/FTTH</span> hasta <span class=\"font-bold\">virtualización, servidores y CI/CD</span>, con liderazgo técnico comprobado. Participé en proyectos de escala global, incluyendo una migración de 30 sitios mineros con <span class=\"font-bold\">Accenture</span>. Inglés C1."
+    "title": "Especialista en Redes e Infraestructura IT · Líder de equipos · Data center 24/7",
+    "subtitle": "Especialista en Redes e Infraestructura IT · Líder de equipos · Data center 24/7",
+    "keywords": [
+      "Infraestructura IT",
+      "Redes",
+      "NOC",
+      "GPON/FTTH",
+      "BGP/OSPF",
+      "Liderazgo de equipos",
+      "isitmyisp",
+      "Inglés C1"
+    ],
+    "bio": "Especialista de redes e infraestructura con <span class=\"font-bold\">más de 6 años</span> de experiencia y fuerte conocimiento de campo: <span class=\"font-bold\">data centers de gran escala</span>, cableado estructurado, fibra óptica y soporte presencial en un sitio minero (Proyecto Rio Tinto, <span class=\"font-bold\">Accenture</span>). He liderado equipos de soporte, coordinado relevos operativos, gestionado proveedores, contratistas y SLA, reforzado la seguridad de la infraestructura y sostenido la continuidad operativa de servicios críticos, desde la red de <span class=\"font-bold\">21 sucursales</span> de un organismo público hasta la operación 24/7 de un ISP de <span class=\"font-bold\">más de 50.000 abonados</span>. <span class=\"font-bold\">Inglés C1</span>."
   }
 }

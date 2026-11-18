@@ -2,7 +2,6 @@ import { Component, type OnInit, inject } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { TranslateModule } from "@ngx-translate/core"
 import { LanguageService } from "@app/services/language.service"
-import { CvGeneratorAtsService } from "@app/services/cv-generator.service"
 import { AnalyticsService } from "@app/services/analytics.service"
 import { SOCIAL_CONFIG } from "@app/config/social.config"
 
@@ -27,7 +26,6 @@ export class HeroComponent implements OnInit {
   private nameClickTimeout: ReturnType<typeof setTimeout> | null = null
 
   private languageService = inject(LanguageService)
-  private cvGeneratorService: CvGeneratorAtsService = inject(CvGeneratorAtsService)
   private analyticsService = inject(AnalyticsService)
 
   ngOnInit() {

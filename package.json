@@ -9,7 +9,7 @@
     "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --configuration production && cp dist/portfolio/browser/_redirects dist/portfolio/browser/"
+    "deploy": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
@@ -23,9 +23,7 @@
     "@angular/router": "^18.0.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
-    "html2canvas": "^1.4.1",
     "iconify-icon": "^1.0.8",
-    "jspdf": "^3.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.0"
@@ -35,7 +33,6 @@
     "@angular/cli": "^18.0.0",
     "@angular/compiler-cli": "^18.0.0",
     "@types/jasmine": "~5.1.0",
-    "@types/jspdf": "^2.0.0",
     "autoprefixer": "^10.4.16",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
