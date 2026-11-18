@@ -17,7 +17,7 @@
 - [📝 Configuración de Contenido](#-configuración-de-contenido)
 - [🌐 Internacionalización](#-internacionalización)
 - [🎨 Personalización](#-personalización)
-- [📄 Generador de CV](#-generador-de-cv)
+- [📄 Contenido y CV](#-contenido-y-cv-una-sola-fuente)
 - [🔧 Comandos Disponibles](#-comandos-disponibles)
 - [🤝 Contribuir](#-contribuir)
 
@@ -28,7 +28,7 @@
 - 🌍 **Soporte multilenguaje** (Español/Inglés) con ngx-translate
 - 📱 **Diseño completamente responsive** con Tailwind CSS
 - 🎨 **Efectos neumórficos** modernos y animaciones fluidas
-- 📄 **Generador dinámico de CV en PDF** optimizado para ATS
+- 📄 **CV en PDF (ES/EN)** generado desde una única fuente, en URLs fijas
 - 🔍 **SEO optimizado** con metadatos dinámicos y JSON-LD
 - ⚡ **Carga rápida** con lazy loading y optimizaciones
 - 🎭 **Temas adaptativos** (claro/oscuro)
@@ -57,8 +57,6 @@ SCSS                   // Preprocesador CSS
 ### Librerías Principales
 ```typescript
 @ngx-translate/core    // Internacionalización
-jsPDF                  // Generación de PDFs
-html2canvas            // Captura de elementos HTML
 iconify-icon           // Sistema de iconos
 RxJS                   // Programación reactiva
 ```
@@ -90,7 +88,6 @@ src/
 │   │   ├── seo.config.ts
 │   │   └── social.config.ts
 │   ├── services/            # Servicios de negocio
-│   │   ├── cv-generator.service.ts
 │   │   ├── language.service.ts
 │   │   ├── enhanced-seo.service.ts
 │   │   ├── icon.service.ts
@@ -250,37 +247,15 @@ Sistema basado en Iconify con soporte para iconos personalizados:
 <iconify-icon icon="logos:angular" width="24" height="24"></iconify-icon>
 ```
 
-## 📄 Generador de CV
+## 📄 Contenido y CV: una sola fuente
 
-### Características del CV
-- ✅ **Optimizado para ATS** (Applicant Tracking Systems)
-- 📋 **Múltiples temas** predefinidos
-- 🎨 **Personalización** de colores y estilos
-- 🌍 **Soporte multilenguaje**
-- 👀 **Vista previa HTML** antes de descargar
-- 🔗 **Enlaces a proyectos** y perfiles
+El contenido del sitio y los CV en PDF **no se editan a mano en este repo**. Se generan desde el CV Maestro de Enzo (carpeta privada `career-assistant`, fuera de este repo) con `resumes/general/build.py`:
 
-### Uso del Generador
-```typescript
-// Generar CV básico
-await this.cvService.generateCV();
+- `src/assets/i18n/{es,en}/` → hero, experience, projects, education, skills, footer y metadata
+- `src/cv/es.pdf` y `src/cv/en.pdf` → CV general de 1 página (ATS), servidos en las URLs fijas `/cv/es.pdf` y `/cv/en.pdf`
+- `src/index.html`, `src/app/config/seo.config.ts`, `src/app/config/social.config.ts`, `src/sitemap.xml` → títulos, descripciones, contacto y fechas
 
-// CV con foto y tema personalizado
-await this.cvService.generateCV(
-  'url-foto.jpg',
-  'ats_professional',
-  { accent: '#4A90E2' },
-  ['JavaScript', 'Angular', 'Node.js']
-);
-
-// Vista previa
-const preview = await this.cvService.previewAtsCV();
-```
-
-### Temas Disponibles
-- `ats_professional` - Diseño clásico y profesional
-- `ats_modern` - Estilo moderno con acentos de color
-- `ats_elegant` - Diseño elegante con tipografía serif
+Los textos de la interfaz (botones, menús, filtros) sí se editan acá. Cada actualización llega como PR; Netlify publica al hacer merge a `main`.
 
 ## 🔧 Comandos Disponibles
 

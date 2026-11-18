@@ -62,20 +62,12 @@ export class SkillsComponent {
   }
 
   getIcon(category: string, skill: string | Skill, fallbackIcon: string): string {
-    const skillName = typeof skill === 'object' ? skill.name : skill;
-    
-    // Try to get the icon from the service
-    const icon = this.iconService.getTechIcon(skillName);
-    if (icon !== 'vscode-icons:file-type-default') {
-      return icon;
-    }
-    
-    // If the skill has an icon in its property
+    // El ícono del JSON (generado desde el CV Maestro) manda; si no hay, el del servicio
     if (typeof skill === 'object' && skill && skill.icon) {
       return skill.icon;
     }
-    
-    return fallbackIcon;
+    const skillName = typeof skill === 'object' ? skill.name : skill;
+    return this.iconService.getTechIcon(skillName, fallbackIcon);
   }
 
   // Método para verificar si una tecnología tiene un ícono personalizado

@@ -24,163 +24,161 @@
     },
     "items": [
       {
-        "name": "Hybrid Server Infrastructure Management",
-        "description": "Comprehensive administration of a heterogeneous server environment. Responsible for maintenance, upgrades (hardware and software), and securing Windows Servers for Genexus systems and databases, as well as Linux servers (Debian) for critical services like Docker, PBX (Issabel), and reverse proxy. Includes UPS installation and management to ensure 24/7 operational continuity.",
-        "technologies": ["Windows Server", "Linux", "Docker", "Issabel", "Genexus", "SQL Server"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "infra-servers.svg",
+        "name": "isitmyisp",
+        "description": "Self-hosted, open source (MIT) connectivity monitor for small businesses. It tells you in one sentence whose fault the outage is (Wi-Fi/router, the ISP's access network, backbone, a service or DNS) and builds the evidence report for the ISP claim: a summary for the customer and a technical annex with mtr captures for the NOC. 5 releases on Docker Hub (amd64/arm64), 277 automated tests and a public demo in Spanish and English.",
+        "technologies": [
+          "Python",
+          "Flask",
+          "SQLite",
+          "Docker",
+          "SNMP",
+          "mtr",
+          "fping",
+          "Prometheus"
+        ],
+        "githubUrl": "https://github.com/21Enzo17/isitmyisp",
+        "demoUrl": "https://isitmyisp.enzo-meneghini.com",
+        "downloadUrl": "https://hub.docker.com/r/21enzo03/isitmyisp",
+        "docsUrl": null,
+        "image": "",
         "category": "infrastructure",
         "featured": true
       },
       {
-        "name": "AI Application Deployment and Services",
-        "description": "Setup and management of multiple Docker environments for AI models, including implementation of Large Language Models (LLM) like Ollama, vector databases (Chromadb) for RAG systems, and voice assistants using Whisper AI. Focus on optimizing deployment to ensure efficient and scalable performance of AI services in production.",
-        "technologies": ["Docker", "Linux", "Ollama", "Chromadb", "Whisper AI", "Python"],
-        "githubUrl": null,
+        "name": "Asist.io — attendance REST API",
+        "description": "REST API in Java / Spring Boot with Spring Security, JPA/Hibernate and MySQL. JWT authentication signed with RS256, refresh tokens, a Redis token blacklist and monthly key rotation; OpenAPI/Swagger spec and Docker Compose deployment.",
+        "technologies": [
+          "Java",
+          "Spring Boot",
+          "MySQL",
+          "Redis",
+          "JWT",
+          "Docker"
+        ],
+        "githubUrl": "https://github.com/21Enzo17/asist.io",
         "demoUrl": null,
-        "image": "devops-ai.svg",
+        "downloadUrl": null,
+        "docsUrl": null,
+        "image": "sistema-asistencia.jpg",
+        "category": "backend",
+        "featured": true
+      },
+      {
+        "name": "High-availability service with backups",
+        "description": "High-availability service: HAProxy load balancing, Prometheus and Telegraf monitoring and automatic backups, built with Docker Compose and Bash.",
+        "technologies": [
+          "HAProxy",
+          "Prometheus",
+          "Telegraf",
+          "Docker Compose",
+          "Bash"
+        ],
+        "githubUrl": "https://github.com/21Enzo17/ClusterAltaDisponibilidadBackup-TPF-MMV",
+        "demoUrl": null,
+        "downloadUrl": null,
+        "docsUrl": null,
+        "image": "",
         "category": "devops",
         "featured": true
       },
       {
-        "name": "Enterprise Network Modernization and Management",
-        "description": "Leadership in the complete restructuring of corporate network infrastructure in collaboration with external vendors. Key tasks include managing all company DNS records, network configuration, port forwarding, and resolving complex issues such as network loops to optimize performance and stability.",
-        "technologies": ["DNS", "Networking", "Firewall", "TCP/IP", "Mikrotik"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "infra-network.svg",
-        "category": "infrastructure",
-        "featured": false
-      },
-      {
-        "name": "Legacy System Migration",
-        "description": "Participation in the migration of critical systems from Genexus to Java, including invoice generation and water account registration systems. This process required advanced analysis of undocumented systems.",
-        "technologies": ["Java", "Spring Boot", "MySQL"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "proyectoLegacy.jpg",
-        "category": "fullstack",
-        "featured": false
-      },
-      {
-        "name": "Jujuy Water Utility Website",
-        "description": "Redesign and development of the corporate website, improving user experience and accessibility. Led a multidisciplinary team and made key decisions in UI/UX, ensuring business goals were met.",
-        "technologies": ["Angular", "Java", "Spring Boot"],
-        "githubUrl": null,
+        "name": "Agua Potable de Jujuy website",
+        "description": "Redesign of the institutional website, led with a mixed team. Angular and Bootstrap frontend; GeneXus and Node.js/TypeScript backend.",
+        "technologies": [
+          "Angular",
+          "Bootstrap",
+          "Node.js",
+          "TypeScript",
+          "GeneXus"
+        ],
+        "githubUrl": "https://github.com/21Enzo17/AguaPotableWeb",
         "demoUrl": "https://web.aguapotablejujuy.com/home",
+        "downloadUrl": null,
+        "docsUrl": null,
         "image": "agua-jujuy.webp",
         "category": "fullstack",
         "featured": false
       },
       {
-        "name": "IFS Consultora",
-        "description": "Official website for IFS Consultora, a company specialized in food safety audits and consulting for food service establishments. Features responsive design, optimized animations, Netlify Forms contact form, Instagram feed, and SEO optimization.",
-        "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
+        "name": "Client websites (NDA)",
+        "description": "Websites built for freelance clients. They are under a non-disclosure agreement, so names and links are not published.",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "Bootstrap"
+        ],
         "githubUrl": null,
-        "demoUrl": "https://www.ifsconsultora.com",
-        "image": "IFS.webp",
-        "category": "frontend",
-        "featured": false
-      },
-      {
-        "name": "Vimo Congelados",
-        "description": "Development of the website for a frozen food factory, focused on presenting their product catalog and brand identity. The project centered on creating an attractive user experience and responsive design that adapts to any device, ensuring intuitive and accessible navigation for customers.",
-        "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap 5"],
-        "githubUrl": null,
-        "demoUrl": "https://www.vimocongelados.com",
-        "image": "vimo.webp",
-        "category": "frontend",
-        "featured": false
-      },
-      {
-        "name": "Attendance System with Strong Security",
-        "description": "Development of a student attendance system focused on security, implementing JWT authentication and authorization, secure password storage, role validation, sensitive data encryption, and protection against common attacks.",
-        "technologies": ["Java", "MySQL", "Spring Boot", "JWT", "bcrypt"],
-        "githubUrl": "https://github.com/21Enzo17/asist.io",
-        "image": "sistema-asistencia.jpg",
-        "category": "backend",
-        "featured": false
-      },
-      {
-        "name": "Digital Signal Generator",
-        "description": "Web application to visualize different types of digital signal encoding, including NRZ-L, NRZ-I, Manchester, and Differential Manchester. Features include start level selection and chart export.",
-        "technologies": ["HTML", "CSS", "JavaScript"],
-        "githubUrl": "https://github.com/21Enzo17/Signal-Modulator-web",
-        "demoUrl": "https://21enzo17.github.io/Signal-Modulator-web/",
-        "image": "generador-senales.png",
+        "demoUrl": null,
+        "downloadUrl": null,
+        "docsUrl": null,
+        "image": "",
         "category": "frontend",
         "featured": false
       },
       {
         "name": "URL Shortener API",
-        "description": "API for shortening URLs, providing detailed visit statistics and ensuring security and scalability. Includes authentication and authorization features.",
-        "technologies": ["Java", "Spring Boot", "MySQL"],
+        "description": "REST API to shorten URLs with visit statistics.",
+        "technologies": [
+          "Java",
+          "Spring Boot"
+        ],
         "githubUrl": "https://github.com/21Enzo17/url-shortener",
         "demoUrl": null,
+        "downloadUrl": null,
+        "docsUrl": null,
         "image": "",
         "category": "backend",
         "featured": false
       },
       {
+        "name": "Digital signal simulator",
+        "description": "Web app to visualize digital signal encodings: NRZ-L, NRZ-I, Manchester and Differential Manchester.",
+        "technologies": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "githubUrl": "https://github.com/21Enzo17/Signal-Modulator-web",
+        "demoUrl": "https://21enzo17.github.io/Signal-Modulator-web/",
+        "downloadUrl": null,
+        "docsUrl": null,
+        "image": "generador-senales.png",
+        "category": "frontend",
+        "featured": false
+      },
+      {
         "name": "Imagemin UI",
-        "description": "Desktop app built with Electron that serves as a graphical interface for the Imagemin library, allowing easy image optimization with drag and drop, quality selection, and preview.",
-        "technologies": ["Electron", "JavaScript", "Imagemin"],
+        "description": "Desktop GUI (Electron) for the Imagemin library, to optimize images.",
+        "technologies": [
+          "Electron",
+          "JavaScript",
+          "Imagemin"
+        ],
         "githubUrl": "https://github.com/21Enzo17/ImageminUI",
         "demoUrl": null,
+        "downloadUrl": null,
+        "docsUrl": null,
         "image": "",
         "category": "frontend",
         "featured": false
       },
       {
-        "name": "Multilingual Personal Portfolio",
-        "description": "Personal portfolio developed with Angular and TypeScript, implementing scalable architecture with centralized services, lazy loading, internationalization (i18n) for Spanish and English, responsive design with Tailwind CSS, dynamic PDF CV generation, and advanced SEO optimizations. Features reusable components, efficient state management, and frontend development best practices.",
-        "technologies": ["Angular", "TypeScript", "Tailwind CSS"],
+        "name": "This portfolio",
+        "description": "Angular and Tailwind site in Spanish and English. The content and the PDF resumes are generated from a single source: the master resume.",
+        "technologies": [
+          "Angular",
+          "TypeScript",
+          "Tailwind CSS",
+          "Python"
+        ],
         "githubUrl": "https://github.com/21Enzo17/Portfolio",
         "demoUrl": "https://www.enzo-meneghini.com",
+        "downloadUrl": null,
+        "docsUrl": null,
         "image": "",
         "category": "frontend",
         "featured": false
-      },
-      {
-        "name": "Multi-Site Enterprise Infrastructure",
-        "description": "Design and implementation of network infrastructure for multiple sites, including site-to-site VPN configuration, VLAN segmentation, firewall policies, QoS for critical traffic, and centralized monitoring with Prometheus and Grafana.",
-        "technologies": ["Mikrotik", "VPN", "VLANs", "Prometheus", "NGINX"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "",
-        "category": "infrastructure",
-        "featured": true
-      },
-      {
-        "name": "Enterprise Virtualization Platform",
-        "description": "Implementation of high-availability virtualization cluster using Proxmox, shared storage management, automated backup, live VM migration, and disaster recovery policies.",
-        "technologies": ["Proxmox", "Linux", "RAID", "Bash Scripting"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "",
-        "category": "infrastructure",
-        "featured": false
-      },
-      {
-        "name": "Enterprise CI/CD Pipeline",
-        "description": "Design and implementation of complete CI/CD pipeline using GitHub Actions and GitLab CI, including automated tests, static code analysis, Docker image building, automated deployment to multiple environments, and integrated notifications.",
-        "technologies": ["GitHub Actions", "Docker", "GitLab CI", "Bash"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "",
-        "category": "devops",
-        "featured": false
-      },
-      {
-        "name": "Monitoring and Observability Stack",
-        "description": "Implementation of complete monitoring stack including Prometheus for metrics, Alertmanager for alert management, centralized logging, custom Grafana dashboards, and exporters for critical services.",
-        "technologies": ["Prometheus", "Docker", "NGINX", "Bash Scripting"],
-        "githubUrl": null,
-        "demoUrl": null,
-        "image": "",
-        "category": "devops",
-        "featured": true
       }
     ],
     "buttons": {

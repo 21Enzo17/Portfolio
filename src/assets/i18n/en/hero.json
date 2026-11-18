@@ -1,8 +1,17 @@
 {
   "hero": {
-    "title": "Infrastructure & Networks Specialist · NOC Engineer · DevOps",
-    "subtitle": "Infrastructure & Networks Specialist · NOC Engineer · DevOps",
-    "keywords": ["NOC Engineer", "Infrastructure", "Networks", "GPON/FTTH", "DevOps", "ISP", "Accenture", "C1 English"],
-    "bio": "<span class=\"font-bold\">ISPs, government agencies, and international enterprise projects</span> — <span class=\"font-bold\">6+ years</span> in <span class=\"font-bold\">infrastructure, networks, and DevOps</span> across completely different environments. From <span class=\"font-bold\">fiber optics and GPON/FTTH</span> to <span class=\"font-bold\">virtualization, servers, and CI/CD</span>, with proven technical leadership. Took part in global-scale projects, including a 30-site mining migration with <span class=\"font-bold\">Accenture</span>. C1 English."
+    "title": "IT Infrastructure & Network Specialist · Team Lead · 24/7 Data Center",
+    "subtitle": "IT Infrastructure & Network Specialist · Team Lead · 24/7 Data Center",
+    "keywords": [
+      "IT Infrastructure",
+      "Networking",
+      "NOC",
+      "GPON/FTTH",
+      "BGP/OSPF",
+      "Team leadership",
+      "isitmyisp",
+      "English C1"
+    ],
+    "bio": "Network and infrastructure specialist with <span class=\"font-bold\">over 6 years</span> of experience and strong field knowledge: <span class=\"font-bold\">large-scale data centers</span>, structured cabling, fiber optics and on-site support at a mining site (Rio Tinto Project, <span class=\"font-bold\">Accenture</span>). I have led support teams, coordinated operational handovers, managed vendors, contractors and SLAs, strengthened infrastructure security and kept critical services running, from the <span class=\"font-bold\">21-branch</span> network of a public agency to the 24/7 operation of an ISP with <span class=\"font-bold\">more than 50,000 subscribers</span>. <span class=\"font-bold\">English C1</span>."
   }
 }

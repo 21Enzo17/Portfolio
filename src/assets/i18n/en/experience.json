@@ -3,23 +3,55 @@
     "title": "Work Experience",
     "items": [
       {
-        "jobTitle": "NOC Engineer",
+        "jobTitle": "Freelance — Networks & IT Infrastructure",
+        "company": "BEXCA (own company)",
+        "period": "Sep 2026 – Present",
+        "location": "Jujuy, Argentina",
+        "sections": [
+          {
+            "type": "list",
+            "title": "Achievements and responsibilities:",
+            "icon": "🛠️",
+            "content": [
+              "Deployed structured cabling, racks, switching and UniFi Wi-Fi in 3 offices with more than 20 workstations each.",
+              "Designed, built and released isitmyisp, an open source connectivity monitor for small businesses: 5 releases on Docker Hub (amd64/arm64) with a one-command installer, documentation and a public demo in Spanish and English.",
+              "Through my company, BEXCA, I designed and led the network installation of 3 offices, coordinating the technicians I hire per job (4 per project); I built the telecom racks.",
+              "Managed network projects for corporate clients end to end, from site survey to go-live.",
+              "I install home servers for private clients with video surveillance on Frigate (open source NVR)."
+            ]
+          },
+          {
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
+            "content": [
+              "Structured cabling",
+              "Racks",
+              "Switching",
+              "UniFi",
+              "Frigate",
+              "Docker"
+            ]
+          }
+        ]
+      },
+      {
+        "jobTitle": "Network Specialist — NOC",
         "company": "Canal 4 Jujuy (ISP)",
-        "period": "April 2026 - Present",
+        "period": "Apr 2026 – Aug 2026",
         "location": "Jujuy, Argentina · On-site",
         "sections": [
           {
             "type": "list",
-            "title": "Key responsibilities:",
+            "title": "Achievements and responsibilities:",
             "icon": "📡",
             "content": [
-              "24/7 network monitoring and operations with Zabbix and Grafana: early incident detection, advanced diagnostics and resolution at all levels",
-              "Switch configuration and routing management at scale: advanced VLANs, BGP and network segmentation for FTTH and HFC services",
-              "GPON/FTTH and HFC infrastructure management: provisioning and troubleshooting of OLTs, ONTs and cable modems in production",
-              "CDN cache management: deployment and maintenance of Netflix OCA, Google GGC and Meta caches to optimize traffic and reduce latency",
-              "Server administration and virtualization with Proxmox; perimeter security with FortiGate and unified network management with UniFi UDM",
-              "Leadership on large-scale network projects, including provisioner migrations",
-              "Continuous technical documentation of infrastructure, procedures and changes"
+              "Operated the FTTH network of more than 50,000 subscribers in 24/7 shifts, keeping availability close to 99% even during the migration to dual stack and dynamic routing, with monitoring in Grafana and Prometheus.",
+              "Took part in the design and migration of the network to a minimal infrastructure with IPv4/IPv6 dual stack and dynamic routing (BGP and OSPF).",
+              "Led technical meetings in English with international teams and resolved critical incidents in an average of 10 minutes.",
+              "Provisioned, troubleshot and activated subscribers on OLTs and ONTs, configuring switches, routers and BGP.",
+              "Worked with the Netflix Open Connect (OCA) and Google Global Cache (GGC) content caches hosted in the ISP's data center.",
+              "Handled requests in Jira, wrote Bash/Python scripts and maintained runbooks for recurring NOC tasks."
             ]
           },
           {
@@ -27,35 +59,37 @@
             "title": "Technologies used:",
             "icon": "⚙️",
             "content": [
-              "Zabbix", "Grafana", "GPON/FTTH", "HFC", "OLTs", "ONTs", "cable modems",
-              "Netflix OCA", "Google GGC", "Meta Cache", "BGP", "VLANs",
-              "Proxmox", "FortiGate", "UniFi UDM", "switches", "routing"
+              "GPON/FTTH",
+              "OLT/ONT",
+              "BGP",
+              "OSPF",
+              "IPv6",
+              "VLANs",
+              "Grafana",
+              "Prometheus",
+              "Netflix OCA",
+              "Google GGC",
+              "Jira"
             ]
           }
         ]
       },
       {
-        "jobTitle": "Support Engineer | Site Lead",
-        "company": "Accenture - Rio Tinto Project",
-        "period": "October 2025 - April 2026",
-        "location": "Jujuy, Argentina · On-site",
+        "jobTitle": "Support Engineer — Site Lead",
+        "company": "Accenture · Rio Tinto Project",
+        "period": "Oct 2025 – Apr 2026",
+        "location": "Jujuy, Argentina · Mining site",
         "sections": [
           {
             "type": "list",
-            "title": "Key responsibilities:",
+            "title": "Achievements and responsibilities:",
             "icon": "⛏️",
             "content": [
-              "Site Lead: coordination and supervision of on-site technical support team, task assignment, SLA tracking, and primary point of contact with the client",
-              "On-site technical support in enterprise-level mining operations: resolution of critical hardware, software and network incidents in 24/7 environment",
-              "Imaging and mass deployment of workstations: preparation, configuration and deployment of Windows corporate images with enterprise tools (MDT/SCCM)",
-              "Preventive and corrective maintenance of equipment in operational areas: workstations, laptops, printers, scanners and specialized mining peripherals",
-              "Incident management through ServiceNow: creation, tracking, escalation and documentation of tickets according to corporate SLAs",
-              "End-user support in mining environment: on-site and remote technical assistance to operators, supervisors and administrative staff",
-              "Active Directory administration: management of accounts, permissions, groups and GPO policies for access control",
-              "Local network troubleshooting: diagnosis and resolution of LAN/WiFi connectivity issues in distributed mining infrastructure",
-              "Installation and configuration of corporate software: Office 365, specialized mining applications and productivity tools",
-              "Compliance with mining safety standards: working under HSE (Health, Safety, Environment) standards and industrial safety protocols",
-              "Coordination with Accenture global teams: collaboration with infrastructure, security and development teams for complex incident resolution"
+              "Led a team of 4 technicians in 14-day rotations, coordinating the handover with the incoming team to ensure service continuity.",
+              "Took part in the migration of 1,500 computers and supported about 2,000 people on site, solving hardware, software and network incidents with the local IT team; I also did structured cabling.",
+              "Used Microsoft Intune to manage the site's devices: enrollment, configuration profiles and compliance policies.",
+              "Managed incident and request tickets in ServiceNow.",
+              "Managed user onboarding, offboarding and access permissions on site under the principle of least privilege."
             ]
           },
           {
@@ -63,50 +97,36 @@
             "title": "Technologies used:",
             "icon": "⚙️",
             "content": [
-              "Windows 10/11", "Active Directory", "ServiceNow", "MDT", "SCCM",
-              "Office 365", "VPN", "LAN/WiFi", "Remote Desktop",
-              "PowerShell", "Bash", "Hardware Diagnostics", "Imaging Tools",
-              "Ticketing Systems", "ITIL", "HSE Protocols"
+              "ServiceNow",
+              "Microsoft Intune",
+              "Azure / Entra ID",
+              "Windows",
+              "Structured cabling",
+              "Switches"
             ]
           }
         ]
       },
       {
-        "jobTitle": "Infrastructure Manager",
-        "company": "Jujuy Water Utility",
-        "period": "January 2025 - April 2026",
-        "location": "Jujuy, Argentina · On-site",
+        "jobTitle": "IT Infrastructure Lead",
+        "company": "Agua Potable de Jujuy (public water utility)",
+        "period": "Jan 2025 – Apr 2026",
+        "location": "Jujuy, Argentina",
         "sections": [
           {
             "type": "list",
-            "title": "Key responsibilities:",
-            "icon": "🖥️",
+            "title": "Achievements and responsibilities:",
+            "icon": "💧",
             "content": [
-              "Leadership and coordination of Support, Infrastructure and Applications teams: direct technical supervision, mentoring, critical task assignment, and IT team skills development",
-              "Comprehensive administration of physical and virtual servers on Debian and Windows Server using Hyper‑V and Proxmox; preventive/corrective maintenance, RAID management and provisioning of development/testing environments",
-              "Hybrid infrastructure management on-premise and cloud (Azure): Azure AD administration, corporate tenant, identity synchronization, conditional access policies, and progressive service migration to the cloud",
-              "Large‑scale enterprise network operations: design and administration of LAN/WAN, VLANs, QoS, DNS/DHCP Server, advanced routing and multi‑layer firewall policies",
-              "Complete restructuring of corporate network infrastructure: comprehensive DNS management, network configuration, port forwarding and resolution of critical issues (network loops) in collaboration with external vendors",
-              "Active Directory on-premise and Azure AD administration: user and group management, GPO policies, NTFS permissions, integration with corporate services, SSO and granular access control",
-              "Comprehensive IT inventory and asset management: hardware/software control, equipment lifecycle, licensing (Microsoft, Adobe, etc.), planned obsolescence management, and compliance audits",
-              "Multi‑site network with Mikrotik: site‑to‑site/client VPNs, dynamic routing, monitoring and troubleshooting of province‑wide WAN links",
-              "Corporate Wi‑Fi with Aruba (controllers and APs), VLAN segmentation and wireless security policies",
-              "Structured cabling infrastructure: design, implementation and certification of Cat6/Cat6A data networks, including fiber optic deployment and telecommunications cabinets",
-              "Enterprise IP telephony with Issabel: extension provisioning, SIP trunk configuration, call recordings and routing policies",
-              "Containerized services with Docker: deployment, light orchestration and automation with advanced scripting (Bash/Python) for digital transformation",
-              "On-premise AI services implementation: deployment of Large Language Models (Ollama with Qwen 4B), official corporate chatbot, vector databases (Chromadb) for RAG, voice assistants with Whisper AI, and intelligent automation initiatives (RPA)",
-              "Facial recognition systems deployment and integration: implementation of biometric solutions for access control and attendance tracking with IP cameras and processing servers",
-              "Complete lifecycle management of web applications: architecture, deployment and maintenance of backend and frontend of corporate website with automated CI/CD, ensuring 24/7 availability",
-              "Implementation and administration of Redmine: ticketing and project management system for IT department, including custom workflows and reporting",
-              "Reverse proxy and load balancing (NGINX/HAProxy): TLS termination, automated Let's Encrypt certificate renewal, security hardening and domain management",
-              "Advanced database administration (MySQL/PostgreSQL/SQL Server): provisioning instances for development/testing, automated backups, restores, performance tuning and advanced SQL",
-              "Proactive monitoring and observability with Nagios, Prometheus/Alertmanager and centralized logging; custom dashboards, critical metrics, SLAs, and multi‑channel alerting system ensuring 99.9% availability",
-              "CI/CD pipelines for automated internal deployments (GitHub Actions/GitLab CI) with automated testing, code quality analysis, and automatic rollback",
-              "Direct vendor coordination (Iplan, Google Workspace, carriers); SLA management, critical incidents and technical escalation",
-              "Comprehensive technical documentation of processes, standard operating procedures (SOPs), incident runbooks, and knowledge base for know-how transfer",
-              "UPS installation and management to ensure 24/7 operational continuity of critical servers and mission-critical systems",
-              "Level 1, 2 and 3 technical support since day one: complex incident resolution, root cause analysis, team technical reference, and final escalation point",
-              "Hands-on experience with Azure Cloud Services (VMs, Storage, Networking) and AWS (EC2, S3, RDS, VPC); cloud-native architectures for future hybrid migrations"
+              "Stabilized an infrastructure that went down every 30 minutes, brought it to 99% availability and strengthened its security; managed 15+ physical and virtual servers and provided L3 support on network and databases.",
+              "Supervised a team of 4 and the network of 21 branches; managed contractors for recabling (two buildings with more than 100 users each) and server upgrades.",
+              "Cut the connectivity bill by 90%: we replaced a dedicated fiber run with individual connections and moved several links to WireGuard.",
+              "Defined the area's policies and quality standards, a disaster recovery plan and a backup plan.",
+              "Automated application deployment on merge to main, removing manual infrastructure work.",
+              "Deployed corporate and general-use Wi-Fi networks with UniFi, and replaced L2TP with WireGuard to reduce vendor dependency.",
+              "Managed the infrastructure area's budget: purchasing, quotes and vendor selection, as well as the area's accounting and payments.",
+              "Implemented the IT asset inventory with GLPI.",
+              "Deployed on-premise AI services with a local LLM on Ollama."
             ]
           },
           {
@@ -114,83 +134,81 @@
             "title": "Technologies used:",
             "icon": "⚙️",
             "content": [
-              "Debian/Linux", "Windows Server", "Active Directory", "Azure AD", "GPO", "Hyper‑V", "Proxmox", "Docker",
-              "Microsoft Azure", "Azure VMs", "Azure Storage", "Azure Networking", "Entra ID",
-              "NGINX", "HAProxy", "Nagios", "Prometheus", "Alertmanager", "Grafana",
-              "Mikrotik RouterOS", "Cisco CCNA", "Aruba Controllers", "Issabel PBX", "VPN (IPSec/OpenVPN)",
-              "MySQL", "PostgreSQL", "SQL Server", "Redmine", "ServiceNow",
-              "IT Asset Management", "Hardware/Software Inventory", "License Management",
-              "Ollama", "Qwen", "Chromadb", "Whisper AI", "LLMs", "RAG", "RPA",
-              "Facial Recognition", "Biometric Systems", "IP Cameras",
-              "GitHub Actions", "GitLab CI", "Bash", "Python", "PowerShell",
-              "TLS/SSL", "Let's Encrypt", "RAID", "DNS/DHCP Server", "Firewall", "VLANs", "QoS",
-              "Structured Cabling", "Fiber Optics", "Cat6/6A", "UPS", "Patch Panels",
-              "Team Leadership", "Technical Mentoring", "Process Documentation", "SOPs"
+              "Proxmox VE",
+              "Windows Server",
+              "Active Directory",
+              "Microsoft 365",
+              "Google Workspace",
+              "MikroTik",
+              "UniFi",
+              "Aruba",
+              "WireGuard",
+              "NGINX",
+              "Prometheus",
+              "GLPI",
+              "Issabel",
+              "Ollama",
+              "CI/CD"
             ]
           }
         ]
       },
       {
-        "jobTitle": "Jr Full Stack Developer",
-        "company": "Jujuy Water Utility",
-        "period": "August 2024 - December 2024",
-        "location": "Jujuy, Argentina · On-site",
+        "jobTitle": "Jr. Fullstack Developer",
+        "company": "Agua Potable de Jujuy (public water utility)",
+        "period": "Aug 2024 – Dec 2024",
+        "location": "Jujuy, Argentina",
         "sections": [
           {
             "type": "list",
-            "title": "Key impact and responsibilities:",
+            "title": "Achievements and responsibilities:",
             "icon": "💻",
             "content": [
-              "Migration of legacy systems from Genexus to modern technologies (Java/Angular): invoicing and water account onboarding, integrations and undocumented analysis",
-              "End‑to‑end participation: discovery, design, development, testing and production deployment",
-              "Redesign and migration of the institutional website WordPress → Angular/Genexus; coordination of a multidisciplinary team",
-              "Automation and CI/CD for builds and deployments; security best practices (JWT, role control, validations)",
-              "Level 3 support in parallel: resolution of critical network/server incidents and vendor coordination"
+              "Migrated legacy GeneXus systems to Java/Angular, directly affecting billing for 100,000+ residents.",
+              "Led the redesign of the institutional website with a mixed team."
             ]
           },
           {
             "type": "technologies",
             "title": "Technologies used:",
             "icon": "⚙️",
-            "content": ["Java", "Spring Boot", "Angular", "MySQL", "SQL", "Docker", "GitHub Actions", "Networks", "Node.js"]
+            "content": [
+              "GeneXus",
+              "Java",
+              "Angular",
+              "Node.js/TypeScript"
+            ]
           }
         ]
       },
       {
         "jobTitle": "Infrastructure Analyst",
-        "company": "Instalaciones Eléctricas del Norte S.R.L",
-        "period": "February 2023 - November 2024",
-        "location": "Jujuy, Argentina · On-site",
+        "company": "Freelance (25+ clients)",
+        "period": "Jul 2020 – Dec 2024",
+        "location": "Jujuy, Argentina",
         "sections": [
           {
             "type": "list",
-            "title": "Key responsibilities:",
-            "icon": "🛠️",
+            "title": "Achievements and responsibilities:",
+            "icon": "🔌",
             "content": [
-              "Provided L1 and L2 support to users both remotely and on-site",
-              "Equipment repair and workstation provisioning",
-              "Maintenance and monitoring of internal systems",
-              "Resolution of hardware, software, and network incidents",
-              "Ticket and incident management ensuring operational continuity"
+              "Designed, installed and maintained networks and structured cabling (racks, MikroTik, Cisco, UniFi) for 25+ clients, including work as a contractor for a company in the electrical sector.",
+              "Solved interference and performance problems caused by poor cabling, improving connectivity at the sites.",
+              "Configured DNS, domains and TLS/SSL certificates for clients.",
+              "Built websites for clients (HTML, CSS, JavaScript, Bootstrap)."
             ]
-          }
-        ]
-      },
-      {
-        "jobTitle": "Infrastructure Analyst (Freelance)",
-        "company": "Freelance",
-        "period": "July 2020 - January 2023",
-        "location": "Jujuy, Argentina · Freelance",
-        "sections": [
+          },
           {
-            "type": "list",
-            "title": "Key responsibilities:",
-            "icon": "🛠️",
+            "type": "technologies",
+            "title": "Technologies used:",
+            "icon": "⚙️",
             "content": [
-              "Designed and configured networks for Krass Coffee ensuring stable and secure connectivity",
-              "Provided L1 and L2 support to individual users on-site and remotely",
-              "Repair and maintenance of equipment and incident resolution",
-              "Technology solutions for small businesses and independent professionals"
+              "MikroTik",
+              "Cisco",
+              "UniFi",
+              "Racks",
+              "DNS",
+              "TLS/SSL"
             ]
           }
         ]

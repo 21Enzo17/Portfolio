@@ -2,7 +2,6 @@ import { Component, type ElementRef, ViewChild, type AfterViewInit, type OnDestr
 import { CommonModule } from "@angular/common"
 import { TranslateModule } from "@ngx-translate/core"
 import { LanguageService } from "@app/services/language.service"
-import { CvGeneratorLazyService } from "@app/services/cv-generator-lazy.service"
 import { AnalyticsService } from "@app/services/analytics.service"
 import { SOCIAL_CONFIG } from "@app/config/social.config"
 
@@ -24,7 +23,6 @@ export class FooterComponent implements AfterViewInit, OnDestroy, OnInit {
   socialConfig = SOCIAL_CONFIG;
 
   private languageService = inject(LanguageService)
-  private cvGeneratorService = inject(CvGeneratorLazyService)
   private analyticsService = inject(AnalyticsService)
 
   ngOnInit() {
