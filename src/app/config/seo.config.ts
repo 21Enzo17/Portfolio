@@ -13,7 +13,7 @@ export const SEO_CONFIG = {  // Configuración general
     description: 'Enzo Meneghini, especialista de redes e infraestructura IT en Jujuy, Argentina. Más de 6 años entre data centers, la operación 24/7 de un ISP de más de 50.000 abonados, soporte en un sitio minero con Accenture y liderazgo de equipos. Creador de isitmyisp.',
     keywords: 'Enzo Meneghini, redes, infraestructura IT, NOC, ISP, GPON/FTTH, BGP, OSPF, IPv6, MikroTik, Cisco, UniFi, Proxmox, Windows Server, Docker, isitmyisp, Jujuy, Argentina',
     author: 'Enzo Meneghini',
-    image: `${SOCIAL_CONFIG.portfolioUrl}/assets/fotoPerfil.webp`,
+    image: `${SOCIAL_CONFIG.portfolioUrl}/assets/og-image.png`,
   },
   
   // Configuración de redes sociales (Open Graph y Twitter)
