@@ -87,6 +87,10 @@
           "icon": "mdi:account-group"
         },
         {
+          "name": "GPO / WSUS",
+          "icon": "mdi:microsoft-windows"
+        },
+        {
           "name": "Microsoft 365",
           "icon": "logos:microsoft-icon"
         },
@@ -177,6 +181,10 @@
         {
           "name": "Bash",
           "icon": "carbon:terminal"
+        },
+        {
+          "name": "PowerShell",
+          "icon": "mdi:powershell"
         },
         {
           "name": "Python",
