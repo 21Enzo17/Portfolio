@@ -16,6 +16,7 @@
               "Implementé cableado estructurado, racks, switching y Wi-Fi UniFi en 3 oficinas de más de 20 puestos cada una.",
               "Diseñé, desarrollé y publiqué isitmyisp, un monitor de conectividad open source para pymes: 5 versiones publicadas en Docker Hub (amd64/arm64) con instalador de un comando, documentación y demo pública en español e inglés.",
               "Con mi empresa, BEXCA, diseñé y lideré la instalación de la red de 3 oficinas, coordinando a los técnicos que contrato por obra (4 por proyecto); armé los racks de telecomunicaciones.",
+              "Resolví como consultor externo la caída del acceso RD Web/RDS de una organización pública: diagnóstico de desfase horario entre VMs Hyper-V y el controlador de dominio (Kerberos) y corrección de la jerarquía NTP del dominio.",
               "Gestioné de punta a punta proyectos de red para clientes corporativos, desde el relevamiento hasta la puesta en marcha.",
               "Instalo servidores domésticos para clientes particulares con videovigilancia sobre Frigate (NVR open source)."
             ]
@@ -30,7 +31,9 @@
               "Switching",
               "UniFi",
               "Frigate",
-              "Docker"
+              "Docker",
+              "Windows Server",
+              "RDS"
             ]
           }
         ]
